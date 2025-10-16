@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Rahim ALI
 
-## Getting Started
+Portfolio personnel inspiré du design de Brittany Chiang, construit avec Next.js 15 et Tailwind CSS 4.
 
-First, run the development server:
+## 🚀 Installation
+
+### 1. Créer la structure des dossiers
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Créer les dossiers nécessaires
+mkdir -p src/lib
+mkdir -p src/components/ui
+mkdir -p src/components/sections
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Copier les fichiers
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copiez chaque fichier que j'ai généré dans son emplacement correspondant :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Fichiers de configuration (déjà existants - à remplacer)
+- `src/app/page.tsx` ✅
+- `src/app/layout.tsx` ✅
+- `src/app/globals.css` ✅
 
-## Learn More
+#### Nouveaux fichiers à créer
 
-To learn more about Next.js, take a look at the following resources:
+**Dans `src/lib/` :**
+- `types.ts`
+- `data.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Dans `src/components/ui/` :**
+- `Navigation.tsx`
+- `SocialLinks.tsx`
+- `SectionTitle.tsx`
+- `ExperienceCard.tsx`
+- `ProjectCard.tsx`
+- `ServiceCard.tsx`
+- `MouseEffect.tsx`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Dans `src/components/sections/` :**
+- `Hero.tsx`
+- `About.tsx`
+- `Services.tsx`
+- `Experience.tsx`
+- `Projects.tsx`
+- `Skills.tsx`
+- `Footer.tsx`
 
-## Deploy on Vercel
+### 3. Lancer le projet
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Installer les dépendances (si ce n'est pas déjà fait)
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Lancer en mode développement
+npm run dev
+```
+
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+
+## 📝 Personnalisation
+
+### Modifier vos données personnelles
+
+Toutes vos données sont centralisées dans **`src/lib/data.ts`**. Modifiez ce fichier pour :
+
+- ✏️ Mettre à jour votre email
+- ✏️ Modifier les expériences professionnelles (remplacer les données aléatoires)
+- ✏️ Mettre à jour vos projets (remplacer les données aléatoires)
+- ✏️ Ajouter ou retirer des services
+- ✏️ Modifier vos compétences
+
+### Structure des données
+
+```typescript
+// Exemple pour une expérience
+{
+  id: '1',
+  period: '2023 — PRESENT',
+  title: 'Votre Poste',
+  company: 'Votre Entreprise',
+  description: 'Description de votre rôle...',
+  technologies: ['Tech1', 'Tech2'],
+  link: 'https://exemple.com' // Optionnel
+}
+```
+
+## 🎨 Fonctionnalités
+
+- ✅ Design fidèle au site de Brittany Chiang
+- ✅ Navigation latérale fixe avec scroll spy
+- ✅ Effet de souris animé
+- ✅ Sections : About, Services, Experience, Projects, Skills
+- ✅ Cartes interactives avec effets de survol
+- ✅ Liens sociaux (GitHub, LinkedIn)
+- ✅ Responsive design
+- ✅ Animations subtiles
+- ✅ Architecture propre et modulaire
+- ✅ TypeScript pour la sécurité des types
+
+## 📱 Sections
+
+1. **Hero** - Nom, titre et navigation
+2. **About** - Présentation personnelle
+3. **Services** - Vos services offerts
+4. **Experience** - Expériences professionnelles
+5. **Projects** - Portfolio de projets
+6. **Skills** - Compétences techniques
+
+## 🛠️ Technologies utilisées
+
+- Next.js 15.5.5
+- React 19.1.0
+- TypeScript 5
+- Tailwind CSS 4
+- Geist Font
+
+## 📦 Structure du projet
+
+```
+freelance_portfolio/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── sections/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   └── Footer.tsx
+│   │   └── ui/
+│   │       ├── Navigation.tsx
+│   │       ├── SocialLinks.tsx
+│   │       ├── SectionTitle.tsx
+│   │       ├── ExperienceCard.tsx
+│   │       ├── ProjectCard.tsx
+│   │       ├── ServiceCard.tsx
+│   │       └── MouseEffect.tsx
+│   └── lib/
+│       ├── types.ts
+│       └── data.ts
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+└── next.config.ts
+```
+
+## 🎯 Prochaines étapes
+
+1. Remplacez les données aléatoires dans `src/lib/data.ts`
+2. Ajoutez votre vrai email
+3. Ajoutez des images pour vos projets (optionnel)
+4. Testez sur mobile et desktop
+5. Déployez sur Vercel
+
+## 🚀 Déploiement
+
+```bash
+# Build pour la production
+npm run build
+
+# Tester le build
+npm start
+```
+
+Pour déployer sur Vercel : [vercel.com](https://vercel.com)
+
+---
+
+**Créé par Rahim ALI** | Inspiré par [Brittany Chiang](https://brittanychiang.com/)
