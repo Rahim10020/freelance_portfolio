@@ -1,0 +1,74 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
+const sections = [
+    { id: 'about', label: 'About' },
+    { id: 'services', label: 'Services' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Skills' },
+];
+
+export default function Navigation() {
+    const [activeSection, setActiveSection] = useState('about');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + 100;
+
+            for (const section of sections) {
+                const element = document.getElementById(section.id);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(section.id);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <nav className="hidden lg:block">
+            <ul className="space-y-4">
+                {sections.map((section) => (
+                    <li key={section.id}>
+                        <button
+                            onClick={() => scrollToSection(section.id)}
+                            className="group flex items-center gap-4 py-3"
+                        >
+                            <span
+                                className={`h-px transition-all ${activeSection === section.id
+                                    ? 'w-16 bg-slate-200'
+                                    : 'w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200'
+                                    }`}
+                            />
+                            <span
+                                className={`text-xs font-bold uppercase tracking-widest transition-colors ${activeSection === section.id
+                                    ? 'text-slate-200'
+                                    : 'text-slate-500 group-hover:text-slate-200'
+                                    }`}
+                            >
+                                {section.label}
+                            </span>
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
