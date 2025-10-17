@@ -6,6 +6,11 @@ export default function About() {
             <SectionTitle>About</SectionTitle>
             <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
+                    Since the beginning of my journey as a freelance designer over a decade ago,
+                    I've had the opportunity to work remotely with agencies, consult for startups,
+                    and collaborate with talented people to create digital products for both business and everyday users.
+                </p>
+                <p>
                     Back in 2019, I decided to dive into the world of software development and discovered
                     my passion for creating digital experiences. What started as curiosity quickly evolved
                     into a professional career building modern applications.
