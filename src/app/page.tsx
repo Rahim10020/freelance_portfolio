@@ -6,6 +6,7 @@ import Projects from '@/components/sections/Projects';
 import Skills from '@/components/sections/Skills';
 import Footer from '@/components/sections/Footer';
 import MouseEffect from '@/components/ui/MouseEffect';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
             <Projects />
             <Services />
             <Skills />
+            <Contact />
             <Footer />
           </main>
         </div>

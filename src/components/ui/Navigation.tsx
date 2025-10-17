@@ -8,6 +8,7 @@ const sections = [
     { id: 'projects', label: 'Projects' },
     { id: 'services', label: 'Services' },
     { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' },
 ];
 
 export default function Navigation() {
