@@ -3,8 +3,8 @@ import { Experience, Project, Service, SocialLink } from './types';
 export const personalInfo = {
     name: 'Rahim ALI',
     title: 'Software Developer',
-    bio: "I design and develop modern mobile and web applications using Flutter, Django, Next.js, and Android (Kotlin). I specialize in developing web applications with Django and Next.js, and mobile apps using Flutter and Kotlin(for Android development). My work focuses on clean architecture, best development practices, and delivering an optimal user experience.",
-    email: 'rahim.ali@example.com', // Modifiez avec mon vrai email
+    bio: "I design and code beautifully simple things that make the web feel intuitive and alive — and I genuinely love what I do.",
+    email: 'rahim100codeur@gmail.com',
 };
 
 export const socialLinks: SocialLink[] = [
