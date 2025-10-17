@@ -56,7 +56,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </h3>
                 <p className="mt-2 text-sm leading-normal text-slate-400">{project.description}</p>
                 {(project.links.github || project.links.live) && (
-                    <div className="mt-8 flex gap-4 text-xs">
+                    <div className="mt-4 flex gap-4 text-xs">
                         {project.links.github && (
                             <a
                                 href={project.links.github}
@@ -94,7 +94,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         )}
                     </div>
                 )}
-                <ul className="mt-6 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                         <li key={tech}>
                             <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
