@@ -24,7 +24,7 @@ export default function SocialLinks() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block hover:text-slate-200 transition-colors"
+                        className="block text-slate-400 hover:text-slate-200 transition-colors"
                         aria-label={link.name}
                     >
                         <svg

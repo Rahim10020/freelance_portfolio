@@ -41,7 +41,7 @@ export default function ProjectsArchive() {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl mb-4">
+                    <h1 className="text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4">
                         All Projects
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl">
