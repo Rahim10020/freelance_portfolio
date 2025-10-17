@@ -60,5 +60,5 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
     );
 
-    return <li className="mb-12">{content}</li>;
+    return <li className="mb-12 hover:cursor-pointer">{content}</li>;
 }
