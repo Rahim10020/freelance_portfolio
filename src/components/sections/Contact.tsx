@@ -35,11 +35,12 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-20">
+        <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
             <SectionTitle>Contact</SectionTitle>
 
             <div className="space-y-6">
                 <div>
+                    <p>Want to discuss a startup collaboration? I'm most definitely game.</p>
                     <p className="text-slate-400">
                         Get in touch or shoot me an email directly on{' '}
                         <a
@@ -60,7 +61,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="Name"
                             required
-                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
                         />
                     </div>
 
@@ -72,7 +73,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="Subject"
                             required
-                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
                         />
                     </div>
 
@@ -84,7 +85,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="Email"
                             required
-                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors"
                         />
                     </div>
 
@@ -96,14 +97,14 @@ export default function Contact() {
                             placeholder="Message"
                             required
                             rows={6}
-                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors resize-none"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-300 focus:ring-1 focus:ring-teal-300 transition-colors resize-none"
                         />
                     </div>
 
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="px-8 py-3 bg-slate-200 text-slate-900 font-medium rounded-lg hover:bg-teal-300 hover:text-slate-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-4 py-2 bg-slate-200 text-slate-900 font-medium rounded-lg hover:bg-teal-300 hover:text-slate-900 hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {status === 'sending' ? 'Sending...' : status === 'success' ? '✓ Sent!' : 'Send Message'}
                     </button>
