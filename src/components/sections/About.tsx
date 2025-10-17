@@ -1,19 +1,15 @@
 import SectionTitle from '../ui/SectionTitle';
+import Skills from './Skills';
 
 export default function About() {
     return (
         <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
             <SectionTitle>About</SectionTitle>
-            <div className="space-y-4 text-slate-400 leading-relaxed">
+            <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
                 <p>
                     Since the beginning of my journey as a freelance designer over a decade ago,
                     I've had the opportunity to work remotely with agencies, consult for startups,
                     and collaborate with talented people to create digital products for both business and everyday users.
-                </p>
-                <p>
-                    Back in 2019, I decided to dive into the world of software development and discovered
-                    my passion for creating digital experiences. What started as curiosity quickly evolved
-                    into a professional career building modern applications.
                 </p>
                 <p>
                     My main focus these days is building accessible, user-centered products for a variety
@@ -21,11 +17,9 @@ export default function About() {
                     to implementing robust backend systems. I specialize in creating applications that
                     not only look great but also perform exceptionally well.
                 </p>
-                <p>
-                    When I'm not coding, you'll find me exploring new technologies, contributing to
-                    open-source projects, or sharing knowledge with the developer community.
-                </p>
+
             </div>
+            <Skills />
         </section>
     );
 }
