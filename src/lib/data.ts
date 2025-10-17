@@ -18,6 +18,26 @@ export const socialLinks: SocialLink[] = [
         url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
         icon: 'linkedin',
     },
+    {
+        name: 'Instagram',
+        url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+        icon: 'instagram',
+    },
+    {
+        name: 'Facebook',
+        url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+        icon: 'facebook',
+    },
+    // {
+    //     name: 'YouTube',
+    //     url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+    //     icon: 'youtube',
+    // },
+    // {
+    //     name: 'Twitter',
+    //     url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+    //     icon: 'twitter',
+    // },
 ];
 
 export const services: Service[] = [
