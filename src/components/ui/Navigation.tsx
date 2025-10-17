@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 const sections = [
     { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'services', label: 'Services' },
     { id: 'skills', label: 'Skills' },
 ];
 
@@ -43,13 +43,13 @@ export default function Navigation() {
     };
 
     return (
-        <nav className="hidden lg:block">
+        <nav className="hidden lg:block mt-7 lg:mt-14">
             <ul className="space-y-4">
                 {sections.map((section) => (
                     <li key={section.id}>
                         <button
                             onClick={() => scrollToSection(section.id)}
-                            className="group flex items-center gap-4 py-3"
+                            className="group flex items-center hover:cursor-pointer gap-4 py-3"
                         >
                             <span
                                 className={`h-px transition-all ${activeSection === section.id
