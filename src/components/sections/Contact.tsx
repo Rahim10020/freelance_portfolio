@@ -35,7 +35,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-20">
             <SectionTitle>Contact</SectionTitle>
 
             <div className="space-y-6">
