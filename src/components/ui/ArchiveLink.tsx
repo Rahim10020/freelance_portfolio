@@ -8,8 +8,8 @@ interface ArchiveLinkProps {
 
 export default function ArchiveLink({ href, text, isExternal = false }: ArchiveLinkProps) {
     const content = (
-        <span className="inline-flex items-center font-medium leading-tight text-slate-200 group">
-            <span className="border-b border-transparent group-hover:border-teal-300 transition-all duration-300">
+        <span className="inline-flex items-center font-medium leading-tight text-slate-200 dark:text-slate-200 light:text-slate-900 group">
+            <span className="border-b border-transparent group-hover:border-teal-300 dark:group-hover:border-teal-300 light:group-hover:border-teal-700 transition-all duration-300">
                 {text}
             </span>
             <svg
@@ -38,7 +38,7 @@ export default function ArchiveLink({ href, text, isExternal = false }: ArchiveL
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-base font-semibold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 transition-colors"
+                className="inline-flex items-center text-base font-semibold leading-tight text-slate-200 dark:text-slate-200 light:text-slate-900 hover:text-teal-300 dark:hover:text-teal-300 light:hover:text-teal-700 focus-visible:text-teal-300 dark:focus-visible:text-teal-300 light:focus-visible:text-teal-700 transition-colors"
             >
                 {content}
             </a>
@@ -48,7 +48,7 @@ export default function ArchiveLink({ href, text, isExternal = false }: ArchiveL
     return (
         <Link
             href={href}
-            className="inline-flex items-center text-base font-semibold leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 transition-colors"
+            className="inline-flex items-center text-base font-semibold leading-tight text-slate-200 dark:text-slate-200 light:text-slate-900 hover:text-teal-300 dark:hover:text-teal-300 light:hover:text-teal-700 focus-visible:text-teal-300 dark:focus-visible:text-teal-300 light:focus-visible:text-teal-700 transition-colors"
         >
             {content}
         </Link>
