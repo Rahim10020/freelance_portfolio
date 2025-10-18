@@ -1,3 +1,9 @@
-- regler le souci du scroll behavior
-- voir si je peux ajouter le dark et night mode
-- voir la traduction anglais-francais.
+- regler le souci du mouse effect (le probleme c'est que des que je scroll ma page ca ne s'applique plus 
+    mais quand j'ai pas scroller sa fonctionne)
+- voir si je peux ajouter un systeme de light/dark mode (on devra alors garder le systeme actuel comme dark mode et ensuite 
+    on implementera un systeme light mode magnifique en coherence avec les couleurs du dark)
+- voir si on peut ajouter la traduction anglais-francais. (Je veux pas utiliser google translate mais plutot mes propres textes. 
+    donc en fonction du systeme choisi on va utiliser les textes en anglais ou les textes en francais. 
+    Mais par defaut mon systeme sera en anglais)
+
+- les boutons de changement de theme et de langue devront etre en un endroit ou ils seront tjs visibles et disponibles a utiliser
