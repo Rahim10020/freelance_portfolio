@@ -42,13 +42,22 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         setTheme(prev => prev === 'dark' ? 'light' : 'dark');
     };
 
+    const value = {
+        theme,
+        toggleTheme,
+    };
+
     // Éviter le flash de contenu non stylé
     if (!mounted) {
-        return <>{children}</>;
+        return (
+            <ThemeContext.Provider value={value}>
+                {children}
+            </ThemeContext.Provider>
+        );
     }
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={value}>
             {children}
         </ThemeContext.Provider>
     );

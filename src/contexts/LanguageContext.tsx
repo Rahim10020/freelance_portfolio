@@ -37,15 +37,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         localStorage.setItem('language', lang);
     };
 
-    if (!mounted) {
-        return <>{children}</>;
-    }
-
     const value = {
         language,
         setLanguage,
         t: translations[language],
     };
+
+    if (!mounted) {
+        return (
+            <LanguageContext.Provider value={value}>
+                {children}
+            </LanguageContext.Provider>
+        );
+    }
 
     return (
         <LanguageContext.Provider value={value}>

@@ -19,7 +19,7 @@ export default function ControlsPanel() {
                         }`}
                     aria-label="Switch to English"
                 >
-                    ENLanguageContext
+                    EN
                 </button>
                 <button
                     onClick={() => setLanguage('fr')}
