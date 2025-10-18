@@ -1,0 +1,3 @@
+- regler le souci du scroll behavior
+- voir si je peux ajouter le dark et night mode
+- voir la traduction anglais-francais.
