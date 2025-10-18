@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import ControlsPanel from "@/components/ui/ControlsPanel";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,16 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} antialiased bg-slate-900 text-slate-400 selection:bg-teal-300 selection:text-teal-900`}
+        className={`${inter.variable} antialiased`}
       >
-        <div className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
-          style={{
-            background: 'radial-gradient(600px at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(29, 78, 216, 0.15), transparent 80%)'
-          }}
-        />
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            <ControlsPanel />
+            <div className="gradient-effect" />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
