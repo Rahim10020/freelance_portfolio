@@ -1,175 +1,299 @@
-# Portfolio Rahim ALI
+# 🚀 Portfolio - Rahim ALI
 
-Portfolio personnel inspiré du design de Brittany Chiang, construit avec Next.js 15 et Tailwind CSS 4.
+Portfolio personnel moderne et interactif construit avec Next.js 15, React 19, TypeScript et Tailwind CSS.
 
-## 🚀 Installation
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black)
+![React](https://img.shields.io/badge/React-19.1.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.x-38bdf8)
 
-### 1. Créer la structure des dossiers
+## ✨ Fonctionnalités
 
-```bash
-# Créer les dossiers nécessaires
-mkdir -p src/lib
-mkdir -p src/components/ui
-mkdir -p src/components/sections
-```
+- 🌓 **Dark/Light Mode** - Système de thème complet avec persistance
+- 🌍 **i18n** - Support multilingue (Anglais/Français)
+- 🖱️ **Mouse Effect** - Effet de gradient interactif qui suit le curseur
+- 📱 **Responsive Design** - Optimisé pour tous les appareils
+- ⚡ **Performance** - Optimisé avec Next.js App Router et React Server Components
+- ♿ **Accessible** - Conforme aux standards WCAG
+- 🎨 **Design Moderne** - Inspiré par Brittany Chiang
 
-### 2. Copier les fichiers
+## 🛠️ Technologies
 
-Copiez chaque fichier que j'ai généré dans son emplacement correspondant :
+- **Framework** : Next.js 15.5.5 (App Router)
+- **UI Library** : React 19.1.0
+- **Language** : TypeScript 5.x
+- **Styling** : Tailwind CSS 4.x
+- **Fonts** : Inter (Google Fonts)
+- **Icons** : SVG personnalisés
+- **Deployment** : Vercel / Netlify
 
-#### Fichiers de configuration (déjà existants - à remplacer)
-- `src/app/page.tsx` ✅
-- `src/app/layout.tsx` ✅
-- `src/app/globals.css` ✅
+## 📦 Installation
 
-#### Nouveaux fichiers à créer
+### Prérequis
+- Node.js >= 18.x
+- npm ou yarn
 
-**Dans `src/lib/` :**
-- `types.ts`
-- `data.ts`
-
-**Dans `src/components/ui/` :**
-- `Navigation.tsx`
-- `SocialLinks.tsx`
-- `SectionTitle.tsx`
-- `ExperienceCard.tsx`
-- `ProjectCard.tsx`
-- `ServiceCard.tsx`
-- `MouseEffect.tsx`
-
-**Dans `src/components/sections/` :**
-- `Hero.tsx`
-- `About.tsx`
-- `Services.tsx`
-- `Experience.tsx`
-- `Projects.tsx`
-- `Skills.tsx`
-- `Footer.tsx`
-
-### 3. Lancer le projet
+### Commandes
 
 ```bash
-# Installer les dépendances (si ce n'est pas déjà fait)
+# Cloner le repository
+git clone https://github.com/votre-username/portfolio.git
+cd portfolio
+
+# Installer les dépendances
 npm install
 
-# Lancer en mode développement
+# Lancer en développement
 npm run dev
-```
 
-Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
-
-## 📝 Personnalisation
-
-### Modifier vos données personnelles
-
-Toutes vos données sont centralisées dans **`src/lib/data.ts`**. Modifiez ce fichier pour :
-
-- ✏️ Mettre à jour votre email
-- ✏️ Modifier les expériences professionnelles (remplacer les données aléatoires)
-- ✏️ Mettre à jour vos projets (remplacer les données aléatoires)
-- ✏️ Ajouter ou retirer des services
-- ✏️ Modifier vos compétences
-
-### Structure des données
-
-```typescript
-// Exemple pour une expérience
-{
-  id: '1',
-  period: '2023 — PRESENT',
-  title: 'Votre Poste',
-  company: 'Votre Entreprise',
-  description: 'Description de votre rôle...',
-  technologies: ['Tech1', 'Tech2'],
-  link: 'https://exemple.com' // Optionnel
-}
-```
-
-## 🎨 Fonctionnalités
-
-- ✅ Design fidèle au site de Brittany Chiang
-- ✅ Navigation latérale fixe avec scroll spy
-- ✅ Effet de souris animé
-- ✅ Sections : About, Services, Experience, Projects, Skills
-- ✅ Cartes interactives avec effets de survol
-- ✅ Liens sociaux (GitHub, LinkedIn)
-- ✅ Responsive design
-- ✅ Animations subtiles
-- ✅ Architecture propre et modulaire
-- ✅ TypeScript pour la sécurité des types
-
-## 📱 Sections
-
-1. **Hero** - Nom, titre et navigation
-2. **About** - Présentation personnelle
-3. **Services** - Vos services offerts
-4. **Experience** - Expériences professionnelles
-5. **Projects** - Portfolio de projets
-6. **Skills** - Compétences techniques
-
-## 🛠️ Technologies utilisées
-
-- Next.js 15.5.5
-- React 19.1.0
-- TypeScript 5
-- Tailwind CSS 4
-- Geist Font
-
-## 📦 Structure du projet
-
-```
-freelance_portfolio/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── sections/
-│   │   │   ├── Hero.tsx
-│   │   │   ├── About.tsx
-│   │   │   ├── Services.tsx
-│   │   │   ├── Experience.tsx
-│   │   │   ├── Projects.tsx
-│   │   │   ├── Skills.tsx
-│   │   │   └── Footer.tsx
-│   │   └── ui/
-│   │       ├── Navigation.tsx
-│   │       ├── SocialLinks.tsx
-│   │       ├── SectionTitle.tsx
-│   │       ├── ExperienceCard.tsx
-│   │       ├── ProjectCard.tsx
-│   │       ├── ServiceCard.tsx
-│   │       └── MouseEffect.tsx
-│   └── lib/
-│       ├── types.ts
-│       └── data.ts
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-└── next.config.ts
-```
-
-## 🎯 Prochaines étapes
-
-1. Remplacez les données aléatoires dans `src/lib/data.ts`
-2. Ajoutez votre vrai email
-3. Ajoutez des images pour vos projets (optionnel)
-4. Testez sur mobile et desktop
-5. Déployez sur Vercel
-
-## 🚀 Déploiement
-
-```bash
 # Build pour la production
 npm run build
 
-# Tester le build
+# Lancer en production
 npm start
+
+# Linter
+npm run lint
 ```
 
-Pour déployer sur Vercel : [vercel.com](https://vercel.com)
+## 📁 Structure du Projet
+
+```
+src/
+├── app/
+│   ├── globals.css           # Styles globaux avec thèmes
+│   ├── layout.tsx            # Layout racine avec providers
+│   ├── page.tsx              # Page d'accueil
+│   └── projects/
+│       └── page.tsx          # Archive des projets
+│
+├── components/
+│   ├── ui/
+│   │   ├── ArchiveLink.tsx       # Lien vers archives
+│   │   ├── ControlsPanel.tsx     # Panneau de contrôle (theme/lang)
+│   │   ├── ExperienceCard.tsx    # Carte d'expérience
+│   │   ├── MouseEffect.tsx       # Effet de souris
+│   │   ├── Navigation.tsx        # Navigation sticky
+│   │   ├── ProjectCard.tsx       # Carte de projet
+│   │   ├── SectionTitle.tsx      # Titre de section
+│   │   ├── ServiceCard.tsx       # Carte de service
+│   │   └── SocialLinks.tsx       # Liens sociaux
+│   │
+│   └── sections/
+│       ├── About.tsx             # Section À propos
+│       ├── Contact.tsx           # Section Contact
+│       ├── Experience.tsx        # Section Expérience
+│       ├── Footer.tsx            # Pied de page
+│       ├── Hero.tsx              # Section Hero
+│       ├── Projects.tsx          # Section Projets
+│       ├── Services.tsx          # Section Services
+│       └── Skills.tsx            # Section Compétences
+│
+├── contexts/
+│   ├── LanguageContext.tsx   # Context pour i18n
+│   └── ThemeContext.tsx      # Context pour theme
+│
+├── translations/
+│   ├── en.ts                 # Traductions anglaises
+│   └── fr.ts                 # Traductions françaises
+│
+└── lib/
+    ├── data.ts               # Données statiques
+    └── types.ts              # Types TypeScript
+```
+
+## 🎨 Personnalisation
+
+### Modifier les Données
+
+Édite `src/lib/data.ts` :
+
+```typescript
+export const personalInfo = {
+  name: 'Ton Nom',
+  title: 'Ton Titre',
+  bio: 'Ta bio...',
+  email: 'ton@email.com',
+};
+
+export const experiences = [
+  // Tes expériences...
+];
+
+export const projects = [
+  // Tes projets...
+];
+```
+
+### Changer les Couleurs
+
+Édite `src/app/globals.css` :
+
+```css
+/* Dark Mode */
+.dark {
+  --background: #0f172a;
+  --text-accent: #5eead4;
+}
+
+/* Light Mode */
+.light {
+  --background: #faf8f5;
+  --text-accent: #0d9488;
+}
+```
+
+### Ajouter une Langue
+
+1. Créer `src/translations/es.ts`
+2. Mettre à jour `src/contexts/LanguageContext.tsx`
+3. Ajouter le bouton dans `src/components/ui/ControlsPanel.tsx`
+
+## 🌐 i18n (Internationalisation)
+
+Le système i18n utilise React Context pour gérer les traductions.
+
+### Utilisation dans un Composant
+
+```typescript
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
+export default function MonComposant() {
+  const { t, language, setLanguage } = useLanguage();
+
+  return (
+    <div>
+      <h1>{t.hero.title}</h1>
+      <button onClick={() => setLanguage('fr')}>FR</button>
+    </div>
+  );
+}
+```
+
+### Langues Disponibles
+- 🇬🇧 Anglais (par défaut)
+- 🇫🇷 Français
+
+## 🎨 Système de Thème
+
+Le système de thème utilise React Context et CSS variables.
+
+### Utilisation dans un Composant
+
+```typescript
+'use client';
+
+import { useTheme } from '@/contexts/ThemeContext';
+
+export default function MonComposant() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <button onClick={toggleTheme}>
+      {theme === 'dark' ? '🌙' : '☀️'}
+    </button>
+  );
+}
+```
+
+### Thèmes Disponibles
+- 🌙 Dark Mode (slate + teal)
+- ☀️ Light Mode (crème + teal foncé)
+
+## 🖱️ Mouse Effect
+
+Effet de gradient qui suit le curseur, optimisé avec `requestAnimationFrame`.
+
+### Fonctionnement
+1. Le `MouseEffect` component track la position de la souris
+2. Il met à jour les CSS variables `--mouse-x` et `--mouse-y`
+3. Le gradient dans `layout.tsx` utilise ces variables
+
+## 📱 Responsive Design
+
+Le portfolio est entièrement responsive :
+
+- **Mobile** : < 768px - Layout vertical
+- **Tablet** : 768px - 1024px - Layout adaptatif
+- **Desktop** : > 1024px - Layout sticky avec navigation
+
+## ⚡ Performance
+
+- ✅ Next.js App Router pour le routing optimisé
+- ✅ React Server Components par défaut
+- ✅ Code splitting automatique
+- ✅ Lazy loading des images
+- ✅ CSS optimisé avec Tailwind
+- ✅ requestAnimationFrame pour les animations
+
+## 🚀 Déploiement
+
+### Vercel (Recommandé)
+
+```bash
+# Installation de Vercel CLI
+npm i -g vercel
+
+# Déploiement
+vercel --prod
+```
+
+### Netlify
+
+```bash
+# Installation de Netlify CLI
+npm i -g netlify-cli
+
+# Déploiement
+netlify deploy --prod
+```
+
+### Variables d'Environnement
+
+Aucune variable d'environnement requise pour le moment.
+
+## 📊 Scripts Disponibles
+
+```bash
+npm run dev      # Lancer en mode développement
+npm run build    # Build pour la production
+npm start        # Lancer en production
+npm run lint     # Linter le code
+```
+
+## 🐛 Résolution des Problèmes
+
+### Le thème ne persiste pas
+- Vérifier que localStorage est accessible
+- Vider le cache du navigateur
+
+### Les traductions ne s'affichent pas
+- Vérifier que les fichiers de traduction sont dans `src/translations/`
+- Vérifier que `'use client'` est présent en haut du composant
+
+### L'effet de souris ne fonctionne pas après le scroll
+- Vérifier que le MouseEffect est bien dans le layout
+- Vérifier les CSS variables dans les DevTools
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Tu es libre de l'utiliser pour ton portfolio personnel.
+
+## 🙏 Crédits
+
+- **Design Inspiration** : [Brittany Chiang](https://brittanychiang.com/)
+- **Framework** : [Next.js](https://nextjs.org/)
+- **Styling** : [Tailwind CSS](https://tailwindcss.com/)
+
+## 📞 Contact
+
+- **Email** : rahim100codeur@gmail.com
+- **LinkedIn** : [Rahim ALI](http://www.linkedin.com/in/rahim-ali-a6003226b)
+- **GitHub** : [Rahim10020](https://github.com/Rahim10020)
 
 ---
 
-**Créé par Rahim ALI** | Inspiré par [Brittany Chiang](https://brittanychiang.com/)
+Fait avec ❤️ par Rahim ALI
