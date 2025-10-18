@@ -4,7 +4,6 @@ import Services from '@/components/sections/Services';
 import Experience from '@/components/sections/Experience';
 import Projects from '@/components/sections/Projects';
 import Footer from '@/components/sections/Footer';
-import MouseEffect from '@/components/ui/MouseEffect';
 import Contact from '@/components/sections/Contact';
 
 export default function Home() {

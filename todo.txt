@@ -7,3 +7,14 @@
     Mais par defaut mon systeme sera en anglais)
 
 - les boutons de changement de theme et de langue devront etre en un endroit ou ils seront tjs visibles et disponibles a utiliser
+
+
+
+💡 Conseils
+
+    - Parait que mes fichiers utilisent localStorage pour la gestion des themes et langue donc si je devais deployer 
+        dans un environnement qui ne supporte pas localStorage, je devrais utiliser les cookies a la place.
+
+    - Le système est modulaire : tu peux facilement ajouter d'autres langues en créant un nouveau fichier dans translations/
+    - Les couleurs du light mode peuvent être ajustées dans globals.css
+    - Les animations peuvent être désactivées en supprimant les classes transition- de Tailwind
