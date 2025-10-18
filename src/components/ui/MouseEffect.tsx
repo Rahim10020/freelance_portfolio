@@ -10,10 +10,21 @@ export default function MouseEffect() {
             document.documentElement.style.setProperty('--mouse-y', `${clientY}px`);
         };
 
-        window.addEventListener('mousemove', handleMouseMove);
+        // Throttle pour optimiser les performances
+        let rafId: number | null = null;
+        const throttledMouseMove = (e: MouseEvent) => {
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+                handleMouseMove(e);
+                rafId = null;
+            });
+        };
+
+        window.addEventListener('mousemove', throttledMouseMove);
 
         return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mousemove', throttledMouseMove);
+            if (rafId) cancelAnimationFrame(rafId);
         };
     }, []);
 
