@@ -45,7 +45,7 @@ export default function ProjectsArchive() {
                         All Projects
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl">
-                        A complete archive of projects I've built over the years.
+                        A complete archive of projects I&apos;ve built over the years.
                     </p>
                 </div>
 
