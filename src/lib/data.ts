@@ -98,11 +98,12 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
     {
         id: '1',
-        title: 'E-Commerce Platform',
-        description: 'A full-stack e-commerce platform with admin dashboard, payment integration, and real-time inventory management. Built with Django REST Framework backend and Next.js frontend.',
-        technologies: ['Next.js', 'Django', 'PostgreSQL', 'Stripe', 'Redis'],
+        title: 'Essence Togo',
+        image: '/images/projects/p1-accueil.png',
+        description: 'A Kotlin mobile app built with Jetpack Compose that helps users quickly find nearby gas stations on a map. Fast, simple, and user-friendly.',
+        technologies: ['Kotlin', 'Jetpack Compose', 'Firebase'],
         links: {
-            github: 'https://github.com/Rahim10020',
+            github: 'https://github.com/Rahim10020/essence-togo',
             live: 'https://example.com',
         },
     },

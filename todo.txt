@@ -1,4 +1,1 @@
-- verifier pourquoi le mouse effect ne marche que sur la page projects
-- voir si on peut placer les controls panel (langue et theme) dans un meilleur endroit ; par exemple au niveau 
-    des social links
 - regler le souci des couleurs du light mode.
