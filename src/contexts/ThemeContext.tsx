@@ -15,22 +15,22 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const [theme, setTheme] = useState<Theme>('dark');
     const [mounted, setMounted] = useState(false);
 
-    // Charger le thème depuis le localStorage au montage
     useEffect(() => {
         setMounted(true);
-        const savedTheme = localStorage.getItem('theme') as Theme | null;
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else {
-            // Détecter la préférence système
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            setTheme(prefersDark ? 'dark' : 'light');
+        // Vérifier que window est disponible
+        if (typeof window !== 'undefined') {
+            const savedTheme = localStorage.getItem('theme') as Theme | null;
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setTheme(prefersDark ? 'dark' : 'light');
+            }
         }
     }, []);
 
-    // Appliquer le thème au document
     useEffect(() => {
-        if (!mounted) return;
+        if (!mounted || typeof window === 'undefined') return;
 
         const root = document.documentElement;
         root.classList.remove('light', 'dark');
@@ -46,15 +46,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         theme,
         toggleTheme,
     };
-
-    // Éviter le flash de contenu non stylé
-    if (!mounted) {
-        return (
-            <ThemeContext.Provider value={value}>
-                {children}
-            </ThemeContext.Provider>
-        );
-    }
 
     return (
         <ThemeContext.Provider value={value}>

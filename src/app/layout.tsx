@@ -98,8 +98,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
 
         {/* Schema.org JSON-LD pour Google Rich Results */}
         <script
@@ -136,6 +136,7 @@ export default function RootLayout({
           <LanguageProvider>
             <div className="gradient-effect" />
             {children}
+            <Analytics />
           </LanguageProvider>
         </ThemeProvider>
       </body>

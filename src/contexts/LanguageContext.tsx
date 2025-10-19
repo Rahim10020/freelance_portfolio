@@ -26,15 +26,20 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
     useEffect(() => {
         setMounted(true);
-        const savedLanguage = localStorage.getItem('language') as Language | null;
-        if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'fr')) {
-            setLanguageState(savedLanguage);
+        // Vérifier que window est disponible
+        if (typeof window !== 'undefined') {
+            const savedLanguage = localStorage.getItem('language') as Language | null;
+            if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'fr')) {
+                setLanguageState(savedLanguage);
+            }
         }
     }, []);
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);
-        localStorage.setItem('language', lang);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('language', lang);
+        }
     };
 
     const value = {
@@ -42,14 +47,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         setLanguage,
         t: translations[language],
     };
-
-    if (!mounted) {
-        return (
-            <LanguageContext.Provider value={value}>
-                {children}
-            </LanguageContext.Provider>
-        );
-    }
 
     return (
         <LanguageContext.Provider value={value}>
