@@ -8,7 +8,7 @@ export default function ControlsPanel() {
     const { language, setLanguage } = useLanguage();
 
     return (
-        <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
+        <div className="flex items-center gap-3">
             {/* Language Switcher */}
             <div className="flex items-center gap-1 rounded-full bg-slate-800/90 dark:bg-slate-800/90 light:bg-white/90 backdrop-blur-sm border border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/50 p-1 shadow-lg">
                 <button

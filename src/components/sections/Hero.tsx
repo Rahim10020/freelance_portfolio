@@ -4,6 +4,7 @@ import { personalInfo } from '@/lib/data';
 import Navigation from '../ui/Navigation';
 import SocialLinks from '../ui/SocialLinks';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ControlsPanel from '../ui/ControlsPanel';
 
 export default function Hero() {
     const { t } = useLanguage();
@@ -22,7 +23,10 @@ export default function Hero() {
                 </p>
                 <Navigation />
             </div>
-            <SocialLinks />
+            <div className="flex gap-8 mt-8 lg:mt-16">
+                <ControlsPanel />
+                <SocialLinks />
+            </div>
         </header>
     );
 }

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import ControlsPanel from "@/components/ui/ControlsPanel";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,7 +27,6 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider>
-            <ControlsPanel />
             <div className="gradient-effect" />
             {children}
           </LanguageProvider>

@@ -16,7 +16,7 @@ const iconPaths = {
 
 export default function SocialLinks() {
     return (
-        <ul className="flex items-center gap-5 mt-8 lg:mt-16">
+        <ul className="flex items-center gap-5">
             {socialLinks.map((link) => (
                 <li key={link.name}>
                     <a
