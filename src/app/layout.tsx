@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://rahim-ali.com'), // ⚠️ REMPLACE PAR TON URL
   title: {
-    default: "rahim.ali | Software Developer",
+    default: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
     template: "%s | Rahim ALI"
   },
   description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications with clean architecture. Available for freelance projects.",
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: ["fr_FR"],
     url: "https://rahim-ali.com",
-    title: "rahim.ali | Software Developer",
+    title: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
     description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications.",
-    siteName: "rahim.ali",
+    siteName: "Rahim ALI Portfolio",
     images: [
       {
         url: "/og-image.jpg", // ⚠️ Crée cette image 1200x630px
@@ -57,13 +58,13 @@ export const metadata: Metadata = {
   },
 
   // Twitter Card
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Rahim ALI - Software Developer",
-  //   description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin).",
-  //   creator: "@rahimali", // ⚠️ REMPLACE PAR TON @ Twitter si tu en as un
-  //   images: ["/og-image.jpg"],
-  // },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rahim ALI - Software Developer",
+    description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin).",
+    creator: "@rahimali", // ⚠️ REMPLACE PAR TON @ Twitter si tu en as un
+    images: ["/og-image.jpg"],
+  },
 
   // Robots
   robots: {
@@ -110,7 +111,7 @@ export default function RootLayout({
               "name": "Rahim ALI",
               "url": "https://rahim-ali.com",
               "jobTitle": "Software Developer",
-              "description": "Software Developer specializing in Flutter, Android (Kotlin), Django, Next.js,",
+              "description": "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin)",
               "email": "rahim100codeur@gmail.com",
               "sameAs": [
                 "https://github.com/Rahim10020",
