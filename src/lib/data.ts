@@ -120,21 +120,24 @@ export const projects: Project[] = [
     },
     {
         id: '3',
-        title: 'Social Media Dashboard',
-        description: 'Analytics dashboard for social media management with real-time data visualization, scheduled posting, and multi-account support.',
-        technologies: ['React', 'Django', 'Chart.js', 'WebSocket', 'Docker'],
+        title: 'DocStore - Documents for Lome University',
+        image: '/images/projects/p3-docstore.png',
+        description: 'A website that provides visitors with documents and resources for the University of Lomé, covering all schools and faculties.',
+        technologies: ['React', 'Tailwind css', 'Appwrite', 'Google Drive'],
         links: {
-            github: 'https://github.com/Rahim10020',
-            live: 'https://example.com',
+            github: 'https://github.com/crepin7/biblio-epl',
+            live: 'https://docstore-univ.vercel.app/',
         },
     },
     {
         id: '4',
-        title: 'Fitness Tracking App',
-        description: 'Native Android fitness application with workout plans, progress tracking, and nutrition logging using MVVM architecture.',
-        technologies: ['Kotlin', 'Jetpack Compose', 'Room', 'Retrofit', 'MVVM'],
+        title: 'Togo Stay - Apartment Booking Website',
+        image: '/images/projects/p4-stay.png',
+        description: 'A website that allows Togolese people to easily find and rent apartments, while also offering owners the opportunity to publish their rental advertisements.',
+        technologies: ['Next.js', 'Firebase', 'Appwrite', 'TypeScript', 'Tailwind css', 'OpenStreetMap'],
         links: {
-            github: 'https://github.com/Rahim10020',
+            github: 'https://github.com/crepin7/nyigba',
+            live: 'https://stay-ashy.vercel.app/',
         },
     },
 ];
