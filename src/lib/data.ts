@@ -109,11 +109,13 @@ export const projects: Project[] = [
     },
     {
         id: '2',
-        title: 'Task Management Mobile App',
-        description: 'Cross-platform mobile application for task and project management with offline support, push notifications, and team collaboration features.',
-        technologies: ['Flutter', 'Firebase', 'Provider', 'SQLite'],
+        title: 'PixelPulse - Blog Platform for Developers',
+        image: '/images/projects/p2-detail.png',
+        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
+        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         links: {
-            github: 'https://github.com/Rahim10020',
+            github: 'https://github.com/Rahim10020/tech-pulse',
+            live: 'https://pixelpulse-blog.vercel.app/',
         },
     },
     {
