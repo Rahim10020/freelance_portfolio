@@ -1,12 +1,4 @@
 - verifier pourquoi le mouse effect ne marche que sur la page projects
-- voir si on peut placer les controls panel (langue et theme) dans un meilleur endroit
+- voir si on peut placer les controls panel (langue et theme) dans un meilleur endroit ; par exemple au niveau 
+    des social links
 - regler le souci des couleurs du light mode.
-
-💡 Conseils
-
-    - Parait que mes fichiers utilisent localStorage pour la gestion des themes et langue donc si je devais deployer 
-        dans un environnement qui ne supporte pas localStorage, je devrais utiliser les cookies a la place.
-
-    - Le système est modulaire : tu peux facilement ajouter d'autres langues en créant un nouveau fichier dans translations/
-    - Les couleurs du light mode peuvent être ajustées dans globals.css
-    - Les animations peuvent être désactivées en supprimant les classes transition- de Tailwind
