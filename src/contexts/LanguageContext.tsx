@@ -22,10 +22,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [language, setLanguageState] = useState<Language>('en');
-    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
         // Vérifier que window est disponible
         if (typeof window !== 'undefined') {
             const savedLanguage = localStorage.getItem('language') as Language | null;

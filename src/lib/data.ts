@@ -20,12 +20,12 @@ export const socialLinks: SocialLink[] = [
     },
     {
         name: 'Instagram',
-        url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+        url: 'https://instagram.com/rahimali',
         icon: 'instagram',
     },
     {
         name: 'Facebook',
-        url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
+        url: 'https://facebook.com/rahimali',
         icon: 'facebook',
     },
     // {
@@ -75,7 +75,7 @@ export const experiences: Experience[] = [
         company: 'Tech Innovations Ltd',
         description: 'Led development of enterprise web applications using Django and Next.js. Implemented microservices architecture and improved application performance by 40%. Mentored junior developers and established code review processes.',
         technologies: ['Django', 'Next.js', 'PostgreSQL', 'Docker', 'AWS'],
-        link: 'https://example.com',
+        link: 'https://rahim-ali.com',
     },
     {
         id: '2',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase'],
         links: {
             github: 'https://github.com/Rahim10020/essence-togo',
-            live: 'https://example.com',
+            live: 'https://github.com/Rahim10020/essence-togo',
         },
     },
     {

@@ -8,11 +8,13 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 // Configuration SEO avancée
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rahim-ali.com'), // ⚠️ REMPLACE PAR TON URL
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahim-ali.com'),
   title: {
     default: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
     template: "%s | Rahim ALI"
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     "API Development",
     "UI/UX Design"
   ],
-  authors: [{ name: "Rahim ALI", url: "https://rahim-ali.com" }],
+  authors: [{ name: "Rahim ALI", url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali.com" }],
   creator: "Rahim ALI",
   publisher: "Rahim ALI",
 
@@ -43,13 +45,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: ["fr_FR"],
-    url: "https://rahim-ali.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali.com",
     title: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
     description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications.",
     siteName: "Rahim ALI Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // ⚠️ Crée cette image 1200x630px
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Rahim ALI - Software Developer Portfolio",
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rahim ALI - Software Developer",
     description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin).",
-    creator: "@rahimali", // ⚠️ REMPLACE PAR TON @ Twitter si tu en as un
+    creator: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@rahimali",
     images: ["/og-image.jpg"],
   },
 
@@ -112,7 +114,7 @@ export default function RootLayout({
               "url": "https://rahim-ali.com",
               "jobTitle": "Software Developer",
               "description": "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin)",
-              "email": "rahim100codeur@gmail.com",
+              "email": process.env.NEXT_PUBLIC_EMAIL || "rahim100codeur@gmail.com",
               "sameAs": [
                 "https://github.com/Rahim10020",
                 "http://www.linkedin.com/in/rahim-ali-a6003226b"

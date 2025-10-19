@@ -1,4 +1,5 @@
 import { Project } from '@/lib/types';
+import Image from 'next/image';
 
 interface ProjectCardProps {
     project: Project;
@@ -15,9 +16,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.image && (
                 <div className="z-10 sm:col-span-2">
                     <div className="rounded border-2 border-slate-200/10 dark:border-slate-200/10 light:border-slate-300/30 transition group-hover:border-slate-200/30 dark:group-hover:border-slate-200/30 light:group-hover:border-slate-300/50">
-                        <img
+                        <Image
                             src={project.image}
                             alt={project.title}
+                            width={400}
+                            height={300}
                             className="rounded"
                             loading="lazy"
                         />
