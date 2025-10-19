@@ -14,9 +14,9 @@ const inter = Inter({
 
 // Configuration SEO avancée
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahim-ali.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahim-ali-dev.vercel.app/'),
   title: {
-    default: "rahim.ali.dev | Software Developer",
+    default: "Rahim ALI - Dev",
     template: "%s | Rahim ALI"
   },
   description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications with clean architecture. Available for freelance projects.",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "API Development",
     "UI/UX Design"
   ],
-  authors: [{ name: "Rahim ALI", url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali.com" }],
+  authors: [{ name: "Rahim ALI", url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/" }],
   creator: "Rahim ALI",
   publisher: "Rahim ALI",
 
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: ["fr_FR"],
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/",
     title: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
     description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications.",
     siteName: "Rahim ALI Portfolio",
@@ -113,7 +113,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Rahim ALI",
-              "url": "https://rahim-ali.com",
+              "url": "https://rahim-ali-dev.vercel.app/",
               "jobTitle": "Software Developer",
               "description": "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin)",
               "email": process.env.NEXT_PUBLIC_EMAIL || "rahim100codeur@gmail.com",
