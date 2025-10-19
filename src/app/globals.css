@@ -7,8 +7,8 @@
 
 /* Light Mode Variables */
 .light {
-  --background: #faf8f5;
-  --foreground: #1e293b;
+  --background: #ffffff;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -42,16 +42,16 @@ body {
   --scrollbar-thumb-hover: #64748b;
 }
 
-/* Light Mode Styles */
+/* Light Mode Styles - Palette moderne et épurée */
 .light {
-  --gradient-from: rgba(20, 184, 166, 0.12);
+  --gradient-from: rgba(20, 184, 166, 0.08);
   --gradient-to: transparent;
-  --card-hover-bg: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(148, 163, 184, 0.2);
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-accent: #0d9488;
-  --scrollbar-track: #e2e8f0;
+  --card-hover-bg: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(226, 232, 240, 0.8);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-accent: #14b8a6;
+  --scrollbar-track: #f8fafc;
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-thumb-hover: #94a3b8;
 }
@@ -82,8 +82,8 @@ body {
 
 /* Selection color - Light Mode */
 .light ::selection {
-  background-color: rgba(13, 148, 136, 0.2);
-  color: #0d9488;
+  background-color: rgba(20, 184, 166, 0.2);
+  color: #0f172a;
 }
 
 /* Focus visible styles - Dark Mode */
@@ -94,7 +94,7 @@ body {
 
 /* Focus visible styles - Light Mode */
 .light *:focus-visible {
-  outline: 2px solid #0d9488;
+  outline: 2px solid #14b8a6;
   outline-offset: 2px;
 }
 
