@@ -1,1 +1,20 @@
 - regler le souci des couleurs du light mode.
+
+
+Après déploiement :
+
+📸 Crée une image OG (1200x630px) → /public/og-image.jpg
+
+Utilise Canva (gratuit)
+Ou OG Image Generator
+
+
+🔍 Inscris-toi à Google Search Console
+📊 Configure Google Analytics ou Plausible
+
+Image OG - Que mettre ?
+
+Ton nom en grand
+"Software Developer"
+Technos principales (Flutter, Django, Next.js)
+Design sobre et pro

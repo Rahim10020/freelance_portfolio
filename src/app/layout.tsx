@@ -78,6 +78,11 @@ export const metadata: Metadata = {
     },
   },
 
+  // Verification (à ajouter après avoir configuré Google Search Console)
+  // verification: {
+  //   google: 'ton-code-verification-google',
+  // },
+
   // Autres métadonnées
   category: 'technology',
   classification: 'Business',

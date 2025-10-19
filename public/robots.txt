@@ -1,0 +1,11 @@
+
+# Autoriser tous les robots
+User-agent: *
+Allow: /
+
+# Bloquer les pages inutiles (si tu j'en ais)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap
+Sitemap: https://rahim-ali.com/sitemap.xml
