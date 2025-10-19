@@ -13,9 +13,9 @@ export default function ControlsPanel() {
             <div className="flex items-center gap-1 rounded-full bg-slate-800/90 dark:bg-slate-800/90 light:bg-white/90 backdrop-blur-sm border border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/50 p-1 shadow-lg">
                 <button
                     onClick={() => setLanguage('en')}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${language === 'en'
+                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${language === 'en'
                         ? 'bg-teal-400/20 dark:bg-teal-400/20 light:bg-teal-500/20 text-teal-300 dark:text-teal-300 light:text-teal-700'
-                        : 'text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-slate-200 dark:hover:text-slate-200 light:hover:text-slate-800'
+                        : 'text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-slate-200 hover:cursor-pointer dark:hover:text-slate-200 light:hover:text-slate-800'
                         }`}
                     aria-label="Switch to English"
                 >
@@ -23,9 +23,9 @@ export default function ControlsPanel() {
                 </button>
                 <button
                     onClick={() => setLanguage('fr')}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${language === 'fr'
+                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${language === 'fr'
                         ? 'bg-teal-400/20 dark:bg-teal-400/20 light:bg-teal-500/20 text-teal-300 dark:text-teal-300 light:text-teal-700'
-                        : 'text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-slate-200 dark:hover:text-slate-200 light:hover:text-slate-800'
+                        : 'text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-slate-200 hover:cursor-pointer dark:hover:text-slate-200 light:hover:text-slate-800'
                         }`}
                     aria-label="Switch to French"
                 >
@@ -36,12 +36,12 @@ export default function ControlsPanel() {
             {/* Theme Switcher */}
             <button
                 onClick={toggleTheme}
-                className="group relative w-12 h-12 rounded-full bg-slate-800/90 dark:bg-slate-800/90 light:bg-white/90 backdrop-blur-sm border border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/50 shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center"
+                className="group relative w-9 h-9 rounded-full bg-slate-800/90 dark:bg-slate-800/90 light:bg-white/90 backdrop-blur-sm border border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/50 shadow-lg hover:scale-110 hover:cursor-pointer transition-all duration-300 flex items-center justify-center"
                 aria-label="Toggle theme"
             >
                 {/* Sun Icon (Light Mode) */}
                 <svg
-                    className={`absolute w-5 h-5 text-amber-400 transition-all duration-500 ${theme === 'light'
+                    className={`absolute w-4 h-4 text-amber-400 transition-all duration-500 ${theme === 'light'
                         ? 'rotate-0 scale-100 opacity-100'
                         : 'rotate-90 scale-0 opacity-0'
                         }`}
