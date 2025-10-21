@@ -41,12 +41,12 @@ export default function Contact() {
 
             <div className="space-y-6">
                 <div>
-                    <p className="dark:text-slate-200 light:text-slate-900">{t.contact.intro}</p>
-                    <p className="text-slate-400 dark:text-slate-400 light:text-slate-600">
+                    <p className="text-slate-900 dark:text-slate-200">{t.contact.intro}</p>
+                    <p className="text-slate-600 dark:text-slate-400">
                         {t.contact.emailText}{' '}
                         <a
                             href="mailto:rahim100codeur@gmail.com"
-                            className="text-teal-300 dark:text-teal-300 light:text-teal-700 hover:text-teal-200 dark:hover:text-teal-200 light:hover:text-teal-600 transition-colors font-medium"
+                            className="text-teal-600 dark:text-teal-300 hover:text-teal-700 dark:hover:text-teal-200 transition-colors font-medium"
                         >
                             rahim100codeur@gmail.com
                         </a>
@@ -62,7 +62,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.name}
                             required
-                            className="w-full px-4 py-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/70 rounded-lg text-slate-200 dark:text-slate-200 light:text-slate-900 placeholder-slate-500 dark:placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-300 dark:focus:border-teal-300 light:focus:border-teal-600 focus:ring-1 focus:ring-teal-300 dark:focus:ring-teal-300 light:focus:ring-teal-600 transition-colors border border-transparent dark:border-transparent light:border-slate-200"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.subject}
                             required
-                            className="w-full px-4 py-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/70 rounded-lg text-slate-200 dark:text-slate-200 light:text-slate-900 placeholder-slate-500 dark:placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-300 dark:focus:border-teal-300 light:focus:border-teal-600 focus:ring-1 focus:ring-teal-300 dark:focus:ring-teal-300 light:focus:ring-teal-600 transition-colors border border-transparent dark:border-transparent light:border-slate-200"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.email}
                             required
-                            className="w-full px-4 py-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/70 rounded-lg text-slate-200 dark:text-slate-200 light:text-slate-900 placeholder-slate-500 dark:placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-300 dark:focus:border-teal-300 light:focus:border-teal-600 focus:ring-1 focus:ring-teal-300 dark:focus:ring-teal-300 light:focus:ring-teal-600 transition-colors border border-transparent dark:border-transparent light:border-slate-200"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -98,23 +98,23 @@ export default function Contact() {
                             placeholder={t.contact.form.message}
                             required
                             rows={6}
-                            className="w-full px-4 py-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/70 rounded-lg text-slate-200 dark:text-slate-200 light:text-slate-900 placeholder-slate-500 dark:placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-300 dark:focus:border-teal-300 light:focus:border-teal-600 focus:ring-1 focus:ring-teal-300 dark:focus:ring-teal-300 light:focus:ring-teal-600 transition-colors resize-none border border-transparent dark:border-transparent light:border-slate-200"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors resize-none border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="px-4 py-2 bg-slate-200 dark:bg-slate-200 light:bg-teal-600 text-slate-900 dark:text-slate-900 light:text-white font-medium rounded-lg hover:bg-teal-300 dark:hover:bg-teal-300 light:hover:bg-teal-700 hover:text-slate-900 dark:hover:text-slate-900 light:hover:text-white hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-4 py-2 bg-teal-600 dark:bg-slate-200 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-teal-700 dark:hover:bg-teal-300 hover:text-white dark:hover:text-slate-900 hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {status === 'sending' ? t.contact.form.sending : status === 'success' ? t.contact.form.sent : t.contact.form.send}
                     </button>
 
                     {status === 'success' && (
-                        <p className="text-teal-300 dark:text-teal-300 light:text-teal-700 text-sm">{t.contact.form.success}</p>
+                        <p className="text-teal-700 dark:text-teal-300 text-sm">{t.contact.form.success}</p>
                     )}
                     {status === 'error' && (
-                        <p className="text-red-400 dark:text-red-400 light:text-red-600 text-sm">{t.contact.form.error}</p>
+                        <p className="text-red-600 dark:text-red-400 text-sm">{t.contact.form.error}</p>
                     )}
                 </form>
             </div>

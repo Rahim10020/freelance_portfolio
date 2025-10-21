@@ -57,14 +57,14 @@ export default function Navigation() {
                         >
                             <span
                                 className={`h-px transition-all ${activeSection === section.id
-                                    ? 'w-16 bg-slate-200 dark:bg-slate-200 light:bg-slate-900'
-                                    : 'w-8 bg-slate-600 dark:bg-slate-600 light:bg-slate-400 group-hover:w-16 group-hover:bg-slate-200 dark:group-hover:bg-slate-200 light:group-hover:bg-slate-900'
+                                    ? 'w-16 bg-slate-900 dark:bg-slate-200'
+                                    : 'w-8 bg-slate-400 dark:bg-slate-600 group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200'
                                     }`}
                             />
                             <span
                                 className={`text-xs font-bold uppercase tracking-widest transition-colors ${activeSection === section.id
-                                    ? 'text-slate-200 dark:text-slate-200 light:text-slate-900'
-                                    : 'text-slate-500 dark:text-slate-500 light:text-slate-600 group-hover:text-slate-200 dark:group-hover:text-slate-200 light:group-hover:text-slate-900'
+                                    ? 'text-slate-900 dark:text-slate-200'
+                                    : 'text-slate-600 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-slate-200'
                                     }`}
                             >
                                 {section.label}

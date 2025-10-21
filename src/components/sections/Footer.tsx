@@ -7,13 +7,13 @@ export default function Footer() {
 
     return (
         <footer className="mt-24 pb-16">
-            <p className="text-sm text-slate-500 dark:text-slate-500 light:text-slate-600">
+            <p className="text-sm text-slate-600 dark:text-slate-500">
                 {t.footer.builtWith}{' '}
                 <a
                     href="https://nextjs.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-400 dark:text-slate-400 light:text-slate-700 hover:text-teal-300 dark:hover:text-teal-300 light:hover:text-teal-600 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
                 >
                     Next.js
                 </a>
@@ -22,7 +22,7 @@ export default function Footer() {
                     href="https://tailwindcss.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-400 dark:text-slate-400 light:text-slate-700 hover:text-teal-300 dark:hover:text-teal-300 light:hover:text-teal-600 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
                 >
                     Tailwind CSS
                 </a>
@@ -31,7 +31,7 @@ export default function Footer() {
                     href="https://brittanychiang.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-400 dark:text-slate-400 light:text-slate-700 hover:text-teal-300 dark:hover:text-teal-300 light:hover:text-teal-600 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
                 >
                     Brittany Chiang
                 </a>
