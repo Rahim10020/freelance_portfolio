@@ -44,10 +44,10 @@ body {
 
 /* Light Mode Styles - Palette moderne et épurée */
 .light {
-  --gradient-from: rgba(20, 184, 166, 0.08);
+  --gradient-from: rgba(20, 184, 166, 0.05);
   --gradient-to: transparent;
-  --card-hover-bg: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(226, 232, 240, 0.8);
+  --card-hover-bg: rgba(240, 253, 250, 0.8);
+  --border-color: rgba(20, 184, 166, 0.15);
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-accent: #14b8a6;
