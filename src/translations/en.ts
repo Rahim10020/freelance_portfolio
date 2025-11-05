@@ -17,7 +17,7 @@ export const en = {
     // About Section
     about: {
         title: 'About',
-        paragraph1: "Since the beginning of my journey as a freelance designer over a decade ago, I've had the opportunity to work remotely with agencies, consult for startups, and collaborate with talented people to create digital products for both business and everyday users.",
+        paragraph1: "Since the beginning of my journey as a freelance developper over a decade ago, I've had the opportunity to work remotely with agencies, consult for startups, and collaborate with talented people to create digital products for both business and everyday users.",
         paragraph2: "My main focus these days is building accessible, user-centered products for a variety of clients. I enjoy working across the full stack—from designing intuitive interfaces to implementing robust backend systems. I specialize in creating applications that not only look great but also perform exceptionally well.",
     },
 

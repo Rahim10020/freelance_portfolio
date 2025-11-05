@@ -17,7 +17,7 @@ export const fr = {
     // About Section
     about: {
         title: 'À propos',
-        paragraph1: "Depuis le début de mon parcours en tant que designer freelance il y a plus d'une décennie, j'ai eu l'opportunité de travailler à distance avec des agences, conseiller des startups, et collaborer avec des personnes talentueuses pour créer des produits numériques pour les entreprises et les utilisateurs quotidiens.",
+        paragraph1: "Depuis le début de mon parcours en tant que développeur freelance il y a plus d'une décennie, j'ai eu l'opportunité de travailler à distance avec des agences, conseiller des startups, et collaborer avec des personnes talentueuses pour créer des produits numériques pour les entreprises et les utilisateurs quotidiens.",
         paragraph2: "Mon principal objectif ces jours-ci est de créer des produits accessibles et centrés sur l'utilisateur pour une variété de clients. J'aime travailler sur toute la stack—de la conception d'interfaces intuitives à l'implémentation de systèmes backend robustes. Je me spécialise dans la création d'applications qui non seulement sont superbes mais fonctionnent aussi exceptionnellement bien.",
     },
 
