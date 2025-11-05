@@ -44,26 +44,34 @@ export const services: Service[] = [
     {
         id: '1',
         title: 'Web Development',
-        description: 'Building modern and responsive web applications using Django, Next.js, and React with clean architecture.',
+        description: 'Building modern and responsive web applications with clean architecture.',
         icon: '💻',
+        priceUSD: 1500,
+        priceFCFA: 900000,
     },
     {
         id: '2',
         title: 'Mobile Development',
-        description: 'Creating cross-platform mobile apps with Flutter and native Android applications using Kotlin & Jetpack Compose.',
+        description: 'Creating cross-platform mobile apps with Flutter and native Android applications.',
         icon: '📱',
+        priceUSD: 2000,
+        priceFCFA: 1200000,
     },
     {
         id: '3',
         title: 'UI/UX Design',
         description: 'Designing intuitive and engaging user interfaces with Figma, focusing on user experience and modern design patterns.',
         icon: '🎨',
+        priceUSD: 800,
+        priceFCFA: 480000,
     },
     {
         id: '4',
         title: 'API Development',
         description: 'Developing robust RESTful APIs with Django REST Framework and implementing efficient backend solutions.',
         icon: '⚡',
+        priceUSD: 1200,
+        priceFCFA: 720000,
     },
 ];
 
