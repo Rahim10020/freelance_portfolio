@@ -25,6 +25,8 @@ export interface Service {
     title: string;
     description: string;
     icon: string;
+    priceUSD: number;
+    priceFCFA: number;
 }
 
 export interface SocialLink {
