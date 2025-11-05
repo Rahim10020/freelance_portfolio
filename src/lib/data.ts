@@ -117,13 +117,13 @@ export const projects: Project[] = [
     },
     {
         id: '2',
-        title: 'PixelPulse - Blog Platform for Developers',
-        image: '/images/projects/p2-detail.png',
-        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
-        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        title: 'Focusly-work - Pomodoro Productivity App',
+        image: '/images/projects/p2-focus.png',
+        description: 'A modern, feature-rich Pomodoro timer application designed to help you stay focused and productive using the proven Pomodoro Technique.',
+        technologies: ['Next.js', 'Tailwind css'],
         links: {
-            github: 'https://github.com/Rahim10020/tech-pulse',
-            live: 'https://pixelpulse-blog.vercel.app/',
+            github: 'https://github.com/Rahim10020/focusly',
+            live: 'https://focusly-work.vercel.app/',
         },
     },
     {
@@ -146,6 +146,17 @@ export const projects: Project[] = [
         links: {
             github: 'https://github.com/crepin7/nyigba',
             live: 'https://stay-ashy.vercel.app/',
+        },
+    },
+    {
+        id: '5',
+        title: 'PixelPulse - Blog Platform for Developers',
+        image: '/images/projects/p5-detail.png',
+        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
+        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        links: {
+            github: 'https://github.com/Rahim10020/tech-pulse',
+            live: 'https://pixelpulse-blog.vercel.app/',
         },
     },
 ];
