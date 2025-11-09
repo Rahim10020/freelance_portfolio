@@ -52,14 +52,14 @@ export default function ProjectsArchive() {
                 {/* Projects Table */}
                 <div className="overflow-x-auto">
                     <table className="w-full border-collapse text-left">
-                        <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
+                        <thead className="sticky top-0 z-10 transition motion-reduce:transition-none bg-white/50 dark:bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg">
                             <tr>
-                                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Year</th>
-                                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">Project</th>
-                                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
+                                <th className="py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200">Year</th>
+                                <th className="py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200">Project</th>
+                                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200 lg:table-cell">
                                     Built with
                                 </th>
-                                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 sm:table-cell">
+                                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200 sm:table-cell">
                                     Link
                                 </th>
                             </tr>
