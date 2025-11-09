@@ -18,7 +18,7 @@ export default function ProjectsArchive() {
                     <div className='py-3 flex items-center justify-between transition motion-reduce:transition-none bg-white/50 dark:bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg'>
                         <Link
                             href="/"
-                            className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
+                            className="group inline-flex ml-2 items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
                         >
                             <svg
                                 className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
@@ -39,7 +39,9 @@ export default function ProjectsArchive() {
                             </svg>
                             Rahim ALI
                         </Link>
-                        <ControlsPanel />
+                        <div className='mr-3'>
+                            <ControlsPanel />
+                        </div>
                     </div>
                 </div>
 
