@@ -1,4 +1,3 @@
 A VOIR PROCHAINEMENT
-    - regler le souci des couleurs du light mode.
-    - responsiver pour voir si tout est bon (corriger s'il y a des trucs a modifier)
     - gerer le back de la partie contact
+    - revoir la page de projects pour le translation (eng/fr)
