@@ -11,15 +11,15 @@ export default function ProjectsArchive() {
     return (
         <>
             <MouseEffect />
-            <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-24">
+            <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-15 lg:px-24 lg:py-18">
                 {/* Back button */}
                 <div className="mb-16">
                     <Link
                         href="/"
-                        className="group inline-flex items-center font-semibold leading-tight text-teal-300 hover:text-teal-200"
+                        className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
                     >
                         <svg
-                            className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-2"
+                            className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
                             viewBox="0 0 16 16"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +41,10 @@ export default function ProjectsArchive() {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <h1 className="text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4">
+                    <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl mb-4">
                         All Projects
                     </h1>
-                    <p className="text-lg text-slate-400 max-w-2xl">
+                    <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
                         A complete archive of projects I&apos;ve built over the years.
                     </p>
                 </div>
