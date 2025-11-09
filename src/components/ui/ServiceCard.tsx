@@ -13,7 +13,7 @@ export default function ServiceCard({ service, showPricing = false }: ServiceCar
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">{service.description}</p>
             {showPricing && (
                 <div className="mt-4 p-3 rounded-md">
-                    <div className="text-lg font-bold text-green-400">${service.priceUSD}</div>
+                    <div className="text-lg font-bold text-teal-700 dark:text-teal-300">${service.priceUSD}</div>
                     <div className="text-sm text-slate-600 dark:text-slate-400">{service.priceFCFA.toLocaleString()} FCFA</div>
                 </div>
             )}
