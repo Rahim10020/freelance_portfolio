@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { projects } from '@/lib/data';
 import MouseEffect from '@/components/ui/MouseEffect';
+import ControlsPanel from '@/components/ui/ControlsPanel';
 
 export const metadata = {
     title: 'Projects Archive - Rahim ALI',
@@ -13,30 +14,33 @@ export default function ProjectsArchive() {
             <MouseEffect />
             <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-15 lg:px-24 lg:py-18">
                 {/* Back button */}
-                <div className="mb-16">
-                    <Link
-                        href="/"
-                        className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
-                    >
-                        <svg
-                            className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                <div className="mb-16 sticky top-6 z-50">
+                    <div className='py-3 flex items-center justify-between transition motion-reduce:transition-none bg-white/50 dark:bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg'>
+                        <Link
+                            href="/"
+                            className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
                         >
-                            <path
-                                fill="currentColor"
-                                d="M8.71967 3.21967C9.01256 2.92678 9.48744 2.92678 9.78033 3.21967C10.0732 3.51256 10.0732 3.98744 9.78033 4.28033L8.71967 3.21967ZM5 8L4.46967 7.46967C4.17678 7.76256 4.17678 8.23744 4.46967 8.53033L5 8ZM9.78033 11.7197C10.0732 12.0126 10.0732 12.4874 9.78033 12.7803C9.48744 13.0732 9.01256 13.0732 8.71967 12.7803L9.78033 11.7197ZM9.78033 4.28033L5.53033 8.53033L4.46967 7.46967L8.71967 3.21967L9.78033 4.28033ZM5.53033 7.46967L9.78033 11.7197L8.71967 12.7803L4.46967 8.53033L5.53033 7.46967Z"
-                            />
-                            <path
-                                stroke="currentColor"
-                                d="M14.25 8H5"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                        Rahim ALI
-                    </Link>
+                            <svg
+                                className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M8.71967 3.21967C9.01256 2.92678 9.48744 2.92678 9.78033 3.21967C10.0732 3.51256 10.0732 3.98744 9.78033 4.28033L8.71967 3.21967ZM5 8L4.46967 7.46967C4.17678 7.76256 4.17678 8.23744 4.46967 8.53033L5 8ZM9.78033 11.7197C10.0732 12.0126 10.0732 12.4874 9.78033 12.7803C9.48744 13.0732 9.01256 13.0732 8.71967 12.7803L9.78033 11.7197ZM9.78033 4.28033L5.53033 8.53033L4.46967 7.46967L8.71967 3.21967L9.78033 4.28033ZM5.53033 7.46967L9.78033 11.7197L8.71967 12.7803L4.46967 8.53033L5.53033 7.46967Z"
+                                />
+                                <path
+                                    stroke="currentColor"
+                                    d="M14.25 8H5"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                            Rahim ALI
+                        </Link>
+                        <ControlsPanel />
+                    </div>
                 </div>
 
                 {/* Header */}
