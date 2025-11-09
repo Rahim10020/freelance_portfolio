@@ -120,7 +120,7 @@ export default function ProjectsArchive() {
                                                     </li>
                                                 ))}
                                                 {project.technologies.length > 4 && (
-                                                    <li className="text-xs text-slate-500">
+                                                    <li className="text-xs text-slate-700">
                                                         +{project.technologies.length - 4} more
                                                     </li>
                                                 )}
@@ -133,7 +133,7 @@ export default function ProjectsArchive() {
                                                         href={project.links.github}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-slate-400 hover:text-teal-300 transition-colors"
+                                                        className="text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
                                                         aria-label="GitHub"
                                                     >
                                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -146,7 +146,7 @@ export default function ProjectsArchive() {
                                                         href={project.links.live}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-slate-400 hover:text-teal-300 transition-colors"
+                                                        className="text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
                                                         aria-label="Live Demo"
                                                     >
                                                         <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
