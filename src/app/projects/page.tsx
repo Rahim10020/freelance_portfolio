@@ -76,7 +76,7 @@ export default function ProjectsArchive() {
                                         className="border-b border-slate-300/10 last:border-none"
                                     >
                                         <td className="py-4 pr-4 align-top text-sm">
-                                            <div className="translate-y-px text-slate-500">{year}</div>
+                                            <div className="translate-y-px text-slate-700">{year}</div>
                                         </td>
                                         <td className="py-4 pr-4 align-top font-semibold leading-snug text-slate-200">
                                             <div>
@@ -85,7 +85,7 @@ export default function ProjectsArchive() {
                                                         href={mainLink}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                                                        className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
                                                     >
                                                         <span className="inline-block">
                                                             {project.title}
@@ -106,7 +106,7 @@ export default function ProjectsArchive() {
                                                     <span>{project.title}</span>
                                                 )}
                                             </div>
-                                            <div className="mt-2 text-sm leading-normal text-slate-400 font-normal">
+                                            <div className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400 font-normal">
                                                 {project.description}
                                             </div>
                                         </td>
@@ -114,7 +114,7 @@ export default function ProjectsArchive() {
                                             <ul className="flex flex-wrap gap-2">
                                                 {project.technologies.slice(0, 4).map((tech) => (
                                                     <li key={tech}>
-                                                        <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+                                                        <div className="flex items-center rounded-full bg-teal-500/20 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-700 dark:text-teal-300">
                                                             {tech}
                                                         </div>
                                                     </li>
