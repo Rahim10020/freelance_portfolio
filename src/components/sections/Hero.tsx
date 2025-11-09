@@ -23,7 +23,7 @@ export default function Hero() {
                 </p>
                 <Navigation />
             </div>
-            <div className="flex gap-8 mt-8 lg:mt-16">
+            <div className="flex flex-col md:flex-row gap-8 mt-8 lg:mt-16">
                 <ControlsPanel />
                 <SocialLinks />
             </div>
