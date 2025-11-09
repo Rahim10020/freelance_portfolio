@@ -14,11 +14,11 @@ export default function ProjectsArchive() {
             <MouseEffect />
             <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-15 lg:px-24 lg:py-18">
                 {/* Back button */}
-                <div className="mb-16 sticky top-6 z-50">
-                    <div className='py-3 flex items-center justify-between transition motion-reduce:transition-none bg-white/50 dark:bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg'>
+                <div className="mb-16">
+                    <div className='flex items-center justify-between'>
                         <Link
                             href="/"
-                            className="group inline-flex ml-2 items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
+                            className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
                         >
                             <svg
                                 className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
@@ -37,11 +37,11 @@ export default function ProjectsArchive() {
                                     strokeLinecap="round"
                                 />
                             </svg>
-                            Rahim ALI
+                            <span className='hidden md:block'>
+                                Rahim ALI
+                            </span>
                         </Link>
-                        <div className='mr-3'>
-                            <ControlsPanel />
-                        </div>
+                        <ControlsPanel />
                     </div>
                 </div>
 
