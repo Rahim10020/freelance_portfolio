@@ -25,7 +25,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
         name: 'Facebook',
-        url: 'https://facebook.com/rahimali',
+        url: 'https://www.facebook.com/',
         icon: 'facebook',
     },
     // {
@@ -182,7 +182,7 @@ export const skills = [
     'Git',
     'Next.js',
     'React',
+    'Tailwind CSS',
     'TypeScript',
-    'Docker',
     'Firebase',
 ];

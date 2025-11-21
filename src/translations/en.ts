@@ -1,7 +1,7 @@
 export const en = {
     // Hero Section
     hero: {
-        title: 'Software Developer',
+        title: 'Web and Mobile Developer',
         bio: "I design and code beautifully simple things that make the web feel intuitive and alive — and I genuinely love what I do.",
     },
 

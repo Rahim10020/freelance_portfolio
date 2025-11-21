@@ -1,7 +1,7 @@
 export const fr = {
     // Hero Section
     hero: {
-        title: 'Développeur Logiciel',
+        title: 'Développeur Web et Mobile',
         bio: "Je conçois et code des solutions élégantes qui rendent le web intuitif et vivant — et j'aime sincèrement ce que je fais.",
     },
 
