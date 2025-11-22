@@ -129,7 +129,7 @@ export const projects: Project[] = [
         title: 'Focusly-work - Pomodoro Productivity App',
         image: '/images/projects/p2-focus.png',
         description: 'A modern, feature-rich Pomodoro timer application designed to help you stay focused and productive using the proven Pomodoro Technique.',
-        technologies: ['Next.js', 'Tailwind css'],
+        technologies: ['Next.js', 'React', 'Tailwind css', 'Supabase', 'TypeScript'],
         status: 'in-progress',
         best: true,
         links: {
@@ -153,7 +153,7 @@ export const projects: Project[] = [
         title: 'Togo Stay - Apartment Booking Website',
         image: '/images/projects/p4-stay.png',
         description: 'A website that allows Togolese people to easily find and rent apartments, while also offering owners the opportunity to publish their rental advertisements.',
-        technologies: ['Next.js', 'Firebase', 'Appwrite', 'TypeScript', 'Tailwind css', 'OpenStreetMap'],
+        technologies: ['Next.js', 'React', 'Firebase', 'Appwrite', 'TypeScript', 'Tailwind css', 'OpenStreetMap'],
         status: 'in-progress',
         best: true,
         links: {
@@ -166,8 +166,9 @@ export const projects: Project[] = [
         title: 'PixelPulse - Blog Platform for Developers',
         image: '/images/projects/p5-detail.png',
         description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
-        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        technologies: ['Next.js', 'React', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         status: 'completed',
+        best: true,
         links: {
             github: 'https://github.com/Rahim10020/tech-pulse',
             live: 'https://pixelpulse-blog.vercel.app/',
@@ -176,11 +177,9 @@ export const projects: Project[] = [
     {
         id: '6',
         title: 'Togo-xiwo',
-        image: '',
         description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
         technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         status: 'in-progress',
-        best: true,
         links: {
             github: 'https://github.com/Rahim10020/Togo-ssiwo',
         },
@@ -188,9 +187,9 @@ export const projects: Project[] = [
     {
         id: '7',
         title: 'Portify - Portfolio Builder',
-        image: '',
+        image: '/images/projects/p7-home.png',
         description: 'Portify - Portfolio Builder Platform Create professional portfolios in minutes. No coding required.',
-        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        technologies: ['Next.js', 'React', 'Tailwind css', 'Firebase', 'Framer Motion'],
         status: 'in-progress',
         best: true,
         links: {
@@ -200,9 +199,8 @@ export const projects: Project[] = [
     {
         id: '8',
         title: 'Atomic Habits',
-        image: '',
-        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
-        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        description: "A habit tracking application based on James Clear's Atomic Habits methodology. Build better habits using the 4 Laws of Behavior Change.",
+        technologies: ['Next.js', 'Typescript', 'Tailwind css', 'Supabase'],
         status: 'upcoming',
         links: {
             github: 'https://github.com/Rahim10020/atomic-habits',
