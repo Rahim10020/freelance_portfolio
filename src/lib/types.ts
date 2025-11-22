@@ -15,6 +15,7 @@ export interface Project {
     technologies: string[];
     image?: string;
     status?: 'completed' | 'in-progress' | 'upcoming';
+    best?: boolean;
     links: {
         github?: string;
         live?: string;

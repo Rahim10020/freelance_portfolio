@@ -9,8 +9,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Projects() {
     const { t } = useLanguage();
 
-    // Sort projects by status: completed first, then in-progress, then upcoming
-    const sortedProjects = [...projects].sort((a, b) => {
+    // Separate best projects from others
+    const bestProjects = projects.filter(project => project.best);
+    const nonBestProjects = projects.filter(project => !project.best);
+
+    // Sort non-best projects by status: completed first, then in-progress, then upcoming
+    const sortedNonBestProjects = [...nonBestProjects].sort((a, b) => {
         const getStatusPriority = (status?: string) => {
             switch (status) {
                 case 'completed':
@@ -28,7 +32,11 @@ export default function Projects() {
         return getStatusPriority(a.status) - getStatusPriority(b.status);
     });
 
-    const displayedProjects = sortedProjects.slice(0, 5);
+    // Display all best projects, then fill with sorted non-best up to 5 total
+    const displayedProjects = [
+        ...bestProjects,
+        ...sortedNonBestProjects.slice(0, 5 - bestProjects.length)
+    ];
 
     return (
         <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">

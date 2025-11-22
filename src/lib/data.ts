@@ -118,6 +118,7 @@ export const projects: Project[] = [
         image: '/images/projects/p1-accueil.png',
         description: 'A Kotlin mobile app built with Jetpack Compose that helps users quickly find nearby gas stations on a map. Fast, simple, and user-friendly.',
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase'],
+        best: true,
         links: {
             github: 'https://github.com/Rahim10020/essence-togo',
             live: 'https://github.com/Rahim10020/essence-togo',
@@ -130,6 +131,7 @@ export const projects: Project[] = [
         description: 'A modern, feature-rich Pomodoro timer application designed to help you stay focused and productive using the proven Pomodoro Technique.',
         technologies: ['Next.js', 'Tailwind css'],
         status: 'in-progress',
+        best: true,
         links: {
             github: 'https://github.com/Rahim10020/focusly',
             live: 'https://focusly-work.vercel.app/',
@@ -153,6 +155,7 @@ export const projects: Project[] = [
         description: 'A website that allows Togolese people to easily find and rent apartments, while also offering owners the opportunity to publish their rental advertisements.',
         technologies: ['Next.js', 'Firebase', 'Appwrite', 'TypeScript', 'Tailwind css', 'OpenStreetMap'],
         status: 'in-progress',
+        best: true,
         links: {
             github: 'https://github.com/crepin7/nyigba',
             live: 'https://stay-ashy.vercel.app/',
@@ -177,6 +180,7 @@ export const projects: Project[] = [
         description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
         technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         status: 'in-progress',
+        best: true,
         links: {
             github: 'https://github.com/Rahim10020/Togo-ssiwo',
         },
@@ -188,6 +192,7 @@ export const projects: Project[] = [
         description: 'Portify - Portfolio Builder Platform Create professional portfolios in minutes. No coding required.',
         technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         status: 'in-progress',
+        best: true,
         links: {
             github: 'https://github.com/Rahim10020/portify',
         },
