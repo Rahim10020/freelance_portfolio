@@ -164,10 +164,43 @@ export const projects: Project[] = [
         image: '/images/projects/p5-detail.png',
         description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
         technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
-        status: 'upcoming',
+        status: 'completed',
         links: {
             github: 'https://github.com/Rahim10020/tech-pulse',
             live: 'https://pixelpulse-blog.vercel.app/',
+        },
+    },
+    {
+        id: '6',
+        title: 'Togo-xiwo',
+        image: '',
+        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
+        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        status: 'in-progress',
+        links: {
+            github: 'https://github.com/Rahim10020/Togo-ssiwo',
+        },
+    },
+    {
+        id: '7',
+        title: 'Portify - Portfolio Builder',
+        image: '',
+        description: 'Portify - Portfolio Builder Platform Create professional portfolios in minutes. No coding required.',
+        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        status: 'in-progress',
+        links: {
+            github: 'https://github.com/Rahim10020/portify',
+        },
+    },
+    {
+        id: '8',
+        title: 'Atomic Habits',
+        image: '',
+        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
+        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        status: 'upcoming',
+        links: {
+            github: 'https://github.com/Rahim10020/atomic-habits',
         },
     },
 ];
