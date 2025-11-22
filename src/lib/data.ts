@@ -177,8 +177,8 @@ export const projects: Project[] = [
     {
         id: '6',
         title: 'Togo-xiwo',
-        description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
-        technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
+        description: "Mobile application to discover Togo's markets, their specialties, find nearby markets and place orders.",
+        technologies: ['Futter', 'Get X', 'OpenStreetMap', 'Dart'],
         status: 'in-progress',
         links: {
             github: 'https://github.com/Rahim10020/Togo-ssiwo',
