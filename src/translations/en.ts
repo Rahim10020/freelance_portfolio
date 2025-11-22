@@ -40,6 +40,12 @@ export const en = {
             builtWith: 'Built with',
             link: 'Link',
         },
+        filters: {
+            all: 'All',
+            completed: 'Completed',
+            'in-progress': 'In Progress',
+            upcoming: 'Upcoming',
+        },
         status: {
             'completed': 'Completed',
             'in-progress': 'In Progress',

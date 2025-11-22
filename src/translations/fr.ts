@@ -40,6 +40,12 @@ export const fr = {
             builtWith: 'Construit avec',
             link: 'Lien',
         },
+        filters: {
+            all: 'Tous',
+            completed: 'Terminé',
+            'in-progress': 'En Cours',
+            upcoming: 'À Venir',
+        },
         status: {
             'completed': 'Terminé',
             'in-progress': 'En Cours',
