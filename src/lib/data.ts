@@ -164,7 +164,7 @@ export const projects: Project[] = [
         image: '/images/projects/p5-detail.png',
         description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
         technologies: ['Next.js', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
-        status: 'completed',
+        status: 'upcoming',
         links: {
             github: 'https://github.com/Rahim10020/tech-pulse',
             live: 'https://pixelpulse-blog.vercel.app/',
