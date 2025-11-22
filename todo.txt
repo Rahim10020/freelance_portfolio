@@ -3,4 +3,6 @@ A VOIR PROCHAINEMENT
     - revoir la page de projects pour le translation (eng/fr)
     - ajouter une section pour mes passions et mes lectures. (voir avec windsurf 
         quelle partie de mon site sera parfaite pour cette section en matiere de design)
-    - 
+    - on a 5 projets max qui s'affichent dans la section projetcs. je veux pourvoir faire en sorte que 
+        si un projet a une ligne dont la valeur est "best" (dans data) il va forcement s'afficher.
+    

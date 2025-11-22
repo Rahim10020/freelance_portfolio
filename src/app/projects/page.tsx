@@ -1,14 +1,38 @@
+'use client';
+
 import Link from 'next/link';
 import { projects } from '@/lib/data';
 import MouseEffect from '@/components/ui/MouseEffect';
 import ControlsPanel from '@/components/ui/ControlsPanel';
-
-export const metadata = {
-    title: 'Projects Archive - Rahim ALI',
-    description: 'Complete archive of my projects and work',
-};
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProjectsArchive() {
+    const { t } = useLanguage();
+
+    const getStatusBadge = (status?: string) => {
+        if (!status || status === 'completed') return null;
+
+        const statusText = t.projects.status[status as keyof typeof t.projects.status];
+        const baseClasses = "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5 ml-2";
+
+        switch (status) {
+            case 'in-progress':
+                return (
+                    <span className={`${baseClasses} bg-green-500/20 text-green-700 dark:bg-green-400/10 dark:text-green-300`}>
+                        {statusText}
+                    </span>
+                );
+            case 'upcoming':
+                return (
+                    <span className={`${baseClasses} bg-blue-500/20 text-blue-700 dark:bg-blue-400/10 dark:text-blue-300`}>
+                        {statusText}
+                    </span>
+                );
+            default:
+                return null;
+        }
+    };
+
     return (
         <>
             <MouseEffect />
@@ -85,7 +109,7 @@ export default function ProjectsArchive() {
                                             <div className="translate-y-px text-slate-700">{year}</div>
                                         </td>
                                         <td className="py-4 pr-4 align-top font-semibold leading-snug text-slate-200">
-                                            <div>
+                                            <div className="flex items-center flex-wrap gap-2">
                                                 {hasLink ? (
                                                     <a
                                                         href={mainLink}
@@ -111,6 +135,7 @@ export default function ProjectsArchive() {
                                                 ) : (
                                                     <span>{project.title}</span>
                                                 )}
+                                                {getStatusBadge(project.status)}
                                             </div>
                                             <div className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400 font-normal">
                                                 {project.description}
