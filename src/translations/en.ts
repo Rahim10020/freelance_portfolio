@@ -51,6 +51,11 @@ export const en = {
             'in-progress': 'In Progress',
             'upcoming': 'Upcoming',
         },
+        moreTechnologies: 'more',
+        ariaLabels: {
+            github: 'GitHub',
+            liveDemo: 'Live Demo',
+        },
     },
 
     // Services Section
