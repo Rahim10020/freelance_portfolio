@@ -14,6 +14,7 @@ export interface Project {
     description: string;
     technologies: string[];
     image?: string;
+    status?: 'completed' | 'in-progress' | 'upcoming';
     links: {
         github?: string;
         live?: string;

@@ -1,3 +1,6 @@
 A VOIR PROCHAINEMENT
     - gerer le back de la partie contact
     - revoir la page de projects pour le translation (eng/fr)
+    - ajouter une section pour mes passions et mes lectures. (voir avec windsurf 
+        quelle partie de mon site sera parfaite pour cette section en matiere de design)
+    - 

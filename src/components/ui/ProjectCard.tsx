@@ -1,13 +1,39 @@
 import { Project } from '@/lib/types';
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectCardProps {
     project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+    const { t } = useLanguage();
     const hasLink = project.links.github || project.links.live;
     const mainLink = project.links.live || project.links.github;
+
+    const getStatusBadge = () => {
+        if (!project.status || project.status === 'completed') return null;
+
+        const statusText = t.projects.status[project.status];
+        const baseClasses = "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5";
+
+        switch (project.status) {
+            case 'in-progress':
+                return (
+                    <span className={`${baseClasses} bg-green-500/20 text-green-700 dark:bg-green-400/10 dark:text-green-300`}>
+                        {statusText}
+                    </span>
+                );
+            case 'upcoming':
+                return (
+                    <span className={`${baseClasses} bg-blue-500/20 text-blue-700 dark:bg-blue-400/10 dark:text-blue-300`}>
+                        {statusText}
+                    </span>
+                );
+            default:
+                return null;
+        }
+    };
 
     const content = (
         <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
@@ -57,6 +83,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         <span className="text-base">{project.title}</span>
                     )}
                 </h3>
+                {getStatusBadge() && (
+                    <div className="mt-2">
+                        {getStatusBadge()}
+                    </div>
+                )}
                 <p className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">{project.description}</p>
                 {(project.links.github || project.links.live) && (
                     <div className="mt-4 flex gap-4 text-xs">

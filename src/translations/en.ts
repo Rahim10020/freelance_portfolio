@@ -40,6 +40,11 @@ export const en = {
             builtWith: 'Built with',
             link: 'Link',
         },
+        status: {
+            'completed': 'Completed',
+            'in-progress': 'In Progress',
+            'upcoming': 'Upcoming',
+        },
     },
 
     // Services Section
