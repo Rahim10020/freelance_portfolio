@@ -1,5 +1,4 @@
 A VOIR PROCHAINEMENT
-    - gerer le back de la partie contact
     - ajouter une section pour mes passions et mes lectures. (voir avec windsurf 
         quelle partie de mon site sera parfaite pour cette section en matiere de design)
     
