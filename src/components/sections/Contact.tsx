@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import SectionTitle from '../ui/SectionTitle';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -25,14 +26,25 @@ export default function Contact() {
         e.preventDefault();
         setStatus('sending');
 
-        // Simulation d'envoi
-        setTimeout(() => {
-            console.log('Form data:', formData);
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
             setStatus('success');
             setFormData({ name: '', subject: '', email: '', message: '' });
-
             setTimeout(() => setStatus('idle'), 3000);
-        }, 1000);
+        } catch (error) {
+            console.error('EmailJS error:', error);
+            setStatus('error');
+        }
     };
 
     return (
