@@ -20,7 +20,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
         name: 'Instagram',
-        url: 'https://instagram.com/rahim15727',
+        url: 'https://instagram.com/rahim.aldev',
         icon: 'instagram',
     },
     {
