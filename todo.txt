@@ -1,6 +1,8 @@
 A VOIR PROCHAINEMENT
     - ajouter une section pour mes passions et mes lectures. (voir avec windsurf 
         quelle partie de mon site sera parfaite pour cette section en matiere de design)
+
+    #13161B
     
     my primary colors: 
     1- ff7d00 - orange
