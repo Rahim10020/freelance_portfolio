@@ -6,73 +6,115 @@
   --background: #13161B;
   --foreground: #e2e8f0;
 
-  --accent-200: #99f6e4;
-  --accent-300: #5eead4;
-  --accent-400: #2dd4bf;
-  --accent-500: #14b8a6;
-  --accent-600: #0d9488;
-  --accent-700: #0f766e;
-  --accent-800: #115e59;
+  --accent-200: #ffd1a3;
+  --accent-300: #ffb266;
+  --accent-400: #ff9a33;
+  --accent-500: #ff7d00;
+  --accent-600: #e66f00;
+  --accent-700: #b35600;
+  --accent-800: #804000;
 
-  --accent-rgb: 20 184 166;
-  --accent-soft-rgb: 94 234 212;
-  --accent-bg-rgb: 13 148 136;
+  --accent-rgb: 255 125 0;
+  --accent-soft-rgb: 255 178 102;
+  --accent-bg-rgb: 230 111 0;
+}
+
+:root[data-accent='clay'] {
+  --accent-200: #f4c7bb;
+  --accent-300: #edac99;
+  --accent-400: #e6917a;
+  --accent-500: #e07a5f;
+  --accent-600: #ca6e56;
+  --accent-700: #9d5642;
+  --accent-800: #704030;
+
+  --accent-rgb: 224 122 95;
+  --accent-soft-rgb: 237 172 153;
+  --accent-bg-rgb: 202 110 86;
+}
+
+:root[data-accent='sage'] {
+  --accent-200: #cde0d7;
+  --accent-300: #b3d1c3;
+  --accent-400: #9ac2ae;
+  --accent-500: #81b29a;
+  --accent-600: #74a08b;
+  --accent-700: #5b7d6c;
+  --accent-800: #435c50;
+
+  --accent-rgb: 129 178 154;
+  --accent-soft-rgb: 179 209 195;
+  --accent-bg-rgb: 116 160 139;
+}
+
+:root[data-accent='red'] {
+  --accent-200: #ebb0b5;
+  --accent-300: #e08990;
+  --accent-400: #d6626b;
+  --accent-500: #c1121f;
+  --accent-600: #ae101c;
+  --accent-700: #880d16;
+  --accent-800: #62090f;
+
+  --accent-rgb: 193 18 31;
+  --accent-soft-rgb: 224 137 144;
+  --accent-bg-rgb: 174 16 28;
+}
+
+:root[data-accent='yellow'] {
+  --accent-200: #ffeb99;
+  --accent-300: #ffdf66;
+  --accent-400: #ffd533;
+  --accent-500: #ffc300;
+  --accent-600: #e6b000;
+  --accent-700: #b38800;
+  --accent-800: #806100;
+
+  --accent-rgb: 255 195 0;
+  --accent-soft-rgb: 255 223 102;
+  --accent-bg-rgb: 230 176 0;
 }
 
 :root[data-accent='blue'] {
-  --accent-200: #bfdbfe;
-  --accent-300: #93c5fd;
-  --accent-400: #60a5fa;
-  --accent-500: #3b82f6;
-  --accent-600: #2563eb;
-  --accent-700: #1d4ed8;
-  --accent-800: #1e40af;
+  --accent-200: #9fd8ff;
+  --accent-300: #6ec3ff;
+  --accent-400: #39adff;
+  --accent-500: #0496ff;
+  --accent-600: #0487e6;
+  --accent-700: #0369b3;
+  --accent-800: #024c80;
 
-  --accent-rgb: 59 130 246;
-  --accent-soft-rgb: 147 197 253;
-  --accent-bg-rgb: 37 99 235;
+  --accent-rgb: 4 150 255;
+  --accent-soft-rgb: 110 195 255;
+  --accent-bg-rgb: 4 135 230;
 }
 
-:root[data-accent='violet'] {
-  --accent-200: #ddd6fe;
-  --accent-300: #c4b5fd;
-  --accent-400: #a78bfa;
-  --accent-500: #8b5cf6;
-  --accent-600: #7c3aed;
-  --accent-700: #6d28d9;
-  --accent-800: #5b21b6;
+:root[data-accent='ginger'] {
+  --accent-200: #f1efc2;
+  --accent-300: #e9e4a6;
+  --accent-400: #e1dc8a;
+  --accent-500: #dbd56e;
+  --accent-600: #c5c062;
+  --accent-700: #99964d;
+  --accent-800: #6e6b37;
 
-  --accent-rgb: 139 92 246;
-  --accent-soft-rgb: 196 181 253;
-  --accent-bg-rgb: 124 58 237;
+  --accent-rgb: 219 213 110;
+  --accent-soft-rgb: 233 228 166;
+  --accent-bg-rgb: 197 192 98;
 }
 
-:root[data-accent='amber'] {
-  --accent-200: #fde68a;
-  --accent-300: #fcd34d;
-  --accent-400: #fbbf24;
-  --accent-500: #f59e0b;
-  --accent-600: #d97706;
-  --accent-700: #b45309;
-  --accent-800: #92400e;
+:root[data-accent='sunset'] {
+  --accent-200: #f8c5b4;
+  --accent-300: #f4a688;
+  --accent-400: #ef855b;
+  --accent-500: #eb5e28;
+  --accent-600: #d45424;
+  --accent-700: #a5421c;
+  --accent-800: #763014;
 
-  --accent-rgb: 245 158 11;
-  --accent-soft-rgb: 252 211 77;
-  --accent-bg-rgb: 217 119 6;
-}
-
-:root[data-accent='rose'] {
-  --accent-200: #fecdd3;
-  --accent-300: #fda4af;
-  --accent-400: #fb7185;
-  --accent-500: #f43f5e;
-  --accent-600: #e11d48;
-  --accent-700: #be123c;
-  --accent-800: #9f1239;
-
-  --accent-rgb: 244 63 94;
-  --accent-soft-rgb: 253 164 175;
-  --accent-bg-rgb: 225 29 72;
+  --accent-rgb: 235 94 40;
+  --accent-soft-rgb: 244 166 136;
+  --accent-bg-rgb: 212 84 36;
 }
 
 /* Light Mode Variables */
@@ -195,6 +237,11 @@ body {
   .bg-teal-400\/20,
   .dark\:bg-teal-400\/20) {
   background-color: rgb(var(--accent-rgb) / 0.2) !important;
+}
+
+.light :where(.bg-teal-500\/20,
+  .bg-teal-400\/20) {
+  background-color: #313539 !important;
 }
 
 :where(.dark\:bg-teal-400\/10,

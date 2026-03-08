@@ -3,9 +3,9 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 type Theme = 'dark' | 'light';
-export type AccentTheme = 'teal' | 'blue' | 'violet' | 'amber' | 'rose';
+export type AccentTheme = 'orange' | 'clay' | 'sage' | 'red' | 'yellow' | 'blue' | 'ginger' | 'sunset';
 
-export const accentThemes: AccentTheme[] = ['teal', 'blue', 'violet', 'amber', 'rose'];
+export const accentThemes: AccentTheme[] = ['orange', 'clay', 'sage', 'red', 'yellow', 'blue', 'ginger', 'sunset'];
 
 interface ThemeContextType {
     theme: Theme;
@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
     const [theme, setTheme] = useState<Theme>('dark');
-    const [accentTheme, setAccentTheme] = useState<AccentTheme>('teal');
+    const [accentTheme, setAccentTheme] = useState<AccentTheme>('orange');
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {

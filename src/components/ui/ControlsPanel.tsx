@@ -5,12 +5,15 @@ import { accentThemes, type AccentTheme, useTheme } from '@/contexts/ThemeContex
 import { useLanguage } from '@/contexts/LanguageContext';
 import { MoonIcon, SunIcon } from '@/components/icons';
 
-const accentPreviewStyles: Record<AccentTheme, string> = {
-    teal: 'bg-teal-500',
-    blue: 'bg-blue-500',
-    violet: 'bg-violet-500',
-    amber: 'bg-amber-500',
-    rose: 'bg-rose-500',
+const accentPreviewColors: Record<AccentTheme, string> = {
+    orange: '#ff7d00',
+    clay: '#e07a5f',
+    sage: '#81b29a',
+    red: '#c1121f',
+    yellow: '#ffc300',
+    blue: '#0496ff',
+    ginger: '#dbd56e',
+    sunset: '#eb5e28',
 };
 
 export default function ControlsPanel() {
@@ -79,7 +82,8 @@ export default function ControlsPanel() {
                     title={`Primary color: ${accentTheme}`}
                 >
                     <span
-                        className={`h-6 w-6 rounded-full border-2 border-white/80 dark:border-slate-900 ${accentPreviewStyles[accentTheme]}`}
+                        className="h-6 w-6 rounded-full border-2 border-white/80 dark:border-slate-900"
+                        style={{ backgroundColor: accentPreviewColors[accentTheme] }}
                     />
                 </button>
 
@@ -97,10 +101,11 @@ export default function ControlsPanel() {
                                     setAccentTheme(accent);
                                     setIsAccentPickerOpen(false);
                                 }}
-                                className={`h-7 w-7 rounded-full border-2 transition-all duration-300 ${accentPreviewStyles[accent]} ${accentTheme === accent
+                                className={`h-7 w-7 rounded-full border-2 transition-all duration-300 ${accentTheme === accent
                                     ? 'scale-105 border-white dark:border-slate-900 shadow-md'
                                     : 'border-transparent opacity-75 hover:opacity-100 hover:cursor-pointer'
                                     }`}
+                                style={{ backgroundColor: accentPreviewColors[accent] }}
                                 aria-label={`Set ${accent} as primary color`}
                                 title={accent}
                             />
