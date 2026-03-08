@@ -3,7 +3,7 @@
 @variant dark (.dark &);
 
 :root {
-  --background: #0f172a;
+  --background: #13161B;
   --foreground: #e2e8f0;
 
   --accent-200: #99f6e4;
@@ -168,45 +168,37 @@ body {
 }
 
 /* Map existing teal utility classes to chosen accent */
-:where(
-    .text-teal-200,
-    .text-teal-300,
-    .text-teal-600,
-    .text-teal-700,
-    .text-teal-800,
-    .hover\:text-teal-700:hover,
-    .hover\:text-teal-800:hover,
-    .dark\:text-teal-200,
-    .dark\:text-teal-300,
-    .dark\:hover\:text-teal-200:hover,
-    .dark\:hover\:text-teal-300:hover,
-    .focus-visible\:text-teal-300:focus-visible,
-    .focus-visible\:text-teal-700:focus-visible,
-    .dark\:focus-visible\:text-teal-300:focus-visible
-  ) {
+:where(.text-teal-200,
+  .text-teal-300,
+  .text-teal-600,
+  .text-teal-700,
+  .text-teal-800,
+  .hover\:text-teal-700:hover,
+  .hover\:text-teal-800:hover,
+  .dark\:text-teal-200,
+  .dark\:text-teal-300,
+  .dark\:hover\:text-teal-200:hover,
+  .dark\:hover\:text-teal-300:hover,
+  .focus-visible\:text-teal-300:focus-visible,
+  .focus-visible\:text-teal-700:focus-visible,
+  .dark\:focus-visible\:text-teal-300:focus-visible) {
   color: var(--text-accent) !important;
 }
 
-:where(
-    .bg-teal-500,
-    .hover\:bg-teal-700:hover,
-    .dark\:hover\:bg-teal-300:hover
-  ) {
+:where(.bg-teal-500,
+  .hover\:bg-teal-700:hover,
+  .dark\:hover\:bg-teal-300:hover) {
   background-color: rgb(var(--accent-bg-rgb)) !important;
 }
 
-:where(
-    .bg-teal-500\/20,
-    .bg-teal-400\/20,
-    .dark\:bg-teal-400\/20
-  ) {
+:where(.bg-teal-500\/20,
+  .bg-teal-400\/20,
+  .dark\:bg-teal-400\/20) {
   background-color: rgb(var(--accent-rgb) / 0.2) !important;
 }
 
-:where(
-    .dark\:bg-teal-400\/10,
-    .bg-teal-400\/10
-  ) {
+:where(.dark\:bg-teal-400\/10,
+  .bg-teal-400\/10) {
   background-color: rgb(var(--accent-soft-rgb) / 0.1) !important;
 }
 
@@ -214,12 +206,10 @@ body {
   --tw-shadow-color: rgb(var(--accent-rgb) / 0.2) !important;
 }
 
-:where(
-    .focus\:border-teal-600:focus,
-    .dark\:focus\:border-teal-300:focus,
-    .focus\:ring-teal-600:focus,
-    .dark\:focus\:ring-teal-300:focus
-  ) {
+:where(.focus\:border-teal-600:focus,
+  .dark\:focus\:border-teal-300:focus,
+  .focus\:ring-teal-600:focus,
+  .dark\:focus\:ring-teal-300:focus) {
   border-color: var(--text-accent) !important;
   --tw-ring-color: var(--text-accent) !important;
 }
@@ -239,11 +229,9 @@ body {
   inset: 0;
   z-index: 30;
   transition: opacity 0.3s ease;
-  background: radial-gradient(
-    600px at var(--mouse-x, 0px) var(--mouse-y, 0px),
-    var(--gradient-from),
-    var(--gradient-to) 80%
-  );
+  background: radial-gradient(600px at var(--mouse-x, 0px) var(--mouse-y, 0px),
+      var(--gradient-from),
+      var(--gradient-to) 80%);
   will-change: background;
 }
 
