@@ -99,10 +99,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.font-display {
-  font-family: var(--font-display), var(--font-sans), Arial, Helvetica, sans-serif;
-}
-
 /* Dark Mode Styles */
 .dark {
   --gradient-from: rgb(var(--accent-rgb) / 0.15);
