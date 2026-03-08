@@ -51,7 +51,7 @@ export default function ControlsPanel() {
                 <button
                     onClick={() => setLanguage('en')}
                     className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${language === 'en'
-                        ? 'bg-teal-500/20 dark:bg-teal-400/20 text-teal-700 dark:text-teal-300'
+                        ? 'bg-[rgb(var(--accent-rgb)/0.2)] text-[var(--text-accent)]'
                         : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:cursor-pointer'
                         }`}
                     aria-label="Switch to English"
@@ -61,7 +61,7 @@ export default function ControlsPanel() {
                 <button
                     onClick={() => setLanguage('fr')}
                     className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${language === 'fr'
-                        ? 'bg-teal-500/20 dark:bg-teal-400/20 text-teal-700 dark:text-teal-300'
+                        ? 'bg-[rgb(var(--accent-rgb)/0.2)] text-[var(--text-accent)]'
                         : 'text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:cursor-pointer'
                         }`}
                     aria-label="Switch to French"
@@ -129,7 +129,7 @@ export default function ControlsPanel() {
                 />
                 <MoonIcon
                     size={20}
-                    className={`absolute w-5 h-5 text-teal-300 transition-all duration-500 ${theme === 'dark'
+                    className={`absolute w-5 h-5 text-[var(--accent-300)] transition-all duration-500 ${theme === 'dark'
                         ? 'rotate-0 scale-100 opacity-100'
                         : '-rotate-90 scale-0 opacity-0'
                         }`}

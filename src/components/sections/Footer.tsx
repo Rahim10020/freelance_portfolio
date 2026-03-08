@@ -13,7 +13,7 @@ export default function Footer() {
                     href="https://nextjs.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
                 >
                     Next.js
                 </a>
@@ -22,7 +22,7 @@ export default function Footer() {
                     href="https://tailwindcss.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
                 >
                     Tailwind CSS
                 </a>
@@ -31,7 +31,7 @@ export default function Footer() {
                     href="https://brittanychiang.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors"
+                    className="font-medium text-slate-700 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
                 >
                     Brittany Chiang
                 </a>

@@ -209,64 +209,13 @@ body {
   outline-offset: 2px;
 }
 
-/* Map existing teal utility classes to chosen accent */
-:where(.text-teal-200,
-  .text-teal-300,
-  .text-teal-600,
-  .text-teal-700,
-  .text-teal-800,
-  .hover\:text-teal-700:hover,
-  .hover\:text-teal-800:hover,
-  .dark\:text-teal-200,
-  .dark\:text-teal-300,
-  .dark\:hover\:text-teal-200:hover,
-  .dark\:hover\:text-teal-300:hover,
-  .focus-visible\:text-teal-300:focus-visible,
-  .focus-visible\:text-teal-700:focus-visible,
-  .dark\:focus-visible\:text-teal-300:focus-visible) {
-  color: var(--text-accent) !important;
+.accent-chip {
+  background-color: #313539;
+  color: var(--text-accent);
 }
 
-:where(.bg-teal-500,
-  .hover\:bg-teal-700:hover,
-  .dark\:hover\:bg-teal-300:hover) {
-  background-color: rgb(var(--accent-bg-rgb)) !important;
-}
-
-:where(.bg-teal-500\/20,
-  .bg-teal-400\/20,
-  .dark\:bg-teal-400\/20) {
-  background-color: rgb(var(--accent-rgb) / 0.2) !important;
-}
-
-.light :where(.bg-teal-500\/20,
-  .bg-teal-400\/20) {
-  background-color: #313539 !important;
-}
-
-:where(.dark\:bg-teal-400\/10,
-  .bg-teal-400\/10) {
-  background-color: rgb(var(--accent-soft-rgb) / 0.1) !important;
-}
-
-:where(.hover\:shadow-teal-100\/50:hover) {
-  --tw-shadow-color: rgb(var(--accent-rgb) / 0.2) !important;
-}
-
-:where(.focus\:border-teal-600:focus,
-  .dark\:focus\:border-teal-300:focus,
-  .focus\:ring-teal-600:focus,
-  .dark\:focus\:ring-teal-300:focus) {
-  border-color: var(--text-accent) !important;
-  --tw-ring-color: var(--text-accent) !important;
-}
-
-.group:hover .group-hover\:border-teal-700 {
-  border-color: var(--text-accent) !important;
-}
-
-.dark .group:hover .dark\:group-hover\:border-teal-300 {
-  border-color: var(--text-accent) !important;
+.dark .accent-chip {
+  background-color: rgb(var(--accent-soft-rgb) / 0.1);
 }
 
 /* Gradient effect with better performance */

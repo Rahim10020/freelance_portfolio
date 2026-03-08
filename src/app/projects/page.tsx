@@ -44,7 +44,7 @@ export default function ProjectsArchive() {
                     <div className='flex items-center justify-between'>
                         <Link
                             href="/"
-                            className="group inline-flex items-center font-semibold leading-tight text-teal-700 dark:text-teal-300 hover:text-teal-800"
+                            className="group inline-flex items-center font-semibold leading-tight text-[var(--text-accent)] dark:text-[var(--text-accent)] hover:text-[var(--text-accent)]"
                         >
                             <svg
                                 className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
@@ -88,7 +88,7 @@ export default function ProjectsArchive() {
                                 key={filter}
                                 onClick={() => setActiveFilter(filter)}
                                 className={`px-4 py-2 rounded-full cursor-pointer text-sm font-medium transition-colors ${activeFilter === filter
-                                    ? 'bg-teal-500 text-white'
+                                    ? 'bg-[rgb(var(--accent-bg-rgb))] text-white'
                                     : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                                     }`}
                             >
@@ -140,7 +140,7 @@ export default function ProjectsArchive() {
                                                             href={mainLink}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                                                            className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
                                                         >
                                                             <span className="inline-block">
                                                                 {project.title}
@@ -170,7 +170,7 @@ export default function ProjectsArchive() {
                                                 <ul className="flex flex-wrap gap-2">
                                                     {project.technologies.slice(0, 4).map((tech) => (
                                                         <li key={tech}>
-                                                            <div className="flex items-center rounded-full bg-teal-500/20 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-700 dark:text-teal-300">
+                                                            <div className="accent-chip flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5">
                                                                 {tech}
                                                             </div>
                                                         </li>
@@ -189,7 +189,7 @@ export default function ProjectsArchive() {
                                                             href={project.links.github}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                                                            className="text-slate-600 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
                                                             aria-label={t.projects.ariaLabels.github}
                                                         >
                                                             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -202,7 +202,7 @@ export default function ProjectsArchive() {
                                                             href={project.links.live}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-slate-600 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+                                                            className="text-slate-600 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
                                                             aria-label={t.projects.ariaLabels.liveDemo}
                                                         >
                                                             <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">

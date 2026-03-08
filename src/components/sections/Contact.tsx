@@ -58,7 +58,7 @@ export default function Contact() {
                         {t.contact.emailText}{' '}
                         <a
                             href="mailto:rahim100codeur@gmail.com"
-                            className="text-teal-600 dark:text-teal-300 hover:text-teal-700 dark:hover:text-teal-200 transition-colors font-medium"
+                            className="text-[var(--text-accent)] dark:text-[var(--text-accent)] hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors font-medium"
                         >
                             rahim100codeur@gmail.com
                         </a>
@@ -74,7 +74,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.name}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.subject}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -98,7 +98,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.email}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
@@ -110,20 +110,20 @@ export default function Contact() {
                             placeholder={t.contact.form.message}
                             required
                             rows={6}
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-teal-600 dark:focus:border-teal-300 focus:ring-1 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors resize-none border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors resize-none border border-slate-200 dark:border-transparent"
                         />
                     </div>
 
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="px-4 py-2 bg-teal-600 dark:bg-slate-200 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-teal-700 dark:hover:bg-teal-300 hover:text-white dark:hover:text-slate-900 hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] dark:bg-slate-200 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] dark:hover:bg-slate-300 hover:text-white dark:hover:text-slate-900 hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {status === 'sending' ? t.contact.form.sending : status === 'success' ? t.contact.form.sent : t.contact.form.send}
                     </button>
 
                     {status === 'success' && (
-                        <p className="text-teal-700 dark:text-teal-300 text-sm">{t.contact.form.success}</p>
+                        <p className="text-[var(--text-accent)] dark:text-[var(--text-accent)] text-sm">{t.contact.form.success}</p>
                     )}
                     {status === 'error' && (
                         <p className="text-red-600 dark:text-red-400 text-sm">{t.contact.form.error}</p>

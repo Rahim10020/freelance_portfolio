@@ -9,7 +9,7 @@ interface ArchiveLinkProps {
 export default function ArchiveLink({ href, text, isExternal = false }: ArchiveLinkProps) {
     const content = (
         <span className="inline-flex items-center font-medium leading-tight text-slate-900 dark:text-slate-200 group">
-            <span className="border-b border-transparent group-hover:border-teal-700 dark:group-hover:border-teal-300 transition-all duration-300">
+            <span className="border-b border-transparent group-hover:border-[var(--text-accent)] transition-all duration-300">
                 {text}
             </span>
             <svg
@@ -38,7 +38,7 @@ export default function ArchiveLink({ href, text, isExternal = false }: ArchiveL
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-base font-semibold leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-700 dark:focus-visible:text-teal-300 transition-colors"
+                className="inline-flex items-center text-base font-semibold leading-tight text-slate-900 dark:text-slate-200 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] dark:focus-visible:text-[var(--text-accent)] transition-colors"
             >
                 {content}
             </a>
@@ -48,7 +48,7 @@ export default function ArchiveLink({ href, text, isExternal = false }: ArchiveL
     return (
         <Link
             href={href}
-            className="inline-flex items-center text-base font-semibold leading-tight text-slate-900 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 focus-visible:text-teal-700 dark:focus-visible:text-teal-300 transition-colors"
+            className="inline-flex items-center text-base font-semibold leading-tight text-slate-900 dark:text-slate-200 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] dark:focus-visible:text-[var(--text-accent)] transition-colors"
         >
             {content}
         </Link>
