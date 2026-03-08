@@ -1,6 +1,9 @@
-    #13161B
+#313539 - couleur a utiliser pour background des skills(et equivalents) pour toutes les couleurs primaires
+    uniquement quand on est en light mode. 
+    en dark mode, on garde ce qu'il ya actuellement (le shade de la couleur correspondante)
+    
+my primary colors:
 
-    my primary colors: 
     1- ff7d00 - orange
     2- e07a5f - good
     3- 81b29a - light green
