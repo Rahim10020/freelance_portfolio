@@ -2,3 +2,12 @@ A VOIR PROCHAINEMENT
     - ajouter une section pour mes passions et mes lectures. (voir avec windsurf 
         quelle partie de mon site sera parfaite pour cette section en matiere de design)
     
+    my primary colors: 
+    1- ff7d00 - orange
+    2- e07a5f - good
+    3- 81b29a - light green
+    4- c1121f - rouge
+    5- ffc300 - jaune
+    6- 0496ff - blue
+    7- dbd56e - gingembre
+    8- eb5e28 - orange + rouge

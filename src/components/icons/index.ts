@@ -1,0 +1,13 @@
+export { default as CursorIcon } from './CursorIcon';
+export { default as GithubDarkIcon } from './GithubDarkIcon';
+export { default as GithubWhiteIcon } from './GithubWhiteIcon';
+export { default as InstagramDarkIcon } from './InstagramDarkIcon';
+export { default as InstagramWhiteIcon } from './InstagramWhiteIcon';
+export { default as LinkedinDarkIcon } from './LinkedinDarkIcon';
+export { default as LinkedinWhiteIcon } from './LinkedinWhiteIcon';
+export { default as MoonIcon } from './MoonIcon';
+export { default as PaperPlaneIcon } from './PaperPlaneIcon';
+export { default as SunIcon } from './SunIcon';
+export { default as WhatsappDarkIcon } from './WhatsappDarkIcon';
+export { default as WhatsappWhiteIcon } from './WhatsappWhiteIcon';
+export type { IconProps } from './IconProps';
