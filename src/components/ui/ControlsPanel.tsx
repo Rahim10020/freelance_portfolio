@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { accentThemes, type AccentTheme, useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -14,6 +15,30 @@ const accentPreviewStyles: Record<AccentTheme, string> = {
 export default function ControlsPanel() {
     const { theme, accentTheme, setAccentTheme, toggleTheme } = useTheme();
     const { language, setLanguage } = useLanguage();
+    const [isAccentPickerOpen, setIsAccentPickerOpen] = useState(false);
+    const accentPickerRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const handlePointerDown = (event: MouseEvent) => {
+            if (!accentPickerRef.current?.contains(event.target as Node)) {
+                setIsAccentPickerOpen(false);
+            }
+        };
+
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsAccentPickerOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handlePointerDown);
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+            document.removeEventListener('mousedown', handlePointerDown);
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, []);
 
     return (
         <div className="flex flex-wrap items-center gap-3">
@@ -42,20 +67,45 @@ export default function ControlsPanel() {
             </div>
 
             {/* Accent Color Picker */}
-            <div className="flex items-center gap-1 rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 p-1 shadow-lg">
-                {accentThemes.map((accent) => (
-                    <button
-                        key={accent}
-                        type="button"
-                        onClick={() => setAccentTheme(accent)}
-                        className={`h-7 w-7 rounded-full border-2 transition-all duration-300 ${accentPreviewStyles[accent]} ${accentTheme === accent
-                            ? 'scale-105 border-white dark:border-slate-900 shadow-md'
-                            : 'border-transparent opacity-75 hover:opacity-100 hover:cursor-pointer'
-                            }`}
-                        aria-label={`Set ${accent} as primary color`}
-                        title={accent}
+            <div ref={accentPickerRef} className="relative">
+                <button
+                    type="button"
+                    onClick={() => setIsAccentPickerOpen(prev => !prev)}
+                    className="flex items-center justify-center h-9 w-9 rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 shadow-lg hover:scale-110 hover:cursor-pointer transition-all duration-300"
+                    aria-haspopup="dialog"
+                    aria-expanded={isAccentPickerOpen}
+                    aria-label={`Current primary color: ${accentTheme}. Open color picker`}
+                    title={`Primary color: ${accentTheme}`}
+                >
+                    <span
+                        className={`h-6 w-6 rounded-full border-2 border-white/80 dark:border-slate-900 ${accentPreviewStyles[accentTheme]}`}
                     />
-                ))}
+                </button>
+
+                {isAccentPickerOpen && (
+                    <div
+                        role="dialog"
+                        aria-label="Choose primary color"
+                        className="absolute top-12 right-0 z-50 flex items-center gap-1 rounded-full bg-white dark:bg-slate-800/95 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 p-1.5 shadow-lg"
+                    >
+                        {accentThemes.map((accent) => (
+                            <button
+                                key={accent}
+                                type="button"
+                                onClick={() => {
+                                    setAccentTheme(accent);
+                                    setIsAccentPickerOpen(false);
+                                }}
+                                className={`h-7 w-7 rounded-full border-2 transition-all duration-300 ${accentPreviewStyles[accent]} ${accentTheme === accent
+                                    ? 'scale-105 border-white dark:border-slate-900 shadow-md'
+                                    : 'border-transparent opacity-75 hover:opacity-100 hover:cursor-pointer'
+                                    }`}
+                                aria-label={`Set ${accent} as primary color`}
+                                title={accent}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Theme Switcher */}
