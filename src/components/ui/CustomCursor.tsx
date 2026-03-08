@@ -127,9 +127,15 @@ export default function CustomCursor() {
 
     return (
         <div ref={cursorRef} className="custom-cursor" aria-hidden>
-            {cursorVariant === 'not-allowed' && <NotAllowIcon size={24} className="custom-cursor-icon" />}
-            {cursorVariant === 'pointer' && <PointerIcon size={24} className="custom-cursor-icon" />}
-            {cursorVariant === 'default' && <CursorIcon size={28} className="custom-cursor-icon" />}
+            <span className={`custom-cursor-glyph ${cursorVariant === 'default' ? 'is-active' : ''}`}>
+                <CursorIcon size={28} className="custom-cursor-icon" />
+            </span>
+            <span className={`custom-cursor-glyph ${cursorVariant === 'pointer' ? 'is-active' : ''}`}>
+                <PointerIcon size={24} className="custom-cursor-icon" />
+            </span>
+            <span className={`custom-cursor-glyph ${cursorVariant === 'not-allowed' ? 'is-active' : ''}`}>
+                <NotAllowIcon size={24} className="custom-cursor-icon" />
+            </span>
         </div>
     );
 }
