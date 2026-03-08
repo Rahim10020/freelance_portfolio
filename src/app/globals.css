@@ -5,6 +5,74 @@
 :root {
   --background: #0f172a;
   --foreground: #e2e8f0;
+
+  --accent-200: #99f6e4;
+  --accent-300: #5eead4;
+  --accent-400: #2dd4bf;
+  --accent-500: #14b8a6;
+  --accent-600: #0d9488;
+  --accent-700: #0f766e;
+  --accent-800: #115e59;
+
+  --accent-rgb: 20 184 166;
+  --accent-soft-rgb: 94 234 212;
+  --accent-bg-rgb: 13 148 136;
+}
+
+:root[data-accent='blue'] {
+  --accent-200: #bfdbfe;
+  --accent-300: #93c5fd;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+  --accent-800: #1e40af;
+
+  --accent-rgb: 59 130 246;
+  --accent-soft-rgb: 147 197 253;
+  --accent-bg-rgb: 37 99 235;
+}
+
+:root[data-accent='violet'] {
+  --accent-200: #ddd6fe;
+  --accent-300: #c4b5fd;
+  --accent-400: #a78bfa;
+  --accent-500: #8b5cf6;
+  --accent-600: #7c3aed;
+  --accent-700: #6d28d9;
+  --accent-800: #5b21b6;
+
+  --accent-rgb: 139 92 246;
+  --accent-soft-rgb: 196 181 253;
+  --accent-bg-rgb: 124 58 237;
+}
+
+:root[data-accent='amber'] {
+  --accent-200: #fde68a;
+  --accent-300: #fcd34d;
+  --accent-400: #fbbf24;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+  --accent-700: #b45309;
+  --accent-800: #92400e;
+
+  --accent-rgb: 245 158 11;
+  --accent-soft-rgb: 252 211 77;
+  --accent-bg-rgb: 217 119 6;
+}
+
+:root[data-accent='rose'] {
+  --accent-200: #fecdd3;
+  --accent-300: #fda4af;
+  --accent-400: #fb7185;
+  --accent-500: #f43f5e;
+  --accent-600: #e11d48;
+  --accent-700: #be123c;
+  --accent-800: #9f1239;
+
+  --accent-rgb: 244 63 94;
+  --accent-soft-rgb: 253 164 175;
+  --accent-bg-rgb: 225 29 72;
 }
 
 /* Light Mode Variables */
@@ -21,7 +89,6 @@
 
 * {
   scroll-behavior: smooth;
-  data-scroll-behavior: smooth;
 }
 
 body {
@@ -33,27 +100,27 @@ body {
 
 /* Dark Mode Styles */
 .dark {
-  --gradient-from: rgba(29, 78, 216, 0.15);
+  --gradient-from: rgb(var(--accent-rgb) / 0.15);
   --gradient-to: transparent;
   --card-hover-bg: rgba(15, 23, 42, 0.5);
   --border-color: rgba(148, 163, 184, 0.1);
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
-  --text-accent: #5eead4;
+  --text-accent: var(--accent-300);
   --scrollbar-track: #1e293b;
   --scrollbar-thumb: #475569;
   --scrollbar-thumb-hover: #64748b;
 }
 
-/* Light Mode Styles - Palette moderne et épurée */
+/* Light Mode Styles */
 .light {
-  --gradient-from: rgba(20, 184, 166, 0.05);
+  --gradient-from: rgb(var(--accent-rgb) / 0.05);
   --gradient-to: transparent;
   --card-hover-bg: rgba(240, 253, 250, 0.8);
-  --border-color: rgba(20, 184, 166, 0.15);
+  --border-color: rgb(var(--accent-rgb) / 0.15);
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-accent: #14b8a6;
+  --text-accent: var(--accent-500);
   --scrollbar-track: #f8fafc;
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-thumb-hover: #94a3b8;
@@ -77,28 +144,91 @@ body {
   background: var(--scrollbar-thumb-hover);
 }
 
-/* Selection color - Dark Mode */
+/* Selection color */
 .dark ::selection {
-  background-color: rgba(94, 234, 212, 0.3);
-  color: #5eead4;
+  background-color: rgb(var(--accent-soft-rgb) / 0.3);
+  color: var(--accent-300);
 }
 
-/* Selection color - Light Mode */
 .light ::selection {
-  background-color: rgba(20, 184, 166, 0.2);
+  background-color: rgb(var(--accent-rgb) / 0.2);
   color: #0f172a;
 }
 
-/* Focus visible styles - Dark Mode */
+/* Focus visible styles */
 .dark *:focus-visible {
-  outline: 2px solid #5eead4;
+  outline: 2px solid var(--accent-300);
   outline-offset: 2px;
 }
 
-/* Focus visible styles - Light Mode */
 .light *:focus-visible {
-  outline: 2px solid #14b8a6;
+  outline: 2px solid var(--accent-500);
   outline-offset: 2px;
+}
+
+/* Map existing teal utility classes to chosen accent */
+:where(
+    .text-teal-200,
+    .text-teal-300,
+    .text-teal-600,
+    .text-teal-700,
+    .text-teal-800,
+    .hover\:text-teal-700:hover,
+    .hover\:text-teal-800:hover,
+    .dark\:text-teal-200,
+    .dark\:text-teal-300,
+    .dark\:hover\:text-teal-200:hover,
+    .dark\:hover\:text-teal-300:hover,
+    .focus-visible\:text-teal-300:focus-visible,
+    .focus-visible\:text-teal-700:focus-visible,
+    .dark\:focus-visible\:text-teal-300:focus-visible
+  ) {
+  color: var(--text-accent) !important;
+}
+
+:where(
+    .bg-teal-500,
+    .hover\:bg-teal-700:hover,
+    .dark\:hover\:bg-teal-300:hover
+  ) {
+  background-color: rgb(var(--accent-bg-rgb)) !important;
+}
+
+:where(
+    .bg-teal-500\/20,
+    .bg-teal-400\/20,
+    .dark\:bg-teal-400\/20
+  ) {
+  background-color: rgb(var(--accent-rgb) / 0.2) !important;
+}
+
+:where(
+    .dark\:bg-teal-400\/10,
+    .bg-teal-400\/10
+  ) {
+  background-color: rgb(var(--accent-soft-rgb) / 0.1) !important;
+}
+
+:where(.hover\:shadow-teal-100\/50:hover) {
+  --tw-shadow-color: rgb(var(--accent-rgb) / 0.2) !important;
+}
+
+:where(
+    .focus\:border-teal-600:focus,
+    .dark\:focus\:border-teal-300:focus,
+    .focus\:ring-teal-600:focus,
+    .dark\:focus\:ring-teal-300:focus
+  ) {
+  border-color: var(--text-accent) !important;
+  --tw-ring-color: var(--text-accent) !important;
+}
+
+.group:hover .group-hover\:border-teal-700 {
+  border-color: var(--text-accent) !important;
+}
+
+.dark .group:hover .dark\:group-hover\:border-teal-300 {
+  border-color: var(--text-accent) !important;
 }
 
 /* Gradient effect with better performance */
@@ -108,9 +238,11 @@ body {
   inset: 0;
   z-index: 30;
   transition: opacity 0.3s ease;
-  background: radial-gradient(600px at var(--mouse-x, 0px) var(--mouse-y, 0px),
-      var(--gradient-from),
-      var(--gradient-to) 80%);
+  background: radial-gradient(
+    600px at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    var(--gradient-from),
+    var(--gradient-to) 80%
+  );
   will-change: background;
 }
 
@@ -119,4 +251,26 @@ body {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+html.reduced-motion {
+  scroll-behavior: auto;
+}
+
+html.reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+@media (max-width: 767px) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gradient-effect {
+    display: none;
+  }
 }

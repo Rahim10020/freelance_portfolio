@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -137,11 +138,13 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased`}>
         <ThemeProvider>
-          <LanguageProvider>
-            <div className="gradient-effect" />
-            {children}
-            <Analytics />
-          </LanguageProvider>
+          <SmoothScrollProvider>
+            <LanguageProvider>
+              <div className="gradient-effect" />
+              {children}
+              <Analytics />
+            </LanguageProvider>
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -4,6 +4,13 @@ import { useEffect } from 'react';
 
 export default function MouseEffect() {
     useEffect(() => {
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (isMobile || prefersReducedMotion) {
+            return;
+        }
+
         const handleMouseMove = (e: MouseEvent) => {
             const { clientX, clientY } = e;
             document.documentElement.style.setProperty('--mouse-x', `${clientX}px`);

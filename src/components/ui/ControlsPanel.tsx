@@ -1,14 +1,22 @@
 'use client';
 
-import { useTheme } from '@/contexts/ThemeContext';
+import { accentThemes, type AccentTheme, useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const accentPreviewStyles: Record<AccentTheme, string> = {
+    teal: 'bg-teal-500',
+    blue: 'bg-blue-500',
+    violet: 'bg-violet-500',
+    amber: 'bg-amber-500',
+    rose: 'bg-rose-500',
+};
+
 export default function ControlsPanel() {
-    const { theme, toggleTheme } = useTheme();
+    const { theme, accentTheme, setAccentTheme, toggleTheme } = useTheme();
     const { language, setLanguage } = useLanguage();
 
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
             {/* Language Switcher */}
             <div className="flex items-center gap-1 rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 p-1 shadow-lg">
                 <button
@@ -31,6 +39,23 @@ export default function ControlsPanel() {
                 >
                     FR
                 </button>
+            </div>
+
+            {/* Accent Color Picker */}
+            <div className="flex items-center gap-1 rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 p-1 shadow-lg">
+                {accentThemes.map((accent) => (
+                    <button
+                        key={accent}
+                        type="button"
+                        onClick={() => setAccentTheme(accent)}
+                        className={`h-7 w-7 rounded-full border-2 transition-all duration-300 ${accentPreviewStyles[accent]} ${accentTheme === accent
+                            ? 'scale-105 border-white dark:border-slate-900 shadow-md'
+                            : 'border-transparent opacity-75 hover:opacity-100 hover:cursor-pointer'
+                            }`}
+                        aria-label={`Set ${accent} as primary color`}
+                        title={accent}
+                    />
+                ))}
             </div>
 
             {/* Theme Switcher */}
