@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { CursorIcon } from '@/components/icons';
+import { CursorIcon, NotAllowIcon, PointerIcon } from '@/components/icons';
 
 const POINTER_QUERY = '(hover: hover) and (pointer: fine)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
@@ -21,6 +21,8 @@ const INTERACTIVE_SELECTOR = [
 
 export default function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement | null>(null);
+    const cursorVariantRef = useRef<'default' | 'pointer' | 'not-allowed'>('default');
+    const [cursorVariant, setCursorVariant] = useState<'default' | 'pointer' | 'not-allowed'>('default');
 
     useEffect(() => {
         if (typeof window === 'undefined' || !cursorRef.current) return;
@@ -61,11 +63,22 @@ export default function CustomCursor() {
                 opacityTo(1);
 
                 const target = event.target as Element | null;
-                const isInteractive = !!target?.closest(INTERACTIVE_SELECTOR);
+                const hoveredElement = target?.closest('*') as HTMLElement | null;
+                const computedCursor = hoveredElement ? window.getComputedStyle(hoveredElement).cursor : '';
+                const isNotAllowed = computedCursor.includes('not-allowed');
+                const isPointer = computedCursor.includes('pointer') || !!target?.closest(INTERACTIVE_SELECTOR);
+                const isInteractive = isNotAllowed || isPointer;
+
+                const nextVariant = isNotAllowed ? 'not-allowed' : isPointer ? 'pointer' : 'default';
+                if (cursorVariantRef.current !== nextVariant) {
+                    cursorVariantRef.current = nextVariant;
+                    setCursorVariant(nextVariant);
+                }
+
                 if (!isPressed) {
                     scaleTo(isInteractive ? 1.22 : 1);
                 }
-                rotateTo(isInteractive ? -12 : 0);
+                rotateTo(isNotAllowed ? 0 : isPointer ? -12 : 0);
             };
 
             const onMouseDown = () => {
@@ -93,6 +106,8 @@ export default function CustomCursor() {
                 window.removeEventListener('blur', onMouseLeaveViewport);
                 document.removeEventListener('mouseleave', onMouseLeaveViewport);
                 opacityTo(0);
+                cursorVariantRef.current = 'default';
+                setCursorVariant('default');
             };
         };
 
@@ -112,7 +127,9 @@ export default function CustomCursor() {
 
     return (
         <div ref={cursorRef} className="custom-cursor" aria-hidden>
-            <CursorIcon size={26} className="custom-cursor-icon" />
+            {cursorVariant === 'not-allowed' && <NotAllowIcon size={24} className="custom-cursor-icon" />}
+            {cursorVariant === 'pointer' && <PointerIcon size={24} className="custom-cursor-icon" />}
+            {cursorVariant === 'default' && <CursorIcon size={28} className="custom-cursor-icon" />}
         </div>
     );
 }
