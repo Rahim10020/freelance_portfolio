@@ -1,10 +1,14 @@
 export { default as CursorIcon } from './CursorIcon';
+export { default as FigmaIcon } from './FigmaIcon';
+export { default as GlobeIcon } from './GlobeIcon';
 export { default as GithubDarkIcon } from './GithubDarkIcon';
 export { default as GithubWhiteIcon } from './GithubWhiteIcon';
 export { default as InstagramDarkIcon } from './InstagramDarkIcon';
 export { default as InstagramWhiteIcon } from './InstagramWhiteIcon';
+export { default as LaptopIcon } from './LaptopIcon';
 export { default as LinkedinDarkIcon } from './LinkedinDarkIcon';
 export { default as LinkedinWhiteIcon } from './LinkedinWhiteIcon';
+export { default as MobileIcon } from './MobileIcon';
 export { default as MoonIcon } from './MoonIcon';
 export { default as NotAllowIcon } from './NotAllowIcon';
 export { default as PaperPlaneIcon } from './PaperPlaneIcon';
