@@ -1,14 +1,43 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const ribes = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ribes/Ribes-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ribes/Ribes-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ribes/Ribes-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-ribes",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+});
+
+const abordage = localFont({
+  src: [
+    {
+      path: "../../public/fonts/abordage/Abordage-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-abordage",
   display: "swap",
   fallback: ["system-ui", "sans-serif"],
 });
@@ -136,7 +165,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${ribes.variable} ${abordage.variable} antialiased`}>
         <ThemeProvider>
           <SmoothScrollProvider>
             <LanguageProvider>
