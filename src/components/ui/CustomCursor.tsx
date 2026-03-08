@@ -128,7 +128,7 @@ export default function CustomCursor() {
     return (
         <div ref={cursorRef} className="custom-cursor" aria-hidden>
             <span className={`custom-cursor-glyph ${cursorVariant === 'default' ? 'is-active' : ''}`}>
-                <CursorIcon size={28} className="custom-cursor-icon" />
+                <CursorIcon size={24} className="custom-cursor-icon" />
             </span>
             <span className={`custom-cursor-glyph ${cursorVariant === 'pointer' ? 'is-active' : ''}`}>
                 <PointerIcon size={24} className="custom-cursor-icon" />
