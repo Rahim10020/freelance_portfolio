@@ -53,8 +53,8 @@ export default function Contact() {
 
             <div className="space-y-6">
                 <div>
-                    <p className="text-slate-900 dark:text-slate-200">{t.contact.intro}</p>
-                    <p className="text-slate-600 dark:text-slate-400">
+                    <p className="font-display text-slate-900 dark:text-slate-200">{t.contact.intro}</p>
+                    <p className="font-display text-slate-600 dark:text-slate-400">
                         {t.contact.emailText}{' '}
                         <a
                             href="mailto:rahim100codeur@gmail.com"

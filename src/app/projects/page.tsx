@@ -73,10 +73,10 @@ export default function ProjectsArchive() {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl mb-4">
+                    <h1 className="font-sans text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl mb-4">
                         {t.projects.allProjects}
                     </h1>
-                    <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+                    <p className="font-display text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
                         {t.projects.archiveDescription}
 
                         A complete archive of projects I&apos;ve built over the years.

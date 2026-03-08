@@ -46,7 +46,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                         )}
                     </div>
                 </h3>
-                <p className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">{experience.description}</p>
+                <p className="font-display mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">{experience.description}</p>
                 <ul className="mt-2 flex flex-wrap gap-2">
                     {experience.technologies.map((tech) => (
                         <li key={tech}>

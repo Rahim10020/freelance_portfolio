@@ -88,7 +88,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         {getStatusBadge()}
                     </div>
                 )}
-                <p className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">{project.description}</p>
+                <p className="font-display mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">{project.description}</p>
                 {(project.links.github || project.links.live) && (
                     <div className="mt-4 flex gap-4 text-xs">
                         {project.links.github && (

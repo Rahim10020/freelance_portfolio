@@ -99,7 +99,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-p {
+.font-display {
   font-family: var(--font-display), var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
