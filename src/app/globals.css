@@ -252,6 +252,35 @@ h2 {
   will-change: background;
 }
 
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.custom-cursor-icon {
+  color: var(--text-accent);
+  filter: drop-shadow(0 6px 16px rgb(var(--accent-rgb) / 0.35));
+}
+
+html.custom-cursor-enabled,
+html.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+html.custom-cursor-enabled input[type='text'],
+html.custom-cursor-enabled input[type='email'],
+html.custom-cursor-enabled input[type='search'],
+html.custom-cursor-enabled input[type='password'],
+html.custom-cursor-enabled textarea {
+  cursor: text !important;
+}
+
 /* Ensure smooth transitions */
 * {
   transition-property: background-color, border-color, color, fill, stroke;
@@ -277,6 +306,10 @@ html.reduced-motion * {
   }
 
   .gradient-effect {
+    display: none;
+  }
+
+  .custom-cursor {
     display: none;
   }
 }

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const ribes = localFont({
   src: [
@@ -170,6 +171,7 @@ export default function RootLayout({
           <SmoothScrollProvider>
             <LanguageProvider>
               <div className="gradient-effect" />
+              <CustomCursor />
               {children}
               <Analytics />
             </LanguageProvider>
