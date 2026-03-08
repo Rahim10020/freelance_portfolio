@@ -3,8 +3,8 @@
 @variant dark (.dark &);
 
 :root {
-  --background: #13161b;
-  --foreground: #e2e8f0;
+  --background: #ffffff;
+  --foreground: #0f172a;
 
   --accent-200: #ffd1a3;
   --accent-300: #ffb266;
@@ -117,12 +117,6 @@
   --accent-bg-rgb: 212 84 36;
 }
 
-/* Light Mode Variables */
-.light {
-  --background: #ffffff;
-  --foreground: #0f172a;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -145,6 +139,8 @@ body {
 
 /* Dark Mode Styles */
 .dark {
+  --background: #13161b;
+  --foreground: #e2e8f0;
   --gradient-from: rgb(var(--accent-rgb) / 0.15);
   --gradient-to: transparent;
   --card-hover-bg: rgba(15, 23, 42, 0.5);
@@ -159,6 +155,8 @@ body {
 
 /* Light Mode Styles */
 .light {
+  --background: #ffffff;
+  --foreground: #0f172a;
   --gradient-from: rgb(var(--accent-rgb) / 0.05);
   --gradient-to: transparent;
   --card-hover-bg: rgba(240, 253, 250, 0.8);

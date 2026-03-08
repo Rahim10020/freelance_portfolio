@@ -127,9 +127,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeInitScript = `
+    (function () {
+      try {
+        var root = document.documentElement;
+        var savedTheme = localStorage.getItem('theme');
+        var theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        root.classList.remove('light', 'dark');
+        root.classList.add(theme);
+        root.style.colorScheme = theme;
+
+        var savedAccent = localStorage.getItem('accentTheme');
+        if (savedAccent) {
+          root.setAttribute('data-accent', savedAccent);
+        }
+      } catch (_) {}
+    })();
+  `;
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {/* Favicon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
