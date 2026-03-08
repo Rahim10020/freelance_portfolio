@@ -1,3 +1,5 @@
+export type ServiceIcon = 'globe' | 'mobile' | 'figma' | 'laptop';
+
 export interface Experience {
     id: string;
     period: string;
@@ -26,7 +28,7 @@ export interface Service {
     id: string;
     title: string;
     description: string;
-    icon: string;
+    icon: ServiceIcon;
     priceUSD: number;
     priceFCFA: number;
 }
