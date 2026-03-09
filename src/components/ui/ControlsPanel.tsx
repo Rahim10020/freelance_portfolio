@@ -51,7 +51,7 @@ export default function ControlsPanel() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       {/* Language Switcher */}
-      <div className="flex items-center rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 shadow-sm">
+      <div className="flex items-center rounded-full border border-slate-200 bg-white shadow-sm backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-800/90">
         <button
           onClick={() => setLanguage("en")}
           className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
@@ -76,20 +76,44 @@ export default function ControlsPanel() {
         </button>
       </div>
 
+      {/* Theme Switcher */}
+      <button
+        onClick={toggleTheme}
+        className="group relative flex h-6 w-6 items-center justify-center rounded-full shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:cursor-pointer"
+        aria-label="Toggle theme"
+      >
+        <SunIcon
+          size={24}
+          className={`absolute w-5 h-5 text-[var(--accent-300)] transition-all duration-500 ${
+            theme === "light"
+              ? "rotate-0 scale-100 opacity-100"
+              : "rotate-90 scale-0 opacity-0"
+          }`}
+        />
+        <MoonIcon
+          size={24}
+          className={`absolute w-5 h-5 text-[var(--accent-300)] transition-all duration-500 ${
+            theme === "dark"
+              ? "rotate-0 scale-100 opacity-100"
+              : "-rotate-90 scale-0 opacity-0"
+          }`}
+        />
+      </button>
+
       {/* Accent Color Picker */}
       <div ref={accentPickerRef} className="relative">
         <button
           type="button"
           onClick={() => setIsAccentPickerOpen((prev) => !prev)}
-          className="flex items-center justify-center rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 shadow-sm hover:scale-110 hover:cursor-pointer transition-all duration-300"
+          className="flex items-center ml-6 justify-center rounded-full shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:cursor-pointer"
           aria-haspopup="dialog"
           aria-expanded={isAccentPickerOpen}
-          aria-label={`Current primary color: ${accentTheme}. Open color picker`}
-          title={`Primary color: ${accentTheme}`}
+          aria-label="Open color picker"
+          title="Primary color"
         >
           <span
             className="h-6 w-6 rounded-full border-2 border-white/80 dark:border-slate-900"
-            style={{ backgroundColor: accentPreviewColors[accentTheme] }}
+            style={{ backgroundColor: "rgb(var(--accent-rgb))" }}
           />
         </button>
 
@@ -120,30 +144,6 @@ export default function ControlsPanel() {
           </div>
         )}
       </div>
-
-      {/* Theme Switcher */}
-      <button
-        onClick={toggleTheme}
-        className="group relative flex items-center rounded-full bg-white dark:bg-slate-800/90 backdrop-blur-sm shadow-sm hover:scale-110 hover:cursor-pointer transition-all duration-300"
-        aria-label="Toggle theme"
-      >
-        <SunIcon
-          size={16}
-          className={`absolute w-5 h-5 text-[var(--accent-300)] transition-all duration-500 ${
-            theme === "light"
-              ? "rotate-0 scale-100 opacity-100"
-              : "rotate-90 scale-0 opacity-0"
-          }`}
-        />
-        <MoonIcon
-          size={16}
-          className={`absolute w-5 h-5 text-[var(--accent-300)] transition-all duration-500 ${
-            theme === "dark"
-              ? "rotate-0 scale-100 opacity-100"
-              : "-rotate-90 scale-0 opacity-0"
-          }`}
-        />
-      </button>
     </div>
   );
 }
