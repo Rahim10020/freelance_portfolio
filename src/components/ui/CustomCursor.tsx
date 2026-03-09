@@ -18,6 +18,11 @@ const INTERACTIVE_SELECTOR = [
     'input[type="range"]',
     '[data-cursor="pointer"]',
 ].join(',');
+const TEXT_ENTRY_SELECTOR = [
+    'textarea',
+    '[contenteditable="true"]',
+    'input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="file"]):not([type="color"]):not([type="image"])',
+].join(',');
 
 export default function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement | null>(null);
@@ -60,9 +65,23 @@ export default function CustomCursor() {
             const onMouseMove = (event: MouseEvent) => {
                 xTo(event.clientX);
                 yTo(event.clientY);
-                opacityTo(1);
 
                 const target = event.target as Element | null;
+                const isTextEntry = !!target?.closest(TEXT_ENTRY_SELECTOR);
+                if (isTextEntry) {
+                    opacityTo(0);
+                    if (cursorVariantRef.current !== 'default') {
+                        cursorVariantRef.current = 'default';
+                        setCursorVariant('default');
+                    }
+                    if (!isPressed) {
+                        scaleTo(1);
+                    }
+                    rotateTo(0);
+                    return;
+                }
+
+                opacityTo(1);
                 const hoveredElement = target?.closest('*') as HTMLElement | null;
                 const computedCursor = hoveredElement ? window.getComputedStyle(hoveredElement).cursor : '';
                 const isNotAllowed = computedCursor.includes('not-allowed');
