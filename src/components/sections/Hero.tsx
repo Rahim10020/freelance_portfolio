@@ -1,32 +1,32 @@
-'use client';
+"use client";
 
-import { personalInfo } from '@/lib/data';
-import Navigation from '../ui/Navigation';
-import SocialLinks from '../ui/SocialLinks';
-import { useLanguage } from '@/contexts/LanguageContext';
-import ControlsPanel from '../ui/ControlsPanel';
+import { personalInfo } from "@/lib/data";
+import Navigation from "../ui/Navigation";
+import SocialLinks from "../ui/SocialLinks";
+import { useLanguage } from "@/contexts/LanguageContext";
+import ControlsPanel from "../ui/ControlsPanel";
 
 export default function Hero() {
-    const { t } = useLanguage();
+  const { t } = useLanguage();
 
-    return (
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-            <div>
-                <h1 className="font-sans text-4xl font-black tracking-tight text-slate-900 dark:text-slate-200 sm:text-5xl">
-                    {personalInfo.name}
-                </h1>
-                <h2 className="font-sans mt-3 text-lg font-medium tracking-tight text-slate-800 dark:text-slate-200 sm:text-xl">
-                    {t.hero.title}
-                </h2>
-                <p className="font-display mt-4 max-w-xs leading-normal text-slate-600 dark:text-slate-400">
-                    {t.hero.bio}
-                </p>
-                <Navigation />
-            </div>
-            <div className="flex flex-col md:flex-row gap-8 mt-8 lg:mt-16">
-                <ControlsPanel />
-                <SocialLinks />
-            </div>
-        </header>
-    );
+  return (
+    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+      <div>
+        <h1 className="font-sans text-4xl font-black tracking-tight text-slate-900 dark:text-slate-200 sm:text-5xl">
+          {personalInfo.name}
+        </h1>
+        <h2 className="font-sans mt-3 text-lg font-medium tracking-tight text-slate-800 dark:text-slate-200 sm:text-xl">
+          {t.hero.title}
+        </h2>
+        <p className="font-display mt-4 max-w-xs leading-normal text-slate-600 dark:text-slate-400">
+          {t.hero.bio}
+        </p>
+        <Navigation />
+      </div>
+      <div className="flex flex-col md:flex-row gap-8 mt-8 lg:mt-16">
+        <ControlsPanel />
+        <SocialLinks />
+      </div>
+    </header>
+  );
 }
