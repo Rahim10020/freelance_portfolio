@@ -3,11 +3,12 @@
 import SectionTitle from '../ui/SectionTitle';
 import ServiceCard from '../ui/ServiceCard';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Service } from '@/lib/types';
 
 export default function Services() {
     const { t } = useLanguage();
 
-    const services = [
+    const services: Service[] = [
         {
             id: '1',
             title: t.services.webDev.title,

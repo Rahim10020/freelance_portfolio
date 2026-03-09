@@ -5,18 +5,6 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-
-  --accent-200: #ffd1a3;
-  --accent-300: #ffb266;
-  --accent-400: #ff9a33;
-  --accent-500: #ff7d00;
-  --accent-600: #e66f00;
-  --accent-700: #b35600;
-  --accent-800: #804000;
-
-  --accent-rgb: 255 125 0;
-  --accent-soft-rgb: 255 178 102;
-  --accent-bg-rgb: 230 111 0;
 }
 
 :root[data-accent="clay"] {
@@ -59,20 +47,6 @@
   --accent-rgb: 193 18 31;
   --accent-soft-rgb: 224 137 144;
   --accent-bg-rgb: 174 16 28;
-}
-
-:root[data-accent="yellow"] {
-  --accent-200: #ffeb99;
-  --accent-300: #ffdf66;
-  --accent-400: #ffd533;
-  --accent-500: #ffc300;
-  --accent-600: #e6b000;
-  --accent-700: #b38800;
-  --accent-800: #806100;
-
-  --accent-rgb: 255 195 0;
-  --accent-soft-rgb: 255 223 102;
-  --accent-bg-rgb: 230 176 0;
 }
 
 :root[data-accent="blue"] {
@@ -155,7 +129,7 @@ body {
 
 /* Light Mode Styles */
 .light {
-  --background: #ffffff;
+  --background: #f5f5f5;
   --foreground: #0f172a;
   --gradient-from: rgb(var(--accent-rgb) / 0.05);
   --gradient-to: transparent;

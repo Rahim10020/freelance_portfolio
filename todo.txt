@@ -12,3 +12,4 @@ my primary colors:
     6- 0496ff - blue
     7- dbd56e - gingembre
     8- eb5e28 - orange + rouge
+    15616d

@@ -10,11 +10,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { MoonIcon, SunIcon } from "@/components/icons";
 
 const accentPreviewColors: Record<AccentTheme, string> = {
-  orange: "#ff7d00",
   clay: "#e07a5f",
   sage: "#81b29a",
   red: "#c1121f",
-  yellow: "#ffc300",
   blue: "#0496ff",
   ginger: "#dbd56e",
   sunset: "#eb5e28",
@@ -79,7 +77,7 @@ export default function ControlsPanel() {
       {/* Theme Switcher */}
       <button
         onClick={toggleTheme}
-        className="group relative flex h-6 w-6 items-center justify-center rounded-full shadow-sm backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:cursor-pointer"
+        className="group relative flex h-6 w-6 items-center justify-center rounded-full shadow-sm transition-all duration-300 hover:scale-110 hover:cursor-pointer"
         aria-label="Toggle theme"
       >
         <SunIcon
