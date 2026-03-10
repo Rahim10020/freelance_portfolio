@@ -89,21 +89,30 @@ export const en = {
     // Services Section
     services: {
         title: 'Services',
+        priceRangeLabel: 'Indicative range',
         webDev: {
             title: 'Web Development',
-            description: 'Building modern and responsive web applications using Django, Next.js, and React with clean architecture.',
+            description: 'Modern web apps with Django, Next.js & React.',
+            priceRangeUSD: '$500 – $2,000',
+            priceRangeFCFA: '300k – 1.2M FCFA',
         },
         mobileDev: {
             title: 'Mobile Development',
-            description: 'Creating cross-platform mobile apps with Flutter and native Android applications using Kotlin & Jetpack Compose.',
+            description: 'Flutter & native Android (Kotlin, Jetpack Compose).',
+            priceRangeUSD: '$800 – $2,500',
+            priceRangeFCFA: '480k – 1.5M FCFA',
         },
         uiux: {
             title: 'UI/UX Design',
-            description: 'Designing intuitive and engaging user interfaces with Figma, focusing on user experience and modern design patterns.',
+            description: 'Interfaces with Figma — clear, usable, on brand.',
+            priceRangeUSD: '$300 – $1,200',
+            priceRangeFCFA: '180k – 720k FCFA',
         },
         api: {
             title: 'API Development',
-            description: 'Developing robust RESTful APIs with Django REST Framework and implementing efficient backend solutions.',
+            description: 'RESTful APIs with Django — robust & maintainable.',
+            priceRangeUSD: '$400 – $1,500',
+            priceRangeFCFA: '240k – 900k FCFA',
         },
     },
 

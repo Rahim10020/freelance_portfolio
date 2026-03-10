@@ -36,12 +36,12 @@ export default function ServiceCard({
         {service.description}
       </p>
       {showPricing && (
-        <div className="mt-4 p-3 rounded-md">
-          <div className="text-lg font-bold text-[var(--text-accent)]">
-            ${service.priceUSD}
+        <div className="pt-4 border-t border-slate-400/30">
+          <div className="text-sm font-semibold text-[var(--text-accent)]">
+            {service.priceRangeUSD}
           </div>
-          <div className="text-sm text-slate-400">
-            {service.priceFCFA.toLocaleString()} FCFA
+          <div className="text-xs text-slate-400 mt-0.5">
+            {service.priceRangeFCFA}
           </div>
         </div>
       )}

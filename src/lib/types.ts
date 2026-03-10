@@ -17,8 +17,10 @@ export interface Service {
     title: string;
     description: string;
     icon: ServiceIcon;
-    priceUSD: number;
-    priceFCFA: number;
+    /** Indicative price range (USD) — string to avoid fixed scary numbers */
+    priceRangeUSD: string;
+    /** Indicative price range (FCFA) */
+    priceRangeFCFA: string;
 }
 
 export interface SocialLink {
