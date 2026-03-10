@@ -82,10 +82,9 @@ export default function ProjectsArchive() {
           <h1 className="font-sans text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4">
             {t.projects.allProjects}
           </h1>
-          <p className="font-display text-lg text-slate-400 max-w-2xl">
-            {t.projects.archiveDescription}A complete archive of projects
-            I&apos;ve built over the years.
-          </p>
+            <p className="font-display text-lg text-slate-400 max-w-2xl">
+              {t.projects.archiveDescription}
+            </p>
           {/* Filter Buttons */}
           <div className="flex flex-wrap gap-2 mt-8">
             {(["all", "completed", "in-progress", "upcoming"] as const).map(
