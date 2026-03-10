@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const sectionIds = ['about', 'experience', 'projects', 'services', 'contact'] as const;
+const sectionIds = ['about', 'projects', 'services', 'contact'] as const;
 
 export default function Navigation() {
     const [activeSection, setActiveSection] = useState('about');
@@ -40,7 +40,6 @@ export default function Navigation() {
 
     const sections = [
         { id: 'about', label: t.nav.about },
-        { id: 'experience', label: t.nav.experience },
         { id: 'projects', label: t.nav.projects },
         { id: 'services', label: t.nav.services },
         { id: 'contact', label: t.nav.contact },

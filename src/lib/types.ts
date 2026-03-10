@@ -1,15 +1,5 @@
 export type ServiceIcon = 'globe' | 'mobile' | 'figma' | 'laptop';
 
-export interface Experience {
-    id: string;
-    period: string;
-    title: string;
-    company: string;
-    description: string;
-    technologies: string[];
-    link?: string;
-}
-
 export interface Project {
     id: string;
     title: string;

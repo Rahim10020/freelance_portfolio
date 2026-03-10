@@ -1,4 +1,4 @@
-import { Experience, Project, Service, SocialLink } from './types';
+import { Project, Service, SocialLink } from './types';
 
 export const personalInfo = {
     name: 'Rahim ALI',
@@ -72,42 +72,6 @@ export const services: Service[] = [
         icon: 'laptop',
         priceUSD: 1200,
         priceFCFA: 720000,
-    },
-];
-
-export const experiences: Experience[] = [
-    {
-        id: '1',
-        period: '2025 — PRESENT',
-        title: 'Intermediate Software Developer',
-        company: '',
-        description: 'Developed cross-platform mobile applications using Flutter and native Android apps with Kotlin. Collaborated with design team to implement pixel-perfect UI/UX. Integrated RESTful APIs and implemented offline-first architecture.',
-        technologies: ['Flutter', 'Kotlin', 'Firebase', 'REST API', 'Git'],
-        link: 'https://rahim-ali-dev.vercel.app/',
-    },
-    {
-        id: '2',
-        period: '2024 — 2025',
-        title: 'Junior Software Developer',
-        company: '',
-        description: 'Developed dynamic web applications with robust Django backends, styled with Tailwind CSS and built with Next.js for the frontend. I also developed my first mobile application using Kotlin, and later worked with Flutter to build cross-platform apps.',
-        technologies: ['Next js', 'Tailwind css', 'Kotlin', 'Flutter', 'Firebase', 'REST API', 'Git'],
-    },
-    {
-        id: '3',
-        period: '2023 — 2024',
-        title: 'Frontend Developer',
-        company: '',
-        description: 'Learned Java and developed a desktop application for academic purposes, as well as several static websites with clean and modern designs using css.',
-        technologies: ['HTML 5', 'CSS 3', 'JavaScript', 'React', 'Python', 'Java',],
-    },
-    {
-        id: '4',
-        period: '2022 — 2023',
-        title: 'Beginner in Software Developement',
-        company: '',
-        description: 'Graduated with a Science Baccalaureate (Series C, Honors) and pursued Software Engineering at the Polytechnic School of Lomé, where I learned the basics of programming.',
-        technologies: ['HTML 5', 'CSS 3', 'C', 'C++', 'Python', 'JavaScript'],
     },
 ];
 
