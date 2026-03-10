@@ -5,6 +5,7 @@ import Navigation from "../ui/Navigation";
 import SocialLinks from "../ui/SocialLinks";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ControlsPanel from "../ui/ControlsPanel";
+import AnimatedLetters from "../ui/AnimatedLetters";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -12,9 +13,11 @@ export default function Hero() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div>
-        <h1 className="font-sans text-4xl font-black tracking-tight text-slate-200 sm:text-5xl">
-          {personalInfo.name}
-        </h1>
+        <AnimatedLetters
+          as="h1"
+          text={personalInfo.name}
+          className="font-sans text-4xl font-black tracking-tight text-slate-200 sm:text-5xl"
+        />
         <h2 className="font-sans mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
           {t.hero.title}
         </h2>

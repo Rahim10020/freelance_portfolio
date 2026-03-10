@@ -21,6 +21,8 @@ export interface Service {
     priceRangeUSD: string;
     /** Indicative price range (FCFA) */
     priceRangeFCFA: string;
+    /** Optional label above ranges (UI) */
+    priceRangeLabel?: string;
 }
 
 export interface SocialLink {
