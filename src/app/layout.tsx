@@ -131,13 +131,9 @@ export default function RootLayout({
     (function () {
       try {
         var root = document.documentElement;
-        var savedTheme = localStorage.getItem('theme');
-        var theme = savedTheme === 'light' || savedTheme === 'dark'
-          ? savedTheme
-          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         root.classList.remove('light', 'dark');
-        root.classList.add(theme);
-        root.style.colorScheme = theme;
+        root.classList.add('dark');
+        root.style.colorScheme = 'dark';
 
         var savedAccent = localStorage.getItem('accentTheme');
         if (savedAccent) {

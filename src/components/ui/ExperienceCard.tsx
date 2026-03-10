@@ -7,21 +7,21 @@ interface ExperienceCardProps {
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   const content = (
     <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-white/50 dark:lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
+      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
 
-      <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-500 sm:col-span-2">
+      <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
         {experience.period}
       </header>
 
       <div className="z-10 sm:col-span-6">
-        <h3 className="font-medium leading-snug text-slate-900 dark:text-slate-200">
+        <h3 className="font-medium leading-snug text-slate-200">
           <div>
             {experience.link ? (
               <a
                 href={experience.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] dark:focus-visible:text-[var(--text-accent)] group/link text-base"
+                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
               >
                 <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
                 <span>
@@ -46,7 +46,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             )}
           </div>
         </h3>
-        <p className="font-display mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400">
+        <p className="font-display mt-2 text-sm leading-normal text-slate-400">
           {experience.description}
         </p>
         <ul className="mt-2 flex flex-wrap gap-2">

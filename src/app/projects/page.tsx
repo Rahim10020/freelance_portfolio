@@ -25,7 +25,7 @@ export default function ProjectsArchive() {
       case "in-progress":
         return (
           <span
-            className={`${baseClasses} bg-green-500/20 text-green-700 dark:bg-green-400/10 dark:text-green-300`}
+            className={`${baseClasses} bg-green-400/10 text-green-300`}
           >
             {statusText}
           </span>
@@ -33,7 +33,7 @@ export default function ProjectsArchive() {
       case "upcoming":
         return (
           <span
-            className={`${baseClasses} bg-blue-500/20 text-blue-700 dark:bg-blue-400/10 dark:text-blue-300`}
+            className={`${baseClasses} bg-blue-400/10 text-blue-300`}
           >
             {statusText}
           </span>
@@ -52,7 +52,7 @@ export default function ProjectsArchive() {
           <div className="flex items-center justify-between">
             <Link
               href="/"
-              className="group inline-flex items-center font-semibold leading-tight text-[var(--text-accent)] dark:text-[var(--text-accent)] hover:text-[var(--text-accent)]"
+              className="group inline-flex items-center font-semibold leading-tight text-[var(--text-accent)] hover:text-[var(--text-accent)]"
             >
               <svg
                 className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
@@ -79,10 +79,10 @@ export default function ProjectsArchive() {
 
         {/* Header */}
         <div className="mb-16">
-          <h1 className="font-sans text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl mb-4">
+          <h1 className="font-sans text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4">
             {t.projects.allProjects}
           </h1>
-          <p className="font-display text-lg text-slate-600 dark:text-slate-400 max-w-2xl">
+          <p className="font-display text-lg text-slate-400 max-w-2xl">
             {t.projects.archiveDescription}A complete archive of projects
             I&apos;ve built over the years.
           </p>
@@ -96,7 +96,7 @@ export default function ProjectsArchive() {
                   className={`px-4 py-2 rounded-full cursor-pointer text-sm font-medium transition-colors ${
                     activeFilter === filter
                       ? "bg-[rgb(var(--accent-bg-rgb))] text-white"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+                      : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                   }`}
                 >
                   {t.projects.filters[filter]}
@@ -109,18 +109,18 @@ export default function ProjectsArchive() {
         {/* Projects Table */}
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
-            <thead className="sticky top-0 z-10 transition motion-reduce:transition-none bg-white/50 dark:bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.2)] dark:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg">
+            <thead className="sticky top-0 z-10 transition motion-reduce:transition-none bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:drop-shadow-lg">
               <tr>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200">
+                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
                   {t.projects.tableHeaders.year}
                 </th>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200">
+                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
                   {t.projects.tableHeaders.project}
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200 lg:table-cell">
+                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
                   {t.projects.tableHeaders.builtWith}
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-900 dark:text-slate-200 sm:table-cell">
+                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 sm:table-cell">
                   {t.projects.tableHeaders.link}
                 </th>
               </tr>
@@ -155,7 +155,7 @@ export default function ProjectsArchive() {
                               href={mainLink}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
+                              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
                             >
                               <span className="inline-block">
                                 {project.title}
@@ -177,7 +177,7 @@ export default function ProjectsArchive() {
                           )}
                           {getStatusBadge(project.status)}
                         </div>
-                        <div className="mt-2 text-sm leading-normal text-slate-600 dark:text-slate-400 font-normal">
+                        <div className="mt-2 text-sm leading-normal text-slate-400 font-normal">
                           {project.description}
                         </div>
                       </td>
@@ -205,7 +205,7 @@ export default function ProjectsArchive() {
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-600 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
+                              className="text-slate-400 hover:text-[var(--text-accent)] transition-colors"
                               aria-label={t.projects.ariaLabels.github}
                             >
                               <svg
@@ -222,7 +222,7 @@ export default function ProjectsArchive() {
                               href={project.links.live}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-600 dark:text-slate-400 hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors"
+                              className="text-slate-400 hover:text-[var(--text-accent)] transition-colors"
                               aria-label={t.projects.ariaLabels.liveDemo}
                             >
                               <svg

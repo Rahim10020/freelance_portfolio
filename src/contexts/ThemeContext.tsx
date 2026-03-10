@@ -8,7 +8,6 @@ import {
   ReactNode,
 } from "react";
 
-type Theme = "dark" | "light";
 export type AccentTheme =
   | "clay"
   | "sage"
@@ -27,32 +26,11 @@ export const accentThemes: AccentTheme[] = [
 ];
 
 interface ThemeContextType {
-  theme: Theme;
   accentTheme: AccentTheme;
-  toggleTheme: () => void;
   setAccentTheme: (accent: AccentTheme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
-  }
-
-  if (document.documentElement.classList.contains("dark")) {
-    return "dark";
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-}
 
 function getInitialAccentTheme(): AccentTheme {
   if (typeof window === "undefined") {
@@ -71,7 +49,6 @@ function getInitialAccentTheme(): AccentTheme {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [accentTheme, setAccentTheme] = useState<AccentTheme>(
     getInitialAccentTheme,
   );
@@ -86,10 +63,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     const root = document.documentElement;
     root.classList.remove("light", "dark");
-    root.classList.add(theme);
-    root.style.colorScheme = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme, mounted]);
+    root.classList.add("dark");
+    root.style.colorScheme = "dark";
+  }, [mounted]);
 
   useEffect(() => {
     if (!mounted || typeof window === "undefined") return;
@@ -99,14 +75,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("accentTheme", accentTheme);
   }, [accentTheme, mounted]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
-
   const value = {
-    theme,
     accentTheme,
-    toggleTheme,
     setAccentTheme,
   };
 

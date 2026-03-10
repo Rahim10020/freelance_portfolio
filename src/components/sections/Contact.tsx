@@ -53,12 +53,12 @@ export default function Contact() {
 
             <div className="space-y-6">
                 <div>
-                    <p className="font-display text-slate-900 dark:text-slate-200">{t.contact.intro}</p>
-                    <p className="font-display text-slate-600 dark:text-slate-400">
+                    <p className="font-display text-slate-200">{t.contact.intro}</p>
+                    <p className="font-display text-slate-400">
                         {t.contact.emailText}{' '}
                         <a
                             href="mailto:rahim100codeur@gmail.com"
-                            className="text-[var(--text-accent)] dark:text-[var(--text-accent)] hover:text-[var(--text-accent)] dark:hover:text-[var(--text-accent)] transition-colors font-medium"
+                            className="text-[var(--text-accent)] hover:text-[var(--text-accent)] transition-colors font-medium"
                         >
                             rahim100codeur@gmail.com
                         </a>
@@ -74,7 +74,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.name}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
                         />
                     </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.subject}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
                         />
                     </div>
 
@@ -98,7 +98,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder={t.contact.form.email}
                             required
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
                         />
                     </div>
 
@@ -110,23 +110,23 @@ export default function Contact() {
                             placeholder={t.contact.form.message}
                             required
                             rows={6}
-                            className="w-full px-4 py-2 bg-white dark:bg-slate-800/50 rounded-lg text-slate-900 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors resize-none border border-slate-200 dark:border-transparent"
+                            className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors resize-none border border-transparent"
                         />
                     </div>
 
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] dark:bg-slate-200 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] dark:hover:bg-slate-300 hover:text-white dark:hover:text-slate-900 hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-white font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-white hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {status === 'sending' ? t.contact.form.sending : status === 'success' ? t.contact.form.sent : t.contact.form.send}
                     </button>
 
                     {status === 'success' && (
-                        <p className="text-[var(--text-accent)] dark:text-[var(--text-accent)] text-sm">{t.contact.form.success}</p>
+                        <p className="text-[var(--text-accent)] text-sm">{t.contact.form.success}</p>
                     )}
                     {status === 'error' && (
-                        <p className="text-red-600 dark:text-red-400 text-sm">{t.contact.form.error}</p>
+                        <p className="text-red-400 text-sm">{t.contact.form.error}</p>
                     )}
                 </form>
             </div>
