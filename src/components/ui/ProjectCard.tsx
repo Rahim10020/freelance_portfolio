@@ -8,6 +8,9 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const { t } = useLanguage();
+    const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
+    const title = projectTr?.title ?? '';
+    const description = projectTr?.description ?? '';
     const hasLink = project.links.github || project.links.live;
     const mainLink = project.links.live || project.links.github;
 
@@ -44,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <div className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30">
                         <Image
                             src={project.image}
-                            alt={project.title}
+                            alt={title}
                             width={400}
                             height={300}
                             className="rounded"
@@ -65,7 +68,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         >
                             <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
                             <span>
-                                {project.title}
+                                {title}
                                 <svg
                                     className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
                                     viewBox="0 0 20 20"
@@ -80,7 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                             </span>
                         </a>
                     ) : (
-                        <span className="text-base">{project.title}</span>
+                        <span className="text-base">{title}</span>
                     )}
                 </h3>
                 {getStatusBadge() && (
@@ -88,7 +91,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         {getStatusBadge()}
                     </div>
                 )}
-                <p className="font-display mt-2 text-sm leading-normal text-slate-400">{project.description}</p>
+                <p className="font-display mt-2 text-sm leading-normal text-slate-400">{description}</p>
                 {(project.links.github || project.links.live) && (
                     <div className="mt-4 flex gap-4 text-xs">
                         {project.links.github && (

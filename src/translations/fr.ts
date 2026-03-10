@@ -50,6 +50,40 @@ export const fr = {
             github: 'GitHub',
             liveDemo: 'Démo en Direct',
         },
+        list: {
+            '1': {
+                title: 'Essence Togo',
+                description: 'Application mobile Kotlin avec Jetpack Compose pour trouver rapidement les stations-service à proximité sur une carte. Rapide, simple et conviviale.',
+            },
+            '2': {
+                title: 'Focusly-work - Application Pomodoro',
+                description: 'Une application de timer Pomodoro moderne et complète pour rester concentré et productif en utilisant la technique Pomodoro.',
+            },
+            '3': {
+                title: 'DocStore - Documents pour l\'Université de Lomé',
+                description: 'Un site qui met à disposition des visiteurs des documents et ressources pour l\'Université de Lomé, toutes écoles et facultés confondues.',
+            },
+            '4': {
+                title: 'Togo Stay - Location d\'appartements',
+                description: 'Un site permettant aux Togolais de trouver et louer facilement des appartements, tout en offrant aux propriétaires la possibilité de publier leurs annonces.',
+            },
+            '5': {
+                title: 'PixelPulse - Blog pour Développeurs',
+                description: 'Une plateforme de blog moderne pour développeurs, créateurs de contenu et passionnés de tech. Partage de connaissances, d\'articles et interaction avec une communauté grandissante.',
+            },
+            '6': {
+                title: 'Togo-xiwo',
+                description: 'Application mobile pour découvrir les marchés du Togo, leurs spécialités, trouver les marchés à proximité et passer des commandes.',
+            },
+            '7': {
+                title: 'Portify - Créateur de portfolios',
+                description: 'Plateforme Portify pour créer des portfolios professionnels en quelques minutes. Sans code.',
+            },
+            '8': {
+                title: 'Atomic Habits',
+                description: 'Application de suivi d\'habitudes basée sur la méthodologie Atomic Habits de James Clear. Construisez de meilleures habitudes avec les 4 lois du changement de comportement.',
+            },
+        },
     },
 
     // Services Section

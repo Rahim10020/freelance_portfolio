@@ -50,6 +50,40 @@ export const en = {
             github: 'GitHub',
             liveDemo: 'Live Demo',
         },
+        list: {
+            '1': {
+                title: 'Essence Togo',
+                description: 'A Kotlin mobile app built with Jetpack Compose that helps users quickly find nearby gas stations on a map. Fast, simple, and user-friendly.',
+            },
+            '2': {
+                title: 'Focusly-work - Pomodoro Productivity App',
+                description: 'A modern, feature-rich Pomodoro timer application designed to help you stay focused and productive using the proven Pomodoro Technique.',
+            },
+            '3': {
+                title: 'DocStore - Documents for Lome University',
+                description: 'A website that provides visitors with documents and resources for the University of Lomé, covering all schools and faculties.',
+            },
+            '4': {
+                title: 'Togo Stay - Apartment Booking Website',
+                description: 'A website that allows Togolese people to easily find and rent apartments, while also offering owners the opportunity to publish their rental advertisements.',
+            },
+            '5': {
+                title: 'PixelPulse - Blog Platform for Developers',
+                description: 'A modern blog platform designed for developers, content creators, and technology enthusiasts. It offers a rich ecosystem for sharing knowledge, technology insights, and interacting with a growing community.',
+            },
+            '6': {
+                title: 'Togo-xiwo',
+                description: "Mobile application to discover Togo's markets, their specialties, find nearby markets and place orders.",
+            },
+            '7': {
+                title: 'Portify - Portfolio Builder',
+                description: 'Portify - Portfolio Builder Platform. Create professional portfolios in minutes. No coding required.',
+            },
+            '8': {
+                title: 'Atomic Habits',
+                description: "A habit tracking application based on James Clear's Atomic Habits methodology. Build better habits using the 4 Laws of Behavior Change.",
+            },
+        },
     },
 
     // Services Section

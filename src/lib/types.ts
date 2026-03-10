@@ -2,8 +2,6 @@ export type ServiceIcon = 'globe' | 'mobile' | 'figma' | 'laptop';
 
 export interface Project {
     id: string;
-    title: string;
-    description: string;
     technologies: string[];
     image?: string;
     status?: 'completed' | 'in-progress' | 'upcoming';

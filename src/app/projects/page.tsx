@@ -137,6 +137,9 @@ export default function ProjectsArchive() {
                   const year = new Date().getFullYear() - Math.floor(index / 2);
                   const hasLink = project.links.github || project.links.live;
                   const mainLink = project.links.live || project.links.github;
+                  const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
+                  const title = projectTr?.title ?? '';
+                  const description = projectTr?.description ?? '';
 
                   return (
                     <tr
@@ -158,7 +161,7 @@ export default function ProjectsArchive() {
                               className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
                             >
                               <span className="inline-block">
-                                {project.title}
+                                {title}
                                 <svg
                                   className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
                                   viewBox="0 0 20 20"
@@ -173,12 +176,12 @@ export default function ProjectsArchive() {
                               </span>
                             </a>
                           ) : (
-                            <span>{project.title}</span>
+                            <span>{title}</span>
                           )}
                           {getStatusBadge(project.status)}
                         </div>
                         <div className="mt-2 text-sm leading-normal text-slate-400 font-normal">
-                          {project.description}
+                          {description}
                         </div>
                       </td>
                       <td className="hidden py-4 pr-4 align-top lg:table-cell">
