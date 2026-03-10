@@ -13,5 +13,3 @@ my primary colors:
     7- dbd56e - gingembre
     8- eb5e28 - orange + rouge
     15616d
-
-    je vais supprimer le light mode du site.
