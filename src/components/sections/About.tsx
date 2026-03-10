@@ -12,11 +12,11 @@ export default function About() {
     return (
         <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
             <SectionTitle>{t.about.title}</SectionTitle>
-            <div className="space-y-4 text-slate-400 leading-relaxed mb-8">
-                <p className="font-display">
+            <div className="space-y-4 text-slate-400 mb-8">
+                <p className="text-body font-display">
                     {t.about.paragraph1}
                 </p>
-                <p className="font-display">
+                <p className="text-body font-display">
                     {t.about.paragraph2}
                 </p>
             </div>

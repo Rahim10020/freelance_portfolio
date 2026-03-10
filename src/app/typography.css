@@ -1,0 +1,24 @@
+/* Centralized typography tokens (edit sizes here) */
+
+:root {
+  /* Body paragraphs */
+  --fs-body: 1.0625rem; /* 17px */
+  --lh-body: 1.65;
+
+  /* Section titles (uppercase) */
+  --fs-section-title: 0.875rem; /* 14px */
+  --lh-section-title: 1.2;
+  --tracking-section-title: 0.18em;
+}
+
+.text-body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.section-title {
+  font-size: var(--fs-section-title);
+  line-height: var(--lh-section-title);
+  letter-spacing: var(--tracking-section-title);
+}
+
