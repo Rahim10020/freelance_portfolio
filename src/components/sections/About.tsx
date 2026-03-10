@@ -1,8 +1,10 @@
 'use client';
 
 import SectionTitle from '../ui/SectionTitle';
+import ArchiveLink from '../ui/ArchiveLink';
 import Skills from './Skills';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { personalInfo } from '@/lib/data';
 
 export default function About() {
     const { t } = useLanguage();
@@ -17,6 +19,13 @@ export default function About() {
                 <p className="font-display">
                     {t.about.paragraph2}
                 </p>
+            </div>
+            <div className="mb-8">
+                <ArchiveLink
+                    href={personalInfo.resumeUrl}
+                    text={t.about.viewResume}
+                    isExternal
+                />
             </div>
             <Skills />
         </section>

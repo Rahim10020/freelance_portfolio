@@ -5,6 +5,7 @@ export const personalInfo = {
     title: 'Software Developer',
     bio: "I design and code beautifully simple things that make the web feel intuitive and alive — and I genuinely love what I do.",
     email: 'rahim100codeur@gmail.com',
+    resumeUrl: 'https://rahim-ali-dev.vercel.app/', // Replace with your CV/resume PDF or page URL
 };
 
 export const socialLinks: SocialLink[] = [
