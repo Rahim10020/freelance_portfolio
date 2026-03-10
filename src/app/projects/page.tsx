@@ -5,6 +5,7 @@ import { useState } from "react";
 import { projects } from "@/lib/data";
 import MouseEffect from "@/components/ui/MouseEffect";
 import ControlsPanel from "@/components/ui/ControlsPanel";
+import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ProjectsArchive() {
@@ -79,9 +80,11 @@ export default function ProjectsArchive() {
 
         {/* Header */}
         <div className="mb-16">
-          <h1 className="font-sans text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4">
-            {t.projects.allProjects}
-          </h1>
+          <AnimatedLetters
+            as="h1"
+            text={t.projects.allProjects}
+            className="font-sans text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl mb-4"
+          />
             <p className="font-display text-lg text-slate-400 max-w-2xl">
               {t.projects.archiveDescription}
             </p>
