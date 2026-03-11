@@ -13,8 +13,3 @@ my primary colors:
     7- dbd56e - gingembre
     8- eb5e28 - orange + rouge
     15616d
-
-Dans le bouton pour envoyer une message, je vois qu'il ya un espace visible qui montre qu'il ya un truc la bas
- pour l'icone paper plane mais moi je veux pas ca. 
-je veux que le texte sois bien centre dans le bouton mais que ca bouge vers la 
-gauche de maniere smooth lors du hover pour laisser de la place a l'icone qui va arriver de la droite de maniere smooth aussi
