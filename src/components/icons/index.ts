@@ -11,7 +11,6 @@ export { default as LinkedinDarkIcon } from './LinkedinDarkIcon';
 export { default as LinkedinWhiteIcon } from './LinkedinWhiteIcon';
 export { default as MobileIcon } from './MobileIcon';
 export { default as NotAllowIcon } from './NotAllowIcon';
-export { default as PaperPlaneIcon } from './PaperPlaneIcon';
 export { default as PointerIcon } from './PointerIcon';
 export { default as WhatsappDarkIcon } from './WhatsappDarkIcon';
 export { default as WhatsappWhiteIcon } from './WhatsappWhiteIcon';

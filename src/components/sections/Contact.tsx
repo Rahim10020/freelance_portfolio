@@ -3,7 +3,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import SectionTitle from "../ui/SectionTitle";
-import { PaperPlaneIcon } from "@/components/icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
@@ -68,7 +67,7 @@ export default function Contact() {
             {t.contact.emailText}{" "}
             <a
               href="mailto:rahim100codeur@gmail.com"
-              className="text-[var(--text-accent)] hover:text-[var(--text-accent)] transition-colors font-medium"
+              className="text-[var(--text-accent)] font-medium transition-colors hover:text-[var(--text-accent)]"
             >
               rahim100codeur@gmail.com
             </a>
@@ -84,7 +83,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={t.contact.form.name}
               required
-              className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
+              className="w-full rounded-lg border border-transparent bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
             />
           </div>
 
@@ -96,7 +95,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={t.contact.form.subject}
               required
-              className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
+              className="w-full rounded-lg border border-transparent bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
             />
           </div>
 
@@ -108,7 +107,7 @@ export default function Contact() {
               onChange={handleChange}
               placeholder={t.contact.form.email}
               required
-              className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors border border-transparent"
+              className="w-full rounded-lg border border-transparent bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
             />
           </div>
 
@@ -120,46 +119,31 @@ export default function Contact() {
               placeholder={t.contact.form.message}
               required
               rows={6}
-              className="w-full px-4 py-2 bg-slate-800/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[var(--text-accent)] focus:ring-1 focus:ring-[var(--text-accent)] transition-colors resize-none border border-transparent"
+              className="w-full resize-none rounded-lg border border-transparent bg-slate-800/50 px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
             />
           </div>
 
           <button
             type="submit"
             disabled={status === "sending"}
-            className="group relative inline-flex items-center justify-center overflow-hidden px-5 py-2 bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)] font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-[var(--on-primary-text)] hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center rounded-lg bg-[rgb(var(--accent-bg-rgb))] px-5 py-2 font-medium text-[var(--on-primary-text)] transition-all duration-300 hover:cursor-pointer hover:bg-[rgb(var(--accent-rgb))] hover:text-[var(--on-primary-text)] disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <span
-              className={`transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                status === "sending"
-                  ? "-translate-x-3"
-                  : "group-hover:-translate-x-3 group-focus-visible:-translate-x-3"
-              }`}
-            >
+            <span>
               {status === "sending"
                 ? t.contact.form.sending
                 : status === "success"
                   ? t.contact.form.sent
                   : t.contact.form.send}
             </span>
-            <PaperPlaneIcon
-              size={24}
-              aria-hidden
-              className={`absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                status === "sending"
-                  ? "contact-plane-fly opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
-              }`}
-            />
           </button>
 
           {status === "success" && (
-            <p className="text-[var(--text-accent)] text-sm">
+            <p className="text-sm text-[var(--text-accent)]">
               {t.contact.form.success}
             </p>
           )}
           {status === "error" && (
-            <p className="text-red-400 text-sm">{t.contact.form.error}</p>
+            <p className="text-sm text-red-400">{t.contact.form.error}</p>
           )}
         </form>
       </div>
