@@ -11,6 +11,7 @@ export default function Navigation() {
     const { t } = useLanguage();
     const lineRefs = useRef<Record<string, HTMLSpanElement | null>>({});
     const prevActiveRef = useRef<string | null>(null);
+    const skipNextActiveAnimationRef = useRef(false);
 
     const canAnimate = useMemo(() => {
         if (typeof window === 'undefined') return false;
@@ -89,6 +90,18 @@ export default function Navigation() {
             return;
         }
 
+        if (skipNextActiveAnimationRef.current) {
+            for (const id of sectionIds) {
+                const el = lineRefs.current[id];
+                if (!el) continue;
+                gsap.killTweensOf(el);
+                gsap.set(el, { width: activeSection === id ? ACTIVE_W : BASE_W });
+            }
+            prevActiveRef.current = activeSection;
+            skipNextActiveAnimationRef.current = false;
+            return;
+        }
+
         const prev = prevActiveRef.current;
         if (prev && prev !== activeSection) {
             animateLineToBase(prev);
@@ -98,6 +111,7 @@ export default function Navigation() {
     }, [activeSection, canAnimate]);
 
     const scrollToSection = (id: string) => {
+        skipNextActiveAnimationRef.current = true;
         setActiveSection(id);
 
         const element = document.getElementById(id);
