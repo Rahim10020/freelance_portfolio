@@ -127,7 +127,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="group inline-flex items-center gap-2 px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-white font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-white hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group inline-flex items-center gap-2 px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)] font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-[var(--on-primary-text)] hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span>
               {status === "sending"

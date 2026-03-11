@@ -85,7 +85,7 @@ export default function ProjectsArchive() {
                   onClick={() => setActiveFilter(filter)}
                   className={`px-4 py-2 rounded-full cursor-pointer text-sm font-medium transition-colors ${
                     activeFilter === filter
-                      ? "bg-[rgb(var(--accent-bg-rgb))] text-white"
+                      ? "bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)]"
                       : "bg-slate-800 text-slate-300 hover:bg-slate-700"
                   }`}
                 >
