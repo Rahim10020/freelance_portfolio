@@ -127,9 +127,15 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="group inline-flex items-center gap-2 px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)] font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-[var(--on-primary-text)] hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group relative inline-flex items-center justify-center overflow-hidden px-5 py-2 bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)] font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-[var(--on-primary-text)] hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span>
+            <span
+              className={`transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                status === "sending"
+                  ? "-translate-x-3"
+                  : "group-hover:-translate-x-3 group-focus-visible:-translate-x-3"
+              }`}
+            >
               {status === "sending"
                 ? t.contact.form.sending
                 : status === "success"
@@ -139,10 +145,10 @@ export default function Contact() {
             <PaperPlaneIcon
               size={24}
               aria-hidden
-              className={`transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              className={`absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 status === "sending"
                   ? "contact-plane-fly opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+                  : "opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
               }`}
             />
           </button>
