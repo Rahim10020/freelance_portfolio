@@ -24,7 +24,6 @@ export default function Navigation() {
 
     const BASE_W = 32; // w-8
     const ACTIVE_W = 64; // w-16
-    const IMPACT_W = 78; // overshoot for "hit"
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,12 +52,7 @@ export default function Navigation() {
         if (!el) return;
 
         gsap.killTweensOf(el);
-        const tl = gsap.timeline();
-
-        // Accélération vers le texte + impact + rebond
-        tl.to(el, { width: ACTIVE_W, duration: 0.38, ease: 'power4.in' }, 0)
-            .to(el, { width: IMPACT_W, duration: 0.08, ease: 'power2.out' })
-            .to(el, { width: ACTIVE_W, duration: 0.18, ease: 'back.out(2.4)' });
+        gsap.to(el, { width: ACTIVE_W, duration: 0.22, ease: 'power2.out' });
     };
 
     const animateLineToBase = (id: string) => {
