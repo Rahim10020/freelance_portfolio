@@ -55,12 +55,10 @@ export default function Navigation() {
         gsap.killTweensOf(el);
         const tl = gsap.timeline();
 
-        // Accélération vers le texte + impact + rebond + mini tremblement
+        // Accélération vers le texte + impact + rebond
         tl.to(el, { width: ACTIVE_W, duration: 0.38, ease: 'power4.in' }, 0)
             .to(el, { width: IMPACT_W, duration: 0.08, ease: 'power2.out' })
-            .to(el, { width: ACTIVE_W, duration: 0.18, ease: 'back.out(2.4)' })
-            .to(el, { width: ACTIVE_W - 3, duration: 0.06, ease: 'sine.inOut' })
-            .to(el, { width: ACTIVE_W, duration: 0.08, ease: 'sine.out' });
+            .to(el, { width: ACTIVE_W, duration: 0.18, ease: 'back.out(2.4)' });
     };
 
     const animateLineToBase = (id: string) => {
