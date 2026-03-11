@@ -50,6 +50,20 @@ export const en = {
             github: 'GitHub',
             liveDemo: 'Live Demo',
         },
+        detail: {
+            backToProjects: 'Back to projects',
+            share: 'Share',
+            showAllPhotos: 'Show all photos',
+            projectSummary: 'Project summary',
+            role: 'Role',
+            duration: 'Duration',
+            stack: 'Stack',
+            keyFeatures: 'Key features',
+            viewLive: 'View live',
+            viewGithub: 'View GitHub',
+            copied: 'Link copied',
+            copyFailed: 'Unable to copy link',
+        },
         list: {
             '1': {
                 title: 'Essence Togo',

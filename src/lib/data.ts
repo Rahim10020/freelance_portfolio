@@ -1,11 +1,11 @@
-import { Project, Service, SocialLink } from './types';
+import { Project, ProjectDetail, Service, SocialLink } from './types';
 
 export const personalInfo = {
     name: 'Rahim ALI',
     title: 'Software Developer',
     bio: "I design and code beautifully simple things that make the web feel intuitive and alive — and I genuinely love what I do.",
     email: 'rahim100codeur@gmail.com',
-    resumeUrl: 'https://rahim-ali-dev.vercel.app/', // Replace with your CV/resume PDF or page URL
+    resumeUrl: 'https://rahim-ali-dev.vercel.app/',
 };
 
 export const socialLinks: SocialLink[] = [
@@ -29,16 +29,6 @@ export const socialLinks: SocialLink[] = [
         url: 'https://www.facebook.com/',
         icon: 'facebook',
     },
-    // {
-    //     name: 'YouTube',
-    //     url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
-    //     icon: 'youtube',
-    // },
-    // {
-    //     name: 'Twitter',
-    //     url: 'http://www.linkedin.com/in/rahim-ali-a6003226b',
-    //     icon: 'twitter',
-    // },
 ];
 
 export const services: Service[] = [
@@ -80,6 +70,7 @@ export const services: Service[] = [
 export const projects: Project[] = [
     {
         id: '1',
+        slug: 'essence-togo',
         image: '/images/projects/p1-accueil.png',
         technologies: ['Kotlin', 'Jetpack Compose', 'Firebase'],
         best: true,
@@ -90,6 +81,7 @@ export const projects: Project[] = [
     },
     {
         id: '2',
+        slug: 'focusly-work',
         image: '/images/projects/p2-focus.png',
         technologies: ['Next.js', 'React', 'Tailwind css', 'Supabase', 'TypeScript'],
         status: 'in-progress',
@@ -101,6 +93,7 @@ export const projects: Project[] = [
     },
     {
         id: '3',
+        slug: 'docstore-ul',
         image: '/images/projects/p3-docstore.png',
         technologies: ['React', 'Tailwind css', 'Appwrite', 'Google Drive'],
         links: {
@@ -110,6 +103,7 @@ export const projects: Project[] = [
     },
     {
         id: '4',
+        slug: 'togo-stay',
         image: '/images/projects/p4-stay.png',
         technologies: ['Next.js', 'React', 'Firebase', 'Appwrite', 'TypeScript', 'Tailwind css', 'OpenStreetMap'],
         status: 'in-progress',
@@ -121,6 +115,7 @@ export const projects: Project[] = [
     },
     {
         id: '5',
+        slug: 'pixelpulse-blog',
         image: '/images/projects/p5-detail.png',
         technologies: ['Next.js', 'React', 'NextAuth.js', 'Tailwind css', 'PostgreSQL'],
         status: 'completed',
@@ -132,6 +127,7 @@ export const projects: Project[] = [
     },
     {
         id: '6',
+        slug: 'togo-xiwo',
         technologies: ['Futter', 'Get X', 'OpenStreetMap', 'Dart'],
         status: 'in-progress',
         links: {
@@ -140,6 +136,7 @@ export const projects: Project[] = [
     },
     {
         id: '7',
+        slug: 'portify-builder',
         image: '/images/projects/p7-home.png',
         technologies: ['Next.js', 'React', 'Tailwind css', 'Firebase', 'Framer Motion'],
         status: 'in-progress',
@@ -150,6 +147,7 @@ export const projects: Project[] = [
     },
     {
         id: '8',
+        slug: 'atomic-habits',
         technologies: ['Next.js', 'Typescript', 'Tailwind css', 'Supabase'],
         status: 'upcoming',
         links: {
@@ -157,6 +155,35 @@ export const projects: Project[] = [
         },
     },
 ];
+
+export const projectDetailMocks: Record<string, ProjectDetail> = {
+    'togo-stay': {
+        slug: 'togo-stay',
+        headline: 'Rental platform experience inspired by modern booking flows',
+        location: 'Lome, Togo',
+        meta: ['End-to-end product', 'Web app', 'Rental marketplace'],
+        ratingLabel: '4.8',
+        reviewLabel: 'User tests: 33 sessions',
+        role: 'Product design + full-stack development',
+        duration: '8 weeks',
+        summary:
+            'Togo Stay helps users discover and book apartments quickly while giving owners a clean dashboard to publish listings, manage availability, and communicate with prospects.',
+        features: [
+            'Hero media gallery inspired by booking platforms',
+            'Listing search and filtering by location and price',
+            'Owner flow for posting and managing properties',
+            'Responsive booking experience for mobile-first users',
+            'Map-based neighborhood preview and context',
+        ],
+        gallery: [
+            { src: '/images/projects/p4-stay.png', alt: 'Main listing preview' },
+            { src: '/images/projects/p5-detail.png', alt: 'Project detail and content layout' },
+            { src: '/images/projects/p7-home.png', alt: 'Landing and discovery section' },
+            { src: '/images/projects/p2-focus.png', alt: 'Dashboard-like secondary screen' },
+            { src: '/images/projects/p3-docstore.png', alt: 'Compact card and panel composition' },
+        ],
+    },
+};
 
 export const skills = [
     'Python & Django',

@@ -2,6 +2,7 @@ export type ServiceIcon = 'globe' | 'mobile' | 'figma' | 'laptop';
 
 export interface Project {
     id: string;
+    slug: string;
     technologies: string[];
     image?: string;
     status?: 'completed' | 'in-progress' | 'upcoming';
@@ -10,6 +11,23 @@ export interface Project {
         github?: string;
         live?: string;
     };
+}
+
+export interface ProjectDetail {
+    slug: string;
+    headline: string;
+    location: string;
+    meta: string[];
+    ratingLabel: string;
+    reviewLabel: string;
+    role: string;
+    duration: string;
+    summary: string;
+    features: string[];
+    gallery: Array<{
+        src: string;
+        alt: string;
+    }>;
 }
 
 export interface Service {

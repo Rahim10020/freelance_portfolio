@@ -53,6 +53,20 @@ export const fr = {
       github: "GitHub",
       liveDemo: "Démo en Direct",
     },
+    detail: {
+      backToProjects: "Retour aux projets",
+      share: "Partager",
+      showAllPhotos: "Voir toutes les captures",
+      projectSummary: "Résumé du projet",
+      role: "Rôle",
+      duration: "Durée",
+      stack: "Stack",
+      keyFeatures: "Fonctionnalités clés",
+      viewLive: "Voir en ligne",
+      viewGithub: "Voir GitHub",
+      copied: "Lien copié",
+      copyFailed: "Impossible de copier le lien",
+    },
     list: {
       "1": {
         title: "Essence Togo",
