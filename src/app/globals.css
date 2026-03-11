@@ -6,6 +6,8 @@
 :root {
   --background: #13161b;
   --foreground: #e2e8f0;
+  --cursor-fg: #f8fafc;
+  --cursor-contrast: #0f172a;
   --gradient-from: rgb(var(--accent-rgb) / 0.15);
   --gradient-to: transparent;
   --card-hover-bg: rgba(15, 23, 42, 0.5);
@@ -199,14 +201,29 @@ body {
     transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.custom-cursor-glyph::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 999px;
+  background: rgb(15 23 42 / 0.32);
+  border: 1px solid rgb(248 250 252 / 0.45);
+  box-shadow:
+    0 0 0 1px rgb(15 23 42 / 0.5),
+    0 8px 18px rgb(2 6 23 / 0.35);
+}
+
 .custom-cursor-glyph.is-active {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
 
 .custom-cursor-icon {
-  color: var(--text-accent);
-  filter: drop-shadow(0 6px 16px rgb(var(--accent-rgb) / 0.35));
+  position: relative;
+  color: var(--cursor-fg);
+  filter:
+    drop-shadow(0 0 1px var(--cursor-contrast))
+    drop-shadow(0 0 3px var(--cursor-contrast));
 }
 
 html.custom-cursor-enabled,
@@ -220,6 +237,12 @@ html.custom-cursor-enabled input[type="search"],
 html.custom-cursor-enabled input[type="password"],
 html.custom-cursor-enabled textarea {
   cursor: text !important;
+}
+
+input,
+textarea,
+[contenteditable='true'] {
+  caret-color: var(--foreground);
 }
 
 /* Ensure smooth transitions */
