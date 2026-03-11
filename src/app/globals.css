@@ -253,6 +253,10 @@ textarea,
   transition-duration: 300ms;
 }
 
+.custom-cursor {
+  transition: none !important;
+}
+
 @keyframes contact-plane-fly {
   0% {
     transform: translateX(0) translateY(0) rotate(0deg);
