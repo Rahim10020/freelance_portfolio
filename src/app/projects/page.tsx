@@ -58,7 +58,7 @@ export default function ProjectsArchive() {
             >
               <ArrowLeftIcon
                 size={24}
-                className="mr-2 h-6 w-6 transition-transform duration-300 group-hover:-translate-x-2 group-hover:scale-105"
+                className="mr-2 h-6 w-6 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-1.5 group-hover:scale-105"
               />
               <span className="hidden md:block">Rahim ALI</span>
             </Link>
