@@ -103,7 +103,7 @@ export const en = {
             priceRangeFCFA: '480k – 1.5M FCFA',
         },
         uiux: {
-            title: 'UI/UX Design',
+            title: 'UX/UI Design',
             description: 'Interfaces with Figma — clear, usable, on brand.',
             priceRangeUSD: '$300 – $1,200',
             priceRangeFCFA: '180k – 720k FCFA',

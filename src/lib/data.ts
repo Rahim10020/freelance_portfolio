@@ -61,7 +61,7 @@ export const services: Service[] = [
     },
     {
         id: '3',
-        title: 'UI/UX Design',
+        title: 'UX/UI Design',
         description: 'Interfaces with Figma — clear, usable, on brand.',
         icon: 'figma',
         priceRangeUSD: '$300 – $1,200',
@@ -164,7 +164,7 @@ export const skills = [
     'Kotlin & Jetpack Compose',
     'Flutter & Dart',
     'PostgreSQL',
-    'UI/UX with Figma',
+    'UX/UI with Figma',
     'Design Patterns',
     'Architecture MVVM/MVP',
     'API REST',

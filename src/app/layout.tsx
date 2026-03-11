@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     "React Developer",
     "TypeScript",
     "API Development",
-    "UI/UX Design"
+    "UX/UI Design"
   ],
   authors: [{ name: "Rahim ALI", url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/" }],
   creator: "Rahim ALI",
