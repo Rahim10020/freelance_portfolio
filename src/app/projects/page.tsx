@@ -7,6 +7,7 @@ import MouseEffect from "@/components/ui/MouseEffect";
 import ControlsPanel from "@/components/ui/ControlsPanel";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ArrowLeftIcon } from "@/components/icons";
 
 export default function ProjectsArchive() {
   const { t } = useLanguage();
@@ -55,23 +56,10 @@ export default function ProjectsArchive() {
               href="/"
               className="group inline-flex items-center font-semibold leading-tight text-[var(--text-accent)] hover:text-[var(--text-accent)]"
             >
-              <svg
-                className="mr-2 h-8 w-8 transition-transform group-hover:-translate-x-2"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="currentColor"
-                  d="M8.71967 3.21967C9.01256 2.92678 9.48744 2.92678 9.78033 3.21967C10.0732 3.51256 10.0732 3.98744 9.78033 4.28033L8.71967 3.21967ZM5 8L4.46967 7.46967C4.17678 7.76256 4.17678 8.23744 4.46967 8.53033L5 8ZM9.78033 11.7197C10.0732 12.0126 10.0732 12.4874 9.78033 12.7803C9.48744 13.0732 9.01256 13.0732 8.71967 12.7803L9.78033 11.7197ZM9.78033 4.28033L5.53033 8.53033L4.46967 7.46967L8.71967 3.21967L9.78033 4.28033ZM5.53033 7.46967L9.78033 11.7197L8.71967 12.7803L4.46967 8.53033L5.53033 7.46967Z"
-                />
-                <path
-                  stroke="currentColor"
-                  d="M14.25 8H5"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <ArrowLeftIcon
+                size={24}
+                className="mr-2 h-6 w-6 transition-transform duration-300 group-hover:-translate-x-2 group-hover:scale-105"
+              />
               <span className="hidden md:block">Rahim ALI</span>
             </Link>
             <ControlsPanel />

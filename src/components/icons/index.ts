@@ -1,3 +1,4 @@
+export { default as ArrowLeftIcon } from './ArrowLeftIcon';
 export { default as CursorIcon } from './CursorIcon';
 export { default as FigmaIcon } from './FigmaIcon';
 export { default as GlobeIcon } from './GlobeIcon';

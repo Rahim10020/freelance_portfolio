@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import SectionTitle from '../ui/SectionTitle';
+import { PaperPlaneIcon } from '@/components/icons';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Contact() {
@@ -117,9 +118,20 @@ export default function Contact() {
                     <button
                         type="submit"
                         disabled={status === 'sending'}
-                        className="px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-white font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-white hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="group inline-flex items-center gap-2 px-4 py-2 bg-[rgb(var(--accent-bg-rgb))] text-white font-medium rounded-lg hover:bg-[rgb(var(--accent-rgb))] hover:text-white hover:cursor-pointer transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {status === 'sending' ? t.contact.form.sending : status === 'success' ? t.contact.form.sent : t.contact.form.send}
+                        <span>
+                            {status === 'sending' ? t.contact.form.sending : status === 'success' ? t.contact.form.sent : t.contact.form.send}
+                        </span>
+                        <PaperPlaneIcon
+                            size={16}
+                            aria-hidden
+                            className={`transition-all duration-300 ${
+                                status === 'sending'
+                                    ? 'contact-plane-fly opacity-100 translate-x-0'
+                                    : 'opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0'
+                            }`}
+                        />
                     </button>
 
                     {status === 'success' && (

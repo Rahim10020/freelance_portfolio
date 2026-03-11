@@ -252,6 +252,27 @@ textarea,
   transition-duration: 300ms;
 }
 
+@keyframes contact-plane-fly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(24px) translateY(-18px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.contact-plane-fly {
+  animation: contact-plane-fly 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+html.reduced-motion .contact-plane-fly {
+  animation: none !important;
+  opacity: 0 !important;
+}
+
 html.reduced-motion {
   scroll-behavior: auto;
 }
