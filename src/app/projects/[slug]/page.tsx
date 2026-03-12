@@ -85,7 +85,7 @@ export default function ProjectDetailPage() {
               onClick={handleShare}
               className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
             >
-              <ShareIcon size={16} />
+              <ShareIcon size={20} />
               <span>{t.projects.detail.share}</span>
             </button>
             {project.links.github && (
