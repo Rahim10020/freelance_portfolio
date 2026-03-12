@@ -3,13 +3,9 @@
     en dark mode, on garde ce qu'il ya actuellement (le shade de la couleur correspondante)
     
 my primary colors:
+    - trouver des couleurs primary superbes
 
-    1- ff7d00 - orange
-    2- e07a5f - good
-    3- 81b29a - light green
-    4- c1121f - rouge
-    5- ffc300 - jaune
-    6- 0496ff - blue
-    7- dbd56e - gingembre
-    8- eb5e28 - orange + rouge
-    15616d
+- prochaine amelioration design : Mettre mon image en arrie plan (trouver une section pour ca) ensuite faire en sorte que 
+    cette image ne soit pas visible. Si un visiteur vient sur le site , il ne saura pas qu'il y a une image derriere. 
+    Et ce que je vais faire c'est que lorsque le curseur va survoler une partie de l'image, 
+    on va afficher cette partie survolee( comme sur le site suivant : https://landonorris.com/) 
