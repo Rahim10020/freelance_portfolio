@@ -8,7 +8,7 @@ import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
 import { projects, projectDetailMocks } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeftIcon } from "@/components/icons";
+import { ArrowLeftIcon, ShareIcon } from "@/components/icons";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -54,10 +54,11 @@ export default function ProjectDetailPage() {
     <>
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-10 md:px-12 lg:px-16">
+        {/* Screen header */}
         <div className="mb-8 flex items-center justify-between">
           <Link
             href="/projects"
-            className="group inline-flex items-center font-semibold text-[var(--text-accent)]"
+            className="group font-display inline-flex items-center font-semibold text-[var(--text-accent)]"
           >
             <ArrowLeftIcon
               size={24}
@@ -68,25 +69,26 @@ export default function ProjectDetailPage() {
           <ControlsPanel />
         </div>
 
+        {/* Project detail header */}
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-100 md:text-4xl">
+          <h1 className="text-3xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl">
             {projectTr?.title}
           </h1>
           <div className="flex items-center gap-4 text-slate-300">
             <button
               type="button"
               onClick={handleShare}
-              className="inline-flex items-center gap-2 text-sm font-semibold hover:text-[var(--text-accent)]"
+              className="inline-flex items-center gap-1 text-sm hover:text-[var(--text-accent)]"
             >
-              <span aria-hidden>⇪</span>
-              <span>{t.projects.detail.share}</span>
+              <ShareIcon size={24} />
+              <span className="font-display">{t.projects.detail.share}</span>
             </button>
             {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold hover:text-[var(--text-accent)]"
+                className="text-sm font-display hover:text-[var(--text-accent)]"
               >
                 {t.projects.detail.viewGithub}
               </a>
@@ -96,7 +98,7 @@ export default function ProjectDetailPage() {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold hover:text-[var(--text-accent)]"
+                className="text-sm font-display hover:text-[var(--text-accent)]"
               >
                 {t.projects.detail.viewLive}
               </a>
@@ -104,6 +106,7 @@ export default function ProjectDetailPage() {
           </div>
         </div>
 
+        {/* Images section */}
         <section className="grid gap-2 overflow-hidden rounded-2xl md:grid-cols-12">
           <div className="relative min-h-[320px] md:col-span-7 md:min-h-[520px]">
             <Image
@@ -131,6 +134,7 @@ export default function ProjectDetailPage() {
           </div>
         </section>
 
+        {/* Show all photos button */}
         <div className="mt-3 flex justify-end">
           <button
             type="button"
@@ -142,7 +146,7 @@ export default function ProjectDetailPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <h2 className="text-4xl font-bold text-slate-100">
+            <h2 className="text-4xl font-sans font-bold text-slate-100">
               {detail.headline}
             </h2>
             <p className="mt-3 text-lg text-slate-300">{detail.location}</p>
