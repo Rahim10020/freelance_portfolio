@@ -79,24 +79,24 @@ export default function ProjectDetailPage() {
           <h1 className="text-3xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl">
             {projectTr?.title}
           </h1>
-          <div className="flex items-center gap-4 text-slate-300">
+          <div className="flex flex-wrap items-center gap-2 text-slate-300">
             <button
               type="button"
               onClick={handleShare}
-              className="inline-flex items-center gap-1 text-sm hover:text-[var(--text-accent)]"
+              className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
             >
               <ShareIcon size={16} />
-              <span className="font-display">{t.projects.detail.share}</span>
+              <span>{t.projects.detail.share}</span>
             </button>
             {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-display hover:text-[var(--text-accent)]"
+                className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
               >
                 <GithubWhiteIcon size={16} />
-                {t.projects.detail.viewGithub}
+                <span>{t.projects.detail.viewGithub}</span>
               </a>
             )}
             {project.links.live && (
@@ -104,10 +104,10 @@ export default function ProjectDetailPage() {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-display hover:text-[var(--text-accent)]"
+                className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
               >
                 <ExternalLinkIcon size={16} />
-                {t.projects.detail.viewLive}
+                <span>{t.projects.detail.viewLive}</span>
               </a>
             )}
           </div>
@@ -233,7 +233,7 @@ export default function ProjectDetailPage() {
                     rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center rounded-lg bg-[rgb(var(--accent-bg-rgb))] px-4 py-2 font-semibold text-[var(--on-primary-text)] hover:bg-[rgb(var(--accent-rgb))]"
                   >
-                    {t.projects.detail.viewLive}
+                    <span>{t.projects.detail.viewLive}</span>
                   </a>
                 )}
                 {project.links.github && (
@@ -241,9 +241,9 @@ export default function ProjectDetailPage() {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-lg border border-slate-600 px-4 py-2 font-semibold text-slate-100 hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
+                    className="inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-slate-100 hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
                   >
-                    {t.projects.detail.viewGithub}
+                    <span>{t.projects.detail.viewGithub}</span>
                   </a>
                 )}
               </div>
