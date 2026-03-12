@@ -71,7 +71,7 @@ export default function ProjectDetailPage() {
           <AnimatedLetters
             as="h1"
             text={projectTr?.title}
-            className="text-3xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl"
+            className="text-4xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl"
           />
 
           <div className="flex flex-wrap items-center gap-2 text-slate-300">
@@ -152,32 +152,26 @@ export default function ProjectDetailPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <h2 className="text-4xl font-sans font-bold text-slate-100">
+            <h2 className="text-3xl font-sans font-bold text-slate-100">
               {detail.headline}
             </h2>
-            <p className="mt-3 text-lg text-slate-300">{detail.location}</p>
-            <p className="mt-2 text-lg text-slate-300">
-              {detail.meta.join(" · ")}
-            </p>
-            <p className="mt-2 text-lg text-slate-200">
-              <span className="font-semibold">★ {detail.ratingLabel}</span>
-              <span className="mx-2">·</span>
-              <span className="underline">{detail.reviewLabel}</span>
-            </p>
 
             <div className="mt-8 border-t border-slate-700/60 pt-6">
-              <p className="text-base leading-relaxed text-slate-300">
+              <p className="text-base font-display leading-relaxed text-slate-300">
                 {detail.summary}
               </p>
             </div>
 
             <div className="mt-8 border-t border-slate-700/60 pt-6">
-              <h3 className="text-xl font-semibold text-slate-100">
+              <h3 className="text-xl font-sans font-semibold text-slate-100">
                 {t.projects.detail.keyFeatures}
               </h3>
               <ul className="mt-4 space-y-3 text-slate-300">
                 {detail.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
+                  <li
+                    key={feature}
+                    className="flex items-start font-display gap-3"
+                  >
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
                     <span>{feature}</span>
                   </li>
@@ -187,36 +181,36 @@ export default function ProjectDetailPage() {
           </div>
 
           <aside className="lg:col-span-4">
-            <div className="top-6 rounded-2xl border border-slate-700/60 bg-slate-800/65 p-5 shadow-lg backdrop-blur-sm lg:sticky">
-              <h3 className="text-xl font-semibold text-slate-100">
+            <div className="top-6 p-5 shadow-lg lg:sticky">
+              <h3 className="text-xl font-sans font-semibold text-slate-100">
                 {t.projects.detail.projectSummary}
               </h3>
               <div className="mt-6 space-y-4">
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-400">
+                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
                     {t.projects.detail.role}
                   </p>
-                  <p className="mt-1 font-medium text-slate-100">
+                  <p className="mt-1 font-display font-medium text-slate-100">
                     {detail.role}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-400">
+                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
                     {t.projects.detail.duration}
                   </p>
-                  <p className="mt-1 font-medium text-slate-100">
+                  <p className="mt-1 font-medium font-display text-slate-100">
                     {detail.duration}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-slate-400">
+                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
                     {t.projects.detail.stack}
                   </p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <li
                         key={tech}
-                        className="accent-chip rounded-full px-3 py-1 text-xs font-medium"
+                        className="accent-chip rounded-full font-display px-3 py-1 text-xs font-medium"
                       >
                         {tech}
                       </li>
