@@ -1,8 +1,19 @@
-import type { IconProps } from './IconProps';
+import type { IconProps } from "./IconProps";
 
-export default function GithubWhiteIcon({ size = 48, color = '#FFFFFF', ...props }: IconProps) {
+export default function GithubWhiteIcon({
+  size = 48,
+  color = "#FFFFFF",
+  ...props
+}: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

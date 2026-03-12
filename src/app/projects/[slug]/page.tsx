@@ -8,7 +8,12 @@ import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
 import { projects, projectDetailMocks } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeftIcon, ShareIcon } from "@/components/icons";
+import {
+  ArrowLeftIcon,
+  ExternalLinkIcon,
+  GithubWhiteIcon,
+  ShareIcon,
+} from "@/components/icons";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -80,7 +85,7 @@ export default function ProjectDetailPage() {
               onClick={handleShare}
               className="inline-flex items-center gap-1 text-sm hover:text-[var(--text-accent)]"
             >
-              <ShareIcon size={24} />
+              <ShareIcon size={16} />
               <span className="font-display">{t.projects.detail.share}</span>
             </button>
             {project.links.github && (
@@ -88,8 +93,9 @@ export default function ProjectDetailPage() {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-display hover:text-[var(--text-accent)]"
+                className="inline-flex items-center gap-1 text-sm font-display hover:text-[var(--text-accent)]"
               >
+                <GithubWhiteIcon size={16} />
                 {t.projects.detail.viewGithub}
               </a>
             )}
@@ -98,8 +104,9 @@ export default function ProjectDetailPage() {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-display hover:text-[var(--text-accent)]"
+                className="inline-flex items-center gap-1 text-sm font-display hover:text-[var(--text-accent)]"
               >
+                <ExternalLinkIcon size={16} />
                 {t.projects.detail.viewLive}
               </a>
             )}
