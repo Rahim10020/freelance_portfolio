@@ -12,6 +12,7 @@ import {
   ArrowLeftIcon,
   ExternalLinkIcon,
   GithubWhiteIcon,
+  MoreGridIcon,
   ShareIcon,
 } from "@/components/icons";
 
@@ -83,20 +84,22 @@ export default function ProjectDetailPage() {
             <button
               type="button"
               onClick={handleShare}
-              className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
+              aria-label={t.projects.detail.share}
+              title={t.projects.detail.share}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
             >
-              <ShareIcon size={20} />
-              <span>{t.projects.detail.share}</span>
+              <ShareIcon size={16} />
             </button>
             {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
+                aria-label={t.projects.detail.viewGithub}
+                title={t.projects.detail.viewGithub}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
               >
                 <GithubWhiteIcon size={16} />
-                <span>{t.projects.detail.viewGithub}</span>
               </a>
             )}
             {project.links.live && (
@@ -104,17 +107,18 @@ export default function ProjectDetailPage() {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 items-center justify-center gap-2 px-3 text-sm font-display transition-colors hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
+                aria-label={t.projects.detail.viewLive}
+                title={t.projects.detail.viewLive}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
               >
                 <ExternalLinkIcon size={16} />
-                <span>{t.projects.detail.viewLive}</span>
               </a>
             )}
           </div>
         </div>
 
         {/* Images section */}
-        <section className="grid gap-2 overflow-hidden rounded-2xl md:grid-cols-12">
+        <section className="grid gap-2 overflow-hidden md:grid-cols-12">
           <div className="relative min-h-[320px] md:col-span-7 md:min-h-[520px]">
             <Image
               src={detail.gallery[0].src}
@@ -145,8 +149,9 @@ export default function ProjectDetailPage() {
         <div className="mt-3 flex justify-end">
           <button
             type="button"
-            className="rounded-xl bg-slate-100 px-5 py-2 text-base font-semibold text-slate-900"
+            className="inline-flex items-center gap-2 font-display bg-slate-100 px-5 py-2 text-base font-medium text-slate-900"
           >
+            <MoreGridIcon size={24} />
             {t.projects.detail.showAllPhotos}
           </button>
         </div>
