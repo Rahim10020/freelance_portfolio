@@ -15,6 +15,7 @@ import {
   MoreGridIcon,
   ShareIcon,
 } from "@/components/icons";
+import AnimatedLetters from "@/components/ui/AnimatedLetters";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -61,25 +62,18 @@ export default function ProjectDetailPage() {
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-10 md:px-12 lg:px-16">
         {/* Screen header */}
-        <div className="mb-8 flex items-center justify-between">
-          <Link
-            href="/projects"
-            className="group font-display inline-flex items-center font-semibold text-[var(--text-accent)]"
-          >
-            <ArrowLeftIcon
-              size={24}
-              className="mr-2 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-1.5"
-            />
-            <span>{t.projects.detail.backToProjects}</span>
-          </Link>
+        <div className="mb-8 flex justify-end">
           <ControlsPanel />
         </div>
 
         {/* Project detail header */}
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <h1 className="text-3xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl">
-            {projectTr?.title}
-          </h1>
+          <AnimatedLetters
+            as="h1"
+            text={projectTr?.title}
+            className="text-3xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl"
+          />
+
           <div className="flex flex-wrap items-center gap-2 text-slate-300">
             <button
               type="button"
@@ -88,7 +82,7 @@ export default function ProjectDetailPage() {
               title={t.projects.detail.share}
               className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
             >
-              <ShareIcon size={16} />
+              <ShareIcon size={24} />
             </button>
             {project.links.github && (
               <a
@@ -99,7 +93,7 @@ export default function ProjectDetailPage() {
                 title={t.projects.detail.viewGithub}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
               >
-                <GithubWhiteIcon size={16} />
+                <GithubWhiteIcon size={24} />
               </a>
             )}
             {project.links.live && (
@@ -111,7 +105,7 @@ export default function ProjectDetailPage() {
                 title={t.projects.detail.viewLive}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
               >
-                <ExternalLinkIcon size={16} />
+                <ExternalLinkIcon size={24} />
               </a>
             )}
           </div>
