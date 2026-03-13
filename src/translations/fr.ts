@@ -67,6 +67,8 @@ export const fr = {
       copied: "Lien copié",
       copyFailed: "Impossible de copier le lien",
       closeGallery: "Fermer la galerie",
+      backToProject: "Retour au projet",
+      photosSections: "sections",
     },
     list: {
       "1": {

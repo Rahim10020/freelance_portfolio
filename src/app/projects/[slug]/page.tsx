@@ -21,7 +21,7 @@ export default function ProjectDetailPage() {
   const { t } = useLanguage();
   const params = useParams<{ slug: string }>();
   const [toast, setToast] = useState<string | null>(null);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
   const slug = params?.slug;
 
@@ -32,23 +32,14 @@ export default function ProjectDetailPage() {
   const detail = slug ? projectDetails[slug] : undefined;
 
   useEffect(() => {
-    if (!isGalleryOpen) return;
+    if (!isPreviewOpen) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!detail) return;
       if (event.key === "Escape") {
-        setIsGalleryOpen(false);
-      }
-      if (event.key === "ArrowRight") {
-        setActivePhotoIndex((prev) => (prev + 1) % detail.gallery.length);
-      }
-      if (event.key === "ArrowLeft") {
-        setActivePhotoIndex((prev) =>
-          prev === 0 ? detail.gallery.length - 1 : prev - 1,
-        );
+        setIsPreviewOpen(false);
       }
     };
 
@@ -58,7 +49,7 @@ export default function ProjectDetailPage() {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isGalleryOpen, detail]);
+  }, [isPreviewOpen]);
 
   if (!project || !detail) {
     return (
@@ -76,6 +67,8 @@ export default function ProjectDetailPage() {
   }
 
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
+  const gallery = detail.gallery;
+  const activePhoto = gallery[activePhotoIndex];
 
   const handleShare = async () => {
     try {
@@ -88,12 +81,10 @@ export default function ProjectDetailPage() {
     }
   };
 
-  const openGallery = (index = 0) => {
+  const openPreview = (index: number) => {
     setActivePhotoIndex(index);
-    setIsGalleryOpen(true);
+    setIsPreviewOpen(true);
   };
-
-  const activePhoto = detail.gallery[activePhotoIndex];
 
   return (
     <>
@@ -150,23 +141,23 @@ export default function ProjectDetailPage() {
         <section className="grid gap-2 overflow-hidden md:grid-cols-12">
           <button
             type="button"
-            onClick={() => openGallery(0)}
+            onClick={() => openPreview(0)}
             className="relative min-h-[320px] text-left md:col-span-7 md:min-h-[520px]"
           >
             <Image
-              src={detail.gallery[0].src}
-              alt={detail.gallery[0].alt}
+              src={gallery[0].src}
+              alt={gallery[0].alt}
               fill
               className="object-cover"
               priority
             />
           </button>
           <div className="grid min-h-[320px] grid-cols-2 gap-2 md:col-span-5 md:grid-rows-2">
-            {detail.gallery.slice(1, 5).map((item, index) => (
+            {gallery.slice(1, 5).map((item, index) => (
               <button
                 key={item.src + index}
                 type="button"
-                onClick={() => openGallery(index + 1)}
+                onClick={() => openPreview(index + 1)}
                 className="relative min-h-[158px] text-left md:min-h-[259px]"
               >
                 <Image
@@ -181,14 +172,13 @@ export default function ProjectDetailPage() {
         </section>
 
         <div className="mt-3 flex justify-end">
-          <button
-            type="button"
-            onClick={() => openGallery(0)}
+          <Link
+            href={`/projects/${project.slug}/photos`}
             className="inline-flex items-center gap-2 font-display bg-slate-100 px-5 py-2 text-base font-medium text-slate-900"
           >
             <MoreGridIcon size={24} />
             {t.projects.detail.showAllPhotos}
-          </button>
+          </Link>
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
@@ -286,22 +276,22 @@ export default function ProjectDetailPage() {
         </div>
       </div>
 
-      {isGalleryOpen && (
+      {isPreviewOpen && (
         <div
           className="fixed inset-0 z-[80] bg-slate-950/95 p-4 md:p-8"
           role="dialog"
           aria-modal="true"
           aria-label={t.projects.detail.showAllPhotos}
-          onClick={() => setIsGalleryOpen(false)}
+          onClick={() => setIsPreviewOpen(false)}
         >
-          <div className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr_auto] gap-4" onClick={(event) => event.stopPropagation()}>
-            <div className="flex items-center justify-between">
-              <p className="font-display text-slate-200">
-                {activePhotoIndex + 1} / {detail.gallery.length}
-              </p>
+          <div
+            className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr] gap-4"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-end">
               <button
                 type="button"
-                onClick={() => setIsGalleryOpen(false)}
+                onClick={() => setIsPreviewOpen(false)}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/70 text-slate-100"
                 aria-label={t.projects.detail.closeGallery}
               >
@@ -317,25 +307,6 @@ export default function ProjectDetailPage() {
                 className="object-contain"
                 sizes="100vw"
               />
-            </div>
-
-            <div className="grid grid-cols-5 gap-2 md:grid-cols-6">
-              {detail.gallery.map((item, index) => (
-                <button
-                  key={item.src + index}
-                  type="button"
-                  onClick={() => setActivePhotoIndex(index)}
-                  className={`relative min-h-[64px] overflow-hidden ${index === activePhotoIndex ? "ring-2 ring-[var(--text-accent)]" : "opacity-70"}`}
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover"
-                    sizes="160px"
-                  />
-                </button>
-              ))}
             </div>
           </div>
         </div>

@@ -13,6 +13,17 @@ export interface Project {
     };
 }
 
+export interface ProjectPhoto {
+    src: string;
+    alt: string;
+}
+
+export interface PhotoSection {
+    title: string;
+    description: string;
+    images: ProjectPhoto[];
+}
+
 export interface ProjectDetail {
     slug: string;
     headline: string;
@@ -24,10 +35,8 @@ export interface ProjectDetail {
     duration: string;
     summary: string;
     features: string[];
-    gallery: Array<{
-        src: string;
-        alt: string;
-    }>;
+    gallery: ProjectPhoto[];
+    photoSections: PhotoSection[];
 }
 
 export interface Service {

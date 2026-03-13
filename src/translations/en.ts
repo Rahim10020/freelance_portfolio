@@ -64,6 +64,8 @@ export const en = {
             copied: 'Link copied',
             copyFailed: 'Unable to copy link',
             closeGallery: 'Close gallery',
+            backToProject: 'Back to project',
+            photosSections: 'sections',
         },
         list: {
             '1': {
