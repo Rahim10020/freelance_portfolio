@@ -15,9 +15,9 @@ import {
   GithubWhiteIcon,
   MoreGridIcon,
   ShareIcon,
-  IdeaIcon,
 } from "@/components/icons";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
+import TldrCallout from "@/components/ui/TldrCallout";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -203,68 +203,40 @@ export default function ProjectDetailPage() {
                 </h3>
                 <div className="mt-4 space-y-3">
                   {detail.tldr?.what && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
-                      <div className="flex items-start gap-3">
-                        <div>
-                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
-                            {t.projects.detail.what}
-                          </p>
-                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
-                            {detail.tldr.what}
-                          </p>
-                        </div>
-                      </div>
-                    </article>
+                    <TldrCallout label={t.projects.detail.what}>
+                      <p className="font-display leading-relaxed text-slate-100/90">
+                        {detail.tldr.what}
+                      </p>
+                    </TldrCallout>
                   )}
                   {detail.tldr?.who && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
-                      <div className="flex items-start gap-3">
-                        <div>
-                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
-                            {t.projects.detail.who}
-                          </p>
-                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
-                            {detail.tldr.who}
-                          </p>
-                        </div>
-                      </div>
-                    </article>
+                    <TldrCallout label={t.projects.detail.who}>
+                      <p className="font-display leading-relaxed text-slate-100/90">
+                        {detail.tldr.who}
+                      </p>
+                    </TldrCallout>
                   )}
                   {detail.tldr?.challenges &&
                     detail.tldr.challenges.length > 0 && (
-                      <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
-                        <div className="flex items-start gap-3">
-                          <div className="w-full">
-                            <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
-                              {t.projects.detail.challenges}
-                            </p>
-                            <ul className="mt-2 space-y-2">
-                              {detail.tldr.challenges.map((item) => (
-                                <li
-                                  key={item}
-                                  className="font-display italic leading-relaxed text-slate-100/90"
-                                >
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </article>
+                      <TldrCallout label={t.projects.detail.challenges}>
+                        <ul className="space-y-2">
+                          {detail.tldr.challenges.map((item) => (
+                            <li
+                              key={item}
+                              className="font-display leading-relaxed text-slate-100/90"
+                            >
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </TldrCallout>
                     )}
                   {detail.tldr?.result && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[#313539] px-4 py-4 md:px-6">
-                      <div className="flex items-start gap-3">
-                        <div>
-                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
-                            {t.projects.detail.result}
-                          </p>
-                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
-                            {detail.tldr.result}
-                          </p>
-                        </div>
-                      </div>
-                    </article>
+                    <TldrCallout label={t.projects.detail.result}>
+                      <p className="font-display leading-relaxed text-slate-100/90">
+                        {detail.tldr.result}
+                      </p>
+                    </TldrCallout>
                   )}
                 </div>
               </section>
