@@ -63,6 +63,7 @@ export const en = {
             viewGithub: 'View GitHub',
             copied: 'Link copied',
             copyFailed: 'Unable to copy link',
+            closeGallery: 'Close gallery',
         },
         list: {
             '1': {

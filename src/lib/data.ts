@@ -156,12 +156,90 @@ export const projects: Project[] = [
     },
 ];
 
-export const projectDetailMocks: Record<string, ProjectDetail> = {
+const commonGallery = [
+    '/images/projects/p2-focus.png',
+    '/images/projects/p3-docstore.png',
+    '/images/projects/p4-stay.png',
+    '/images/projects/p5-detail.png',
+    '/images/projects/p7-home.png',
+    '/images/website.png',
+];
+
+const galleryFor = (primary?: string) => {
+    const seed = primary ? [primary, ...commonGallery] : commonGallery;
+    const unique = Array.from(new Set(seed));
+    return unique.slice(0, 6).map((src, index) => ({
+        src,
+        alt: `Project capture ${index + 1}`,
+    }));
+};
+
+export const projectDetails: Record<string, ProjectDetail> = {
+    'essence-togo': {
+        slug: 'essence-togo',
+        headline: 'Kotlin mobile app to locate nearby fuel stations quickly',
+        location: 'Lome, Togo',
+        meta: ['Android app', 'Geolocation', 'Utility product'],
+        ratingLabel: '4.7',
+        reviewLabel: 'Field tests with local users',
+        role: 'Mobile developer (Kotlin + Compose)',
+        duration: '6 weeks',
+        summary:
+            'Essence Togo was built to simplify fuel station discovery with a fast map-first flow. The app focuses on speed, clear UI, and practical location context for daily city movement.',
+        features: [
+            'Nearby station discovery with map context',
+            'Fast loading and simple mobile-first interaction',
+            'Compose UI architecture for maintainability',
+            'Data flow prepared for real-time updates',
+            'Clean utility experience with minimal friction',
+        ],
+        gallery: galleryFor('/images/projects/p1-accueil.png'),
+    },
+    'focusly-work': {
+        slug: 'focusly-work',
+        headline: 'Pomodoro productivity app with focused work sessions',
+        location: 'Remote project',
+        meta: ['Web app', 'Productivity', 'In progress'],
+        ratingLabel: '4.8',
+        reviewLabel: 'Iteration feedback from active users',
+        role: 'Frontend + product implementation',
+        duration: 'Ongoing',
+        summary:
+            'Focusly-work structures concentration blocks with a practical timer experience and clean interface. The goal is to reduce distraction and keep users in a consistent deep-work rhythm.',
+        features: [
+            'Pomodoro timer flow with session tracking',
+            'Responsive UI optimized for quick access',
+            'Supabase-backed data persistence',
+            'Type-safe frontend architecture with TypeScript',
+            'Continuous feature iteration from user feedback',
+        ],
+        gallery: galleryFor('/images/projects/p2-focus.png'),
+    },
+    'docstore-ul': {
+        slug: 'docstore-ul',
+        headline: 'Academic document hub for University of Lome students',
+        location: 'Lome, Togo',
+        meta: ['Web platform', 'Education', 'Document access'],
+        ratingLabel: '4.6',
+        reviewLabel: 'Student usage sessions',
+        role: 'Frontend contributor + integration',
+        duration: '5 weeks',
+        summary:
+            'DocStore centralizes key university resources so students can find materials faster. The experience was designed around clarity, quick discovery, and lightweight browsing on low bandwidth.',
+        features: [
+            'Centralized academic document library',
+            'Simple navigation by school and faculty',
+            'Fast access to downloadable resources',
+            'Search-friendly content architecture',
+            'Practical UI for repeat daily use',
+        ],
+        gallery: galleryFor('/images/projects/p3-docstore.png'),
+    },
     'togo-stay': {
         slug: 'togo-stay',
-        headline: 'Rental platform experience inspired by modern booking flows',
+        headline: 'Rental platform with modern booking-inspired browsing',
         location: 'Lome, Togo',
-        meta: ['End-to-end product', 'Web app', 'Rental marketplace'],
+        meta: ['Marketplace', 'Web app', 'In progress'],
         ratingLabel: '4.8',
         reviewLabel: 'User tests: 33 sessions',
         role: 'Product design + full-stack development',
@@ -169,19 +247,93 @@ export const projectDetailMocks: Record<string, ProjectDetail> = {
         summary:
             'Togo Stay helps users discover and book apartments quickly while giving owners a clean dashboard to publish listings, manage availability, and communicate with prospects.',
         features: [
-            'Hero media gallery inspired by booking platforms',
-            'Listing search and filtering by location and price',
-            'Owner flow for posting and managing properties',
-            'Responsive booking experience for mobile-first users',
-            'Map-based neighborhood preview and context',
+            'Media-driven listing detail experience',
+            'Search and filtering by key rental criteria',
+            'Owner publishing and listing management flow',
+            'Responsive booking UX for mobile-first usage',
+            'Location context via map-based integration',
         ],
-        gallery: [
-            { src: '/images/projects/p4-stay.png', alt: 'Main listing preview' },
-            { src: '/images/projects/p5-detail.png', alt: 'Project detail and content layout' },
-            { src: '/images/projects/p7-home.png', alt: 'Landing and discovery section' },
-            { src: '/images/projects/p2-focus.png', alt: 'Dashboard-like secondary screen' },
-            { src: '/images/projects/p3-docstore.png', alt: 'Compact card and panel composition' },
+        gallery: galleryFor('/images/projects/p4-stay.png'),
+    },
+    'pixelpulse-blog': {
+        slug: 'pixelpulse-blog',
+        headline: 'Blog platform for developers and technology creators',
+        location: 'Remote project',
+        meta: ['Content platform', 'Web app', 'Completed'],
+        ratingLabel: '4.9',
+        reviewLabel: 'Editorial workflow tests',
+        role: 'Full-stack web development',
+        duration: '7 weeks',
+        summary:
+            'PixelPulse enables developers to publish, discover, and discuss technical content in a modern interface. The project balances editorial readability, authentication, and scalable article management.',
+        features: [
+            'Developer-focused publishing workflow',
+            'Authentication with secure user sessions',
+            'Structured article pages with strong readability',
+            'Database-backed content persistence',
+            'Modern responsive UI with clean typography',
         ],
+        gallery: galleryFor('/images/projects/p5-detail.png'),
+    },
+    'togo-xiwo': {
+        slug: 'togo-xiwo',
+        headline: 'Mobile market discovery app for local commerce in Togo',
+        location: 'Togo',
+        meta: ['Mobile app', 'Commerce', 'In progress'],
+        ratingLabel: '4.5',
+        reviewLabel: 'Prototype market interviews',
+        role: 'Mobile app developer',
+        duration: 'Ongoing',
+        summary:
+            'Togo-xiwo is designed to help users find nearby markets, discover specialties, and prepare purchases more efficiently. The product focuses on practical local value and accessibility.',
+        features: [
+            'Nearby market discovery using map context',
+            'Market specialty exploration',
+            'Order preparation and simple flow planning',
+            'Mobile navigation tuned for practical usage',
+            'Progressive iteration with field constraints',
+        ],
+        gallery: galleryFor('/images/website.png'),
+    },
+    'portify-builder': {
+        slug: 'portify-builder',
+        headline: 'No-code portfolio builder for fast personal branding',
+        location: 'Remote project',
+        meta: ['SaaS-style product', 'Web app', 'In progress'],
+        ratingLabel: '4.7',
+        reviewLabel: 'Creator onboarding feedback',
+        role: 'Frontend architecture + product implementation',
+        duration: 'Ongoing',
+        summary:
+            'Portify helps users generate professional portfolios in minutes without writing code. The experience is built around speed, customization, and clear publishing workflow.',
+        features: [
+            'Template-driven portfolio creation',
+            'Guided setup for non-technical users',
+            'Responsive portfolio output pages',
+            'Firebase-backed account and data logic',
+            'Continuous iteration for onboarding quality',
+        ],
+        gallery: galleryFor('/images/projects/p7-home.png'),
+    },
+    'atomic-habits': {
+        slug: 'atomic-habits',
+        headline: 'Habit tracker inspired by the Atomic Habits framework',
+        location: 'Remote project',
+        meta: ['Web app', 'Habits', 'Upcoming'],
+        ratingLabel: '4.4',
+        reviewLabel: 'Concept validation phase',
+        role: 'Product conception + web development',
+        duration: 'Planned',
+        summary:
+            'Atomic Habits translates behavior design principles into a practical tracking product. The roadmap focuses on clarity, streak consistency, and motivation loops with measurable progress.',
+        features: [
+            'Habit creation and tracking foundation',
+            'Behavior-change oriented progression model',
+            'Supabase-ready data persistence strategy',
+            'Simple dashboard for daily consistency',
+            'Upcoming release with iterative milestones',
+        ],
+        gallery: galleryFor('/images/website.png'),
     },
 };
 

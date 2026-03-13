@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
-import { projects, projectDetailMocks } from "@/lib/data";
+import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeftIcon,
@@ -21,13 +21,44 @@ export default function ProjectDetailPage() {
   const { t } = useLanguage();
   const params = useParams<{ slug: string }>();
   const [toast, setToast] = useState<string | null>(null);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
   const slug = params?.slug;
 
   const project = useMemo(
     () => projects.find((item) => item.slug === slug),
     [slug],
   );
-  const detail = slug ? projectDetailMocks[slug] : undefined;
+  const detail = slug ? projectDetails[slug] : undefined;
+
+  useEffect(() => {
+    if (!isGalleryOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!detail) return;
+      if (event.key === "Escape") {
+        setIsGalleryOpen(false);
+      }
+      if (event.key === "ArrowRight") {
+        setActivePhotoIndex((prev) => (prev + 1) % detail.gallery.length);
+      }
+      if (event.key === "ArrowLeft") {
+        setActivePhotoIndex((prev) =>
+          prev === 0 ? detail.gallery.length - 1 : prev - 1,
+        );
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isGalleryOpen, detail]);
 
   if (!project || !detail) {
     return (
@@ -57,16 +88,21 @@ export default function ProjectDetailPage() {
     }
   };
 
+  const openGallery = (index = 0) => {
+    setActivePhotoIndex(index);
+    setIsGalleryOpen(true);
+  };
+
+  const activePhoto = detail.gallery[activePhotoIndex];
+
   return (
     <>
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-10 md:px-12 lg:px-16">
-        {/* Screen header */}
         <div className="mb-8 flex justify-end">
           <ControlsPanel />
         </div>
 
-        {/* Project detail header */}
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedLetters
             as="h1"
@@ -111,9 +147,12 @@ export default function ProjectDetailPage() {
           </div>
         </div>
 
-        {/* Images section */}
         <section className="grid gap-2 overflow-hidden md:grid-cols-12">
-          <div className="relative min-h-[320px] md:col-span-7 md:min-h-[520px]">
+          <button
+            type="button"
+            onClick={() => openGallery(0)}
+            className="relative min-h-[320px] text-left md:col-span-7 md:min-h-[520px]"
+          >
             <Image
               src={detail.gallery[0].src}
               alt={detail.gallery[0].alt}
@@ -121,12 +160,14 @@ export default function ProjectDetailPage() {
               className="object-cover"
               priority
             />
-          </div>
+          </button>
           <div className="grid min-h-[320px] grid-cols-2 gap-2 md:col-span-5 md:grid-rows-2">
             {detail.gallery.slice(1, 5).map((item, index) => (
-              <div
+              <button
                 key={item.src + index}
-                className="relative min-h-[158px] md:min-h-[259px]"
+                type="button"
+                onClick={() => openGallery(index + 1)}
+                className="relative min-h-[158px] text-left md:min-h-[259px]"
               >
                 <Image
                   src={item.src}
@@ -134,15 +175,15 @@ export default function ProjectDetailPage() {
                   fill
                   className="object-cover"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </section>
 
-        {/* Show all photos button */}
         <div className="mt-3 flex justify-end">
           <button
             type="button"
+            onClick={() => openGallery(0)}
             className="inline-flex items-center gap-2 font-display bg-slate-100 px-5 py-2 text-base font-medium text-slate-900"
           >
             <MoreGridIcon size={24} />
@@ -244,6 +285,61 @@ export default function ProjectDetailPage() {
           </aside>
         </div>
       </div>
+
+      {isGalleryOpen && (
+        <div
+          className="fixed inset-0 z-[80] bg-slate-950/95 p-4 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={t.projects.detail.showAllPhotos}
+          onClick={() => setIsGalleryOpen(false)}
+        >
+          <div className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr_auto] gap-4" onClick={(event) => event.stopPropagation()}>
+            <div className="flex items-center justify-between">
+              <p className="font-display text-slate-200">
+                {activePhotoIndex + 1} / {detail.gallery.length}
+              </p>
+              <button
+                type="button"
+                onClick={() => setIsGalleryOpen(false)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/70 text-slate-100"
+                aria-label={t.projects.detail.closeGallery}
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="relative min-h-0">
+              <Image
+                src={activePhoto.src}
+                alt={activePhoto.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+
+            <div className="grid grid-cols-5 gap-2 md:grid-cols-6">
+              {detail.gallery.map((item, index) => (
+                <button
+                  key={item.src + index}
+                  type="button"
+                  onClick={() => setActivePhotoIndex(index)}
+                  className={`relative min-h-[64px] overflow-hidden ${index === activePhotoIndex ? "ring-2 ring-[var(--text-accent)]" : "opacity-70"}`}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {toast && (
         <div className="fixed bottom-6 right-6 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-900 shadow-lg">
