@@ -17,7 +17,7 @@ export default function ProjectCardCompact({
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group block min-w-[290px] max-w-[320px] overflow-hidden rounded-md"
+      className="group block min-w-[290px] max-w-[320px] overflow-hidden"
     >
       {project.image && (
         <div className="relative h-40 w-full overflow-hidden">
