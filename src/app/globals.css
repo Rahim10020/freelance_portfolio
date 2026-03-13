@@ -203,7 +203,7 @@ body {
 }
 
 .custom-cursor-glyph::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 5px;
   border-radius: 999px;
@@ -222,8 +222,7 @@ body {
 .custom-cursor-icon {
   position: relative;
   color: var(--cursor-fg);
-  filter:
-    drop-shadow(0 0 1px var(--cursor-contrast))
+  filter: drop-shadow(0 0 1px var(--cursor-contrast))
     drop-shadow(0 0 3px var(--cursor-contrast));
 }
 
@@ -242,7 +241,7 @@ html.custom-cursor-enabled textarea {
 
 input,
 textarea,
-[contenteditable='true'] {
+[contenteditable="true"] {
   caret-color: var(--foreground);
 }
 
@@ -256,9 +255,6 @@ textarea,
 .custom-cursor {
   transition: none !important;
 }
-
-
-
 
 html.reduced-motion {
   scroll-behavior: auto;

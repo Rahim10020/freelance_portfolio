@@ -31,7 +31,9 @@ export default function ProjectPhotosPage() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
         if (visible.length === 0) return;
-        const nextIndex = Number((visible[0].target as HTMLElement).dataset.index);
+        const nextIndex = Number(
+          (visible[0].target as HTMLElement).dataset.index,
+        );
         if (!Number.isNaN(nextIndex)) {
           setActiveSectionIndex(nextIndex);
         }
@@ -78,10 +80,12 @@ export default function ProjectPhotosPage() {
               className="inline-flex items-center gap-2 text-slate-200 hover:text-[var(--text-accent)]"
             >
               <ArrowLeftIcon size={20} aria-hidden />
-              <span className="font-display">{t.projects.detail.backToProject}</span>
+              <span className="font-display">
+                {t.projects.detail.backToProject}
+              </span>
             </Link>
 
-            <h1 className="font-sans text-4xl font-bold text-slate-100">
+            <h1 className="font-display text-4xl font-bold text-slate-100">
               {activeSection.title}
             </h1>
             <p className="font-display text-lg text-slate-300">
@@ -91,7 +95,8 @@ export default function ProjectPhotosPage() {
             <div className="border-t border-slate-700/60 pt-4 text-sm text-slate-400">
               <p className="font-display">{projectTr?.title}</p>
               <p className="font-display">
-                {activeSectionIndex + 1} / {detail.photoSections.length} {t.projects.detail.photosSections}
+                {activeSectionIndex + 1} / {detail.photoSections.length}{" "}
+                {t.projects.detail.photosSections}
               </p>
             </div>
           </div>

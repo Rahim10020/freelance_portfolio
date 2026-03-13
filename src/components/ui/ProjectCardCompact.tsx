@@ -7,16 +7,17 @@ interface ProjectCardCompactProps {
   project: Project;
 }
 
-export default function ProjectCardCompact({ project }: ProjectCardCompactProps) {
+export default function ProjectCardCompact({
+  project,
+}: ProjectCardCompactProps) {
   const { t } = useLanguage();
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const title = projectTr?.title ?? "";
-  const description = projectTr?.description ?? "";
 
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group block min-w-[290px] max-w-[320px] overflow-hidden rounded-lg border border-slate-700/40 bg-slate-900/40"
+      className="group block min-w-[290px] max-w-[320px] overflow-hidden rounded-md"
     >
       {project.image && (
         <div className="relative h-40 w-full overflow-hidden">
@@ -24,21 +25,13 @@ export default function ProjectCardCompact({ project }: ProjectCardCompactProps)
             src={project.image}
             alt={title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover"
             sizes="320px"
           />
         </div>
       )}
-      <div className="space-y-3 p-4">
-        <h4 className="font-sans text-lg font-semibold text-slate-100">{title}</h4>
-        <p className="line-clamp-3 font-display text-sm text-slate-300">{description}</p>
-        <ul className="flex flex-wrap gap-2">
-          {project.technologies.slice(0, 3).map((tech) => (
-            <li key={tech} className="accent-chip rounded-full px-2.5 py-1 text-xs font-medium">
-              {tech}
-            </li>
-          ))}
-        </ul>
+      <div className="space-y-3 py-4">
+        <h4 className="font-display text-lg font-semibold">{title}</h4>
       </div>
     </Link>
   );

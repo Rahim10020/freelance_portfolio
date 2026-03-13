@@ -26,7 +26,7 @@ export default function ProjectSummaryAside({
   return (
     <aside className="lg:col-span-4">
       <div className="top-6 p-5 shadow-lg lg:sticky">
-        <h3 className="text-xl font-sans font-semibold text-slate-100">
+        <h3 className="text-xl font-display font-semibold text-slate-100">
           {labels.projectSummary}
         </h3>
         <div className="mt-6 space-y-4">

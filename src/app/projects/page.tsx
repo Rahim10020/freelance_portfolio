@@ -44,7 +44,7 @@ export default function ProjectsArchive() {
   return (
     <>
       <MouseEffect />
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-15 lg:px-24 lg:py-18">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-display md:px-12 md:py-15 lg:px-24 lg:py-18">
         <div className="mb-16">
           <div className="flex justify-end">
             <ControlsPanel />
@@ -55,7 +55,7 @@ export default function ProjectsArchive() {
           <AnimatedLetters
             as="h1"
             text={t.projects.allProjects}
-            className="mb-4 font-sans text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl"
+            className="mb-4 font-display text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl"
           />
           <p className="max-w-2xl font-display text-lg text-slate-400">
             {t.projects.archiveDescription}

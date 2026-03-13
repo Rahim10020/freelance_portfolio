@@ -107,7 +107,7 @@ export default function ProjectDetailPage() {
           <AnimatedLetters
             as="h1"
             text={projectTr?.title}
-            className="text-4xl font-bold font-sans tracking-tight text-slate-100 md:text-4xl"
+            className="text-4xl font-bold font-display tracking-tight text-slate-100 md:text-4xl"
           />
 
           <div className="flex flex-wrap items-center gap-2 text-slate-300">
@@ -193,13 +193,13 @@ export default function ProjectDetailPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
           <div className="space-y-8 lg:col-span-8">
-            <h2 className="text-3xl font-sans font-bold text-slate-100">
+            <h2 className="text-3xl font-display font-bold text-slate-100">
               {detail.headline}
             </h2>
 
             {hasTldr && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.tldr}
                 </h3>
                 <div className="mt-4 space-y-3">
@@ -245,7 +245,7 @@ export default function ProjectDetailPage() {
 
             {detail.contextAndProblem && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.contextProblem}
                 </h3>
                 <p className="mt-3 font-display leading-relaxed text-slate-300">
@@ -256,7 +256,7 @@ export default function ProjectDetailPage() {
 
             {detail.solutionRetained && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.solutionRetained}
                 </h3>
                 <p className="mt-3 font-display leading-relaxed text-slate-300">
@@ -266,7 +266,7 @@ export default function ProjectDetailPage() {
             )}
 
             <section className="border-t border-slate-700/60 pt-6">
-              <h3 className="text-xl font-sans font-semibold text-slate-100">
+              <h3 className="text-xl font-display font-semibold text-slate-100">
                 {t.projects.detail.keyFeatures}
               </h3>
               <ul className="mt-4 space-y-3 text-slate-300">
@@ -285,7 +285,7 @@ export default function ProjectDetailPage() {
             {detail.securityAndResponsibility &&
               detail.securityAndResponsibility.length > 0 && (
                 <section className="border-t border-slate-700/60 pt-6">
-                  <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  <h3 className="text-xl font-display font-semibold text-slate-100">
                     {t.projects.detail.securityResponsibility}
                   </h3>
                   <ul className="mt-4 space-y-3 text-slate-300">
@@ -304,7 +304,7 @@ export default function ProjectDetailPage() {
 
             {detail.keyLearnings && detail.keyLearnings.length > 0 && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.keyLearnings}
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">
@@ -323,7 +323,7 @@ export default function ProjectDetailPage() {
 
             {detail.futureRoadmap && detail.futureRoadmap.length > 0 && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.futureRoadmap}
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">
@@ -342,7 +342,7 @@ export default function ProjectDetailPage() {
 
             {detail.whatYouCanLearn && detail.whatYouCanLearn.length > 0 && (
               <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                <h3 className="text-xl font-display font-semibold text-slate-100">
                   {t.projects.detail.whatYouCanLearn}
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">

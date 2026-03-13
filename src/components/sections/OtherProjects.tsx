@@ -23,7 +23,7 @@ export default function OtherProjects({ currentSlug }: OtherProjectsProps) {
 
   return (
     <section className="mt-14 border-t border-slate-700/60 pt-10">
-      <h3 className="mb-5 font-sans text-2xl font-semibold text-slate-100">
+      <h3 className="mb-5 font-display text-2xl font-semibold text-slate-100">
         {t.projects.detail.otherProjects}
       </h3>
       <div className="flex gap-4 overflow-x-auto pb-2">
