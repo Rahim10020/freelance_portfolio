@@ -454,6 +454,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Field tests with local users',
             role: 'Mobile developer (Kotlin + Compose)',
             duration: '6 weeks',
+            year: '2023',
+            team: 'Solo developer',
+            platforms: ['Android'],
             summary:
                 'Essence Togo was built to simplify fuel station discovery with a fast map-first flow. The app focuses on speed, clear UI, and practical location context for daily city movement.',
             features: [
@@ -487,6 +490,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Iteration feedback from active users',
             role: 'Frontend + product implementation',
             duration: 'Ongoing',
+            year: '2024',
+            team: 'Solo product builder',
+            platforms: ['Web'],
             summary:
                 'Focusly-work structures concentration blocks with a practical timer experience and clean interface. The goal is to reduce distraction and keep users in a consistent deep-work rhythm.',
             features: [
@@ -520,6 +526,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Student usage sessions',
             role: 'Frontend contributor + integration',
             duration: '5 weeks',
+            year: '2022',
+            team: 'Frontend + content coordination',
+            platforms: ['Web'],
             summary:
                 'DocStore centralizes key university resources so students can find materials faster. The experience was designed around clarity, quick discovery, and lightweight browsing on low bandwidth.',
             features: [
@@ -553,6 +562,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'User tests: 33 sessions',
             role: 'Product design + full-stack development',
             duration: '8 weeks',
+            year: '2024',
+            team: 'Product design + full-stack',
+            platforms: ['Web', 'Mobile web'],
             summary:
                 'Togo Stay helps users discover and book apartments quickly while giving owners a clean dashboard to publish listings, manage availability, and communicate with prospects.',
             features: [
@@ -591,6 +603,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Editorial workflow tests',
             role: 'Full-stack web development',
             duration: '7 weeks',
+            year: '2023',
+            team: 'Solo full-stack developer',
+            platforms: ['Web'],
             summary:
                 'PixelPulse enables developers to publish, discover, and discuss technical content in a modern interface. The project balances editorial readability, authentication, and scalable article management.',
             features: [
@@ -624,6 +639,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Prototype market interviews',
             role: 'Mobile app developer',
             duration: 'Ongoing',
+            year: '2025',
+            team: 'Solo mobile developer',
+            platforms: ['Android'],
             summary:
                 'Togo-xiwo is designed to help users find nearby markets, discover specialties, and prepare purchases more efficiently. The product focuses on practical local value and accessibility.',
             features: [
@@ -657,6 +675,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Creator onboarding feedback',
             role: 'Frontend architecture + product implementation',
             duration: 'Ongoing',
+            year: '2025',
+            team: 'Solo builder + feedback loop',
+            platforms: ['Web'],
             summary:
                 'Portify helps users generate professional portfolios in minutes without writing code. The experience is built around speed, customization, and clear publishing workflow.',
             features: [
@@ -690,6 +711,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
             reviewLabel: 'Concept validation phase',
             role: 'Product conception + web development',
             duration: 'Planned',
+            year: '2026',
+            team: 'Solo product conception',
+            platforms: ['Web'],
             summary:
                 'Atomic Habits translates behavior design principles into a practical tracking product. The roadmap focuses on clarity, streak consistency, and motivation loops with measurable progress.',
             features: [

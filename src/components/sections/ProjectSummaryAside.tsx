@@ -4,6 +4,9 @@ type ProjectSummaryAsideLabels = {
   projectSummary: string;
   role: string;
   duration: string;
+  year: string;
+  team: string;
+  platforms: string;
   stack: string;
   viewLive: string;
   viewGithub: string;
@@ -37,10 +40,34 @@ export default function ProjectSummaryAside({
           </div>
           <div>
             <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+              {labels.team}
+            </p>
+            <p className="mt-1 font-display font-medium text-slate-100">
+              {detail.team}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase font-display tracking-wide text-slate-400">
               {labels.duration}
             </p>
             <p className="mt-1 font-medium font-display text-slate-100">
               {detail.duration}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+              {labels.year}
+            </p>
+            <p className="mt-1 font-medium font-display text-slate-100">
+              {detail.year}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+              {labels.platforms}
+            </p>
+            <p className="mt-1 font-medium font-display text-slate-100">
+              {detail.platforms.join(" / ")}
             </p>
           </div>
           <div>

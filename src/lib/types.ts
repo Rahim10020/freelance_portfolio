@@ -40,6 +40,9 @@ export interface ProjectDetail {
     reviewLabel: string;
     role: string;
     duration: string;
+    year: string;
+    team: string;
+    platforms: string[];
     summary: string;
     features: string[];
     gallery: ProjectPhoto[];
