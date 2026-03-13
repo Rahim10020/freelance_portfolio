@@ -145,7 +145,7 @@ export default function ProjectDetailPage() {
             )}
           </div>
         </div>
-          
+
         {/*Images sections */}
         <section className="grid gap-2 overflow-hidden md:grid-cols-12">
           <button
@@ -203,11 +203,8 @@ export default function ProjectDetailPage() {
                 </h3>
                 <div className="mt-4 space-y-3">
                   {detail.tldr?.what && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
                       <div className="flex items-start gap-3">
-                        <span className="mt-0.5 text-amber-300">
-                          <IdeaIcon size={18} />
-                        </span>
                         <div>
                           <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
                             {t.projects.detail.what}
@@ -220,11 +217,8 @@ export default function ProjectDetailPage() {
                     </article>
                   )}
                   {detail.tldr?.who && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
                       <div className="flex items-start gap-3">
-                        <span className="mt-0.5 text-amber-300">
-                          <IdeaIcon size={18} />
-                        </span>
                         <div>
                           <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
                             {t.projects.detail.who}
@@ -236,33 +230,31 @@ export default function ProjectDetailPage() {
                       </div>
                     </article>
                   )}
-                  {detail.tldr?.challenges && detail.tldr.challenges.length > 0 && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
-                      <div className="flex items-start gap-3">
-                        <span className="mt-0.5 text-amber-300">
-                          <IdeaIcon size={18} />
-                        </span>
-                        <div className="w-full">
-                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
-                            {t.projects.detail.challenges}
-                          </p>
-                          <ul className="mt-2 space-y-2">
-                            {detail.tldr.challenges.map((item) => (
-                              <li key={item} className="font-display italic leading-relaxed text-slate-100/90">
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
+                  {detail.tldr?.challenges &&
+                    detail.tldr.challenges.length > 0 && (
+                      <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] px-4 py-4 md:px-6">
+                        <div className="flex items-start gap-3">
+                          <div className="w-full">
+                            <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
+                              {t.projects.detail.challenges}
+                            </p>
+                            <ul className="mt-2 space-y-2">
+                              {detail.tldr.challenges.map((item) => (
+                                <li
+                                  key={item}
+                                  className="font-display italic leading-relaxed text-slate-100/90"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  )}
+                      </article>
+                    )}
                   {detail.tldr?.result && (
-                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[#313539] px-4 py-4 md:px-6">
                       <div className="flex items-start gap-3">
-                        <span className="mt-0.5 text-amber-300">
-                          <IdeaIcon size={18} />
-                        </span>
                         <div>
                           <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
                             {t.projects.detail.result}
@@ -317,21 +309,25 @@ export default function ProjectDetailPage() {
               </ul>
             </section>
 
-            {detail.securityAndResponsibility && detail.securityAndResponsibility.length > 0 && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-sans font-semibold text-slate-100">
-                  {t.projects.detail.securityResponsibility}
-                </h3>
-                <ul className="mt-4 space-y-3 text-slate-300">
-                  {detail.securityAndResponsibility.map((item) => (
-                    <li key={item} className="flex items-start gap-3 font-display">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            )}
+            {detail.securityAndResponsibility &&
+              detail.securityAndResponsibility.length > 0 && (
+                <section className="border-t border-slate-700/60 pt-6">
+                  <h3 className="text-xl font-sans font-semibold text-slate-100">
+                    {t.projects.detail.securityResponsibility}
+                  </h3>
+                  <ul className="mt-4 space-y-3 text-slate-300">
+                    {detail.securityAndResponsibility.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 font-display"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
             {detail.keyLearnings && detail.keyLearnings.length > 0 && (
               <section className="border-t border-slate-700/60 pt-6">
@@ -340,7 +336,10 @@ export default function ProjectDetailPage() {
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">
                   {detail.keyLearnings.map((item) => (
-                    <li key={item} className="flex items-start gap-3 font-display">
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 font-display"
+                    >
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
                       <span>{item}</span>
                     </li>
@@ -356,7 +355,10 @@ export default function ProjectDetailPage() {
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">
                   {detail.futureRoadmap.map((item) => (
-                    <li key={item} className="flex items-start gap-3 font-display">
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 font-display"
+                    >
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
                       <span>{item}</span>
                     </li>
@@ -372,7 +374,10 @@ export default function ProjectDetailPage() {
                 </h3>
                 <ul className="mt-4 space-y-3 text-slate-300">
                   {detail.whatYouCanLearn.map((item) => (
-                    <li key={item} className="flex items-start gap-3 font-display">
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 font-display"
+                    >
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
                       <span>{item}</span>
                     </li>
