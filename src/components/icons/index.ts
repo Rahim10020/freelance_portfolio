@@ -18,3 +18,5 @@ export { default as ShareIcon } from "./ShareIcon";
 export { default as MoreGridIcon } from "./MoreGridIcon";
 export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
 export type { IconProps } from "./IconProps";
+
+export { default as IdeaIcon } from "./IdeaIcon";

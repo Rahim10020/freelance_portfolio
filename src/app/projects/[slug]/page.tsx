@@ -15,6 +15,7 @@ import {
   GithubWhiteIcon,
   MoreGridIcon,
   ShareIcon,
+  IdeaIcon,
 } from "@/components/icons";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 
@@ -144,7 +145,8 @@ export default function ProjectDetailPage() {
             )}
           </div>
         </div>
-
+          
+        {/*Images sections */}
         <section className="grid gap-2 overflow-hidden md:grid-cols-12">
           <button
             type="button"
@@ -201,43 +203,76 @@ export default function ProjectDetailPage() {
                 </h3>
                 <div className="mt-4 space-y-3">
                   {detail.tldr?.what && (
-                    <div>
-                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                        {t.projects.detail.what}
-                      </p>
-                      <p className="mt-1 font-display text-slate-300">{detail.tldr.what}</p>
-                    </div>
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 text-amber-300">
+                          <IdeaIcon size={18} />
+                        </span>
+                        <div>
+                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
+                            {t.projects.detail.what}
+                          </p>
+                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
+                            {detail.tldr.what}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
                   )}
                   {detail.tldr?.who && (
-                    <div>
-                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                        {t.projects.detail.who}
-                      </p>
-                      <p className="mt-1 font-display text-slate-300">{detail.tldr.who}</p>
-                    </div>
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 text-amber-300">
+                          <IdeaIcon size={18} />
+                        </span>
+                        <div>
+                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
+                            {t.projects.detail.who}
+                          </p>
+                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
+                            {detail.tldr.who}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
                   )}
                   {detail.tldr?.challenges && detail.tldr.challenges.length > 0 && (
-                    <div>
-                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                        {t.projects.detail.challenges}
-                      </p>
-                      <ul className="mt-2 space-y-2 text-slate-300">
-                        {detail.tldr.challenges.map((item) => (
-                          <li key={item} className="flex items-start gap-3 font-display">
-                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 text-amber-300">
+                          <IdeaIcon size={18} />
+                        </span>
+                        <div className="w-full">
+                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
+                            {t.projects.detail.challenges}
+                          </p>
+                          <ul className="mt-2 space-y-2">
+                            {detail.tldr.challenges.map((item) => (
+                              <li key={item} className="font-display italic leading-relaxed text-slate-100/90">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
                   )}
                   {detail.tldr?.result && (
-                    <div>
-                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                        {t.projects.detail.result}
-                      </p>
-                      <p className="mt-1 font-display text-slate-300">{detail.tldr.result}</p>
-                    </div>
+                    <article className="relative overflow-hidden border-l-4 border-[var(--text-accent)] bg-[linear-gradient(90deg,rgba(245,158,11,0.14)_0%,rgba(17,24,39,0.65)_42%,rgba(2,6,23,0.9)_100%)] px-4 py-4 md:px-6">
+                      <div className="flex items-start gap-3">
+                        <span className="mt-0.5 text-amber-300">
+                          <IdeaIcon size={18} />
+                        </span>
+                        <div>
+                          <p className="text-xs uppercase font-display tracking-wide text-amber-200/90">
+                            {t.projects.detail.result}
+                          </p>
+                          <p className="mt-1 font-display italic leading-relaxed text-slate-100/90">
+                            {detail.tldr.result}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
                   )}
                 </div>
               </section>
