@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
 import OtherProjects from "@/components/sections/OtherProjects";
+import ProjectSummaryAside from "@/components/sections/ProjectSummaryAside";
 import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -358,69 +359,18 @@ export default function ProjectDetailPage() {
               </section>
             )}
           </div>
-
-          <aside className="lg:col-span-4">
-            <div className="top-6 p-5 shadow-lg lg:sticky">
-              <h3 className="text-xl font-sans font-semibold text-slate-100">
-                {t.projects.detail.projectSummary}
-              </h3>
-              <div className="mt-6 space-y-4">
-                <div>
-                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                    {t.projects.detail.role}
-                  </p>
-                  <p className="mt-1 font-display font-medium text-slate-100">
-                    {detail.role}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                    {t.projects.detail.duration}
-                  </p>
-                  <p className="mt-1 font-medium font-display text-slate-100">
-                    {detail.duration}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase font-display tracking-wide text-slate-400">
-                    {t.projects.detail.stack}
-                  </p>
-                  <ul className="mt-2 flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <li
-                        key={tech}
-                        className="accent-chip rounded-full font-display px-3 py-1 text-xs font-medium"
-                      >
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-6 space-y-2">
-                {project.links.live && (
-                  <a
-                    href={project.links.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-display inline-flex w-full items-center justify-center bg-[rgb(var(--accent-bg-rgb))] px-4 py-2 font-semibold text-[var(--on-primary-text)] hover:bg-[rgb(var(--accent-rgb))]"
-                  >
-                    <span>{t.projects.detail.viewLive}</span>
-                  </a>
-                )}
-                {project.links.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" font-display inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-slate-100 hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
-                  >
-                    <span>{t.projects.detail.viewGithub}</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </aside>
+          <ProjectSummaryAside
+            project={project}
+            detail={detail}
+            labels={{
+              projectSummary: t.projects.detail.projectSummary,
+              role: t.projects.detail.role,
+              duration: t.projects.detail.duration,
+              stack: t.projects.detail.stack,
+              viewLive: t.projects.detail.viewLive,
+              viewGithub: t.projects.detail.viewGithub,
+            }}
+          />
         </div>
 
         <OtherProjects currentSlug={project.slug} />
