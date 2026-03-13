@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
+import OtherProjects from "@/components/sections/OtherProjects";
 import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -69,6 +70,12 @@ export default function ProjectDetailPage() {
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const gallery = detail.gallery;
   const activePhoto = gallery[activePhotoIndex];
+
+  const hasTldr =
+    !!detail.tldr?.what ||
+    !!detail.tldr?.who ||
+    !!detail.tldr?.result ||
+    !!(detail.tldr?.challenges && detail.tldr.challenges.length > 0);
 
   const handleShare = async () => {
     try {
@@ -182,18 +189,83 @@ export default function ProjectDetailPage() {
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-8">
+          <div className="space-y-8 lg:col-span-8">
             <h2 className="text-3xl font-sans font-bold text-slate-100">
               {detail.headline}
             </h2>
 
-            <div className="mt-8 border-t border-slate-700/60 pt-6">
-              <p className="text-base font-display leading-relaxed text-slate-300">
-                {detail.summary}
-              </p>
-            </div>
+            {hasTldr && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.tldr}
+                </h3>
+                <div className="mt-4 space-y-3">
+                  {detail.tldr?.what && (
+                    <div>
+                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+                        {t.projects.detail.what}
+                      </p>
+                      <p className="mt-1 font-display text-slate-300">{detail.tldr.what}</p>
+                    </div>
+                  )}
+                  {detail.tldr?.who && (
+                    <div>
+                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+                        {t.projects.detail.who}
+                      </p>
+                      <p className="mt-1 font-display text-slate-300">{detail.tldr.who}</p>
+                    </div>
+                  )}
+                  {detail.tldr?.challenges && detail.tldr.challenges.length > 0 && (
+                    <div>
+                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+                        {t.projects.detail.challenges}
+                      </p>
+                      <ul className="mt-2 space-y-2 text-slate-300">
+                        {detail.tldr.challenges.map((item) => (
+                          <li key={item} className="flex items-start gap-3 font-display">
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {detail.tldr?.result && (
+                    <div>
+                      <p className="text-xs uppercase font-display tracking-wide text-slate-400">
+                        {t.projects.detail.result}
+                      </p>
+                      <p className="mt-1 font-display text-slate-300">{detail.tldr.result}</p>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
-            <div className="mt-8 border-t border-slate-700/60 pt-6">
+            {detail.contextAndProblem && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.contextProblem}
+                </h3>
+                <p className="mt-3 font-display leading-relaxed text-slate-300">
+                  {detail.contextAndProblem}
+                </p>
+              </section>
+            )}
+
+            {detail.solutionRetained && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.solutionRetained}
+                </h3>
+                <p className="mt-3 font-display leading-relaxed text-slate-300">
+                  {detail.solutionRetained}
+                </p>
+              </section>
+            )}
+
+            <section className="border-t border-slate-700/60 pt-6">
               <h3 className="text-xl font-sans font-semibold text-slate-100">
                 {t.projects.detail.keyFeatures}
               </h3>
@@ -208,7 +280,71 @@ export default function ProjectDetailPage() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
+
+            {detail.securityAndResponsibility && detail.securityAndResponsibility.length > 0 && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.securityResponsibility}
+                </h3>
+                <ul className="mt-4 space-y-3 text-slate-300">
+                  {detail.securityAndResponsibility.map((item) => (
+                    <li key={item} className="flex items-start gap-3 font-display">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {detail.keyLearnings && detail.keyLearnings.length > 0 && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.keyLearnings}
+                </h3>
+                <ul className="mt-4 space-y-3 text-slate-300">
+                  {detail.keyLearnings.map((item) => (
+                    <li key={item} className="flex items-start gap-3 font-display">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {detail.futureRoadmap && detail.futureRoadmap.length > 0 && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.futureRoadmap}
+                </h3>
+                <ul className="mt-4 space-y-3 text-slate-300">
+                  {detail.futureRoadmap.map((item) => (
+                    <li key={item} className="flex items-start gap-3 font-display">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {detail.whatYouCanLearn && detail.whatYouCanLearn.length > 0 && (
+              <section className="border-t border-slate-700/60 pt-6">
+                <h3 className="text-xl font-sans font-semibold text-slate-100">
+                  {t.projects.detail.whatYouCanLearn}
+                </h3>
+                <ul className="mt-4 space-y-3 text-slate-300">
+                  {detail.whatYouCanLearn.map((item) => (
+                    <li key={item} className="flex items-start gap-3 font-display">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--text-accent)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
 
           <aside className="lg:col-span-4">
@@ -274,6 +410,8 @@ export default function ProjectDetailPage() {
             </div>
           </aside>
         </div>
+
+        <OtherProjects currentSlug={project.slug} />
       </div>
 
       {isPreviewOpen && (

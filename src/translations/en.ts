@@ -66,6 +66,18 @@ export const en = {
             closeGallery: 'Close gallery',
             backToProject: 'Back to project',
             photosSections: 'sections',
+            tldr: 'TL;DR',
+            what: 'What',
+            who: 'Who',
+            challenges: 'Challenges',
+            result: 'Result',
+            contextProblem: 'Context & Problem',
+            solutionRetained: 'Chosen Solution',
+            securityResponsibility: 'Security & Responsibility',
+            keyLearnings: 'Key Learnings',
+            futureRoadmap: 'Future Roadmap',
+            whatYouCanLearn: 'What You Can Learn From This Project',
+            otherProjects: 'Other Projects',
         },
         list: {
             '1': {

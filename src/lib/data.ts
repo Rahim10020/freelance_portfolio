@@ -178,6 +178,248 @@ const createPhotoSection = (
     })),
 });
 
+const narrativeBySlug: Record<
+    string,
+    Pick<
+        ProjectDetail,
+        | 'tldr'
+        | 'contextAndProblem'
+        | 'solutionRetained'
+        | 'securityAndResponsibility'
+        | 'keyLearnings'
+        | 'futureRoadmap'
+        | 'whatYouCanLearn'
+    >
+> = {
+    'essence-togo': {
+        tldr: {
+            what: 'A mobile utility app to quickly locate nearby gas stations.',
+            who: 'Daily commuters and drivers in Togo.',
+            challenges: [
+                'Map readability on small screens',
+                'Fast loading in unstable network conditions',
+            ],
+            result: 'Delivered a practical location-first experience with strong field usability.',
+        },
+        contextAndProblem:
+            'Drivers often lose time identifying available stations quickly, especially in unfamiliar areas.',
+        solutionRetained:
+            'A map-first approach with direct station access and lightweight interactions was retained for speed.',
+        securityAndResponsibility: [
+            'No sensitive personal data required for core usage',
+            'Network calls minimized for reliability',
+        ],
+        keyLearnings: [
+            'Map clarity matters more than visual complexity',
+            'Fast first render is critical on low-end devices',
+        ],
+        futureRoadmap: [
+            'Add station service filters',
+            'Improve offline caching',
+            'Introduce user-reported station updates',
+        ],
+        whatYouCanLearn: [
+            'Designing utility-first mobile workflows',
+            'Balancing UX simplicity with real constraints',
+        ],
+    },
+    'focusly-work': {
+        tldr: {
+            what: 'A Pomodoro productivity web app focused on sustained concentration.',
+            who: 'Students, freelancers, and creators needing structured focus sessions.',
+            challenges: [
+                'Reducing distraction without overloading features',
+                'Maintaining smooth timer state',
+            ],
+            result: 'A clean and focused timer experience with iterative user feedback.',
+        },
+        contextAndProblem:
+            'Many productivity apps overload the UI and break focus instead of reinforcing it.',
+        solutionRetained:
+            'A minimalist timer-centric interface with clear session flow was chosen as the core direction.',
+        securityAndResponsibility: [
+            'Session data scoped to authenticated users',
+            'Defensive handling for timer state consistency',
+        ],
+        keyLearnings: [
+            'Minimal interfaces improve retention',
+            'Users value predictable flow over feature quantity',
+        ],
+        futureRoadmap: [
+            'Session analytics dashboard',
+            'Cross-device continuity',
+            'Focus streak milestones',
+        ],
+        whatYouCanLearn: [
+            'Product-focused iteration with user feedback',
+            'Structuring stateful UX in React',
+        ],
+    },
+    'docstore-ul': {
+        tldr: {
+            what: 'A document platform for University of Lome students.',
+            who: 'Students searching for academic resources by school and faculty.',
+            challenges: [
+                'Information architecture across many domains',
+                'Fast retrieval under constrained connectivity',
+            ],
+            result: 'A centralized access point that reduced search friction for users.',
+        },
+        contextAndProblem:
+            'Students struggled to find reliable documents scattered across informal channels.',
+        solutionRetained:
+            'A categorized, faculty-driven browsing model was retained for fast discovery.',
+        keyLearnings: [
+            'Navigation depth must stay shallow',
+            'Consistency in labeling improves trust',
+        ],
+        whatYouCanLearn: [
+            'Designing structured content platforms',
+            'Building searchable educational interfaces',
+        ],
+    },
+    'togo-stay': {
+        tldr: {
+            what: 'A rental marketplace inspired by modern booking flows.',
+            who: 'People searching apartments and owners publishing listings.',
+            challenges: [
+                'Making listing detail clear at first glance',
+                'Balancing browsing speed with trust signals',
+            ],
+            result: 'A media-rich detail flow with clearer decision support for renters.',
+        },
+        contextAndProblem:
+            'Local apartment discovery lacked structured product experience and trustworthy listing presentation.',
+        solutionRetained:
+            'A listing-detail-first layout with visual priority and concise property context was retained.',
+        securityAndResponsibility: [
+            'Safe external link handling for navigation',
+            'Controlled media and content mapping',
+        ],
+        keyLearnings: [
+            'Visual hierarchy strongly impacts booking confidence',
+            'Metadata clarity reduces bounce',
+        ],
+        futureRoadmap: [
+            'Availability calendar improvements',
+            'Owner verification badges',
+            'Smarter filtering and alerts',
+        ],
+        whatYouCanLearn: [
+            'Designing marketplace trust cues',
+            'Turning visual inspiration into actionable UX',
+        ],
+    },
+    'pixelpulse-blog': {
+        tldr: {
+            what: 'A blog platform tailored for developers and tech creators.',
+            who: 'Developers publishing and reading technical content.',
+            challenges: [
+                'Balancing editorial readability with product features',
+                'Maintaining clean authoring flow',
+            ],
+            result: 'A content experience optimized for writing, reading, and discoverability.',
+        },
+        contextAndProblem:
+            'Creators needed a modern publishing space with technical audience expectations.',
+        solutionRetained:
+            'A reading-first structure and lightweight author tools were prioritized.',
+        securityAndResponsibility: [
+            'Authenticated content actions',
+            'Safer external navigation and input hygiene',
+        ],
+        keyLearnings: [
+            'Readable typography has measurable impact on engagement',
+            'Author friction must stay low',
+        ],
+        futureRoadmap: [
+            'Topic subscriptions',
+            'Author analytics',
+            'Editorial workflow upgrades',
+        ],
+        whatYouCanLearn: [
+            'Building creator-first platforms',
+            'Structuring content systems with scalable UX',
+        ],
+    },
+    'togo-xiwo': {
+        tldr: {
+            what: 'A market discovery mobile concept for local commerce.',
+            who: 'Shoppers and users exploring nearby markets.',
+            challenges: [
+                'Data reliability for market information',
+                'Simple exploration on mobile',
+            ],
+            result: 'A usable prototype direction validated through early interviews.',
+        },
+        keyLearnings: [
+            'Local context is crucial for discovery apps',
+            'Prototype validation saves time on roadmap decisions',
+        ],
+        futureRoadmap: [
+            'Merchant onboarding',
+            'Market schedule data',
+            'Order-ready shopping lists',
+        ],
+    },
+    'portify-builder': {
+        tldr: {
+            what: 'A no-code portfolio builder for fast personal branding.',
+            who: 'Freelancers, students, and creators who need a professional portfolio quickly.',
+            challenges: [
+                'Simplifying setup without reducing customization',
+                'Keeping output quality consistent',
+            ],
+            result: 'A guided builder flow that accelerates first publish experience.',
+        },
+        contextAndProblem:
+            'Many users need portfolio presence but are blocked by technical setup complexity.',
+        solutionRetained:
+            'A guided, template-first onboarding was retained to optimize activation speed.',
+        keyLearnings: [
+            'Default quality matters more than deep settings initially',
+            'Onboarding clarity drives completion',
+        ],
+        futureRoadmap: [
+            'Template library expansion',
+            'Portfolio analytics',
+            'One-click deployment improvements',
+        ],
+        whatYouCanLearn: [
+            'Designing no-code experiences',
+            'Balancing speed and customization in product design',
+        ],
+    },
+    'atomic-habits': {
+        tldr: {
+            what: 'A habit tracking concept inspired by Atomic Habits principles.',
+            who: 'People building routines with measurable progress.',
+            challenges: [
+                'Avoiding feature bloat in habit tools',
+                'Keeping motivation loops meaningful',
+            ],
+            result: 'A clear roadmap focused on behavior consistency and progress visibility.',
+        },
+        contextAndProblem:
+            'Users abandon habit apps when daily flow becomes complex or repetitive.',
+        solutionRetained:
+            'A lightweight daily check-in model with strong progress cues was selected.',
+        keyLearnings: [
+            'Consistency beats complexity for habit systems',
+            'Small feedback loops improve retention',
+        ],
+        futureRoadmap: [
+            'Habit streak analytics',
+            'Goal-linked routines',
+            'Coach-like reminder model',
+        ],
+        whatYouCanLearn: [
+            'Designing behavioral product loops',
+            'Prioritizing MVP scope for habit platforms',
+        ],
+    },
+};
+
 const createDetail = (
     detail: Omit<ProjectDetail, 'gallery' | 'photoSections'>,
     sections: PhotoSection[],
@@ -195,6 +437,7 @@ const createDetail = (
 
     return {
         ...detail,
+        ...narrativeBySlug[detail.slug],
         photoSections: fallbackSection,
         gallery: fallbackSection.flatMap((section) => section.images),
     };

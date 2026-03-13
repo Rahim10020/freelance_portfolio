@@ -69,6 +69,18 @@ export const fr = {
       closeGallery: "Fermer la galerie",
       backToProject: "Retour au projet",
       photosSections: "sections",
+      tldr: "TL;DR",
+      what: "What",
+      who: "Who",
+      challenges: "Challenges",
+      result: "Result",
+      contextProblem: "Contexte et probleme",
+      solutionRetained: "Solution retenue",
+      securityResponsibility: "Securite et responsabilite",
+      keyLearnings: "Apprentissages cles",
+      futureRoadmap: "Feuille de route future",
+      whatYouCanLearn: "Ce que vous pouvez apprendre de ce projet",
+      otherProjects: "Autres projets",
     },
     list: {
       "1": {

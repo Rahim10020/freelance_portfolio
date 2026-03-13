@@ -24,6 +24,13 @@ export interface PhotoSection {
     images: ProjectPhoto[];
 }
 
+export interface ProjectTldr {
+    what?: string;
+    who?: string;
+    challenges?: string[];
+    result?: string;
+}
+
 export interface ProjectDetail {
     slug: string;
     headline: string;
@@ -37,6 +44,13 @@ export interface ProjectDetail {
     features: string[];
     gallery: ProjectPhoto[];
     photoSections: PhotoSection[];
+    tldr?: ProjectTldr;
+    contextAndProblem?: string;
+    solutionRetained?: string;
+    securityAndResponsibility?: string[];
+    keyLearnings?: string[];
+    futureRoadmap?: string[];
+    whatYouCanLearn?: string[];
 }
 
 export interface Service {
