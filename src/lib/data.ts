@@ -165,17 +165,33 @@ const fallbackGallerySources = [
     '/images/website.png',
 ];
 
-const createPhotoSection = (
-    title: string,
-    description: string,
-    imageSources: string[],
-): PhotoSection => ({
-    title,
-    description,
-    images: imageSources.map((src, index) => ({
-        src,
-        alt: `${title} - view ${index + 1}`,
-    })),
+const photoLibrary = {
+    mobileHome: { src: '/images/projects/p1-accueil.png', format: 'mobile' },
+    webFocus: { src: '/images/projects/p2-focus.png', format: 'web' },
+    webDocstore: { src: '/images/projects/p3-docstore.png', format: 'web' },
+    webStay: { src: '/images/projects/p4-stay.png', format: 'web' },
+    webDetail: { src: '/images/projects/p5-detail.png', format: 'web' },
+    webHome: { src: '/images/projects/p7-home.png', format: 'web' },
+    webSite: { src: '/images/website.png', format: 'web' },
+} satisfies Record<string, { src: string; format: 'mobile' | 'web' }>;
+
+type PhotoInput = {
+    src: string;
+    format?: 'mobile' | 'web';
+    alt?: string;
+};
+
+const createPhotoSection = (imageSources: Array<string | PhotoInput>): PhotoSection => ({
+    images: imageSources.map((image, index) => {
+        const src = typeof image === 'string' ? image : image.src;
+        const format = typeof image === 'string' ? 'web' : image.format ?? 'web';
+        const alt =
+            typeof image === 'string'
+                ? `Project screenshot ${index + 1}`
+                : image.alt ?? `Project screenshot ${index + 1}`;
+
+        return { src, alt, format };
+    }),
 });
 
 const narrativeBySlug: Record<
@@ -427,13 +443,7 @@ const createDetail = (
     const fallbackSection =
         sections.length > 0
             ? sections
-            : [
-                  createPhotoSection(
-                      'Project gallery',
-                      'Visual snapshots from this project.',
-                      fallbackGallerySources.slice(0, 3),
-                  ),
-              ];
+            : [createPhotoSection(fallbackGallerySources.slice(0, 3))];
 
     return {
         ...detail,
@@ -468,16 +478,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Map overview',
-                'Users can instantly identify nearby gas stations with a clear map-first entry point.',
-                ['/images/projects/p1-accueil.png', '/images/projects/p2-focus.png'],
-            ),
-            createPhotoSection(
-                'Practical flow',
-                'The app keeps interactions short so commuters can find stations in a few taps.',
-                ['/images/projects/p3-docstore.png', '/images/projects/p4-stay.png'],
-            ),
+            createPhotoSection([photoLibrary.mobileHome, photoLibrary.webFocus]),
+            createPhotoSection([photoLibrary.webDocstore, photoLibrary.webStay]),
         ],
     ),
     'focusly-work': createDetail(
@@ -504,16 +506,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Timer workspace',
-                'A distraction-light workspace keeps the timer and current task visible at all times.',
-                ['/images/projects/p2-focus.png', '/images/projects/p7-home.png'],
-            ),
-            createPhotoSection(
-                'Progress snapshot',
-                'Session summaries and historical progress are surfaced in a compact dashboard layer.',
-                ['/images/projects/p5-detail.png', '/images/projects/p3-docstore.png'],
-            ),
+            createPhotoSection([photoLibrary.webFocus, photoLibrary.webHome]),
+            createPhotoSection([photoLibrary.webDetail, photoLibrary.webDocstore]),
         ],
     ),
     'docstore-ul': createDetail(
@@ -540,16 +534,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Document browsing',
-                'Students navigate faculties and departments quickly to access relevant resources.',
-                ['/images/projects/p3-docstore.png', '/images/projects/p5-detail.png'],
-            ),
-            createPhotoSection(
-                'Resource access',
-                'The platform emphasizes readable content and direct access to downloadable assets.',
-                ['/images/projects/p1-accueil.png', '/images/projects/p2-focus.png'],
-            ),
+            createPhotoSection([photoLibrary.webDocstore, photoLibrary.webDetail]),
+            createPhotoSection([photoLibrary.mobileHome, photoLibrary.webFocus]),
         ],
     ),
     'togo-stay': createDetail(
@@ -576,21 +562,13 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Living room',
-                'Double bed · Ceiling fan · Air conditioning',
-                ['/images/projects/p4-stay.png', '/images/projects/p7-home.png', '/images/projects/p5-detail.png'],
-            ),
-            createPhotoSection(
-                'Dining area',
-                'Natural light · Family table · Quick access to kitchen',
-                ['/images/projects/p3-docstore.png', '/images/projects/p1-accueil.png'],
-            ),
-            createPhotoSection(
-                'Booking flow',
-                'Users can inspect visuals, compare details, and reserve with a smooth step-by-step flow.',
-                ['/images/projects/p2-focus.png', '/images/website.png'],
-            ),
+            createPhotoSection([
+                photoLibrary.webStay,
+                photoLibrary.webHome,
+                photoLibrary.webDetail,
+            ]),
+            createPhotoSection([photoLibrary.webDocstore, photoLibrary.mobileHome]),
+            createPhotoSection([photoLibrary.webFocus, photoLibrary.webSite]),
         ],
     ),
     'pixelpulse-blog': createDetail(
@@ -617,16 +595,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Reading experience',
-                'Article pages are optimized for long reads with clear hierarchy and spacing.',
-                ['/images/projects/p5-detail.png', '/images/projects/p2-focus.png'],
-            ),
-            createPhotoSection(
-                'Creator workflow',
-                'Authors can draft, publish, and iterate content through a streamlined interface.',
-                ['/images/projects/p7-home.png', '/images/projects/p3-docstore.png'],
-            ),
+            createPhotoSection([photoLibrary.webDetail, photoLibrary.webFocus]),
+            createPhotoSection([photoLibrary.webHome, photoLibrary.webDocstore]),
         ],
     ),
     'togo-xiwo': createDetail(
@@ -653,16 +623,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Market discovery',
-                'Users identify nearby markets and quickly inspect category-specific offerings.',
-                ['/images/website.png', '/images/projects/p1-accueil.png'],
-            ),
-            createPhotoSection(
-                'Order preparation',
-                'The app helps structure shopping intent before users move to physical markets.',
-                ['/images/projects/p2-focus.png', '/images/projects/p3-docstore.png'],
-            ),
+            createPhotoSection([photoLibrary.webSite, photoLibrary.mobileHome]),
+            createPhotoSection([photoLibrary.webFocus, photoLibrary.webDocstore]),
         ],
     ),
     'portify-builder': createDetail(
@@ -689,16 +651,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Builder interface',
-                'Users configure profile, projects, and design settings from a guided interface.',
-                ['/images/projects/p7-home.png', '/images/projects/p5-detail.png'],
-            ),
-            createPhotoSection(
-                'Output preview',
-                'Live preview helps creators validate layout and readability before publishing.',
-                ['/images/projects/p2-focus.png', '/images/website.png'],
-            ),
+            createPhotoSection([photoLibrary.webHome, photoLibrary.webDetail]),
+            createPhotoSection([photoLibrary.webFocus, photoLibrary.webSite]),
         ],
     ),
     'atomic-habits': createDetail(
@@ -725,16 +679,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
             ],
         },
         [
-            createPhotoSection(
-                'Habit dashboard',
-                'Daily and weekly views help users maintain consistency and see progress trends.',
-                ['/images/website.png', '/images/projects/p2-focus.png'],
-            ),
-            createPhotoSection(
-                'Progress signals',
-                'The interface highlights streaks, completion patterns, and behavioral checkpoints.',
-                ['/images/projects/p5-detail.png', '/images/projects/p3-docstore.png'],
-            ),
+            createPhotoSection([photoLibrary.webSite, photoLibrary.webFocus]),
+            createPhotoSection([photoLibrary.webDetail, photoLibrary.webDocstore]),
         ],
     ),
 };

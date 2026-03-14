@@ -16,11 +16,10 @@ export interface Project {
 export interface ProjectPhoto {
     src: string;
     alt: string;
+    format: 'mobile' | 'web';
 }
 
 export interface PhotoSection {
-    title: string;
-    description: string;
     images: ProjectPhoto[];
 }
 

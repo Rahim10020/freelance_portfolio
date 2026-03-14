@@ -44,26 +44,39 @@ export default function ProjectPhotosPage() {
           className="inline-flex items-center gap-2 text-slate-200 hover:text-[var(--text-accent)]"
         >
           <ArrowLeftIcon size={20} aria-hidden />
-          <span className="font-display">{t.projects.detail.backToProject}</span>
+          <span className="font-display">
+            {t.projects.detail.backToProject}
+          </span>
         </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10">
-        {images.map((image, imageIndex) => (
-          <div
-            key={`${image.src}-${imageIndex}`}
-            className="relative w-full overflow-hidden rounded-2xl bg-slate-900/60 ring-1 ring-slate-700/40 min-h-[320px] sm:min-h-[420px] lg:min-h-[520px]"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-contain"
-              sizes="(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw"
-              priority={imageIndex < 2}
-            />
-          </div>
-        ))}
+        {images.map((image, imageIndex) => {
+          const frameClass =
+            image.format === "mobile"
+              ? "aspect-[9/16] min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]"
+              : "aspect-[16/9] min-h-[260px] sm:min-h-[360px] lg:min-h-[420px]";
+          const sizes =
+            image.format === "mobile"
+              ? "(min-width: 1280px) 55vw, (min-width: 768px) 70vw, 100vw"
+              : "(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw";
+
+          return (
+            <div
+              key={`${image.src}-${imageIndex}`}
+              className={`relative w-full overflow-hidden ${frameClass}`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-contain"
+                sizes={sizes}
+                priority={imageIndex < 2}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
