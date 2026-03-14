@@ -75,6 +75,7 @@ export default function ProjectPhotosPage() {
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         <aside className="lg:col-span-4">
           <div className="space-y-4 lg:sticky lg:top-6">
+            {/* back to projects */}
             <Link
               href={`/projects/${project.slug}`}
               className="inline-flex items-center gap-2 text-slate-200 hover:text-[var(--text-accent)]"
