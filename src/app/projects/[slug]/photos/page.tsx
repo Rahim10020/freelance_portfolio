@@ -7,6 +7,13 @@ import { useParams } from "next/navigation";
 import { ArrowLeftIcon } from "@/components/icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projects, projectDetails } from "@/lib/data";
+import {
+  mobilePhotoFrame,
+  mobilePhotoMaxWidth,
+  mobilePhotoSizes,
+  webPhotoFrame,
+  webPhotoSizes,
+} from "@/lib/photoStyles";
 
 export default function ProjectPhotosPage() {
   const { t } = useLanguage();
@@ -52,30 +59,19 @@ export default function ProjectPhotosPage() {
 
       <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10">
         {images.map((image, imageIndex) => {
-          const frameClass =
-            image.format === "mobile"
-              ? "aspect-[9/16] min-h-[380px] sm:min-h-[480px] lg:min-h-[560px]"
-              : "aspect-[16/9] min-h-[260px] sm:min-h-[360px] lg:min-h-[420px]";
-          const sizes =
-            image.format === "mobile"
-              ? "(min-width: 1280px) 55vw, (min-width: 768px) 70vw, 100vw"
-              : "(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw";
-
           if (image.format === "mobile") {
             return (
               <div
                 key={`${image.src}-${imageIndex}`}
                 className="flex justify-center"
               >
-                <div
-                  className={`relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] overflow-hidden ${frameClass}`}
-                >
+                <div className={`${mobilePhotoFrame} ${mobilePhotoMaxWidth}`}>
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
                     className="object-contain"
-                    sizes="(min-width: 1280px) 420px, (min-width: 768px) 380px, 320px"
+                    sizes={mobilePhotoSizes}
                     priority={imageIndex < 2}
                   />
                 </div>
@@ -84,16 +80,13 @@ export default function ProjectPhotosPage() {
           }
 
           return (
-            <div
-              key={`${image.src}-${imageIndex}`}
-              className={`relative w-full overflow-hidden ${frameClass}`}
-            >
+            <div key={`${image.src}-${imageIndex}`} className={webPhotoFrame}>
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 className="object-contain"
-                sizes={sizes}
+                sizes={webPhotoSizes}
                 priority={imageIndex < 2}
               />
             </div>
