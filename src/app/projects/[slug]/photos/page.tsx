@@ -54,12 +54,34 @@ export default function ProjectPhotosPage() {
         {images.map((image, imageIndex) => {
           const frameClass =
             image.format === "mobile"
-              ? "aspect-[9/16] min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]"
+              ? "aspect-[9/16] min-h-[380px] sm:min-h-[480px] lg:min-h-[560px]"
               : "aspect-[16/9] min-h-[260px] sm:min-h-[360px] lg:min-h-[420px]";
           const sizes =
             image.format === "mobile"
               ? "(min-width: 1280px) 55vw, (min-width: 768px) 70vw, 100vw"
               : "(min-width: 1280px) 70vw, (min-width: 768px) 85vw, 100vw";
+
+          if (image.format === "mobile") {
+            return (
+              <div
+                key={`${image.src}-${imageIndex}`}
+                className="flex justify-center"
+              >
+                <div
+                  className={`relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] overflow-hidden ${frameClass}`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-contain"
+                    sizes="(min-width: 1280px) 420px, (min-width: 768px) 380px, 320px"
+                    priority={imageIndex < 2}
+                  />
+                </div>
+              </div>
+            );
+          }
 
           return (
             <div
