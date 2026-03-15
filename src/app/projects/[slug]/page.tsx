@@ -192,13 +192,23 @@ export default function ProjectDetailPage() {
         </section>
 
         <div className="mt-3 flex justify-end">
-          <Link
-            href={`/projects/${project.slug}/images`}
-            className="inline-flex items-center gap-2 font-display bg-slate-100 px-5 py-2 text-base font-medium text-slate-900"
-          >
-            <MoreGridIcon size={24} />
-            {t.projects.detail.showAllImages}
-          </Link>
+          {gallery.length > 5 ? (
+            <Link
+              href={`/projects/${project.slug}/images`}
+              className="inline-flex items-center gap-2 bg-slate-100 px-5 py-2 font-display text-base font-medium text-slate-900"
+            >
+              <MoreGridIcon size={24} />
+              {t.projects.detail.showAllImages}
+            </Link>
+          ) : (
+            <span
+              aria-disabled="true"
+              className="inline-flex items-center gap-2 bg-slate-100/60 px-5 py-2 font-display text-base font-medium text-slate-500"
+            >
+              <MoreGridIcon size={24} />
+              {t.projects.detail.showAllImages}
+            </span>
+          )}
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
