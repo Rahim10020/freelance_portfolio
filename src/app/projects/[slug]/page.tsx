@@ -25,7 +25,7 @@ export default function ProjectDetailPage() {
   const params = useParams<{ slug: string }>();
   const [toast, setToast] = useState<string | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const slug = params?.slug;
 
   const project = useMemo(
@@ -71,7 +71,7 @@ export default function ProjectDetailPage() {
 
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const gallery = detail.gallery;
-  const activePhoto = gallery[activePhotoIndex];
+  const activeImage = gallery[activeImageIndex];
 
   const hasTldr =
     !!detail.tldr?.what ||
@@ -91,7 +91,7 @@ export default function ProjectDetailPage() {
   };
 
   const openPreview = (index: number) => {
-    setActivePhotoIndex(index);
+    setActiveImageIndex(index);
     setIsPreviewOpen(true);
   };
 
@@ -183,11 +183,11 @@ export default function ProjectDetailPage() {
 
         <div className="mt-3 flex justify-end">
           <Link
-            href={`/projects/${project.slug}/photos`}
+            href={`/projects/${project.slug}/images`}
             className="inline-flex items-center gap-2 font-display bg-slate-100 px-5 py-2 text-base font-medium text-slate-900"
           >
             <MoreGridIcon size={24} />
-            {t.projects.detail.showAllPhotos}
+            {t.projects.detail.showAllImages}
           </Link>
         </div>
 
@@ -384,7 +384,7 @@ export default function ProjectDetailPage() {
           className="fixed inset-0 z-[80] bg-slate-950/95 p-4 md:p-8"
           role="dialog"
           aria-modal="true"
-          aria-label={t.projects.detail.showAllPhotos}
+          aria-label={t.projects.detail.showAllImages}
           onClick={() => setIsPreviewOpen(false)}
         >
           <div
@@ -404,8 +404,8 @@ export default function ProjectDetailPage() {
 
             <div className="relative min-h-0">
               <Image
-                src={activePhoto.src}
-                alt={activePhoto.alt}
+                src={activeImage.src}
+                alt={activeImage.alt}
                 fill
                 className="object-contain"
                 sizes="100vw"

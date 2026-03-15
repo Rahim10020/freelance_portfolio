@@ -56,7 +56,7 @@ export const fr = {
     detail: {
       backToProjects: "Retour aux projets",
       share: "Partager",
-      showAllPhotos: "Voir toutes les captures",
+      showAllImages: "Voir toutes les captures",
       projectSummary: "Résumé du projet",
       role: "Rôle",
       duration: "Durée",
@@ -71,7 +71,7 @@ export const fr = {
       copyFailed: "Impossible de copier le lien",
       closeGallery: "Fermer la galerie",
       backToProject: "Retour au projet",
-      photosSections: "sections",
+      imagesSections: "sections",
       tldr: "TL;DR",
       what: "Quoi",
       who: "A qui",

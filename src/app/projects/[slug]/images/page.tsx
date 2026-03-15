@@ -7,7 +7,7 @@ import { ArrowLeftIcon } from "@/components/icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projects, projectDetails } from "@/lib/data";
 
-export default function ProjectPhotosPage() {
+export default function ProjectImagesPage() {
   const { t } = useLanguage();
   const params = useParams<{ slug: string }>();
   const slug = params?.slug;
@@ -28,7 +28,7 @@ export default function ProjectPhotosPage() {
           <ArrowLeftIcon size={24} aria-hidden />
           <span>{t.projects.detail.backToProjects}</span>
         </Link>
-        <p className="mt-8 text-slate-300">Project photos not available yet.</p>
+        <p className="mt-8 text-slate-300">Project images not available yet.</p>
       </div>
     );
   }
@@ -37,6 +37,7 @@ export default function ProjectPhotosPage() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-lg px-4 py-6 md:px-6 lg:px-8">
+      {/* Masonry view for projects images */}
       <div className="sticky top-4 z-20 mb-6">
         {/* back to projects */}
         <Link
