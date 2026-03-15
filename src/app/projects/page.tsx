@@ -7,7 +7,6 @@ import MouseEffect from "@/components/ui/MouseEffect";
 import ControlsPanel from "@/components/ui/ControlsPanel";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeftIcon } from "@/components/icons";
 
 export default function ProjectsArchive() {
   const { t } = useLanguage();

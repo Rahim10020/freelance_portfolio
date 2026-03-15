@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
 import { ArrowLeftIcon } from "@/components/icons";
@@ -53,17 +54,21 @@ export default function ProjectImagesPage() {
 
       <div className="columns-1 gap-6 sm:columns-2 sm:gap-8 lg:columns-3 lg:gap-10">
         {images.map((image, imageIndex) => {
+          const isMobile = image.format === "mobile";
+
           return (
             <figure
               key={`${image.src}-${imageIndex}`}
               className="mb-6 break-inside-avoid sm:mb-8 lg:mb-10"
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
-                className={`h-auto w-full`}
-                loading={imageIndex < 2 ? "eager" : "lazy"}
-                decoding="async"
+                width={isMobile ? 900 : 1600}
+                height={isMobile ? 1600 : 900}
+                className="h-auto w-full"
+                sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                priority={imageIndex < 2}
               />
             </figure>
           );

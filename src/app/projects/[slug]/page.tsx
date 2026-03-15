@@ -34,6 +34,7 @@ export default function ProjectDetailPage() {
     [slug],
   );
   const detail = slug ? projectDetails[slug] : undefined;
+  const gallery = detail?.gallery ?? [];
 
   useEffect(() => {
     if (!isPreviewOpen) return;
@@ -61,7 +62,7 @@ export default function ProjectDetailPage() {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isPreviewOpen]);
+  }, [isPreviewOpen, gallery.length]);
 
   if (!project || !detail) {
     return (
@@ -79,7 +80,6 @@ export default function ProjectDetailPage() {
   }
 
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
-  const gallery = detail.gallery;
 
   const hasTldr =
     !!detail.tldr?.what ||
