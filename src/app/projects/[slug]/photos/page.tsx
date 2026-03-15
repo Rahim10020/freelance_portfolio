@@ -1,19 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
 import { ArrowLeftIcon } from "@/components/icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projects, projectDetails } from "@/lib/data";
-import {
-  mobilePhotoFrame,
-  mobilePhotoMaxWidth,
-  mobilePhotoSizes,
-  webPhotoFrame,
-  webPhotoSizes,
-} from "@/lib/photoStyles";
 
 export default function ProjectPhotosPage() {
   const { t } = useLanguage();
@@ -45,11 +37,11 @@ export default function ProjectPhotosPage() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-lg px-4 py-6 md:px-6 lg:px-8">
-      <div className="mb-6">
+      <div className="sticky top-4 z-20 mb-6">
         {/* back to projects */}
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 text-slate-200 hover:text-[var(--text-accent)]"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-3 py-2 text-slate-200 backdrop-blur transition hover:text-[var(--text-accent)]"
         >
           <ArrowLeftIcon size={20} aria-hidden />
           <span className="font-display">
@@ -58,39 +50,21 @@ export default function ProjectPhotosPage() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:gap-10">
+      <div className="columns-1 gap-6 sm:columns-2 sm:gap-8 lg:columns-3 lg:gap-10">
         {images.map((image, imageIndex) => {
-          if (image.format === "mobile") {
-            return (
-              <div
-                key={`${image.src}-${imageIndex}`}
-                className="flex justify-center"
-              >
-                <div className={`${mobilePhotoFrame} ${mobilePhotoMaxWidth}`}>
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-contain"
-                    sizes={mobilePhotoSizes}
-                    priority={imageIndex < 2}
-                  />
-                </div>
-              </div>
-            );
-          }
-
           return (
-            <div key={`${image.src}-${imageIndex}`} className={webPhotoFrame}>
-              <Image
+            <figure
+              key={`${image.src}-${imageIndex}`}
+              className="mb-6 break-inside-avoid sm:mb-8 lg:mb-10"
+            >
+              <img
                 src={image.src}
                 alt={image.alt}
-                fill
-                className="object-contain"
-                sizes={webPhotoSizes}
-                priority={imageIndex < 2}
+                className={`h-auto w-full`}
+                loading={imageIndex < 2 ? "eager" : "lazy"}
+                decoding="async"
               />
-            </div>
+            </figure>
           );
         })}
       </div>
