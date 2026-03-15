@@ -433,7 +433,7 @@ export default function ProjectDetailPage() {
           onClick={() => setIsPreviewOpen(false)}
         >
           <div
-            className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr] gap-4"
+            className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr_auto] gap-4"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-end">
@@ -476,6 +476,24 @@ export default function ProjectDetailPage() {
                 </>
               )}
             </div>
+
+            {gallery.length > 1 && (
+              <div className="flex items-center justify-center gap-2 pb-2">
+                {gallery.map((item, index) => (
+                  <button
+                    key={item.src + index}
+                    type="button"
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`${t.projects.detail.showAllImages} ${index + 1}`}
+                    className={`h-2.5 w-2.5 rounded-full transition ${
+                      index === activeImageIndex
+                        ? "bg-[rgb(var(--accent-bg-rgb))]"
+                        : "bg-slate-100/40 hover:bg-slate-100/70"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
