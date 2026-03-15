@@ -18,4 +18,6 @@ export { default as ShareIcon } from "./ShareIcon";
 export { default as MoreGridIcon } from "./MoreGridIcon";
 export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
 export { default as CloseIcon } from "./CloseIcon";
+export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
+export { default as ChevronRightIcon } from "./ChevronRightIcon";
 export type { IconProps } from "./IconProps";

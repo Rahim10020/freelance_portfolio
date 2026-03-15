@@ -12,6 +12,8 @@ import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeftIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   CloseIcon,
   ExternalLinkIcon,
   GithubWhiteIcon,
@@ -44,6 +46,14 @@ export default function ProjectDetailPage() {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsPreviewOpen(false);
+      }
+      if (event.key === "ArrowRight") {
+        setActiveImageIndex((current) => (current + 1) % gallery.length);
+      }
+      if (event.key === "ArrowLeft") {
+        setActiveImageIndex(
+          (current) => (current - 1 + gallery.length) % gallery.length,
+        );
       }
     };
 
@@ -94,6 +104,16 @@ export default function ProjectDetailPage() {
   const openPreview = (index: number) => {
     setActiveImageIndex(index);
     setIsPreviewOpen(true);
+  };
+
+  const handleNextImage = () => {
+    setActiveImageIndex((current) => (current + 1) % gallery.length);
+  };
+
+  const handlePrevImage = () => {
+    setActiveImageIndex(
+      (current) => (current - 1 + gallery.length) % gallery.length,
+    );
   };
 
   return (
@@ -435,6 +455,26 @@ export default function ProjectDetailPage() {
                 className="object-contain"
                 sizes="100vw"
               />
+              {gallery.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={handlePrevImage}
+                    aria-label={t.projects.detail.previousImage}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-2xl text-slate-100 backdrop-blur transition hover:bg-slate-900/90 md:left-4"
+                  >
+                    <ChevronLeftIcon />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleNextImage}
+                    aria-label={t.projects.detail.nextImage}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-2xl text-slate-100 backdrop-blur transition hover:bg-slate-900/90 md:right-4"
+                  >
+                    <ChevronRightIcon />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>

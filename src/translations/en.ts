@@ -70,6 +70,8 @@ export const en = {
       copied: "Link copied",
       copyFailed: "Unable to copy link",
       closeGallery: "Close gallery",
+      previousImage: "Previous image",
+      nextImage: "Next image",
       backToProject: "Back to project",
       imagesSections: "sections",
       tldr: "TL;DR",
