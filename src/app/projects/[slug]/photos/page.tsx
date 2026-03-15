@@ -46,6 +46,7 @@ export default function ProjectPhotosPage() {
   return (
     <div className="mx-auto min-h-screen max-w-screen-lg px-4 py-6 md:px-6 lg:px-8">
       <div className="mb-6">
+        {/* back to projects */}
         <Link
           href={`/projects/${project.slug}`}
           className="inline-flex items-center gap-2 text-slate-200 hover:text-[var(--text-accent)]"
