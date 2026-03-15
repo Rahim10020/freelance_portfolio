@@ -461,7 +461,7 @@ export default function ProjectDetailPage() {
                     type="button"
                     onClick={handlePrevImage}
                     aria-label={t.projects.detail.previousImage}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-2xl text-slate-100 backdrop-blur transition hover:bg-slate-900/90 md:left-4"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:left-4"
                   >
                     <ChevronLeftIcon />
                   </button>
@@ -469,7 +469,7 @@ export default function ProjectDetailPage() {
                     type="button"
                     onClick={handleNextImage}
                     aria-label={t.projects.detail.nextImage}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2 text-2xl text-slate-100 backdrop-blur transition hover:bg-slate-900/90 md:right-4"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:right-4"
                   >
                     <ChevronRightIcon />
                   </button>
