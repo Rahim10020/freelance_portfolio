@@ -17,4 +17,5 @@ export { default as WhatsappWhiteIcon } from "./WhatsappWhiteIcon";
 export { default as ShareIcon } from "./ShareIcon";
 export { default as MoreGridIcon } from "./MoreGridIcon";
 export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
+export { default as CloseIcon } from "./CloseIcon";
 export type { IconProps } from "./IconProps";

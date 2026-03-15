@@ -12,6 +12,7 @@ import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeftIcon,
+  CloseIcon,
   ExternalLinkIcon,
   GithubWhiteIcon,
   MoreGridIcon,
@@ -163,7 +164,9 @@ export default function ProjectDetailPage() {
               alt={gallery[0].alt}
               fill
               className={
-                gallery[0]?.format === "mobile" ? "object-contain" : "object-cover"
+                gallery[0]?.format === "mobile"
+                  ? "object-contain"
+                  : "object-cover"
               }
               priority
             />
@@ -175,7 +178,9 @@ export default function ProjectDetailPage() {
                 type="button"
                 onClick={() => openPreview(index + 1)}
                 className={`relative min-h-[158px] overflow-hidden text-left md:min-h-[259px] ${
-                  item.format === "mobile" ? "bg-slate-950/60" : "bg-transparent"
+                  item.format === "mobile"
+                    ? "bg-slate-950/60"
+                    : "bg-transparent"
                 }`}
               >
                 <Image
@@ -415,10 +420,10 @@ export default function ProjectDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsPreviewOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/70 text-slate-100"
+                className="inline-flex h-10 w-10 items-center justify-center text-slate-100 hover:text-slate-50"
                 aria-label={t.projects.detail.closeGallery}
               >
-                ×
+                <CloseIcon />
               </button>
             </div>
 
