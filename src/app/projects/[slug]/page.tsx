@@ -152,13 +152,19 @@ export default function ProjectDetailPage() {
           <button
             type="button"
             onClick={() => openPreview(0)}
-            className="relative min-h-[320px] text-left md:col-span-7 md:min-h-[520px]"
+            className={`relative min-h-[320px] overflow-hidden text-left md:col-span-7 md:min-h-[520px] ${
+              gallery[0]?.format === "mobile"
+                ? "bg-slate-950/60"
+                : "bg-transparent"
+            }`}
           >
             <Image
               src={gallery[0].src}
               alt={gallery[0].alt}
               fill
-              className="object-cover"
+              className={
+                gallery[0]?.format === "mobile" ? "object-contain" : "object-cover"
+              }
               priority
             />
           </button>
@@ -168,13 +174,17 @@ export default function ProjectDetailPage() {
                 key={item.src + index}
                 type="button"
                 onClick={() => openPreview(index + 1)}
-                className="relative min-h-[158px] text-left md:min-h-[259px]"
+                className={`relative min-h-[158px] overflow-hidden text-left md:min-h-[259px] ${
+                  item.format === "mobile" ? "bg-slate-950/60" : "bg-transparent"
+                }`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-cover"
+                  className={
+                    item.format === "mobile" ? "object-contain" : "object-cover"
+                  }
                 />
               </button>
             ))}
