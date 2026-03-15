@@ -12,9 +12,6 @@ import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeftIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CloseIcon,
   ExternalLinkIcon,
   GithubWhiteIcon,
   MoreGridIcon,
@@ -22,6 +19,7 @@ import {
 } from "@/components/icons";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import TldrCallout from "@/components/ui/TldrCallout";
+import ImagePreviewModal from "@/components/ui/ImagePreviewModal";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -82,7 +80,6 @@ export default function ProjectDetailPage() {
 
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const gallery = detail.gallery;
-  const activeImage = gallery[activeImageIndex];
 
   const hasTldr =
     !!detail.tldr?.what ||
@@ -424,79 +421,21 @@ export default function ProjectDetailPage() {
         <OtherProjects currentSlug={project.slug} />
       </div>
 
-      {isPreviewOpen && (
-        <div
-          className="fixed inset-0 z-[80] bg-slate-950/95 p-4 md:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-label={t.projects.detail.showAllImages}
-          onClick={() => setIsPreviewOpen(false)}
-        >
-          <div
-            className="mx-auto grid h-full w-full max-w-screen-xl grid-rows-[auto_1fr_auto] gap-4"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="flex items-center justify-end">
-              <button
-                type="button"
-                onClick={() => setIsPreviewOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center text-slate-100 hover:text-slate-50"
-                aria-label={t.projects.detail.closeGallery}
-              >
-                <CloseIcon />
-              </button>
-            </div>
-
-            <div className="relative min-h-0">
-              <Image
-                src={activeImage.src}
-                alt={activeImage.alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-              />
-              {gallery.length > 1 && (
-                <>
-                  <button
-                    type="button"
-                    onClick={handlePrevImage}
-                    aria-label={t.projects.detail.previousImage}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:left-4"
-                  >
-                    <ChevronLeftIcon />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNextImage}
-                    aria-label={t.projects.detail.nextImage}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:right-4"
-                  >
-                    <ChevronRightIcon />
-                  </button>
-                </>
-              )}
-            </div>
-
-            {gallery.length > 1 && (
-              <div className="flex items-center justify-center gap-2 pb-2">
-                {gallery.map((item, index) => (
-                  <button
-                    key={item.src + index}
-                    type="button"
-                    onClick={() => setActiveImageIndex(index)}
-                    aria-label={`${t.projects.detail.showAllImages} ${index + 1}`}
-                    className={`h-2.5 w-2.5 rounded-full transition ${
-                      index === activeImageIndex
-                        ? "bg-[rgb(var(--accent-bg-rgb))]"
-                        : "bg-slate-100/40 hover:bg-slate-100/70"
-                    }`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      <ImagePreviewModal
+        isOpen={isPreviewOpen}
+        images={gallery}
+        activeIndex={activeImageIndex}
+        onClose={() => setIsPreviewOpen(false)}
+        onPrev={handlePrevImage}
+        onNext={handleNextImage}
+        onSelect={setActiveImageIndex}
+        labels={{
+          closeGallery: t.projects.detail.closeGallery,
+          showAllImages: t.projects.detail.showAllImages,
+          previousImage: t.projects.detail.previousImage,
+          nextImage: t.projects.detail.nextImage,
+        }}
+      />
 
       {toast && (
         <div className="fixed bottom-6 right-6 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-900 shadow-lg">
