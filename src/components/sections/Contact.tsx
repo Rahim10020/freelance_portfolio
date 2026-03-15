@@ -67,7 +67,7 @@ export default function Contact() {
             {t.contact.emailText}{" "}
             <a
               href="mailto:rahim100codeur@gmail.com"
-              className="text-[var(--text-accent)] font-medium transition-colors hover:text-[var(--text-accent)]"
+              className="text-[var(--text-accent)] hover:underline font-medium transition-colors hover:text-[var(--text-accent)]"
             >
               rahim100codeur@gmail.com
             </a>
