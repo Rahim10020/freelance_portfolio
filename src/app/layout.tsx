@@ -45,12 +45,15 @@ const abordage = localFont({
 
 // Configuration SEO avancée
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahim-ali-dev.vercel.app/'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/",
+  ),
   title: {
     default: "Rahim ALI - Dev",
-    template: "%s | Rahim ALI"
+    template: "%s | Rahim ALI",
   },
-  description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications with clean architecture. Available for freelance projects.",
+  description:
+    "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications with clean architecture. Available for freelance projects.",
   keywords: [
     "Software Developer",
     "Flutter Developer",
@@ -65,9 +68,15 @@ export const metadata: Metadata = {
     "React Developer",
     "TypeScript",
     "API Development",
-    "UX/UI Design"
+    "UX/UI Design",
   ],
-  authors: [{ name: "Rahim ALI", url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/" }],
+  authors: [
+    {
+      name: "Rahim ALI",
+      url:
+        process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/",
+    },
+  ],
   creator: "Rahim ALI",
   publisher: "Rahim ALI",
 
@@ -76,9 +85,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: ["fr_FR"],
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/",
+    url:
+      process.env.NEXT_PUBLIC_SITE_URL || "https://rahim-ali-dev.vercel.app/",
     title: "Rahim ALI - Software Developer | Flutter, Django, Next.js",
-    description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications.",
+    description:
+      "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin). Building modern mobile and web applications.",
     siteName: "Rahim ALI Portfolio",
     images: [
       {
@@ -86,7 +97,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Rahim ALI - Software Developer Portfolio",
-      }
+      },
     ],
   },
 
@@ -94,7 +105,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rahim ALI - Software Developer",
-    description: "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin).",
+    description:
+      "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin).",
     creator: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "@rahimali",
     images: ["/og-image.jpg"],
   },
@@ -106,9 +118,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 
@@ -118,8 +130,8 @@ export const metadata: Metadata = {
   // },
 
   // Autres métadonnées
-  category: 'technology',
-  classification: 'Business',
+  category: "technology",
+  classification: "Business",
 };
 
 export default function RootLayout({
@@ -148,9 +160,23 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {/* Favicon */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* Schema.org JSON-LD pour Google Rich Results */}
@@ -160,16 +186,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Rahim ALI",
-              "url": "https://rahim-ali-dev.vercel.app/",
-              "jobTitle": "Software Developer",
-              "description": "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin)",
-              "email": process.env.NEXT_PUBLIC_EMAIL || "rahim100codeur@gmail.com",
-              "sameAs": [
+              name: "Rahim ALI",
+              url: "https://rahim-ali-dev.vercel.app/",
+              jobTitle: "Software Developer",
+              description:
+                "Software Developer specializing in Flutter, Django, Next.js, and Android (Kotlin)",
+              email:
+                process.env.NEXT_PUBLIC_EMAIL || "rahim100codeur@gmail.com",
+              sameAs: [
                 "https://github.com/Rahim10020",
-                "http://www.linkedin.com/in/rahim-ali-a6003226b"
+                "http://www.linkedin.com/in/rahim-ali-a6003226b",
               ],
-              "knowsAbout": [
+              knowsAbout: [
                 "Flutter",
                 "Django",
                 "Next.js",
@@ -177,9 +205,9 @@ export default function RootLayout({
                 "React",
                 "TypeScript",
                 "Mobile Development",
-                "Web Development"
-              ]
-            })
+                "Web Development",
+              ],
+            }),
           }}
         />
       </head>
@@ -187,7 +215,6 @@ export default function RootLayout({
         <ThemeProvider>
           <SmoothScrollProvider>
             <LanguageProvider>
-              <div className="gradient-effect" />
               <CustomCursor />
               {children}
               <Analytics />
