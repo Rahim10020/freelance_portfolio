@@ -11,7 +11,7 @@ export const personalInfo = {
   title: "Software Developer",
   bio: "I design and code beautifully simple things that make the web feel intuitive and alive — and I genuinely love what I do.",
   email: "rahim100codeur@gmail.com",
-  resumeUrl: "https://rahim-ali-dev.vercel.app/",
+  resumeUrl: "/resume.pdf",
 };
 
 export const socialLinks: SocialLink[] = [
@@ -109,13 +109,13 @@ export const projects: Project[] = [
     image: "/images/projects/p3-docstore.png",
     technologies: ["React", "Tailwind css", "Appwrite", "Google Drive"],
     links: {
-      github: "https://github.com/crepin7/biblio-epl",
+      github: "https://github.com/twocoderz/docstore",
       live: "https://docstore-univ.vercel.app/",
     },
   },
   {
     id: "4",
-    slug: "togo-stay",
+    slug: "ahoe",
     image: "/images/projects/p4-stay.png",
     technologies: [
       "Next.js",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     status: "in-progress",
     best: true,
     links: {
-      github: "https://github.com/crepin7/nyigba",
+      github: "https://github.com/twocoderz/ahoe",
       live: "https://stay-ashy.vercel.app/",
     },
   },
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     technologies: ["Futter", "Get X", "OpenStreetMap", "Dart"],
     status: "in-progress",
     links: {
-      github: "https://github.com/Rahim10020/Togo-ssiwo",
+      github: "https://github.com/twocoderz/Togo-xiwo",
     },
   },
   {
@@ -331,7 +331,7 @@ const narrativeBySlug: Record<
       "Building searchable educational interfaces",
     ],
   },
-  "togo-stay": {
+  ahoe: {
     tldr: {
       what: "A rental marketplace inspired by modern booking flows.",
       who: "People searching apartments and owners publishing listings.",
@@ -580,9 +580,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
       createImageSection([photoLibrary.mobileHome, photoLibrary.webFocus]),
     ],
   ),
-  "togo-stay": createDetail(
+  ahoe: createDetail(
     {
-      slug: "togo-stay",
+      slug: "ahoe",
       headline: "Rental platform with modern booking-inspired browsing",
       location: "Lome, Togo",
       meta: ["Marketplace", "Web app", "In progress"],
