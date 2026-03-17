@@ -79,7 +79,6 @@ export const projects: Project[] = [
     slug: "essence-togo",
     image: "/images/projects/p1-accueil.png",
     technologies: ["Kotlin", "Jetpack Compose", "Firebase"],
-    best: true,
     links: {
       github: "https://github.com/Rahim10020/essence-togo",
       live: "https://github.com/Rahim10020/essence-togo",
@@ -97,7 +96,6 @@ export const projects: Project[] = [
       "TypeScript",
     ],
     status: "in-progress",
-    best: true,
     links: {
       github: "https://github.com/Rahim10020/focusly",
       live: "https://focusly-work.vercel.app/",
@@ -108,6 +106,7 @@ export const projects: Project[] = [
     slug: "docstore-ul",
     image: "/images/projects/p3-docstore.png",
     technologies: ["React", "Tailwind css", "Appwrite", "Google Drive"],
+    best: true,
     links: {
       github: "https://github.com/twocoderz/docstore",
       live: "https://docstore-univ.vercel.app/",
@@ -170,6 +169,7 @@ export const projects: Project[] = [
       "Firebase",
       "Framer Motion",
     ],
+    best: true,
     status: "in-progress",
     links: {
       github: "https://github.com/Rahim10020/portify",
