@@ -11,26 +11,6 @@ export default function Projects() {
 
     // Separate best projects from others
     const bestProjects = projects.filter(project => project.best);
-    const nonBestProjects = projects.filter(project => !project.best);
-
-    // Sort non-best projects by status: completed first, then in-progress, then upcoming
-    const sortedNonBestProjects = [...nonBestProjects].sort((a, b) => {
-        const getStatusPriority = (status?: string) => {
-            switch (status) {
-                case 'completed':
-                case undefined:
-                    return 0; // completed/no status first
-                case 'in-progress':
-                    return 1; // in-progress second
-                case 'upcoming':
-                    return 2; // upcoming last
-                default:
-                    return 0;
-            }
-        };
-
-        return getStatusPriority(a.status) - getStatusPriority(b.status);
-    });
 
     // Display only the top 3 best projects
     const displayedProjects = bestProjects.slice(0, 3);
