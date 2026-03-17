@@ -32,11 +32,8 @@ export default function Projects() {
         return getStatusPriority(a.status) - getStatusPriority(b.status);
     });
 
-    // Display all best projects, then fill with sorted non-best up to 5 total
-    const displayedProjects = [
-        ...bestProjects,
-        ...sortedNonBestProjects.slice(0, 5 - bestProjects.length)
-    ];
+    // Display only the top 3 best projects
+    const displayedProjects = bestProjects.slice(0, 3);
 
     return (
         <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
