@@ -145,7 +145,6 @@ export const projects: Project[] = [
       "PostgreSQL",
     ],
     status: "completed",
-    best: true,
     links: {
       github: "https://github.com/Rahim10020/tech-pulse",
       live: "https://pixelpulse-blog.vercel.app/",
@@ -172,7 +171,6 @@ export const projects: Project[] = [
       "Framer Motion",
     ],
     status: "in-progress",
-    best: true,
     links: {
       github: "https://github.com/Rahim10020/portify",
     },
