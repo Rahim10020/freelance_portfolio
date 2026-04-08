@@ -129,7 +129,7 @@ export const projects: Project[] = [
     best: true,
     links: {
       github: "https://github.com/twocoderz/ahoe",
-      live: "https://stay-ashy.vercel.app/",
+      live: "https://ahoe-tg.vercel.app/",
     },
   },
   {
