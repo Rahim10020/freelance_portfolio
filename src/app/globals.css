@@ -218,8 +218,8 @@ body::before {
   z-index: 110;
   pointer-events: none;
   opacity: 0;
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   border-radius: 999px;
   border: 1px solid rgb(226 232 240 / 0.55);
   box-shadow: 0 0 0 1px rgb(15 23 42 / 0.45);
