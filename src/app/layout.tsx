@@ -142,7 +142,6 @@ export default function RootLayout({
     <html
       lang="en"
       className="scroll-smooth dark"
-      data-accent="ginger"
       suppressHydrationWarning
     >
       <head>

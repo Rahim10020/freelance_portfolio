@@ -8,6 +8,16 @@
   --foreground: #e2e8f0; /* #FAF9F5- claude white theme; #CCC9C5: component gallery white theme */
   --cursor-fg: #f8fafc;
   --cursor-contrast: #0f172a;
+  --accent-200: #e2e8f0;
+  --accent-300: #cbd5f5;
+  --accent-400: #94a3b8;
+  --accent-500: #64748b;
+  --accent-600: #475569;
+  --accent-700: #334155;
+  --accent-800: #1f2937;
+  --accent-rgb: 148 163 184;
+  --accent-soft-rgb: 148 163 184;
+  --accent-bg-rgb: 30 41 59;
   --gradient-from: rgb(var(--accent-rgb) / 0.15);
   --gradient-to: transparent;
   --card-hover-bg: rgba(15, 23, 42, 0.5);
@@ -27,19 +37,6 @@ html {
   color-scheme: dark;
 }
 
-:root[data-accent="ginger"] {
-  --accent-200: #f1efc2;
-  --accent-300: #e9e4a6;
-  --accent-400: #e1dc8a;
-  --accent-500: #dbd56e;
-  --accent-600: #c5c062;
-  --accent-700: #99964d;
-  --accent-800: #6e6b37;
-
-  --accent-rgb: 219 213 110;
-  --accent-soft-rgb: 233 228 166;
-  --accent-bg-rgb: 197 192 98;
-}
 
 @theme inline {
   --color-background: var(--background);
