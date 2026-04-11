@@ -25,7 +25,7 @@ export default function ServiceCard({
   const IconComponent = serviceIconMap[service.icon];
 
   return (
-    <div className="group relative rounded-lg border border-slate-200/10 bg-slate-800/50 p-6 transition-all hover:bg-slate-800/70 hover:border-slate-200/20 hover:shadow-md">
+    <div className="group relative rounded-lg bg-black/10 p-6 transition-all hover:shadow-md">
       <div className="mb-4 text-[var(--text-accent)]">
         <IconComponent size={34} />
       </div>
