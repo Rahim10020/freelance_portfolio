@@ -19,6 +19,8 @@
   --scrollbar-track: #1e293b;
   --scrollbar-thumb: #475569;
   --scrollbar-thumb-hover: #64748b;
+  --grid-size: 156px;
+  --grid-line: rgb(148 163 184 / 0.08);
 }
 
 :root[data-accent="clay"] {
@@ -117,7 +119,12 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-position: center top;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   transition:
@@ -258,6 +265,12 @@ textarea,
 
 html.reduced-motion {
   scroll-behavior: auto;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --grid-size: 36px;
+  }
 }
 
 html.reduced-motion * {
