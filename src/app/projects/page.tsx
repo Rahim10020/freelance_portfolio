@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { projects } from "@/lib/data";
 import MouseEffect from "@/components/ui/MouseEffect";
-import ControlsPanel from "@/components/ui/ControlsPanel";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -44,12 +43,6 @@ export default function ProjectsArchive() {
     <>
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-display md:px-12 md:py-15 lg:px-24 lg:py-18">
-        <div className="mb-16">
-          <div className="flex justify-end">
-            <ControlsPanel />
-          </div>
-        </div>
-
         <div className="mb-16">
           <AnimatedLetters
             as="h1"

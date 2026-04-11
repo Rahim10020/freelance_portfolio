@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
-import ControlsPanel from "@/components/ui/ControlsPanel";
 import MouseEffect from "@/components/ui/MouseEffect";
 import OtherProjects from "@/components/sections/OtherProjects";
 import ProjectSummaryAside from "@/components/sections/ProjectSummaryAside";
@@ -117,10 +116,6 @@ export default function ProjectDetailPage() {
     <>
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-10 md:px-12 lg:px-16">
-        <div className="mb-8 flex justify-end">
-          <ControlsPanel />
-        </div>
-
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedLetters
             as="h1"

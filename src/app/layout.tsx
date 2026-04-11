@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
@@ -139,26 +138,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const themeInitScript = `
-    (function () {
-      try {
-        var root = document.documentElement;
-        root.classList.remove('light', 'dark');
-        root.classList.add('dark');
-        root.style.colorScheme = 'dark';
-
-        var savedAccent = localStorage.getItem('accentTheme');
-        if (savedAccent) {
-          root.setAttribute('data-accent', savedAccent);
-        }
-      } catch (_) {}
-    })();
-  `;
-
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="scroll-smooth dark"
+      data-accent="ginger"
+      suppressHydrationWarning
+    >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {/* Favicon */}
         <link
           rel="apple-touch-icon"
@@ -212,15 +199,13 @@ export default function RootLayout({
         />
       </head>
       <body className={`${ribes.variable} ${abordage.variable} antialiased`}>
-        <ThemeProvider>
-          <SmoothScrollProvider>
-            <LanguageProvider>
-              <CustomCursor />
-              {children}
-              <Analytics />
-            </LanguageProvider>
-          </SmoothScrollProvider>
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <LanguageProvider>
+            <CustomCursor />
+            {children}
+            <Analytics />
+          </LanguageProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

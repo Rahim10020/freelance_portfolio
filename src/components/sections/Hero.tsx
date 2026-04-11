@@ -4,7 +4,6 @@ import { personalInfo } from "@/lib/data";
 import Navigation from "../ui/Navigation";
 import SocialLinks from "../ui/SocialLinks";
 import { useLanguage } from "@/contexts/LanguageContext";
-import ControlsPanel from "../ui/ControlsPanel";
 import AnimatedLetters from "../ui/AnimatedLetters";
 
 export default function Hero() {
@@ -27,7 +26,6 @@ export default function Hero() {
         <Navigation />
       </div>
       <div className="mt-8 flex flex-col gap-6 md:gap-9 md:flex-row lg:mt-0 lg:items-center">
-        <ControlsPanel />
         <SocialLinks />
       </div>
     </header>

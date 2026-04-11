@@ -23,6 +23,10 @@
   --grid-line: rgb(148 163 184 / 0.03);
 }
 
+html {
+  color-scheme: dark;
+}
+
 :root[data-accent="clay"] {
   --accent-200: #f4c7bb;
   --accent-300: #edac99;
