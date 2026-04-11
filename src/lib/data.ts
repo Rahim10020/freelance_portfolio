@@ -106,7 +106,6 @@ export const projects: Project[] = [
     slug: "docstore-ul",
     image: "/images/projects/p3-docstore.png",
     technologies: ["React", "Tailwind css", "Appwrite", "Google Drive"],
-    best: true,
     links: {
       github: "https://github.com/twocoderz/docstore",
       live: "https://docstore-univ.vercel.app/",
@@ -592,7 +591,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       team: "Product design + full-stack",
       platforms: ["Web", "Mobile web"],
       summary:
-        "Togo Stay helps users discover and book apartments quickly while giving owners a clean dashboard to publish listings, manage availability, and communicate with prospects.",
+        "Ahoe helps users discover and book apartments quickly while giving owners a clean dashboard to publish listings, manage availability, and communicate with prospects.",
       features: [
         "Media-driven listing detail experience",
         "Search and filtering by key rental criteria",

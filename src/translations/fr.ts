@@ -104,7 +104,7 @@ export const fr = {
           "Un site qui met à disposition des visiteurs des documents et ressources pour l'Université de Lomé, toutes écoles et facultés confondues.",
       },
       "4": {
-        title: "Togo Stay - Location d'appartements",
+        title: "Ahoe - Location d'appartements",
         description:
           "Un site permettant aux Togolais de trouver et louer facilement des appartements, tout en offrant aux propriétaires la possibilité de publier leurs annonces.",
       },

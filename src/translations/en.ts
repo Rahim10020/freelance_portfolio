@@ -104,7 +104,7 @@ export const en = {
           "A website that provides visitors with documents and resources for the University of Lomé, covering all schools and faculties.",
       },
       "4": {
-        title: "Togo Stay - Apartment Booking Website",
+        title: "Ahoe - Apartment Booking Website",
         description:
           "A website that allows Togolese people to easily find and rent apartments, while also offering owners the opportunity to publish their rental advertisements.",
       },
