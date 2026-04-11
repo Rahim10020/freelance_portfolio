@@ -67,12 +67,15 @@ export default function CustomCursor() {
       let targetY = window.innerHeight / 2;
       let ringX = targetX;
       let ringY = targetY;
+      let targetScale = 1;
+      let ringScale = 1;
       const lerp = (start: number, end: number, amt: number) =>
         start + (end - start) * amt;
       const tick = () => {
         ringX = lerp(ringX, targetX, 0.14);
         ringY = lerp(ringY, targetY, 0.14);
-        ringEl.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate3d(-50%, -50%, 0)`;
+        ringScale = lerp(ringScale, targetScale, 0.2);
+        ringEl.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate3d(-50%, -50%, 0) scale(${ringScale})`;
         rafId = window.requestAnimationFrame(tick);
       };
       rafId = window.requestAnimationFrame(tick);
@@ -90,6 +93,7 @@ export default function CustomCursor() {
           ringEl.style.opacity = "0";
           targetX = ringX;
           targetY = ringY;
+          targetScale = 1;
           if (cursorVariantRef.current !== "default") {
             cursorVariantRef.current = "default";
             setCursorVariant("default");
@@ -118,6 +122,8 @@ export default function CustomCursor() {
           cursorVariantRef.current = nextVariant;
           setCursorVariant(nextVariant);
         }
+
+        targetScale = isInteractive ? 0.5 : 1;
       };
 
       const onMouseLeaveViewport = () => {
