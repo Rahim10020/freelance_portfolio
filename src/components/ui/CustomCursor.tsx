@@ -25,6 +25,7 @@ const TEXT_ENTRY_SELECTOR = [
 
 export default function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement | null>(null);
+    const ringRef = useRef<HTMLDivElement | null>(null);
     const cursorVariantRef = useRef<'default' | 'pointer' | 'not-allowed'>('default');
     const [cursorVariant, setCursorVariant] = useState<'default' | 'pointer' | 'not-allowed'>('default');
 
@@ -34,6 +35,7 @@ export default function CustomCursor() {
         const pointerMedia = window.matchMedia(POINTER_QUERY);
         const reducedMotionMedia = window.matchMedia(REDUCED_MOTION_QUERY);
         let cleanupListeners: (() => void) | null = null;
+        let rafId: number | null = null;
 
         const setupCursor = () => {
             const shouldEnable = pointerMedia.matches && !reducedMotionMedia.matches;
@@ -48,19 +50,41 @@ export default function CustomCursor() {
             }
 
             const cursorEl = cursorRef.current;
-            if (!cursorEl) return;
+            const ringEl = ringRef.current;
+            if (!cursorEl || !ringEl) return;
 
             document.documentElement.classList.add('custom-cursor-enabled');
             cursorEl.style.opacity = '0';
             cursorEl.style.transform = 'translate3d(-50%, -50%, 0)';
+            ringEl.style.opacity = '0';
+            ringEl.style.transform = 'translate3d(-50%, -50%, 0)';
+
+            let targetX = window.innerWidth / 2;
+            let targetY = window.innerHeight / 2;
+            let ringX = targetX;
+            let ringY = targetY;
+            const lerp = (start: number, end: number, amt: number) => start + (end - start) * amt;
+            const tick = () => {
+                ringX = lerp(ringX, targetX, 0.18);
+                ringY = lerp(ringY, targetY, 0.18);
+                ringEl.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate3d(-50%, -50%, 0)`;
+                rafId = window.requestAnimationFrame(tick);
+            };
+            rafId = window.requestAnimationFrame(tick);
 
             const onMouseMove = (event: MouseEvent) => {
-                cursorEl.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate3d(-50%, -50%, 0)`;
+                targetX = event.clientX;
+                targetY = event.clientY;
+                const translate = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate3d(-50%, -50%, 0)`;
+                cursorEl.style.transform = translate;
 
                 const target = event.target as Element | null;
                 const isTextEntry = !!target?.closest(TEXT_ENTRY_SELECTOR);
                 if (isTextEntry) {
                     cursorEl.style.opacity = '0';
+                    ringEl.style.opacity = '0';
+                    targetX = ringX;
+                    targetY = ringY;
                     if (cursorVariantRef.current !== 'default') {
                         cursorVariantRef.current = 'default';
                         setCursorVariant('default');
@@ -69,6 +93,7 @@ export default function CustomCursor() {
                 }
 
                 cursorEl.style.opacity = '1';
+                ringEl.style.opacity = '1';
                 const hoveredElement = target?.closest('*') as HTMLElement | null;
                 const computedCursor = hoveredElement ? window.getComputedStyle(hoveredElement).cursor : '';
                 const isNotAllowed = computedCursor.includes('not-allowed');
@@ -84,6 +109,7 @@ export default function CustomCursor() {
 
             const onMouseLeaveViewport = () => {
                 cursorEl.style.opacity = '0';
+                ringEl.style.opacity = '0';
             };
 
             window.addEventListener('mousemove', onMouseMove);
@@ -94,7 +120,12 @@ export default function CustomCursor() {
                 window.removeEventListener('mousemove', onMouseMove);
                 window.removeEventListener('blur', onMouseLeaveViewport);
                 document.removeEventListener('mouseleave', onMouseLeaveViewport);
+                if (rafId) {
+                    window.cancelAnimationFrame(rafId);
+                    rafId = null;
+                }
                 cursorEl.style.opacity = '0';
+                ringEl.style.opacity = '0';
                 cursorVariantRef.current = 'default';
                 setCursorVariant('default');
             };
@@ -115,7 +146,9 @@ export default function CustomCursor() {
     }, []);
 
     return (
-        <div ref={cursorRef} className="custom-cursor" aria-hidden>
+        <>
+            <div ref={ringRef} className="custom-cursor-ring" aria-hidden />
+            <div ref={cursorRef} className="custom-cursor" aria-hidden>
             <span className={`custom-cursor-glyph ${cursorVariant === 'default' ? 'is-active' : ''}`}>
                 <CursorIcon size={24} className="custom-cursor-icon" />
             </span>
@@ -125,6 +158,7 @@ export default function CustomCursor() {
             <span className={`custom-cursor-glyph ${cursorVariant === 'not-allowed' ? 'is-active' : ''}`}>
                 <NotAllowIcon size={24} className="custom-cursor-icon" />
             </span>
-        </div>
+            </div>
+        </>
     );
 }

@@ -211,6 +211,21 @@ body::before {
   will-change: transform, opacity;
 }
 
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  pointer-events: none;
+  opacity: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 1px solid rgb(226 232 240 / 0.55);
+  box-shadow: 0 0 0 1px rgb(15 23 42 / 0.45);
+  will-change: transform, opacity;
+}
+
 .custom-cursor-glyph {
   position: absolute;
   inset: 0;
