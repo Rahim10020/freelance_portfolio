@@ -2,7 +2,6 @@
 
 import SectionTitle from "../ui/SectionTitle";
 import ArchiveLink from "../ui/ArchiveLink";
-import Skills from "./Skills";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { personalInfo } from "@/lib/data";
 

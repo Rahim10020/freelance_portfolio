@@ -1,49 +1,21 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 import { en } from '@/translations/en';
-import { fr } from '@/translations/fr';
 
-type Language = 'en' | 'fr';
 type Translations = typeof en;
 
 interface LanguageContextType {
-    language: Language;
-    setLanguage: (lang: Language) => void;
+    language: 'en';
     t: Translations;
 }
-
-const translations: Record<Language, Translations> = {
-    en,
-    fr,
-};
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-    const [language, setLanguageState] = useState<Language>('en');
-
-    useEffect(() => {
-        // Vérifier que window est disponible
-        if (typeof window !== 'undefined') {
-            const savedLanguage = localStorage.getItem('language') as Language | null;
-            if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'fr')) {
-                setLanguageState(savedLanguage);
-            }
-        }
-    }, []);
-
-    const setLanguage = (lang: Language) => {
-        setLanguageState(lang);
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('language', lang);
-        }
-    };
-
-    const value = {
-        language,
-        setLanguage,
-        t: translations[language],
+    const value: LanguageContextType = {
+        language: 'en',
+        t: en,
     };
 
     return (
