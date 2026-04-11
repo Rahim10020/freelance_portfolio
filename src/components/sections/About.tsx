@@ -27,7 +27,7 @@ export default function About() {
                     isExternal
                 />
             </div>
-            <Skills />
+            <div className='py-8'></div>
         </section>
     );
 }
