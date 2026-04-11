@@ -57,95 +57,96 @@ export default function Contact() {
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
     >
       <SectionTitle>{t.contact.title}</SectionTitle>
-
-      <div className="space-y-6">
-        <div>
-          <p className="text-body font-display text-slate-200">
-            {t.contact.intro}
-          </p>
-          <p className="text-body font-display text-slate-400">
-            {t.contact.emailText}{" "}
-            <a
-              href="mailto:rahim100codeur@gmail.com"
-              className="text-[var(--text-accent)] hover:underline font-medium transition-colors hover:text-[var(--text-accent)]"
-            >
-              rahim100codeur@gmail.com
-            </a>
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="text-right">
+        <div className="space-y-6">
           <div>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder={t.contact.form.name}
-              required
-              className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
-            />
-          </div>
-
-          <div>
-            <input
-              type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              placeholder={t.contact.form.subject}
-              required
-              className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
-            />
-          </div>
-
-          <div>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder={t.contact.form.email}
-              required
-              className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
-            />
-          </div>
-
-          <div>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder={t.contact.form.message}
-              required
-              rows={6}
-              className="w-full resize-none rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-2 font-medium text-black transition-all duration-300 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span>
-              {status === "sending"
-                ? t.contact.form.sending
-                : status === "success"
-                  ? t.contact.form.sent
-                  : t.contact.form.send}
-            </span>
-          </button>
-
-          {status === "success" && (
-            <p className="text-sm text-[var(--text-accent)]">
-              {t.contact.form.success}
+            <p className="text-body font-display text-slate-200">
+              {t.contact.intro}
             </p>
-          )}
-          {status === "error" && (
-            <p className="text-sm text-red-400">{t.contact.form.error}</p>
-          )}
-        </form>
+            <p className="text-body font-display text-slate-400">
+              {t.contact.emailText}{" "}
+              <a
+                href="mailto:rahim100codeur@gmail.com"
+                className="text-[var(--text-accent)] hover:underline font-medium transition-colors hover:text-[var(--text-accent)]"
+              >
+                rahim100codeur@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder={t.contact.form.name}
+                required
+                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+              />
+            </div>
+
+            <div>
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder={t.contact.form.subject}
+                required
+                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder={t.contact.form.email}
+                required
+                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+              />
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder={t.contact.form.message}
+                required
+                rows={6}
+                className="w-full resize-none rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-2 font-medium text-black transition-all duration-300 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <span>
+                {status === "sending"
+                  ? t.contact.form.sending
+                  : status === "success"
+                    ? t.contact.form.sent
+                    : t.contact.form.send}
+              </span>
+            </button>
+
+            {status === "success" && (
+              <p className="text-sm text-[var(--text-accent)]">
+                {t.contact.form.success}
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-400">{t.contact.form.error}</p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );
