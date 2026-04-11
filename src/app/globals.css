@@ -19,8 +19,8 @@
   --scrollbar-track: #1e293b;
   --scrollbar-thumb: #475569;
   --scrollbar-thumb-hover: #64748b;
-  --grid-size: 156px;
-  --grid-line: rgb(148 163 184 / 0.08);
+  --grid-size: 200px;
+  --grid-line: rgb(148 163 184 / 0.03);
 }
 
 :root[data-accent="clay"] {
@@ -118,18 +118,32 @@
   scroll-behavior: smooth;
 }
 
-body {
+html {
   background-color: var(--background);
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
-  background-position: center top;
+}
+
+body {
+  background-color: transparent;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  background-position: center top;
 }
 
 /* Custom scrollbar */
