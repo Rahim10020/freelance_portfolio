@@ -19,8 +19,8 @@
   --scrollbar-track: #1e293b;
   --scrollbar-thumb: #475569;
   --scrollbar-thumb-hover: #64748b;
-  --grid-size: 200px;
-  --grid-line: rgb(148 163 184 / 0.03);
+  --grid-size: 102px;
+  --grid-line: rgb(148 163 184 / 0.05);
 }
 
 :root[data-accent="clay"] {
