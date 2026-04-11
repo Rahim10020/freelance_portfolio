@@ -9,3 +9,5 @@ my primary colors:
     cette image ne soit pas visible. Si un visiteur vient sur le site , il ne saura pas qu'il y a une image derriere. 
     Et ce que je vais faire c'est que lorsque le curseur va survoler une partie de l'image, 
     on va afficher cette partie survolee( comme sur le site suivant : https://landonorris.com/) 
+
+- apres on va modifier le footer. on va mettre @copy et aussi le lien vers le site de twocoderz
