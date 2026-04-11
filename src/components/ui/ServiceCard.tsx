@@ -26,7 +26,7 @@ export default function ServiceCard({
 
   return (
     <div className="group relative rounded-lg bg-transparent transition-all hover:shadow-md">
-      <div className="mb-4 text-[var(--text-accent)]">
+      <div className="mb-4 text-[var(--text-accent)] flex items-center justify-end">
         <IconComponent size={34} />
       </div>
       <h3 className="text-lg font-medium text-slate-200 mb-2">
