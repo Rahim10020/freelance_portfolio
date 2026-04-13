@@ -29,7 +29,7 @@ export default function ProjectImagesPage() {
           <ArrowLeftIcon size={24} aria-hidden />
           <span>{t.projects.detail.backToProjects}</span>
         </Link>
-        <p className="mt-8 text-slate-300">Project images not available yet.</p>
+        <p className="mt-8 text-[var(--c-text-soft)]">Project images not available yet.</p>
       </div>
     );
   }
@@ -43,7 +43,7 @@ export default function ProjectImagesPage() {
         {/* back to projects */}
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-3 py-2 text-slate-200 backdrop-blur transition hover:text-[var(--text-accent)]"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--c-border-white-10)] bg-[var(--c-bg-overlay-70)] px-3 py-2 text-[var(--c-text-primary)] backdrop-blur transition hover:text-[var(--text-accent)]"
         >
           <ArrowLeftIcon size={20} aria-hidden />
           <span className="font-display">

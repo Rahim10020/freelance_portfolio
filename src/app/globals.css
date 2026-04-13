@@ -46,11 +46,62 @@ html[data-theme="dark"] {
   --text-secondary: var(--palette-slate-400);
   --text-accent: var(--accent-300);
   --on-primary-text: var(--palette-white);
+
+  --c-text-primary: var(--palette-slate-200);
+  --c-text-strong: var(--palette-slate-100);
+  --c-text-strong-soft: rgb(241 245 249 / 0.9);
+  --c-text-soft: var(--palette-slate-300);
+  --c-text-secondary: var(--palette-slate-400);
+  --c-text-muted: var(--palette-slate-500);
+  --c-text-subtle: var(--palette-slate-700);
+  --c-text-faint: var(--palette-slate-50);
+  --c-text-on-light: var(--palette-slate-900);
+  --c-text-inverse: var(--palette-white);
+  --c-text-black: var(--palette-black);
+
+  --c-bg-overlay-95: rgb(2 6 23 / 0.95);
+  --c-bg-overlay-70: rgb(2 6 23 / 0.7);
+  --c-bg-overlay-60: rgb(2 6 23 / 0.6);
+  --c-bg-sticky: rgb(15 23 42 / 0.75);
+  --c-bg-muted: var(--palette-slate-800);
+  --c-bg-muted-hover: var(--palette-slate-700);
+  --c-bg-muted-soft: rgb(30 41 59 / 0.5);
+  --c-bg-contrast: var(--palette-slate-100);
+  --c-bg-contrast-70: rgb(241 245 249 / 0.7);
+  --c-bg-contrast-60: rgb(241 245 249 / 0.6);
+  --c-bg-contrast-40: rgb(241 245 249 / 0.4);
+  --c-bg-callout: #313539;
+  --c-bg-solid-white: var(--palette-white);
+
+  --c-border-input: var(--palette-slate-800);
+  --c-border-divider: rgb(51 65 85 / 0.6);
+  --c-border-faint: rgb(148 163 184 / 0.3);
+  --c-border-hairline: rgb(203 213 225 / 0.1);
+  --c-border-soft: rgb(226 232 240 / 0.1);
+  --c-border-soft-hover: rgb(226 232 240 / 0.3);
+  --c-border-white-10: rgb(255 255 255 / 0.1);
+
+  --c-placeholder: var(--palette-slate-500);
+  --c-shadow-hairline-rgba: rgba(148, 163, 184, 0.1);
+
+  --c-status-progress-bg: rgb(74 222 128 / 0.1);
+  --c-status-progress-text: rgb(134 239 172);
+  --c-status-upcoming-bg: rgb(96 165 250 / 0.1);
+  --c-status-upcoming-text: rgb(147 197 253);
+  --c-feedback-error-text: rgb(248 113 113);
+  --c-label-warning-soft: rgb(253 230 138 / 0.9);
+
+  --c-icon-white: var(--palette-white);
+  --c-icon-github-dark: #24292f;
+  --c-icon-linkedin-brand: #0a66c2;
+  --c-icon-instagram-dark: #000100;
+  --c-icon-whatsapp-brand: #25d366;
+
   --scrollbar-track: var(--palette-slate-800);
   --scrollbar-thumb: var(--palette-slate-600);
   --scrollbar-thumb-hover: var(--palette-slate-500);
   --grid-size: 102px;
-  --grid-line: rgb(148 163 184 / 0.03);
+  --grid-line: rgb(148 163 184 / 0.04);
 
   --cursor-ring-border: rgb(226 232 240 / 0.55);
   --cursor-ring-shadow: rgb(15 23 42 / 0.45);

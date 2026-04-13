@@ -73,7 +73,9 @@ export default function ProjectDetailPage() {
           <ArrowLeftIcon size={24} aria-hidden />
           <span>{t.projects.detail.backToProjects}</span>
         </Link>
-        <p className="mt-8 text-slate-300">Project detail not available yet.</p>
+        <p className="mt-8 text-[var(--c-text-soft)]">
+          Project detail not available yet.
+        </p>
       </div>
     );
   }
@@ -120,10 +122,10 @@ export default function ProjectDetailPage() {
           <AnimatedLetters
             as="h1"
             text={projectTr?.title}
-            className="text-4xl font-bold font-display tracking-tight text-slate-100 md:text-4xl"
+            className="text-4xl font-bold font-display tracking-tight text-[var(--c-text-strong)] md:text-4xl"
           />
 
-          <div className="flex flex-wrap items-center gap-2 text-slate-300">
+          <div className="flex flex-wrap items-center gap-2 text-[var(--c-text-soft)]">
             <button
               type="button"
               onClick={handleShare}
@@ -167,7 +169,7 @@ export default function ProjectDetailPage() {
             onClick={() => openPreview(0)}
             className={`relative min-h-[320px] overflow-hidden text-left md:col-span-7 md:min-h-[520px] ${
               gallery[0]?.format === "mobile"
-                ? "bg-slate-950/60"
+                ? "bg-[var(--c-bg-overlay-60)]"
                 : "bg-transparent"
             }`}
           >
@@ -191,7 +193,7 @@ export default function ProjectDetailPage() {
                 onClick={() => openPreview(index + 1)}
                 className={`relative min-h-[158px] overflow-hidden text-left md:min-h-[259px] ${
                   item.format === "mobile"
-                    ? "bg-slate-950/60"
+                    ? "bg-[var(--c-bg-overlay-60)]"
                     : "bg-transparent"
                 }`}
               >
@@ -212,7 +214,7 @@ export default function ProjectDetailPage() {
           {gallery.length > 5 ? (
             <Link
               href={`/projects/${project.slug}/images`}
-              className="inline-flex items-center gap-2 bg-slate-100 px-5 py-2 font-display text-base font-medium text-slate-900"
+              className="inline-flex items-center gap-2 bg-[var(--c-bg-contrast)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-on-light)]"
             >
               <MoreGridIcon size={24} />
               {t.projects.detail.showAllImages}
@@ -220,7 +222,7 @@ export default function ProjectDetailPage() {
           ) : (
             <span
               aria-disabled="true"
-              className="inline-flex items-center gap-2 bg-slate-100/60 px-5 py-2 font-display text-base font-medium text-slate-500"
+              className="inline-flex items-center gap-2 bg-[var(--c-bg-contrast-60)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-muted)]"
             >
               <MoreGridIcon size={24} />
               {t.projects.detail.showAllImages}
@@ -230,26 +232,26 @@ export default function ProjectDetailPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
           <div className="space-y-8 lg:col-span-8">
-            <h2 className="text-3xl font-display font-bold text-slate-100">
+            <h2 className="text-3xl font-display font-bold text-[var(--c-text-strong)]">
               {detail.headline}
             </h2>
 
             {hasTldr && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.tldr}
                 </h3>
                 <div className="mt-4 space-y-3">
                   {detail.tldr?.what && (
                     <TldrCallout label={t.projects.detail.what}>
-                      <p className="font-display leading-relaxed text-slate-100/90">
+                      <p className="font-display leading-relaxed text-[var(--c-text-strong-soft)]">
                         {detail.tldr.what}
                       </p>
                     </TldrCallout>
                   )}
                   {detail.tldr?.who && (
                     <TldrCallout label={t.projects.detail.who}>
-                      <p className="font-display leading-relaxed text-slate-100/90">
+                      <p className="font-display leading-relaxed text-[var(--c-text-strong-soft)]">
                         {detail.tldr.who}
                       </p>
                     </TldrCallout>
@@ -261,7 +263,7 @@ export default function ProjectDetailPage() {
                           {detail.tldr.challenges.map((item) => (
                             <li
                               key={item}
-                              className="font-display leading-relaxed text-slate-100/90"
+                              className="font-display leading-relaxed text-[var(--c-text-strong-soft)]"
                             >
                               {item}
                             </li>
@@ -271,7 +273,7 @@ export default function ProjectDetailPage() {
                     )}
                   {detail.tldr?.result && (
                     <TldrCallout label={t.projects.detail.result}>
-                      <p className="font-display leading-relaxed text-slate-100/90">
+                      <p className="font-display leading-relaxed text-[var(--c-text-strong-soft)]">
                         {detail.tldr.result}
                       </p>
                     </TldrCallout>
@@ -281,32 +283,32 @@ export default function ProjectDetailPage() {
             )}
 
             {detail.contextAndProblem && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.contextProblem}
                 </h3>
-                <p className="mt-3 font-display leading-relaxed text-slate-300">
+                <p className="mt-3 font-display leading-relaxed text-[var(--c-text-soft)]">
                   {detail.contextAndProblem}
                 </p>
               </section>
             )}
 
             {detail.solutionRetained && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.solutionRetained}
                 </h3>
-                <p className="mt-3 font-display leading-relaxed text-slate-300">
+                <p className="mt-3 font-display leading-relaxed text-[var(--c-text-soft)]">
                   {detail.solutionRetained}
                 </p>
               </section>
             )}
 
-            <section className="border-t border-slate-700/60 pt-6">
-              <h3 className="text-xl font-display font-semibold text-slate-100">
+            <section className="border-t border-[var(--c-border-divider)] pt-6">
+              <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                 {t.projects.detail.keyFeatures}
               </h3>
-              <ul className="mt-4 space-y-3 text-slate-300">
+              <ul className="mt-4 space-y-3 text-[var(--c-text-soft)]">
                 {detail.features.map((feature) => (
                   <li
                     key={feature}
@@ -321,11 +323,11 @@ export default function ProjectDetailPage() {
 
             {detail.securityAndResponsibility &&
               detail.securityAndResponsibility.length > 0 && (
-                <section className="border-t border-slate-700/60 pt-6">
-                  <h3 className="text-xl font-display font-semibold text-slate-100">
+                <section className="border-t border-[var(--c-border-divider)] pt-6">
+                  <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                     {t.projects.detail.securityResponsibility}
                   </h3>
-                  <ul className="mt-4 space-y-3 text-slate-300">
+                  <ul className="mt-4 space-y-3 text-[var(--c-text-soft)]">
                     {detail.securityAndResponsibility.map((item) => (
                       <li
                         key={item}
@@ -340,11 +342,11 @@ export default function ProjectDetailPage() {
               )}
 
             {detail.keyLearnings && detail.keyLearnings.length > 0 && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.keyLearnings}
                 </h3>
-                <ul className="mt-4 space-y-3 text-slate-300">
+                <ul className="mt-4 space-y-3 text-[var(--c-text-soft)]">
                   {detail.keyLearnings.map((item) => (
                     <li
                       key={item}
@@ -359,11 +361,11 @@ export default function ProjectDetailPage() {
             )}
 
             {detail.futureRoadmap && detail.futureRoadmap.length > 0 && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.futureRoadmap}
                 </h3>
-                <ul className="mt-4 space-y-3 text-slate-300">
+                <ul className="mt-4 space-y-3 text-[var(--c-text-soft)]">
                   {detail.futureRoadmap.map((item) => (
                     <li
                       key={item}
@@ -378,11 +380,11 @@ export default function ProjectDetailPage() {
             )}
 
             {detail.whatYouCanLearn && detail.whatYouCanLearn.length > 0 && (
-              <section className="border-t border-slate-700/60 pt-6">
-                <h3 className="text-xl font-display font-semibold text-slate-100">
+              <section className="border-t border-[var(--c-border-divider)] pt-6">
+                <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.whatYouCanLearn}
                 </h3>
-                <ul className="mt-4 space-y-3 text-slate-300">
+                <ul className="mt-4 space-y-3 text-[var(--c-text-soft)]">
                   {detail.whatYouCanLearn.map((item) => (
                     <li
                       key={item}
@@ -433,7 +435,7 @@ export default function ProjectDetailPage() {
       />
 
       {toast && (
-        <div className="fixed bottom-6 right-6 rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-900 shadow-lg">
+        <div className="fixed bottom-6 right-6 rounded-lg bg-[var(--c-bg-contrast)] px-4 py-2 text-sm font-medium text-[var(--c-text-on-light)] shadow-lg">
           {toast}
         </div>
       )}

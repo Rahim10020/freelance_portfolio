@@ -15,12 +15,12 @@ export default function Hero() {
         <AnimatedLetters
           as="h1"
           text={personalInfo.name}
-          className="font-display text-4xl font-black tracking-tight text-slate-200 sm:text-5xl"
+          className="font-display text-4xl font-black tracking-tight text-[var(--c-text-primary)] sm:text-5xl"
         />
-        <h2 className="font-display mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+        <h2 className="font-display mt-3 text-lg font-medium tracking-tight text-[var(--c-text-primary)] sm:text-xl">
           {t.hero.title}
         </h2>
-        <p className="text-body font-display mt-4 max-w-xs text-slate-400">
+        <p className="text-body font-display mt-4 max-w-xs text-[var(--c-text-secondary)]">
           {t.hero.bio}
         </p>
         <Navigation />

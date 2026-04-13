@@ -9,7 +9,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <h2
-      className={`section-title uppercase text-right text-slate-200 mb-8 lg:mb-12 sticky top-0 z-20 -mx-6 px-6 py-5 backdrop-blur bg-slate-900/75 md:bg-transparent lg:relative lg:top-auto lg:mx-0 lg:px-0 lg:py-0 lg:backdrop-blur-none ${className}`}
+      className={`section-title uppercase text-right text-[var(--c-text-primary)] mb-8 lg:mb-12 sticky top-0 z-20 -mx-6 px-6 py-5 backdrop-blur bg-[var(--c-bg-sticky)] md:bg-transparent lg:relative lg:top-auto lg:mx-0 lg:px-0 lg:py-0 lg:backdrop-blur-none ${className}`}
     >
       {children}
     </h2>

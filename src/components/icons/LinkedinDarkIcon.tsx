@@ -2,7 +2,7 @@ import type { IconProps } from "./IconProps";
 
 export default function LinkedinDarkIcon({
   size = 48,
-  color = "#0A66C2",
+  color = "var(--c-icon-linkedin-brand)",
   ...props
 }: IconProps) {
   return (

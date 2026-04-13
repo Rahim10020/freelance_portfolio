@@ -22,8 +22,8 @@ export default function OtherProjects({ currentSlug }: OtherProjectsProps) {
   if (items.length === 0) return null;
 
   return (
-    <section className="mt-14 border-t border-slate-700/60 pt-10">
-      <h3 className="mb-5 font-display text-2xl font-semibold text-slate-100">
+    <section className="mt-14 border-t border-[var(--c-border-divider)] pt-10">
+      <h3 className="mb-5 font-display text-2xl font-semibold text-[var(--c-text-strong)]">
         {t.projects.detail.otherProjects}
       </h3>
       <div className="flex gap-4 overflow-x-auto pb-2">

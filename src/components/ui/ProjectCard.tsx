@@ -23,13 +23,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     switch (project.status) {
       case "in-progress":
         return (
-          <span className={`${baseClasses} bg-green-400/10 text-green-300`}>
+          <span
+            className={`${baseClasses} bg-[var(--c-status-progress-bg)] text-[var(--c-status-progress-text)]`}
+          >
             {statusText}
           </span>
         );
       case "upcoming":
         return (
-          <span className={`${baseClasses} bg-blue-400/10 text-blue-300`}>
+          <span
+            className={`${baseClasses} bg-[var(--c-status-upcoming-bg)] text-[var(--c-status-upcoming-text)]`}
+          >
             {statusText}
           </span>
         );
@@ -44,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {project.image && (
         <div className="z-10 sm:col-span-2">
-          <div className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30">
+          <div className="rounded border-2 border-[var(--c-border-soft)] transition group-hover:border-[var(--c-border-soft-hover)]">
             <Image
               src={project.image}
               alt={title}
@@ -60,10 +64,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div
         className={`z-10 ${project.image ? "sm:col-span-6" : "sm:col-span-8"}`}
       >
-        <h3 className="font-medium leading-snug text-slate-200">
+        <h3 className="font-medium leading-snug text-[var(--c-text-primary)]">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
+            className="inline-flex items-baseline font-medium leading-tight text-[var(--c-text-primary)] hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
           >
             <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
             <span>
@@ -83,7 +87,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </Link>
         </h3>
         {getStatusBadge() && <div className="mt-2">{getStatusBadge()}</div>}
-        <p className="font-display mt-2 text-sm leading-normal text-slate-400">
+        <p className="font-display mt-2 text-sm leading-normal text-[var(--c-text-secondary)]">
           {description}
         </p>
         {(project.links.github || project.links.live) && (
@@ -93,7 +97,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-1 text-slate-400 hover:text-[var(--text-accent)]"
+                className="relative z-20 inline-flex items-center gap-1 text-[var(--c-text-secondary)] hover:text-[var(--text-accent)]"
               >
                 <svg
                   className="h-4 w-4"
@@ -110,7 +114,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-1 text-slate-400 hover:text-[var(--text-accent)]"
+                className="relative z-20 inline-flex items-center gap-1 text-[var(--c-text-secondary)] hover:text-[var(--text-accent)]"
               >
                 <svg
                   className="h-4 w-4"

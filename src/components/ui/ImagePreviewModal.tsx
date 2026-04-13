@@ -40,7 +40,7 @@ export default function ImagePreviewModal({
 
   return (
     <div
-      className="fixed inset-0 z-[80] bg-slate-950/95 p-4 md:p-8"
+      className="fixed inset-0 z-[80] bg-[var(--c-bg-overlay-95)] p-4 md:p-8"
       role="dialog"
       aria-modal="true"
       aria-label={labels.showAllImages}
@@ -54,7 +54,7 @@ export default function ImagePreviewModal({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-10 w-10 items-center justify-center text-slate-100 hover:text-slate-50"
+            className="inline-flex h-10 w-10 items-center justify-center text-[var(--c-text-strong)] hover:text-[var(--c-text-faint)]"
             aria-label={labels.closeGallery}
           >
             <CloseIcon />
@@ -75,7 +75,7 @@ export default function ImagePreviewModal({
                 type="button"
                 onClick={onPrev}
                 aria-label={labels.previousImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:left-4"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-white-10)] bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-[var(--c-text-strong)] backdrop-blur transition md:left-4"
               >
                 <ChevronLeftIcon />
               </button>
@@ -83,7 +83,7 @@ export default function ImagePreviewModal({
                 type="button"
                 onClick={onNext}
                 aria-label={labels.nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-white/10 bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-slate-100 backdrop-blur transition md:right-4"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-white-10)] bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-[var(--c-text-strong)] backdrop-blur transition md:right-4"
               >
                 <ChevronRightIcon />
               </button>
@@ -102,7 +102,7 @@ export default function ImagePreviewModal({
                 className={`h-2.5 w-2.5 rounded-full transition ${
                   index === activeIndex
                     ? "bg-[rgb(var(--accent-bg-rgb))]"
-                    : "bg-slate-100/40 hover:bg-slate-100/70"
+                    : "bg-[var(--c-bg-contrast-40)] hover:bg-[var(--c-bg-contrast-70)]"
                 }`}
               />
             ))}

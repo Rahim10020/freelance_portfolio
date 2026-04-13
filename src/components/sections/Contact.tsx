@@ -60,10 +60,10 @@ export default function Contact() {
       <div className="text-right">
         <div className="space-y-6">
           <div>
-            <p className="text-body font-display text-slate-200">
+            <p className="text-body font-display text-[var(--c-text-primary)]">
               {t.contact.intro}
             </p>
-            <p className="text-body font-display text-slate-400">
+            <p className="text-body font-display text-[var(--c-text-secondary)]">
               {t.contact.emailText}{" "}
               <a
                 href="mailto:rahim100codeur@gmail.com"
@@ -83,7 +83,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.name}
                 required
-                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -95,7 +95,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.subject}
                 required
-                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.email}
                 required
-                className="w-full rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -119,14 +119,14 @@ export default function Contact() {
                 placeholder={t.contact.form.message}
                 required
                 rows={6}
-                className="w-full resize-none rounded-lg border border-slate-800 bg-transparent px-4 py-2 text-slate-200 placeholder-slate-500 transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full resize-none rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-2 font-medium text-black transition-all duration-300 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center justify-center rounded-lg bg-[var(--c-bg-solid-white)] px-5 py-2 font-medium text-[var(--c-text-black)] transition-all duration-300 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             >
               <span>
                 {status === "sending"
@@ -143,7 +143,9 @@ export default function Contact() {
               </p>
             )}
             {status === "error" && (
-              <p className="text-sm text-red-400">{t.contact.form.error}</p>
+              <p className="text-sm text-[var(--c-feedback-error-text)]">
+                {t.contact.form.error}
+              </p>
             )}
           </form>
         </div>

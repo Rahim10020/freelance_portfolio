@@ -2,7 +2,7 @@ import type { IconProps } from "./IconProps";
 
 export default function GithubWhiteIcon({
   size = 48,
-  color = "#FFFFFF",
+  color = "var(--c-icon-white)",
   ...props
 }: IconProps) {
   return (

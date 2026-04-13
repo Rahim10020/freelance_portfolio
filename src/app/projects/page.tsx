@@ -24,13 +24,17 @@ export default function ProjectsArchive() {
     switch (status) {
       case "in-progress":
         return (
-          <span className={`${baseClasses} bg-green-400/10 text-green-300`}>
+          <span
+            className={`${baseClasses} bg-[var(--c-status-progress-bg)] text-[var(--c-status-progress-text)]`}
+          >
             {statusText}
           </span>
         );
       case "upcoming":
         return (
-          <span className={`${baseClasses} bg-blue-400/10 text-blue-300`}>
+          <span
+            className={`${baseClasses} bg-[var(--c-status-upcoming-bg)] text-[var(--c-status-upcoming-text)]`}
+          >
             {statusText}
           </span>
         );
@@ -47,9 +51,9 @@ export default function ProjectsArchive() {
           <AnimatedLetters
             as="h1"
             text={t.projects.allProjects}
-            className="mb-4 font-display text-2xl font-bold tracking-tight text-slate-200 sm:text-3xl"
+            className="mb-4 font-display text-2xl font-bold tracking-tight text-[var(--c-text-primary)] sm:text-3xl"
           />
-          <p className="max-w-2xl font-display text-lg text-slate-400">
+          <p className="max-w-2xl font-display text-lg text-[var(--c-text-secondary)]">
             {t.projects.archiveDescription}
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
@@ -61,7 +65,7 @@ export default function ProjectsArchive() {
                   className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                     activeFilter === filter
                       ? "bg-[rgb(var(--accent-bg-rgb))] text-[var(--on-primary-text)]"
-                      : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                      : "bg-[var(--c-bg-muted)] text-[var(--c-text-soft)] hover:bg-[var(--c-bg-muted-hover)]"
                   }`}
                 >
                   {t.projects.filters[filter]}
@@ -73,18 +77,18 @@ export default function ProjectsArchive() {
 
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left">
-            <thead className="sticky top-0 z-10 bg-slate-800/50 shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] transition motion-reduce:transition-none lg:drop-shadow-lg">
+            <thead className="sticky top-0 z-10 bg-[var(--c-bg-muted-soft)] shadow-[inset_0_1px_0_0_var(--c-shadow-hairline-rgba)] transition motion-reduce:transition-none lg:drop-shadow-lg">
               <tr>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
+                <th className="py-4 pr-8 text-sm font-semibold text-[var(--c-text-primary)]">
                   {t.projects.tableHeaders.year}
                 </th>
-                <th className="py-4 pr-8 text-sm font-semibold text-slate-200">
+                <th className="py-4 pr-8 text-sm font-semibold text-[var(--c-text-primary)]">
                   {t.projects.tableHeaders.project}
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 lg:table-cell">
+                <th className="hidden py-4 pr-8 text-sm font-semibold text-[var(--c-text-primary)] lg:table-cell">
                   {t.projects.tableHeaders.builtWith}
                 </th>
-                <th className="hidden py-4 pr-8 text-sm font-semibold text-slate-200 sm:table-cell">
+                <th className="hidden py-4 pr-8 text-sm font-semibold text-[var(--c-text-primary)] sm:table-cell">
                   {t.projects.tableHeaders.link}
                 </th>
               </tr>
@@ -108,18 +112,18 @@ export default function ProjectsArchive() {
                   return (
                     <tr
                       key={project.id}
-                      className="border-b border-slate-300/10 last:border-none"
+                      className="border-b border-[var(--c-border-hairline)] last:border-none"
                     >
                       <td className="py-4 pr-4 align-top text-sm">
-                        <div className="translate-y-px text-slate-700">
+                        <div className="translate-y-px text-[var(--c-text-subtle)]">
                           {year}
                         </div>
                       </td>
-                      <td className="py-4 pr-4 align-top font-semibold leading-snug text-slate-200">
+                      <td className="py-4 pr-4 align-top font-semibold leading-snug text-[var(--c-text-primary)]">
                         <div className="flex flex-wrap items-center gap-2">
                           <Link
                             href={`/projects/${project.slug}`}
-                            className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)]"
+                            className="group/link inline-flex items-baseline text-base font-medium leading-tight text-[var(--c-text-primary)] hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)]"
                           >
                             <span className="inline-block">
                               {title}
@@ -138,7 +142,7 @@ export default function ProjectsArchive() {
                           </Link>
                           {getStatusBadge(project.status)}
                         </div>
-                        <div className="mt-2 text-sm font-normal leading-normal text-slate-400">
+                        <div className="mt-2 text-sm font-normal leading-normal text-[var(--c-text-secondary)]">
                           {description}
                         </div>
                       </td>
@@ -152,7 +156,7 @@ export default function ProjectsArchive() {
                             </li>
                           ))}
                           {project.technologies.length > 4 && (
-                            <li className="text-xs text-slate-700">
+                            <li className="text-xs text-[var(--c-text-subtle)]">
                               +{project.technologies.length - 4}{" "}
                               {t.projects.moreTechnologies}
                             </li>
@@ -166,7 +170,7 @@ export default function ProjectsArchive() {
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-400 transition-colors hover:text-[var(--text-accent)]"
+                              className="text-[var(--c-text-secondary)] transition-colors hover:text-[var(--text-accent)]"
                               aria-label={t.projects.ariaLabels.github}
                             >
                               <svg
@@ -183,7 +187,7 @@ export default function ProjectsArchive() {
                               href={project.links.live}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-slate-400 transition-colors hover:text-[var(--text-accent)]"
+                              className="text-[var(--c-text-secondary)] transition-colors hover:text-[var(--text-accent)]"
                               aria-label={t.projects.ariaLabels.liveDemo}
                             >
                               <svg

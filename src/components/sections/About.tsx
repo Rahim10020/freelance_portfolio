@@ -15,7 +15,7 @@ export default function About() {
     >
       <SectionTitle>{t.about.title}</SectionTitle>
       <div className="text-right">
-        <div className="space-y-4 text-slate-400 mb-8">
+        <div className="space-y-4 text-[var(--c-text-secondary)] mb-8">
           <p className="text-body font-display">{t.about.paragraph1}</p>
           <p className="text-body font-display">{t.about.paragraph2}</p>
         </div>
