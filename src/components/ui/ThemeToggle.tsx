@@ -28,7 +28,7 @@ export default function ThemeToggle() {
       title={label}
       className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-transparent transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
     >
-      <ThemeModeIcon size={24} />
+      <ThemeModeIcon size={28} inverted={!isLight} />
     </button>
   );
 }
