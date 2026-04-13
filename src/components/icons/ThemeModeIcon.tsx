@@ -14,13 +14,13 @@ export default function ThemeModeIcon({ size = 24, ...props }: IconProps) {
         cx="12"
         cy="12"
         r="10"
-        fill="var(--c-bg-solid-white)"
-        stroke="var(--c-text-muted)"
+        fill="white"
+        stroke="var(--c-theme-toggle-stroke)"
         strokeWidth="2"
       />
       <path
         d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22V2Z"
-        fill="var(--c-text-muted)"
+        fill="black"
       />
     </svg>
   );

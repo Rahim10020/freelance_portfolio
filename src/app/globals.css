@@ -96,6 +96,7 @@ html[data-theme="dark"] {
   --c-icon-linkedin-brand: #0a66c2;
   --c-icon-instagram-dark: #000100;
   --c-icon-whatsapp-brand: #25d366;
+  --c-theme-toggle-stroke: #ffffff;
 
   --scrollbar-track: var(--palette-slate-800);
   --scrollbar-thumb: var(--palette-slate-600);
@@ -186,6 +187,7 @@ html[data-theme="light"] {
   --c-icon-linkedin-brand: #0a66c2;
   --c-icon-instagram-dark: #000100;
   --c-icon-whatsapp-brand: #25d366;
+  --c-theme-toggle-stroke: #000000;
 
   --scrollbar-track: #e2e8f0;
   --scrollbar-thumb: #94a3b8;
