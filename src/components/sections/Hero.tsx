@@ -5,6 +5,7 @@ import Navigation from "../ui/Navigation";
 import SocialLinks from "../ui/SocialLinks";
 import { useLanguage } from "@/contexts/LanguageContext";
 import AnimatedLetters from "../ui/AnimatedLetters";
+import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -27,6 +28,7 @@ export default function Hero() {
       </div>
       <div className="mt-8 flex flex-col gap-6 md:gap-9 md:flex-row lg:mt-0 lg:items-center">
         <SocialLinks />
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -13,6 +13,11 @@ export const en = {
     contact: "Contact",
   },
 
+  theme: {
+    switchToLight: "Switch to light mode",
+    switchToDark: "Switch to dark mode",
+  },
+
   // About Section
   about: {
     title: "About",

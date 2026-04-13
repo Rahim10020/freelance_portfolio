@@ -5,6 +5,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { getThemeInitScript } from "@/lib/theme";
 
 const ribes = localFont({
   src: [
@@ -145,6 +147,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: getThemeInitScript(),
+          }}
+        />
+
         {/* Favicon */}
         <link
           rel="apple-touch-icon"
@@ -198,13 +206,15 @@ export default function RootLayout({
         />
       </head>
       <body className={`${ribes.variable} ${abordage.variable} antialiased`}>
-        <SmoothScrollProvider>
-          <LanguageProvider>
-            <CustomCursor />
-            {children}
-            <Analytics />
-          </LanguageProvider>
-        </SmoothScrollProvider>
+        <ThemeProvider>
+          <SmoothScrollProvider>
+            <LanguageProvider>
+              <CustomCursor />
+              {children}
+              <Analytics />
+            </LanguageProvider>
+          </SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
