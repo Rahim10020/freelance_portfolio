@@ -25,8 +25,8 @@ export default function Navigation() {
     return pointerFine && desktop;
   }, []);
 
-  const BASE_W = 32; // w-8
-  const ACTIVE_W = 64; // w-16
+  const BASE_W = 68;
+  const ACTIVE_W = 124;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,7 +145,7 @@ export default function Navigation() {
 
   return (
     <nav className="hidden lg:block mt-7 lg:mt-14">
-      <ul className="space-y-4">
+      <ul className="">
         {sections.map((section) => (
           <li key={section.id}>
             <button
