@@ -27,8 +27,8 @@ export default function Hero() {
         <Navigation />
       </div>
       <div className="mt-8 flex flex-col gap-6 md:gap-9 md:flex-row lg:mt-0 lg:items-center">
-        <SocialLinks />
         <ThemeToggle />
+        <SocialLinks />
       </div>
     </header>
   );
