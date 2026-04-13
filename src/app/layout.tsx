@@ -140,7 +140,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-smooth dark"
+      className="scroll-smooth"
+      data-theme="dark"
       suppressHydrationWarning
     >
       <head>
