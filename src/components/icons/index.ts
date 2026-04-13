@@ -20,6 +20,5 @@ export { default as ExternalLinkIcon } from "./ExternalLinkIcon";
 export { default as CloseIcon } from "./CloseIcon";
 export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
 export { default as ChevronRightIcon } from "./ChevronRightIcon";
-export { default as MoonIcon } from "./MoonIcon";
-export { default as SunIcon } from "./SunIcon";
+export { default as ThemeModeIcon } from "./ThemeModeIcon";
 export type { IconProps } from "./IconProps";
