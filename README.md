@@ -8,21 +8,19 @@ Portfolio personnel moderne et interactif construit avec Next.js 15, React 19, T
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.x-38bdf8)
 
-![Screenshot 1](./public/images/website.png)
-
 ## 🛠️ Technologies
 
 - **Framework** : Next.js 15.5.5 (App Router)
 - **UI Library** : React 19.1.0
 - **Language** : TypeScript 5.x
 - **Styling** : Tailwind CSS 4.x
-- **Fonts** : Inter (Google Fonts)
 - **Icons** : SVG personnalisés
-- **Deployment** : Vercel / Netlify
+- **Deployment** : Vercel
 
 ## 📦 Installation
 
 ### Prérequis
+
 - Node.js >= 18.x
 - npm ou yarn
 
@@ -49,15 +47,14 @@ npm start
 npm run lint
 ```
 
-
 ### Langues Disponibles
-- 🇬🇧 Anglais (par défaut)
-- 🇫🇷 Français
 
+- 🇬🇧 Anglais (par défaut)
 
 ### Thèmes Disponibles
-- 🌙 Dark Mode (slate + teal)
-- ☀️ Light Mode (crème + teal foncé)
+
+- 🌙 Dark Mode
+- ☀️ Light Mode
 
 ## 🙏 Crédits
 
