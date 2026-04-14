@@ -1,4 +1,4 @@
-# 🚀 Website - Rahim ALI
+# Website - Rahim ALI
 
 Portfolio personnel moderne et interactif construit avec Next.js 15, React 19, TypeScript et Tailwind CSS.
 
