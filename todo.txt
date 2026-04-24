@@ -11,3 +11,5 @@ my primary colors:
     on va afficher cette partie survolee( comme sur le site suivant : https://landonorris.com/) 
 
 - apres on va modifier le footer. on va mettre @copy et aussi le lien vers le site de twocoderz
+- apres modifier le bg du bouton view live dans project detail lors du hover.
+- projets phares : a prioriser lors du montage du gif : twocoderz, docstore landing page, focusly
