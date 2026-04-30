@@ -110,6 +110,25 @@ html[data-theme="dark"] {
   --cursor-glyph-border: rgb(248 250 252 / 0.45);
   --cursor-glyph-outline: rgb(15 23 42 / 0.5);
   --cursor-glyph-drop-shadow: rgb(2 6 23 / 0.35);
+
+  --c-project-card-bg: rgb(15 23 42 / 0.35);
+  --c-project-card-border: rgb(148 163 184 / 0.2);
+  --c-project-card-border-hover: rgb(148 163 184 / 0.45);
+  --c-project-overlay-title: var(--palette-slate-50);
+  --c-project-overlay-description: rgb(226 232 240 / 0.95);
+  --c-project-chip-bg: rgb(248 250 252 / 0.2);
+  --c-project-chip-border: rgb(248 250 252 / 0.34);
+  --c-project-chip-text: var(--palette-white);
+  --project-card-shadow: 0 12px 28px rgb(2 6 23 / 0.16);
+  --project-card-shadow-hover: 0 16px 36px rgb(2 6 23 / 0.28);
+  --project-card-overlay:
+    linear-gradient(
+      to top,
+      rgb(2 6 23 / 0.94) 0%,
+      rgb(2 6 23 / 0.78) 38%,
+      rgb(2 6 23 / 0.24) 65%,
+      rgb(2 6 23 / 0.04) 100%
+    );
 }
 
 html[data-theme="light"] {
@@ -200,6 +219,25 @@ html[data-theme="light"] {
   --cursor-glyph-border: rgb(38 38 36 / 0.35);
   --cursor-glyph-outline: rgb(38 38 36 / 0.2);
   --cursor-glyph-drop-shadow: rgb(15 23 42 / 0.2);
+
+  --c-project-card-bg: rgb(248 250 252 / 0.72);
+  --c-project-card-border: rgb(71 85 105 / 0.2);
+  --c-project-card-border-hover: rgb(51 65 85 / 0.38);
+  --c-project-overlay-title: #ffffff;
+  --c-project-overlay-description: rgb(248 250 252 / 0.92);
+  --c-project-chip-bg: rgb(248 250 252 / 0.24);
+  --c-project-chip-border: rgb(248 250 252 / 0.42);
+  --c-project-chip-text: #ffffff;
+  --project-card-shadow: 0 12px 30px rgb(15 23 42 / 0.12);
+  --project-card-shadow-hover: 0 18px 40px rgb(15 23 42 / 0.18);
+  --project-card-overlay:
+    linear-gradient(
+      to top,
+      rgb(15 23 42 / 0.9) 0%,
+      rgb(30 41 59 / 0.72) 40%,
+      rgb(30 41 59 / 0.2) 66%,
+      rgb(30 41 59 / 0.02) 100%
+    );
 }
 
 html {

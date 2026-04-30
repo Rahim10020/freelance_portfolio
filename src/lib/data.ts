@@ -115,6 +115,14 @@ export const projects: Project[] = [
     id: "4",
     slug: "ahoe",
     image: "/images/projects/p4-stay.png",
+    isSlideshow: true,
+    slideshowFrames: [
+      "/images/projects/p4-stay.png",
+      "/images/projects/p5-detail.png",
+      "/images/projects/p7-home.png",
+      "/images/projects/p3-docstore.png",
+    ],
+    slideshowIntervalMs: 900,
     technologies: [
       "Next.js",
       "React",
@@ -161,6 +169,14 @@ export const projects: Project[] = [
     id: "7",
     slug: "portify-builder",
     image: "/images/projects/p7-home.png",
+    isSlideshow: true,
+    slideshowFrames: [
+      "/images/projects/p7-home.png",
+      "/images/projects/p2-focus.png",
+      "/images/projects/p5-detail.png",
+      "/images/projects/p4-stay.png",
+    ],
+    slideshowIntervalMs: 1100,
     technologies: [
       "Next.js",
       "React",

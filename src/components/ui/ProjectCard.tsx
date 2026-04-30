@@ -1,7 +1,10 @@
+"use client";
+
 import { Project } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useEffect, useMemo, useState } from "react";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,143 +15,95 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const title = projectTr?.title ?? "";
   const description = projectTr?.description ?? "";
-
-  const getStatusBadge = () => {
-    if (!project.status || project.status === "completed") return null;
-
-    const statusText = t.projects.status[project.status];
-    const baseClasses =
-      "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5";
-
-    switch (project.status) {
-      case "in-progress":
-        return (
-          <span
-            className={`${baseClasses} bg-[var(--c-status-progress-bg)] text-[var(--c-status-progress-text)]`}
-          >
-            {statusText}
-          </span>
-        );
-      case "upcoming":
-        return (
-          <span
-            className={`${baseClasses} bg-[var(--c-status-upcoming-bg)] text-[var(--c-status-upcoming-text)]`}
-          >
-            {statusText}
-          </span>
-        );
-      default:
-        return null;
+  const frames = useMemo(() => {
+    if (project.isSlideshow && project.slideshowFrames?.length) {
+      return project.slideshowFrames;
     }
-  };
+    return project.image ? [project.image] : [];
+  }, [project.image, project.isSlideshow, project.slideshowFrames]);
+  const [frameIndex, setFrameIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const activeFrame = frames[frameIndex] ?? project.image;
 
-  const content = (
-    <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-8">
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block" />
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateReduceMotion = () => setReduceMotion(mediaQuery.matches);
 
-      {project.image && (
-        <div className="z-10 sm:col-span-2">
-          <div className="rounded border-2 border-[var(--c-border-soft)] transition group-hover:border-[var(--c-border-soft-hover)]">
-            <Image
-              src={project.image}
-              alt={title}
-              width={400}
-              height={300}
-              className="rounded"
-              loading="lazy"
-            />
+    updateReduceMotion();
+    mediaQuery.addEventListener("change", updateReduceMotion);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateReduceMotion);
+    };
+  }, []);
+
+  useEffect(() => {
+    setFrameIndex(0);
+  }, [frames]);
+
+  useEffect(() => {
+    if (!project.isSlideshow || frames.length <= 1 || reduceMotion) {
+      return;
+    }
+
+    const intervalMs = project.slideshowIntervalMs ?? 900;
+    const timer = window.setInterval(() => {
+      setFrameIndex((prev) => (prev + 1) % frames.length);
+    }, intervalMs);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [
+    frames.length,
+    project.isSlideshow,
+    project.slideshowIntervalMs,
+    reduceMotion,
+  ]);
+
+  if (!activeFrame) {
+    return null;
+  }
+
+  return (
+    <li className="mb-10 sm:mb-12">
+      <Link
+        href={`/projects/${project.slug}`}
+        className="project-card group relative block overflow-hidden rounded-2xl border border-[var(--c-project-card-border)] bg-[var(--c-project-card-bg)] shadow-[var(--project-card-shadow)] transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--c-project-card-border-hover)] hover:shadow-[var(--project-card-shadow-hover)] focus-visible:-translate-y-0.5 focus-visible:border-[var(--c-project-card-border-hover)] focus-visible:shadow-[var(--project-card-shadow-hover)] focus-visible:outline-none"
+      >
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
+          <Image
+            key={activeFrame}
+            src={activeFrame}
+            alt={title}
+            fill
+            sizes="(min-width: 1024px) 42rem, (min-width: 768px) 80vw, 100vw"
+            loading="lazy"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-[var(--project-card-overlay)]" />
+        </div>
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 p-4 sm:p-6">
+          <div className="project-card-overlay-content translate-y-0 opacity-100 transition-all duration-300 ease-out md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100">
+            <h3 className="font-display text-2xl leading-tight text-[var(--c-project-overlay-title)] sm:text-3xl">
+              {title}
+            </h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--c-project-overlay-description)] sm:text-base">
+              {description}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <li key={tech}>
+                  <span className="inline-flex items-center rounded-full border border-[var(--c-project-chip-border)] bg-[var(--c-project-chip-bg)] px-3 py-1 text-xs font-medium leading-5 text-[var(--c-project-chip-text)] backdrop-blur-sm">
+                    {tech}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      )}
-
-      <div
-        className={`z-10 ${project.image ? "sm:col-span-6" : "sm:col-span-8"}`}
-      >
-        <h3 className="font-medium leading-snug text-[var(--c-text-primary)]">
-          <Link
-            href={`/projects/${project.slug}`}
-            className="inline-flex items-baseline font-medium leading-tight text-[var(--c-text-primary)] hover:text-[var(--text-accent)] focus-visible:text-[var(--text-accent)] group/link text-base"
-          >
-            <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
-            <span>
-              {title}
-              <svg
-                className="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform motion-reduce:transition-none group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </span>
-          </Link>
-        </h3>
-        {getStatusBadge() && <div className="mt-2">{getStatusBadge()}</div>}
-        <p className="font-display mt-2 text-sm leading-normal text-[var(--c-text-secondary)]">
-          {description}
-        </p>
-        {(project.links.github || project.links.live) && (
-          <div className="mt-4 flex gap-4 text-xs">
-            {project.links.github && (
-              <a
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-1 text-[var(--c-text-secondary)] hover:text-[var(--text-accent)]"
-              >
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-            )}
-            {project.links.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-20 inline-flex items-center gap-1 text-[var(--c-text-secondary)] hover:text-[var(--text-accent)]"
-              >
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-                    clipRule="evenodd"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Live Demo
-              </a>
-            )}
-          </div>
-        )}
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
-            <li key={tech}>
-              <div className="accent-chip flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5">
-                {tech}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+      </Link>
+    </li>
   );
-
-  return <li className="mb-12 hover:cursor-pointer">{content}</li>;
 }

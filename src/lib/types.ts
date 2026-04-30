@@ -5,6 +5,9 @@ export interface Project {
   slug: string;
   technologies: string[];
   image?: string;
+  isSlideshow?: boolean;
+  slideshowFrames?: string[];
+  slideshowIntervalMs?: number;
   status?: "completed" | "in-progress" | "upcoming";
   best?: boolean;
   links: {
