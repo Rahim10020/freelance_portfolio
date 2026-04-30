@@ -69,7 +69,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <li className="mb-10 sm:mb-12">
       <Link
         href={`/projects/${project.slug}`}
-        className="project-card group relative block overflow-hidden rounded-2xl border border-[var(--c-project-card-border)] bg-[var(--c-project-card-bg)] shadow-[var(--project-card-shadow)] transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--c-project-card-border-hover)] hover:shadow-[var(--project-card-shadow-hover)] focus-visible:-translate-y-0.5 focus-visible:border-[var(--c-project-card-border-hover)] focus-visible:shadow-[var(--project-card-shadow-hover)] focus-visible:outline-none"
+        className="project-card group relative block overflow-hidden rounded-lg transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--c-project-card-border-hover)] focus-visible:-translate-y-0.5 focus-visible:border-[var(--c-project-card-border-hover)] focus-visible:shadow-[var(--project-card-shadow-hover)] focus-visible:outline-none"
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
