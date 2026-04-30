@@ -169,7 +169,7 @@ export const projects: Project[] = [
     id: "7",
     slug: "portify-builder",
     image: "/images/projects/p7-home.png",
-    isSlideshow: true,
+    isSlideshow: false,
     slideshowFrames: [
       "/images/projects/p7-home.png",
       "/images/projects/p2-focus.png",

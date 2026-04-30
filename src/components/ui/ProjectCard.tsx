@@ -23,7 +23,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   }, [project.image, project.isSlideshow, project.slideshowFrames]);
   const [frameIndex, setFrameIndex] = useState(0);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const activeFrame = frames[frameIndex] ?? project.image;
+  const [visibleFrame, setVisibleFrame] = useState<string | undefined>(
+    frames[0] ?? project.image,
+  );
+  const [incomingFrame, setIncomingFrame] = useState<string | null>(null);
+  const [incomingVisible, setIncomingVisible] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -39,7 +43,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   useEffect(() => {
     setFrameIndex(0);
-  }, [frames]);
+    setVisibleFrame(frames[0] ?? project.image);
+    setIncomingFrame(null);
+    setIncomingVisible(false);
+  }, [frames, project.image]);
 
   useEffect(() => {
     if (!project.isSlideshow || frames.length <= 1 || reduceMotion) {
@@ -61,7 +68,37 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     reduceMotion,
   ]);
 
-  if (!activeFrame) {
+  useEffect(() => {
+    const nextFrame = frames[frameIndex];
+    if (!nextFrame) return;
+
+    if (reduceMotion || !project.isSlideshow || !visibleFrame) {
+      setVisibleFrame(nextFrame);
+      setIncomingFrame(null);
+      setIncomingVisible(false);
+      return;
+    }
+
+    if (nextFrame === visibleFrame) return;
+
+    setIncomingFrame(nextFrame);
+    setIncomingVisible(false);
+    const raf = window.requestAnimationFrame(() => {
+      setIncomingVisible(true);
+    });
+    const fadeTimer = window.setTimeout(() => {
+      setVisibleFrame(nextFrame);
+      setIncomingFrame(null);
+      setIncomingVisible(false);
+    }, 420);
+
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(fadeTimer);
+    };
+  }, [frameIndex, frames, project.isSlideshow, reduceMotion, visibleFrame]);
+
+  if (!visibleFrame) {
     return null;
   }
 
@@ -73,14 +110,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
-            key={activeFrame}
-            src={activeFrame}
+            src={visibleFrame}
             alt={title}
             fill
             sizes="(min-width: 1024px) 42rem, (min-width: 768px) 80vw, 100vw"
             loading="lazy"
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
           />
+          {incomingFrame && (
+            <Image
+              src={incomingFrame}
+              alt={title}
+              fill
+              sizes="(min-width: 1024px) 42rem, (min-width: 768px) 80vw, 100vw"
+              loading="lazy"
+              className={`object-cover transition-opacity duration-[420ms] ease-out ${
+                incomingVisible ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          )}
           <div className="pointer-events-none absolute inset-0 bg-[var(--project-card-overlay)]" />
         </div>
 
