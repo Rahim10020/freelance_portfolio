@@ -121,6 +121,13 @@ html[data-theme="dark"] {
   --c-project-chip-text: var(--palette-white);
   --project-card-shadow: 0 12px 28px rgb(2 6 23 / 0.16);
   --project-card-shadow-hover: 0 16px 36px rgb(2 6 23 / 0.28);
+  --c-project-cartouche-border: rgb(248 250 252 / 0.28);
+  --c-project-cartouche-border-hover: rgb(248 250 252 / 0.4);
+  --c-project-cartouche-bg-mobile: rgb(2 6 23 / 0.54);
+  --c-project-cartouche-bg-desktop-idle: transparent;
+  --c-project-cartouche-bg-desktop-hover: rgb(2 6 23 / 0.68);
+  --project-cartouche-shadow-mobile: 0 10px 24px rgb(2 6 23 / 0.26);
+  --project-cartouche-shadow-hover: 0 16px 32px rgb(2 6 23 / 0.34);
   --project-card-overlay:
     linear-gradient(
       to top,
@@ -230,6 +237,13 @@ html[data-theme="light"] {
   --c-project-chip-text: #ffffff;
   --project-card-shadow: 0 12px 30px rgb(15 23 42 / 0.12);
   --project-card-shadow-hover: 0 18px 40px rgb(15 23 42 / 0.18);
+  --c-project-cartouche-border: rgb(248 250 252 / 0.34);
+  --c-project-cartouche-border-hover: rgb(248 250 252 / 0.5);
+  --c-project-cartouche-bg-mobile: rgb(15 23 42 / 0.52);
+  --c-project-cartouche-bg-desktop-idle: transparent;
+  --c-project-cartouche-bg-desktop-hover: rgb(15 23 42 / 0.64);
+  --project-cartouche-shadow-mobile: 0 10px 24px rgb(15 23 42 / 0.18);
+  --project-cartouche-shadow-hover: 0 16px 32px rgb(15 23 42 / 0.24);
   --project-card-overlay:
     linear-gradient(
       to top,
