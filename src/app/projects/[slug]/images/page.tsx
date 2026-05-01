@@ -8,6 +8,7 @@ import { ArrowLeftIcon } from "@/components/icons";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { projects, projectDetails } from "@/lib/data";
 import EmptyState from "@/components/ui/EmptyState";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function ProjectImagesPage() {
   const { t } = useLanguage();
@@ -65,17 +66,21 @@ export default function ProjectImagesPage() {
   return (
     <div className="mx-auto min-h-screen max-w-screen-lg px-4 py-6 md:px-6 lg:px-8">
       {/* Masonry view for projects images */}
-      <div className="sticky top-4 z-20 mb-6">
-        {/* back to projects */}
-        <Link
-          href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--c-border-white-10)] bg-[var(--c-bg-overlay-70)] px-3 py-2 text-[var(--c-text-primary)] backdrop-blur transition hover:text-[var(--text-accent)]"
-        >
-          <ArrowLeftIcon size={20} aria-hidden />
-          <span className="font-display">
-            {t.projects.detail.backToProject}
-          </span>
-        </Link>
+      <div className="sticky top-4 z-20 mb-10">
+        <div className="flex items-center justify-between">
+          {/* back to projects */}
+          <Link
+            href={`/projects/${project.slug}`}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--c-border-white-10)] bg-[var(--c-text-primary)] px-5 py-2 text-[var(--c-text-on-light)] backdrop-blur"
+          >
+            <ArrowLeftIcon size={20} aria-hidden />
+            <span className="font-display">
+              {t.projects.detail.backToProject}
+            </span>
+          </Link>
+          {/* Theme toggle */}
+          <ThemeToggle />
+        </div>
       </div>
 
       <div className="columns-1 gap-6 sm:columns-2 sm:gap-8 lg:columns-3 lg:gap-10">
