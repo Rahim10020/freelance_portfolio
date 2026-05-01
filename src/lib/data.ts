@@ -78,6 +78,7 @@ export const projects: Project[] = [
     id: "1",
     slug: "essence-togo",
     image: "/images/projects/p1-accueil.png",
+    imageFormat: "mobile",
     technologies: ["Kotlin", "Jetpack Compose", "Firebase"],
     links: {
       github: "https://github.com/Rahim10020/essence-togo",
@@ -88,6 +89,7 @@ export const projects: Project[] = [
     id: "2",
     slug: "focusly-work",
     image: "/images/projects/p2-focus.png",
+    imageFormat: "web",
     technologies: [
       "Next.js",
       "React",
@@ -105,6 +107,7 @@ export const projects: Project[] = [
     id: "3",
     slug: "docstore-ul",
     image: "/images/projects/p3-docstore.png",
+    imageFormat: "web",
     technologies: ["React", "Tailwind css", "Appwrite", "Google Drive"],
     links: {
       github: "https://github.com/twocoderz/docstore",
@@ -115,6 +118,7 @@ export const projects: Project[] = [
     id: "4",
     slug: "ahoe",
     image: "/images/projects/p4-stay.png",
+    imageFormat: "web",
     isSlideshow: true,
     slideshowFrames: [
       "/images/projects/p4-stay.png",
@@ -143,6 +147,7 @@ export const projects: Project[] = [
     id: "5",
     slug: "pixelpulse-blog",
     image: "/images/projects/p5-detail.png",
+    imageFormat: "web",
     technologies: [
       "Next.js",
       "React",
@@ -169,6 +174,7 @@ export const projects: Project[] = [
     id: "7",
     slug: "portify-builder",
     image: "/images/projects/p7-home.png",
+    imageFormat: "web",
     isSlideshow: false,
     slideshowFrames: [
       "/images/projects/p7-home.png",

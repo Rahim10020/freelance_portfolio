@@ -5,6 +5,7 @@ export interface Project {
   slug: string;
   technologies: string[];
   image?: string;
+  imageFormat?: "web" | "mobile";
   isSlideshow?: boolean;
   slideshowFrames?: string[];
   slideshowIntervalMs?: number;

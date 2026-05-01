@@ -19,6 +19,7 @@ import {
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import TldrCallout from "@/components/ui/TldrCallout";
 import ImagePreviewModal from "@/components/ui/ImagePreviewModal";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -118,6 +119,9 @@ export default function ProjectDetailPage() {
     <>
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-10 md:px-12 lg:px-16">
+        <div className="flex items-center justify-end mb-8">
+          <ThemeToggle />
+        </div>
         <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <AnimatedLetters
             as="h1"
