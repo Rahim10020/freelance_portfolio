@@ -128,14 +128,13 @@ html[data-theme="dark"] {
   --c-project-cartouche-bg-desktop-hover: rgb(2 6 23 / 0.68);
   --project-cartouche-shadow-mobile: 0 10px 24px rgb(2 6 23 / 0.26);
   --project-cartouche-shadow-hover: 0 16px 32px rgb(2 6 23 / 0.34);
-  --project-card-overlay:
-    linear-gradient(
-      to top,
-      rgb(2 6 23 / 0.94) 0%,
-      rgb(2 6 23 / 0.78) 38%,
-      rgb(2 6 23 / 0.24) 65%,
-      rgb(2 6 23 / 0.04) 100%
-    );
+  --project-card-overlay: linear-gradient(
+    to top,
+    rgb(2 6 23 / 0.94) 0%,
+    rgb(2 6 23 / 0.78) 38%,
+    rgb(2 6 23 / 0.24) 65%,
+    rgb(2 6 23 / 0.04) 100%
+  );
 }
 
 html[data-theme="light"] {
@@ -244,14 +243,13 @@ html[data-theme="light"] {
   --c-project-cartouche-bg-desktop-hover: rgb(15 23 42 / 0.64);
   --project-cartouche-shadow-mobile: 0 10px 24px rgb(15 23 42 / 0.18);
   --project-cartouche-shadow-hover: 0 16px 32px rgb(15 23 42 / 0.24);
-  --project-card-overlay:
-    linear-gradient(
-      to top,
-      rgb(15 23 42 / 0.9) 0%,
-      rgb(30 41 59 / 0.72) 40%,
-      rgb(30 41 59 / 0.2) 66%,
-      rgb(30 41 59 / 0.02) 100%
-    );
+  --project-card-overlay: linear-gradient(
+    to top,
+    rgb(15 23 42 / 0.9) 0%,
+    rgb(30 41 59 / 0.72) 40%,
+    rgb(30 41 59 / 0.2) 66%,
+    rgb(30 41 59 / 0.02) 100%
+  );
 }
 
 html {
@@ -443,13 +441,6 @@ input,
 textarea,
 [contenteditable="true"] {
   caret-color: var(--foreground);
-}
-
-/* Ensure smooth transitions */
-* {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
 }
 
 .custom-cursor {
