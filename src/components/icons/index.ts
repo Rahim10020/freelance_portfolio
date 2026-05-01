@@ -21,4 +21,6 @@ export { default as CloseIcon } from "./CloseIcon";
 export { default as ChevronLeftIcon } from "./ChevronLeftIcon";
 export { default as ChevronRightIcon } from "./ChevronRightIcon";
 export { default as ThemeModeIcon } from "./ThemeModeIcon";
+export { default as XWhiteIcon } from "./XWhiteIcon";
+export { default as CopyIcon } from "./CopyIcon";
 export type { IconProps } from "./IconProps";

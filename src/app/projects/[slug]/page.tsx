@@ -11,10 +11,15 @@ import { projects, projectDetails } from "@/lib/data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowLeftIcon,
+  CloseIcon,
+  CopyIcon,
   ExternalLinkIcon,
   GithubWhiteIcon,
+  LinkedinWhiteIcon,
   MoreGridIcon,
   ShareIcon,
+  WhatsappWhiteIcon,
+  XWhiteIcon,
 } from "@/components/icons";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import TldrCallout from "@/components/ui/TldrCallout";
@@ -27,7 +32,9 @@ export default function ProjectDetailPage() {
   const params = useParams<{ slug: string }>();
   const [toast, setToast] = useState<string | null>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [shareUrl, setShareUrl] = useState("");
   const slug = params?.slug;
 
   const project = useMemo(
@@ -65,6 +72,19 @@ export default function ProjectDetailPage() {
     };
   }, [isPreviewOpen, gallery.length]);
 
+  useEffect(() => {
+    if (!isShareOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsShareOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isShareOpen]);
+
   if (!project || !detail) {
     return (
       <div className="mx-auto min-h-screen max-w-screen-lg px-6 py-16 md:px-12 lg:px-20">
@@ -94,8 +114,14 @@ export default function ProjectDetailPage() {
     !!(detail.tldr?.challenges && detail.tldr.challenges.length > 0);
 
   const handleShare = async () => {
+    const currentUrl = window.location.href;
+    setShareUrl(currentUrl);
+    setIsShareOpen(true);
+  };
+
+  const handleCopyShareUrl = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(shareUrl || window.location.href);
       setToast(t.projects.detail.copied);
       window.setTimeout(() => setToast(null), 1800);
     } catch {
@@ -118,6 +144,11 @@ export default function ProjectDetailPage() {
       (current) => (current - 1 + gallery.length) % gallery.length,
     );
   };
+
+  const encodedShareUrl = encodeURIComponent(shareUrl || "");
+  const whatsappShareLink = `https://wa.me/?text=${encodedShareUrl}`;
+  const xShareLink = `https://twitter.com/intent/tweet?url=${encodedShareUrl}`;
+  const linkedinShareLink = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareUrl}`;
 
   return (
     <>
@@ -171,6 +202,91 @@ export default function ProjectDetailPage() {
             )}
           </div>
         </div>
+
+        {isShareOpen && (
+          <div
+            className="fixed inset-0 z-[90] bg-[var(--c-bg-overlay-95)] p-4 md:p-8"
+            role="dialog"
+            aria-modal="true"
+            aria-label={t.projects.detail.share}
+            onClick={() => setIsShareOpen(false)}
+          >
+            <div
+              className="mx-auto mt-20 w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-muted)] p-5 shadow-xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="font-display text-xl font-semibold text-[var(--c-text-strong)]">
+                  {t.projects.detail.share}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => setIsShareOpen(false)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  aria-label={t.projects.detail.closeGallery}
+                >
+                  <CloseIcon size={20} />
+                </button>
+              </div>
+
+              <div className="mb-5 flex items-center gap-3">
+                <a
+                  href={linkedinShareLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on LinkedIn"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                >
+                  <LinkedinWhiteIcon size={22} />
+                </a>
+                <a
+                  href={xShareLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on X"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                >
+                  <XWhiteIcon size={20} />
+                </a>
+                <a
+                  href={whatsappShareLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on WhatsApp"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                >
+                  <WhatsappWhiteIcon size={22} />
+                </a>
+              </div>
+
+              <div className="rounded-md border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] p-2">
+                <label
+                  htmlFor="share-project-link"
+                  className="mb-2 block text-xs font-medium uppercase tracking-wide text-[var(--c-text-muted)]"
+                >
+                  Project URL
+                </label>
+                <div className="flex items-center gap-2">
+                  <input
+                    id="share-project-link"
+                    value={shareUrl}
+                    readOnly
+                    className="w-full bg-transparent text-sm text-[var(--c-text-inverse)] outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleCopyShareUrl}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-70)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    aria-label={t.projects.detail.share}
+                    title={t.projects.detail.copied}
+                  >
+                    <CopyIcon size={18} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/*Images sections */}
         <section className="grid gap-2 overflow-hidden md:grid-cols-12">
