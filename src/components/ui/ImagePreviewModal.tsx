@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import type { ProjectImage } from "@/lib/types";
-import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from "@/components/icons";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CloseIcon,
+} from "@/components/icons";
 
 type ImagePreviewLabels = {
   closeGallery: string;
@@ -54,7 +58,7 @@ export default function ImagePreviewModal({
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-10 w-10 items-center justify-center text-[var(--c-text-strong)] hover:text-[var(--c-text-faint)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             aria-label={labels.closeGallery}
           >
             <CloseIcon />
@@ -75,7 +79,7 @@ export default function ImagePreviewModal({
                 type="button"
                 onClick={onPrev}
                 aria-label={labels.previousImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-white-10)] bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-[var(--c-text-strong)] backdrop-blur transition md:left-4"
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] px-3 py-3 text-2xl text-[var(--c-text-inverse)] backdrop-blur transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:left-4"
               >
                 <ChevronLeftIcon />
               </button>
@@ -83,7 +87,7 @@ export default function ImagePreviewModal({
                 type="button"
                 onClick={onNext}
                 aria-label={labels.nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-white-10)] bg-[rgb(var(--accent-bg-rgb))] px-3 py-3 text-2xl text-[var(--c-text-strong)] backdrop-blur transition md:right-4"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] px-3 py-3 text-2xl text-[var(--c-text-inverse)] backdrop-blur transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:right-4"
               >
                 <ChevronRightIcon />
               </button>
@@ -101,8 +105,8 @@ export default function ImagePreviewModal({
                 aria-label={`${labels.showAllImages} ${index + 1}`}
                 className={`h-2.5 w-2.5 rounded-full transition ${
                   index === activeIndex
-                    ? "bg-[rgb(var(--accent-bg-rgb))]"
-                    : "bg-[var(--c-bg-contrast-40)] hover:bg-[var(--c-bg-contrast-70)]"
+                    ? "bg-[var(--c-text-inverse)]"
+                    : "border border-[var(--c-text-inverse)]"
                 }`}
               />
             ))}
