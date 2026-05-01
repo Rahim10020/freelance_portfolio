@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 const CARD_ASPECT_CLASSES = {
   web: "aspect-[16/10]",
-  mobile: "aspect-[9/16]",
+  mobile: "aspect-[3/4]",
 } as const;
 
 export default function ProjectCard({ project }: ProjectCardProps) {
