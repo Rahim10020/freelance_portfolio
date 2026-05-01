@@ -58,6 +58,16 @@ export const en = {
       github: "GitHub",
       liveDemo: "Live Demo",
     },
+    emptyState: {
+      title: "Nothing here yet",
+      noProjects: "No projects to display yet.",
+      noCompletedProjects: "No completed projects yet.",
+      noInProgressProjects: "No in-progress projects yet.",
+      noUpcomingProjects: "No upcoming projects yet.",
+      projectDetailUnavailable: "Project detail not available yet.",
+      projectImagesUnavailable: "Project images not available yet.",
+      noProjectImages: "No images available for this project yet.",
+    },
     detail: {
       backToProjects: "Back to projects",
       share: "Share",

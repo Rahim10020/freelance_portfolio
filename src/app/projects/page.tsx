@@ -8,6 +8,7 @@ import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import EmptyState from "@/components/ui/EmptyState";
 
 export default function ProjectsArchive() {
   const { t } = useLanguage();
@@ -28,6 +29,13 @@ export default function ProjectsArchive() {
     1024: 2,
     640: 1,
   };
+
+  const emptyStateMessageByFilter = {
+    all: t.projects.emptyState.noProjects,
+    completed: t.projects.emptyState.noCompletedProjects,
+    "in-progress": t.projects.emptyState.noInProgressProjects,
+    upcoming: t.projects.emptyState.noUpcomingProjects,
+  } as const;
 
   return (
     <>
@@ -66,15 +74,22 @@ export default function ProjectsArchive() {
           </div>
         </div>
 
-        <Masonry
-          breakpointCols={masonryBreakpoints}
-          className="masonry-grid"
-          columnClassName="masonry-grid-column"
-        >
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </Masonry>
+        {filteredProjects.length > 0 ? (
+          <Masonry
+            breakpointCols={masonryBreakpoints}
+            className="masonry-grid"
+            columnClassName="masonry-grid-column"
+          >
+            {filteredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </Masonry>
+        ) : (
+          <EmptyState
+            title={t.projects.emptyState.title}
+            message={emptyStateMessageByFilter[activeFilter]}
+          />
+        )}
       </div>
     </>
   );

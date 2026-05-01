@@ -20,6 +20,7 @@ import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import TldrCallout from "@/components/ui/TldrCallout";
 import ImagePreviewModal from "@/components/ui/ImagePreviewModal";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import EmptyState from "@/components/ui/EmptyState";
 
 export default function ProjectDetailPage() {
   const { t } = useLanguage();
@@ -67,16 +68,19 @@ export default function ProjectDetailPage() {
   if (!project || !detail) {
     return (
       <div className="mx-auto min-h-screen max-w-screen-lg px-6 py-16 md:px-12 lg:px-20">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-[var(--text-accent)]"
-        >
-          <ArrowLeftIcon size={24} aria-hidden />
-          <span>{t.projects.detail.backToProjects}</span>
-        </Link>
-        <p className="mt-8 text-[var(--c-text-soft)]">
-          Project detail not available yet.
-        </p>
+        <EmptyState
+          title={t.projects.emptyState.title}
+          message={t.projects.emptyState.projectDetailUnavailable}
+          action={
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-[var(--text-accent)]"
+            >
+              <ArrowLeftIcon size={24} aria-hidden />
+              <span>{t.projects.detail.backToProjects}</span>
+            </Link>
+          }
+        />
       </div>
     );
   }
