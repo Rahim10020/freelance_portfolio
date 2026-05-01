@@ -32,11 +32,11 @@ export default function EmptyState({
       </div>
 
       {title && (
-        <h3 className="mt-5 font-display text-xl font-semibold text-[var(--c-text-strong)]">
+        <h3 className="mt-6 font-display text-xl font-semibold text-[var(--c-text-strong)]">
           {title}
         </h3>
       )}
-      <p className="mt-3 font-display text-base text-[var(--c-text-soft)]">
+      <p className="mt-2 font-display text-base text-[var(--c-text-soft)]">
         {message}
       </p>
 
