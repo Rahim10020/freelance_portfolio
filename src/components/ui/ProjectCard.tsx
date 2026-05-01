@@ -36,6 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const [incomingVisible, setIncomingVisible] = useState(false);
   const imageFormat = project.imageFormat ?? "web";
   const cardAspectClass = CARD_ASPECT_CLASSES[imageFormat];
+  const imageFitClass = imageFormat === "mobile" ? "object-contain" : "object-cover";
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -123,7 +124,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             fill
             sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
             loading="lazy"
-            className="object-cover"
+            className={imageFitClass}
           />
           {incomingFrame && (
             <Image
@@ -132,7 +133,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               fill
               sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
               loading="lazy"
-              className={`object-cover transition-opacity duration-[500ms] ease-out ${
+              className={`${imageFitClass} transition-opacity duration-[500ms] ease-out ${
                 incomingVisible ? "opacity-100" : "opacity-0"
               }`}
             />
