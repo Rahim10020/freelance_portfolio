@@ -71,7 +71,7 @@ export default function ProjectSummaryAside({
               {detail.platforms.join(" / ")}
             </p>
           </div>
-          <div>
+          <div className="mt-8">
             <p className="text-xs uppercase font-display tracking-wide text-[var(--c-text-secondary)]">
               {labels.stack}
             </p>
