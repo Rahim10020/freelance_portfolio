@@ -240,7 +240,9 @@ export default function ProjectDetailPage() {
           )}
         </div>
 
+        {/* Content  */}
         <div className="mt-10 grid gap-8 lg:grid-cols-12">
+          {/* Left content */}
           <div className="space-y-8 lg:col-span-8">
             <h2 className="text-3xl font-display font-bold text-[var(--c-text-strong)]">
               {detail.headline}
@@ -408,6 +410,7 @@ export default function ProjectDetailPage() {
               </section>
             )}
           </div>
+          {/* Project summary right */}
           <ProjectSummaryAside
             project={project}
             detail={detail}
