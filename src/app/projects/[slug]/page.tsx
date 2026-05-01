@@ -215,7 +215,7 @@ export default function ProjectDetailPage() {
               className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] p-5 shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="mb-4 flex items-center justify-between">
+              <div className="mb-4 pb-2 flex items-center justify-between border-b border-[var(--c-border-soft)]">
                 <h2 className="font-display text-xl font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.share}
                 </h2>
@@ -229,7 +229,7 @@ export default function ProjectDetailPage() {
                 </button>
               </div>
 
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-5 flex items-center gap-6 border-b pb-4 border-[var(--c-border-soft)]">
                 <a
                   href={linkedinShareLink}
                   target="_blank"
@@ -270,11 +270,11 @@ export default function ProjectDetailPage() {
                   <button
                     type="button"
                     onClick={handleCopyShareUrl}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-70)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    className="inline-flex h-9 w-9 items-center justify-center border border-[var(--c-text-inverse)] bg-[var(--c-bg-overlay-70)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                     aria-label={t.projects.detail.share}
                     title={t.projects.detail.copied}
                   >
-                    <CopyIcon size={18} />
+                    <CopyIcon size={22} />
                   </button>
                 </div>
               </div>
