@@ -139,7 +139,7 @@ export default function ProjectDetailPage() {
               onClick={handleShare}
               aria-label={t.projects.detail.share}
               title={t.projects.detail.share}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg hover:text-[var(--text-accent)]"
             >
               <ShareIcon size={24} />
             </button>
@@ -150,7 +150,7 @@ export default function ProjectDetailPage() {
                 rel="noopener noreferrer"
                 aria-label={t.projects.detail.viewGithub}
                 title={t.projects.detail.viewGithub}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg hover:text-[var(--text-accent)]"
               >
                 <GithubWhiteIcon size={24} />
               </a>
@@ -162,7 +162,7 @@ export default function ProjectDetailPage() {
                 rel="noopener noreferrer"
                 aria-label={t.projects.detail.viewLive}
                 title={t.projects.detail.viewLive}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:text-[var(--text-accent)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg hover:text-[var(--text-accent)]"
               >
                 <ExternalLinkIcon size={24} />
               </a>
