@@ -107,7 +107,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <li className="mb-10 sm:mb-12">
       <Link
         href={`/projects/${project.slug}`}
-        className="project-card group relative block overflow-hidden rounded-lg transition duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--c-project-card-border-hover)] focus-visible:-translate-y-0.5 focus-visible:border-[var(--c-project-card-border-hover)] focus-visible:shadow-[var(--project-card-shadow-hover)] focus-visible:outline-none"
+        className="project-card group relative block overflow-hidden rounded-sm transition duration-300 ease-out"
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
@@ -116,7 +116,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             fill
             sizes="(min-width: 1024px) 42rem, (min-width: 768px) 80vw, 100vw"
             loading="lazy"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
+            className="object-cover"
           />
           {incomingFrame && (
             <Image
@@ -133,11 +133,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 ">
-          <div className="project-card-overlay-content w-fit max-w-full bg-[var(--c-project-cartouche-bg-mobile)] px-4 py-3 opacity-100 shadow-[var(--project-cartouche-shadow-mobile)] backdrop-blur-[2px] transition-all duration-300 ease-out md:translate-y-2 md:bg-[var(--c-project-cartouche-bg-desktop-idle)] md:opacity-0 md:shadow-none md:backdrop-blur-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-hover:border-[var(--c-project-cartouche-border-hover)] md:group-hover:bg-[var(--c-project-cartouche-bg-desktop-hover)] md:group-hover:shadow-[var(--project-cartouche-shadow-hover)] md:group-hover:backdrop-blur-sm md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100 md:group-focus-visible:border-[var(--c-project-cartouche-border-hover)] md:group-focus-visible:bg-[var(--c-project-cartouche-bg-desktop-hover)] md:group-focus-visible:shadow-[var(--project-cartouche-shadow-hover)] md:group-focus-visible:backdrop-blur-sm">
-            <h3 className="font-display text-2xl leading-tight text-[var(--c-project-overlay-title)] sm:text-3xl">
+          <div className="project-card-overlay-content w-fit max-w-full px-4 py-3 opacity-100 shadow-[var(--project-cartouche-shadow-mobile)] backdrop-blur-[2px] transition-all duration-300 ease-out md:translate-y-2 md:bg-[var(--c-project-cartouche-bg-desktop-idle)] md:opacity-0 md:shadow-none md:backdrop-blur-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-hover:border-[var(--c-project-cartouche-border-hover)] md:group-hover:bg-[var(--c-project-cartouche-bg-desktop-hover)] md:group-hover:shadow-[var(--project-cartouche-shadow-hover)] md:group-hover:backdrop-blur-sm md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100 md:group-focus-visible:border-[var(--c-project-cartouche-border-hover)] md:group-focus-visible:bg-[var(--c-project-cartouche-bg-desktop-hover)] md:group-focus-visible:shadow-[var(--project-cartouche-shadow-hover)] md:group-focus-visible:backdrop-blur-sm">
+            <h3 className="font-display text-xl font-bold leading-tight text-[var(--c-project-overlay-title)] sm:text-2xl">
               {title}
             </h3>
-            <p className="line-clamp-2 mt-2 max-w-2xl text-sm leading-relaxed text-[var(--c-project-overlay-description)] sm:text-base">
+            <p className="line-clamp-2 mt-2 max-w-md text-sm leading-relaxed text-[var(--c-project-overlay-description)] sm:text-base">
               {description}
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">

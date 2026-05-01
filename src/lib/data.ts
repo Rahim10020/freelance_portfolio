@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "/images/projects/p7-home.png",
       "/images/projects/p3-docstore.png",
     ],
-    slideshowIntervalMs: 1200,
+    slideshowIntervalMs: 1800,
     technologies: [
       "Next.js",
       "React",
