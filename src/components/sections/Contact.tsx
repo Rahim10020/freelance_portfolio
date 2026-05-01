@@ -126,7 +126,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="inline-flex items-center justify-center rounded-lg border border-[var(--c-border-input)] bg-transparent hover:shadow-sm px-5 py-2 font-medium text-[var(--c-text-black)] transition-all duration-500 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center justify-center rounded-sm border border-[var(--c-bg-contrast)] bg-[var(--c-text-primary)] px-5 py-2 font-medium text-[var(--c-text-on-light)] transition-all duration-100 hover:cursor-pointer hover:px-6 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <span>
                 {status === "sending"
