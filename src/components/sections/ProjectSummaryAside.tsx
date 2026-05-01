@@ -88,25 +88,25 @@ export default function ProjectSummaryAside({
           </div>
         </div>
         {/* Links (github & view live) */}
-        <div className="mt-6 space-y-2">
-          {project.links.live && (
-            <a
-              href={project.links.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display inline-flex w-full items-center justify-center bg-[rgb(var(--accent-bg-rgb))] px-4 py-2 font-semibold text-[var(--on-primary-text)] hover:bg-[rgb(var(--accent-rgb))]"
-            >
-              <span>{labels.viewLive}</span>
-            </a>
-          )}
+        <div className="mt-10 space-y-3">
           {project.links.github && (
             <a
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-[var(--c-text-strong)] border border-[var(--c-border-input)]"
+              className="font-display inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-[var(--c-text-strong)] border border-[var(--c-text-primary)]"
             >
               <span>{labels.viewGithub}</span>
+            </a>
+          )}
+          {project.links.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display inline-flex w-full items-center justify-center bg-[var(--c-text-primary)] px-4 py-2 font-semibold text-[var(--c-text-on-light)]"
+            >
+              <span>{labels.viewLive}</span>
             </a>
           )}
         </div>

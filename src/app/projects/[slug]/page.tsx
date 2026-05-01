@@ -224,7 +224,7 @@ export default function ProjectDetailPage() {
           {gallery.length > 5 ? (
             <Link
               href={`/projects/${project.slug}/images`}
-              className="inline-flex items-center gap-2 border border-[var(--c-border-soft)] bg-[var(--c-bg-contrast)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-on-light)] transition-colors duration-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              className="inline-flex items-center gap-2 border border-[var(--c-border-soft)] bg-[var(--c-bg-contrast)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-on-light)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             >
               <MoreGridIcon size={24} />
               {t.projects.detail.showAllImages}
