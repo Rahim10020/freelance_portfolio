@@ -83,7 +83,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.name}
                 required
-                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-sm border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -95,7 +95,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.subject}
                 required
-                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-sm border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t.contact.form.email}
                 required
-                className="w-full rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full rounded-sm border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
@@ -119,7 +119,7 @@ export default function Contact() {
                 placeholder={t.contact.form.message}
                 required
                 rows={6}
-                className="w-full resize-none rounded-lg border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
+                className="w-full resize-none rounded-sm border border-[var(--c-border-input)] bg-transparent px-4 py-2 text-[var(--c-text-primary)] placeholder-[var(--c-placeholder)] transition-colors focus:border-[var(--text-accent)] focus:outline-none focus:ring-1 focus:ring-[var(--text-accent)]"
               />
             </div>
 
