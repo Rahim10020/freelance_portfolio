@@ -116,7 +116,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             src={visibleFrame}
             alt={title}
             fill
-            sizes="(min-width: 1280px) 28rem, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
             loading="lazy"
             className="object-cover"
           />
@@ -125,7 +125,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               src={incomingFrame}
               alt={title}
               fill
-              sizes="(min-width: 1280px) 28rem, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              sizes="(min-width: 1024px) 50vw, (min-width: 640px) 50vw, 100vw"
               loading="lazy"
               className={`object-cover transition-opacity duration-[500ms] ease-out ${
                 incomingVisible ? "opacity-100" : "opacity-0"

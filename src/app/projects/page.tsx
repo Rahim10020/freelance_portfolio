@@ -7,6 +7,7 @@ import MouseEffect from "@/components/ui/MouseEffect";
 import AnimatedLetters from "@/components/ui/AnimatedLetters";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function ProjectsArchive() {
   const { t } = useLanguage();
@@ -23,7 +24,7 @@ export default function ProjectsArchive() {
   });
 
   const masonryBreakpoints = {
-    default: 3,
+    default: 2,
     1024: 2,
     640: 1,
   };
@@ -33,14 +34,19 @@ export default function ProjectsArchive() {
       <MouseEffect />
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-display md:px-12 md:py-15 lg:px-24 lg:py-18">
         <div className="mb-16">
-          <AnimatedLetters
-            as="h1"
-            text={t.projects.allProjects}
-            className="mb-4 font-display text-2xl font-bold tracking-tight text-[var(--c-text-primary)] sm:text-3xl"
-          />
-          <p className="max-w-2xl font-display text-lg text-[var(--c-text-secondary)]">
-            {t.projects.archiveDescription}
-          </p>
+          <div className="flex items-center justify-between">
+            <div className="flex flex-col">
+              <AnimatedLetters
+                as="h1"
+                text={t.projects.allProjects}
+                className="mb-4 font-display text-2xl font-bold tracking-tight text-[var(--c-text-primary)] sm:text-3xl"
+              />
+              <p className="max-w-2xl font-display text-lg text-[var(--c-text-secondary)]">
+                {t.projects.archiveDescription}
+              </p>
+            </div>
+            <ThemeToggle />
+          </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {(["all", "completed", "in-progress", "upcoming"] as const).map(
               (filter) => (
