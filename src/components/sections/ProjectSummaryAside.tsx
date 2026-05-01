@@ -26,9 +26,10 @@ export default function ProjectSummaryAside({
   return (
     <aside className="lg:col-span-4">
       <div className="top-6 p-5 shadow-lg lg:sticky">
-        <h3 className="text-xl font-display font-semibold text-[var(--c-text-strong)]">
+        <h3 className="text-xl md:text-2xl font-display font-semibold text-[var(--c-text-strong)]">
           {labels.projectSummary}
         </h3>
+        {/* Content */}
         <div className="mt-6 space-y-4">
           <div>
             <p className="text-xs uppercase font-display tracking-wide text-[var(--c-text-secondary)]">
@@ -86,6 +87,7 @@ export default function ProjectSummaryAside({
             </ul>
           </div>
         </div>
+        {/* Links (github & view live) */}
         <div className="mt-6 space-y-2">
           {project.links.live && (
             <a
@@ -102,7 +104,7 @@ export default function ProjectSummaryAside({
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-[var(--c-text-strong)] hover:border-[var(--text-accent)] hover:text-[var(--text-accent)]"
+              className="font-display inline-flex w-full items-center justify-center px-4 py-2 font-semibold text-[var(--c-text-strong)] border border-[var(--c-border-input)]"
             >
               <span>{labels.viewGithub}</span>
             </a>
