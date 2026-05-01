@@ -205,14 +205,14 @@ export default function ProjectDetailPage() {
 
         {isShareOpen && (
           <div
-            className="fixed inset-0 z-[90] bg-[var(--c-bg-overlay-95)] p-4 md:p-8"
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-[var(--c-bg-overlay-60)] p-4 md:p-8"
             role="dialog"
             aria-modal="true"
             aria-label={t.projects.detail.share}
             onClick={() => setIsShareOpen(false)}
           >
             <div
-              className="mx-auto mt-20 w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-muted)] p-5 shadow-xl"
+              className="w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-muted)] p-5 shadow-xl"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="mb-4 flex items-center justify-between">
