@@ -18,9 +18,7 @@ export default function EmptyState({
 }: EmptyStateProps) {
   return (
     <section
-      className={`w-full rounded-xl border border-[var(--c-border-soft)] bg-[var(--c-bg-muted-soft)] px-6 text-center ${
-        compact ? "py-8" : "py-12 md:py-14"
-      }`}
+      className={`w-full text-center ${compact ? "py-8" : "py-12 md:py-14"}`}
     >
       <div className={`mx-auto ${compact ? "max-w-[180px]" : "max-w-[240px]"}`}>
         <Image

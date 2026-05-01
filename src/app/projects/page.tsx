@@ -23,6 +23,9 @@ export default function ProjectsArchive() {
     }
     return project.status === activeFilter;
   });
+  const visibleProjects = filteredProjects.filter(
+    (project) => project.image || project.slideshowFrames?.length,
+  );
 
   const masonryBreakpoints = {
     default: 2,
@@ -74,13 +77,13 @@ export default function ProjectsArchive() {
           </div>
         </div>
 
-        {filteredProjects.length > 0 ? (
+        {visibleProjects.length > 0 ? (
           <Masonry
             breakpointCols={masonryBreakpoints}
             className="masonry-grid"
             columnClassName="masonry-grid-column"
           >
-            {filteredProjects.map((project) => (
+            {visibleProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </Masonry>
