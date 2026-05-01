@@ -232,7 +232,7 @@ export default function ProjectDetailPage() {
           ) : (
             <span
               aria-disabled="true"
-              className="inline-flex items-center gap-2 rounded-sm border border-[var(--c-border-faint)] bg-[var(--c-bg-muted-soft)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-subtle)]"
+              className="inline-flex items-center gap-2 border border-[var(--c-border-faint)] bg-[var(--c-bg-muted-soft)] px-5 py-2 font-display text-base font-medium text-[var(--c-text-subtle)]"
             >
               <MoreGridIcon size={24} />
               {t.projects.detail.showAllImages}
