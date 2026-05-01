@@ -222,7 +222,7 @@ export default function ProjectDetailPage() {
                 <button
                   type="button"
                   onClick={() => setIsShareOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  className="inline-flex h-9 w-9 items-center justify-center text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                   aria-label={t.projects.detail.closeGallery}
                 >
                   <CloseIcon size={20} />
@@ -235,7 +235,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on LinkedIn"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
                 >
                   <LinkedinWhiteIcon size={22} />
                 </a>
@@ -244,7 +244,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on X"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
                 >
                   <XWhiteIcon size={20} />
                 </a>
@@ -253,19 +253,13 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on WhatsApp"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
                 >
                   <WhatsappWhiteIcon size={22} />
                 </a>
               </div>
 
               <div className="rounded-md border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] p-2">
-                <label
-                  htmlFor="share-project-link"
-                  className="mb-2 block text-xs font-medium uppercase tracking-wide text-[var(--c-text-muted)]"
-                >
-                  Project URL
-                </label>
                 <div className="flex items-center gap-2">
                   <input
                     id="share-project-link"
