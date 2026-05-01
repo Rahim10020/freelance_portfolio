@@ -213,7 +213,6 @@ const fallbackGallerySources = [
   "/images/projects/p4-stay.png",
   "/images/projects/p5-detail.png",
   "/images/projects/p7-home.png",
-  "/images/website.png",
 ];
 
 const photoLibrary = {
@@ -223,7 +222,6 @@ const photoLibrary = {
   webStay: { src: "/images/projects/p4-stay.png", format: "web" },
   webDetail: { src: "/images/projects/p5-detail.png", format: "web" },
   webHome: { src: "/images/projects/p7-home.png", format: "web" },
-  webSite: { src: "/images/website.png", format: "web" },
 } satisfies Record<string, { src: string; format: "mobile" | "web" }>;
 
 type ImageInput = {
@@ -629,7 +627,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
         photoLibrary.webDetail,
       ]),
       createImageSection([photoLibrary.webDocstore, photoLibrary.mobileHome]),
-      createImageSection([photoLibrary.webFocus, photoLibrary.webSite]),
+      createImageSection([photoLibrary.webFocus]),
     ],
   ),
   "pixelpulse-blog": createDetail(
@@ -684,7 +682,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       ],
     },
     [
-      createImageSection([photoLibrary.webSite, photoLibrary.mobileHome]),
+      createImageSection([photoLibrary.mobileHome]),
       createImageSection([photoLibrary.webFocus, photoLibrary.webDocstore]),
     ],
   ),
@@ -713,7 +711,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     },
     [
       createImageSection([photoLibrary.webHome, photoLibrary.webDetail]),
-      createImageSection([photoLibrary.webFocus, photoLibrary.webSite]),
+      createImageSection([photoLibrary.webFocus]),
     ],
   ),
   "atomic-habits": createDetail(
@@ -740,7 +738,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       ],
     },
     [
-      createImageSection([photoLibrary.webSite, photoLibrary.webFocus]),
+      createImageSection([photoLibrary.webFocus]),
       createImageSection([photoLibrary.webDetail, photoLibrary.webDocstore]),
     ],
   ),
