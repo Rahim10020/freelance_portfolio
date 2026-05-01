@@ -10,7 +10,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const CARD_ASPECT_CLASSES = ["aspect-[4/3]", "aspect-[16/10]", "aspect-[3/4]"];
+const CARD_ASPECT_CLASS = "aspect-[16/10]";
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const { t } = useLanguage();
@@ -31,12 +31,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   );
   const [incomingFrame, setIncomingFrame] = useState<string | null>(null);
   const [incomingVisible, setIncomingVisible] = useState(false);
-
-  const aspectClass = useMemo(() => {
-    const numericId = Number.parseInt(project.id, 10);
-    if (Number.isNaN(numericId)) return CARD_ASPECT_CLASSES[0];
-    return CARD_ASPECT_CLASSES[numericId % CARD_ASPECT_CLASSES.length];
-  }, [project.id]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -117,7 +111,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         href={`/projects/${project.slug}`}
         className="project-card group relative block overflow-hidden rounded-sm transition duration-300 ease-out"
       >
-        <div className={`relative w-full overflow-hidden ${aspectClass}`}>
+        <div className={`relative w-full overflow-hidden ${CARD_ASPECT_CLASS}`}>
           <Image
             src={visibleFrame}
             alt={title}
