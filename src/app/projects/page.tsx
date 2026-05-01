@@ -64,7 +64,7 @@ export default function ProjectsArchive() {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`cursor-pointer rounded-full px-4 py-2 text-sm font-medium ${
                     activeFilter === filter
                       ? "bg-[var(--c-bg-contrast)] text-[var(--c-text-on-light)]"
                       : "bg-[var(--c-bg-muted)] text-[var(--c-text-soft)] hover:bg-[var(--c-bg-muted-hover)]"
