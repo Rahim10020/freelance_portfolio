@@ -212,7 +212,7 @@ export default function ProjectDetailPage() {
             onClick={() => setIsShareOpen(false)}
           >
             <div
-              className="w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] p-5 shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
+              className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] p-5 shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="mb-4 flex items-center justify-between">
@@ -259,7 +259,7 @@ export default function ProjectDetailPage() {
                 </a>
               </div>
 
-              <div className="rounded-md border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-60)] p-2">
+              <div className="border border-[var(--c-border-soft)] bg-[var(--c-bg-overlay-95)] p-2">
                 <div className="flex items-center gap-2">
                   <input
                     id="share-project-link"
