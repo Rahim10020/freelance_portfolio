@@ -212,7 +212,7 @@ export default function ProjectDetailPage() {
             onClick={() => setIsShareOpen(false)}
           >
             <div
-              className="w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-muted)] p-5 shadow-xl"
+              className="w-full max-w-md rounded-lg border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] p-5 shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
               <div className="mb-4 flex items-center justify-between">
@@ -222,7 +222,7 @@ export default function ProjectDetailPage() {
                 <button
                   type="button"
                   onClick={() => setIsShareOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  className="inline-flex h-9 w-9 items-center justify-center text-[var(--c-bg-overlay-70)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                   aria-label={t.projects.detail.closeGallery}
                 >
                   <CloseIcon size={20} />
@@ -235,7 +235,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on LinkedIn"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
                 >
                   <LinkedinWhiteIcon size={22} />
                 </a>
@@ -244,7 +244,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on X"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
                 >
                   <XWhiteIcon size={20} />
                 </a>
@@ -253,7 +253,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on WhatsApp"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-70)]"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
                 >
                   <WhatsappWhiteIcon size={22} />
                 </a>
