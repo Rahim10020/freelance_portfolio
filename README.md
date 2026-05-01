@@ -1,6 +1,6 @@
 # Website - Rahim ALI
 
-Portfolio personnel moderne et interactif construit avec Next.js 15, React 19, TypeScript et Tailwind CSS.
+Modern and interactive personal portfolio built with Next.js 15, React 19, TypeScript and Tailwind CSS.
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.5-black)
@@ -14,53 +14,17 @@ Portfolio personnel moderne et interactif construit avec Next.js 15, React 19, T
 - **UI Library** : React 19.1.0
 - **Language** : TypeScript 5.x
 - **Styling** : Tailwind CSS 4.x
-- **Icons** : SVG personnalisés
+- **Icons** : Custom SVGs
 - **Deployment** : Vercel
 
-## 📦 Installation
+### Available Languages
 
-### Prérequis
+- 🇬🇧 English (default)
 
-- Node.js >= 18.x
-- npm ou yarn
-
-### Commandes
-
-```bash
-# Cloner le repository
-git clone https://github.com/votre-username/portfolio.git
-cd portfolio
-
-# Installer les dépendances
-npm install
-
-# Lancer en développement
-npm run dev
-
-# Build pour la production
-npm run build
-
-# Lancer en production
-npm start
-
-# Linter
-npm run lint
-```
-
-### Langues Disponibles
-
-- 🇬🇧 Anglais (par défaut)
-
-### Thèmes Disponibles
+### Available Themes
 
 - 🌙 Dark Mode
 - ☀️ Light Mode
-
-## 🙏 Crédits
-
-- **Design Inspiration** : [Brittany Chiang](https://brittanychiang.com/)
-- **Framework** : [Next.js](https://nextjs.org/)
-- **Styling** : [Tailwind CSS](https://tailwindcss.com/)
 
 ## 📞 Contact
 
@@ -70,4 +34,4 @@ npm run lint
 
 ---
 
-Fait avec ❤️ par Rahim ALI
+Made with ❤️ by Rahim ALI
