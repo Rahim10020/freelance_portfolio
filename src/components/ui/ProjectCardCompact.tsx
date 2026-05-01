@@ -13,6 +13,8 @@ export default function ProjectCardCompact({
   const { t } = useLanguage();
   const projectTr = t.projects.list[project.id as keyof typeof t.projects.list];
   const title = projectTr?.title ?? "";
+  const imageFitClass =
+    project.imageFormat === "mobile" ? "object-contain" : "object-cover";
 
   return (
     <Link
@@ -25,7 +27,7 @@ export default function ProjectCardCompact({
             src={project.image}
             alt={title}
             fill
-            className="object-cover"
+            className={imageFitClass}
             sizes="320px"
           />
         </div>
