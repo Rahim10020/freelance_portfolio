@@ -29,7 +29,7 @@ export default function ServiceCard({
       <div className="mb-4 text-[var(--text-accent)] flex items-center justify-end">
         <IconComponent size={34} />
       </div>
-      <h3 className="text-lg font-medium text-[var(--c-text-primary)] mb-2">
+      <h3 className="text-xl font-bold text-[var(--c-text-primary)] mb-2">
         {service.title}
       </h3>
       <p className="font-display text-sm text-[var(--c-text-secondary)] leading-relaxed mb-4">
