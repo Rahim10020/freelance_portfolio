@@ -215,7 +215,7 @@ export default function ProjectDetailPage() {
               className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="px-5 py-4 flex items-center justify-between">
+              <div className="px-5 py-2 flex items-center justify-between">
                 <h2 className="font-display text-xl font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.share}
                 </h2>
@@ -231,7 +231,7 @@ export default function ProjectDetailPage() {
 
               <div className="border border-[var(--c-border-soft)]"></div>
 
-              <div className="px-5 py-4 flex items-center gap-6">
+              <div className="px-5 py-8 flex items-center gap-6">
                 <a
                   href={linkedinShareLink}
                   target="_blank"
@@ -263,7 +263,7 @@ export default function ProjectDetailPage() {
 
               <div className="border border-[var(--c-border-soft)]"></div>
 
-              <div className="border border-[var(--c-border-soft)] px-5 py-2 bg-[var(--c-bg-overlay-95)]">
+              <div className="border border-[var(--c-border-soft)] mt-1 px-5 py-2 bg-[var(--c-bg-overlay-95)]">
                 <div className="flex items-center gap-2">
                   <input
                     id="share-project-link"
