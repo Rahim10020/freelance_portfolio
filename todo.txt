@@ -1,2 +1,2 @@
-- apres on va modifier le footer. on va mettre @copy et aussi le lien vers le site de twocoderz
+- apres on va modifier le footer. on va mettre @copy 2026 rahimdev et aussi le lien vers le site de mon entreprise twocoderz
 - projets phares : a prioriser lors du montage du gif : twocoderz, docstore landing page, focusly
