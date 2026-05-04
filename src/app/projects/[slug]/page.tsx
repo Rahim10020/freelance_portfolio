@@ -215,7 +215,7 @@ export default function ProjectDetailPage() {
               className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="px-5 flex items-center justify-between">
+              <div className="px-5 py-4 flex items-center justify-between">
                 <h2 className="font-display text-xl font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.share}
                 </h2>
@@ -228,9 +228,10 @@ export default function ProjectDetailPage() {
                   <CloseIcon size={20} />
                 </button>
               </div>
+
               <div className="border border-[var(--c-border-soft)]"></div>
 
-              <div className="px-5 flex items-center gap-6">
+              <div className="px-5 py-4 flex items-center gap-6">
                 <a
                   href={linkedinShareLink}
                   target="_blank"
@@ -238,7 +239,7 @@ export default function ProjectDetailPage() {
                   aria-label="Share on LinkedIn"
                   className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
-                  <LinkedinWhiteIcon size={22} />
+                  <LinkedinWhiteIcon size={24} />
                 </a>
                 <a
                   href={xShareLink}
@@ -247,7 +248,7 @@ export default function ProjectDetailPage() {
                   aria-label="Share on X"
                   className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
-                  <XWhiteIcon size={20} />
+                  <XWhiteIcon size={24} />
                 </a>
                 <a
                   href={whatsappShareLink}
@@ -256,9 +257,10 @@ export default function ProjectDetailPage() {
                   aria-label="Share on WhatsApp"
                   className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
-                  <WhatsappWhiteIcon size={22} />
+                  <WhatsappWhiteIcon size={24} />
                 </a>
               </div>
+
               <div className="border border-[var(--c-border-soft)]"></div>
 
               <div className="border border-[var(--c-border-soft)] px-5 py-2 bg-[var(--c-bg-overlay-95)]">
