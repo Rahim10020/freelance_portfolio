@@ -196,8 +196,7 @@ export const en = {
 
   // Footer
   footer: {
-    builtWith: "Built with",
-    and: "and",
-    inspired: "Inspired by",
+    copyright: "© 2026 rahimdev",
+    companyLabel: "Twocoderz Team",
   },
 };
