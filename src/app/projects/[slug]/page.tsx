@@ -212,10 +212,10 @@ export default function ProjectDetailPage() {
             onClick={() => setIsShareOpen(false)}
           >
             <div
-              className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] pt-5 shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
+              className="w-full max-w-md border border-[var(--c-border-soft)] bg-[var(--c-bg-solid-white)] shadow-xl [html[data-theme='dark']_&]:bg-[var(--c-bg-muted)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="mb-4 pb-2 px-5 flex items-center justify-between border-b border-[var(--c-border-soft)]">
+              <div className="px-5 flex items-center justify-between">
                 <h2 className="font-display text-xl font-semibold text-[var(--c-text-strong)]">
                   {t.projects.detail.share}
                 </h2>
@@ -228,8 +228,9 @@ export default function ProjectDetailPage() {
                   <CloseIcon size={20} />
                 </button>
               </div>
+              <div className="border border-[var(--c-border-soft)]"></div>
 
-              <div className="px-5 mb-2 flex items-center gap-6 border-b pb-4 border-[var(--c-border-soft)]">
+              <div className="px-5 flex items-center gap-6">
                 <a
                   href={linkedinShareLink}
                   target="_blank"
@@ -258,6 +259,7 @@ export default function ProjectDetailPage() {
                   <WhatsappWhiteIcon size={22} />
                 </a>
               </div>
+              <div className="border border-[var(--c-border-soft)]"></div>
 
               <div className="border border-[var(--c-border-soft)] px-5 py-2 bg-[var(--c-bg-overlay-95)]">
                 <div className="flex items-center gap-2">
@@ -270,11 +272,11 @@ export default function ProjectDetailPage() {
                   <button
                     type="button"
                     onClick={handleCopyShareUrl}
-                    className="inline-flex h-9 w-9 items-center justify-center border border-[var(--c-text-inverse)] bg-[var(--c-bg-overlay-70)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    className="inline-flex h-8 w-9 items-center justify-center border border-[var(--c-text-inverse)] bg-[var(--c-bg-overlay-70)] text-[var(--c-text-inverse)] transition-colors hover:bg-[var(--c-bg-overlay-95)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-text-inverse)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                     aria-label={t.projects.detail.share}
                     title={t.projects.detail.copied}
                   >
-                    <CopyIcon size={22} />
+                    <CopyIcon size={24} />
                   </button>
                 </div>
               </div>
