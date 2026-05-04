@@ -235,7 +235,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on LinkedIn"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
+                  className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
                   <LinkedinWhiteIcon size={22} />
                 </a>
@@ -244,7 +244,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on X"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
+                  className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
                   <XWhiteIcon size={20} />
                 </a>
@@ -253,7 +253,7 @@ export default function ProjectDetailPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Share on WhatsApp"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--c-border-soft)] text-[var(--c-text-inverse)]"
+                  className="inline-flex items-center justify-center text-[var(--c-text-inverse)]"
                 >
                   <WhatsappWhiteIcon size={22} />
                 </a>
