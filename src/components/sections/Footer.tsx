@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 pb-16">
       <p className="text-sm text-[var(--c-text-muted)]">
-        {t.footer.copyright} ·{" "}
+        {t.footer.builtWithLove} · {t.footer.copyright} ·
         <a
           href="https://twocoderz-team.vercel.app/"
           target="_blank"
