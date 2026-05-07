@@ -13,7 +13,7 @@ export default function Footer() {
           href="https://twocoderz-team.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium text-[var(--c-text-secondary)] hover:text-[var(--text-accent)] transition-colors"
+          className="font-medium text-[var(--c-text-secondary)] hover:text-[var(--text-accent)] underline cursor-pointer transition-colors"
         >
           {t.footer.companyLabel}
         </a>

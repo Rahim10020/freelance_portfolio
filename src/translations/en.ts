@@ -198,8 +198,8 @@ export const en = {
 
   // Footer
   footer: {
-    copyright: "© 2026 rahimdev",
-    builtWithLove: "Built with love by Rahim Ali",
-    companyLabel: "Twocoderz Team",
+    copyright: "© 2026",
+    builtWithLove: "Built with love by Rahim ALI",
+    companyLabel: "Twocoderz Team Website",
   },
 };
