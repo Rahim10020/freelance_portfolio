@@ -316,7 +316,7 @@ body::before {
 
 ::view-transition-new(root) {
   clip-path: circle(0 at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
-  animation: theme-reveal 520ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: theme-reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 ::view-transition-old(root) {
@@ -331,7 +331,7 @@ html.theme-fallback-transition::after {
   z-index: 9999;
   background: var(--background);
   clip-path: circle(0 at var(--theme-origin-x, 50%) var(--theme-origin-y, 50%));
-  animation: theme-reveal 520ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: theme-reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 @keyframes theme-reveal {

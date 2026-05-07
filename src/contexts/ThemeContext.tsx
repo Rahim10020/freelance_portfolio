@@ -19,7 +19,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-const THEME_TRANSITION_MS = 520;
+const THEME_TRANSITION_MS = 900;
 
 type ViewTransition = {
   ready: Promise<void>;
@@ -65,7 +65,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleThemeFrom = useCallback(
     (origin: { x: number; y: number }) => {
       const nextTheme = theme === "dark" ? "light" : "dark";
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
       if (reduceMotion.matches) {
         setTheme(nextTheme);
         return;
