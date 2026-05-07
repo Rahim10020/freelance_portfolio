@@ -18,6 +18,8 @@ export default function About() {
         <div className="space-y-4 text-[var(--c-text-secondary)] mb-8">
           <p className="text-body font-display">{t.about.paragraph1}</p>
           <p className="text-body font-display">{t.about.paragraph2}</p>
+          <p className="text-body font-display">{t.about.paragraph3}</p>
+          <p className="text-body font-display">{t.about.paragraph4}</p>
         </div>
         <div className="mb-8">
           <ArchiveLink
