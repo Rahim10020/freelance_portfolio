@@ -63,7 +63,7 @@ export default function Contact() {
             <p className="text-body font-display text-[var(--c-text-primary)]">
               {t.contact.intro}
             </p>
-            <p className="text-body font-display text-[var(--c-text-secondary)]">
+            <p className="text-body font-display text-[var(--c-text-secondary)] mt-6">
               {t.contact.emailText}{" "}
               <a
                 href="mailto:rahim100codeur@gmail.com"
