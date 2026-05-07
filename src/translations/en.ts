@@ -22,9 +22,9 @@ export const en = {
   about: {
     title: "About",
     paragraph1:
-      "Since the beginning of my journey as a freelance developper over a decade ago, I've had the opportunity to work remotely with agencies, consult for startups, and collaborate with talented people to create digital products for both business and everyday users.",
+      "I build stuff for the internet✨. Most of the time, I'm either turning coffee into code ☕, fixing bugs I created 10 minutes earlier, or building products that make people go “ooooh that's clean” 😮‍💨.",
     paragraph2:
-      "My main focus these days is building accessible, user-centered products for a variety of clients. I enjoy working across the full stack—from designing intuitive interfaces to implementing robust backend systems. I specialize in creating applications that not only look great but also perform exceptionally well.",
+      "I love creating fast, beautiful, and user-friendly experiences. Over the years, I’ve collaborated with startups, agencies, and creators to craft products for humans — not just users. I care a lot about details, performance, accessibility, and making things feel smooth. Basically, if it lives on the internet, there's a good chance I enjoy building it.",
     viewResume: "View Full Résumé",
   },
 
